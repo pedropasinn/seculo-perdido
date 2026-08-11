@@ -68,6 +68,17 @@ favor antes de tentar destruir a hipótese.
 3. `agents/redteam.md` — hipótese → tentativa hostil de refutação.
 4. `agents/curador.md` — recalcula status, escreve o markdown final.
 
+## Dois tetos, não um
+
+`score.py` limita a força de cada capítulo (`TETO_POR_FONTE`) **e** a de cada arco
+(`TETO_POR_ARCO`). O segundo foi acrescentado em 2026-08-11, depois que
+`tools/sensibilidade.py recencia` mostrou a hipótese líder tirando 69% do apoio de
+um arco só: o teto por capítulo não vê quinze capítulos publicados juntos
+empurrando na mesma direção.
+
+O efeito não é cosmético — ele trocou o primeiro colocado. Se você discordar da
+correlação por arco, mexa em `ARCOS` e no teto, não nos pesos dos elos.
+
 ## Portão de fundamentação
 
 Antes de qualquer commit: `make check`.

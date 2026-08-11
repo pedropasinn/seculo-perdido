@@ -34,6 +34,46 @@ PESO_CONF = {
 # freio contra o vies de "arco recente prova tudo".
 TETO_POR_FONTE = 1.2
 
+# ...so que o teto por capitulo nao freia quinze capitulos do MESMO arco
+# empurrando juntos, que foi o que o teste de recencia mostrou: a lider tirava
+# 69% do apoio de um arco so. Este segundo teto age sobre o arco inteiro.
+TETO_POR_ARCO = 1.8
+
+# faixas aproximadas. Nao precisam ser exatas: o objetivo e agrupar capitulos que
+# foram publicados juntos e que por isso se correlacionam, nao catalogar a obra.
+ARCOS = [
+    (1, 100, "East Blue"),
+    (101, 216, "Arabasta"),
+    (217, 302, "Skypiea"),
+    (303, 374, "Water 7"),
+    (375, 441, "Enies Lobby / Ohara"),
+    (442, 489, "Thriller Bark"),
+    (490, 513, "Sabaody"),
+    (514, 580, "Marineford"),
+    (581, 602, "pos-guerra"),
+    (603, 653, "Ilha dos Homens-Peixe"),
+    (654, 699, "Punk Hazard"),
+    (700, 801, "Dressrosa"),
+    (802, 824, "Zou"),
+    (825, 902, "Whole Cake"),
+    (903, 908, "Reverie"),
+    (909, 1057, "Wano"),
+    (1058, 1125, "Egghead"),
+    (1126, 9999, "Elbaf"),
+]
+
+
+def arco(fonte: str) -> str:
+    """'cap 1138' -> 'Elbaf'. O que nao tiver numero vira arco proprio."""
+    digitos = "".join(c for c in str(fonte) if c.isdigit())
+    if not digitos:
+        return str(fonte)
+    n = int(digitos)
+    for lo, hi, nome in ARCOS:
+        if lo <= n <= hi:
+            return nome
+    return str(fonte)
+
 
 def ler(caminho: Path) -> dict:
     bruto = caminho.read_text(encoding="utf-8")
@@ -72,12 +112,19 @@ def pontuar(hip: dict, evidencias: dict[str, dict]) -> dict:
             por_fonte[str(ev.get("fonte", "?"))] += delta
             detalhe.append(f"    {elo['ev']:<14} {rotulo:<10} {delta:+.2f}")
 
-    # aplica o teto por fonte
-    total = 0.0
+    # teto por capitulo, depois teto por arco sobre o que sobrou
+    por_arco: dict[str, float] = defaultdict(float)
     for fonte, soma in por_fonte.items():
         limitado = max(-TETO_POR_FONTE, min(TETO_POR_FONTE, soma))
         if abs(limitado) < abs(soma):
-            detalhe.append(f"    [teto] {fonte}: {soma:+.2f} -> {limitado:+.2f}")
+            detalhe.append(f"    [teto cap] {fonte}: {soma:+.2f} -> {limitado:+.2f}")
+        por_arco[arco(fonte)] += limitado
+
+    total = 0.0
+    for nome, soma in por_arco.items():
+        limitado = max(-TETO_POR_ARCO, min(TETO_POR_ARCO, soma))
+        if abs(limitado) < abs(soma):
+            detalhe.append(f"    [teto arco] {nome}: {soma:+.2f} -> {limitado:+.2f}")
         total += limitado
 
     logodds += total
