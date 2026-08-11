@@ -125,7 +125,9 @@ def carregar():
         meta["corpo"] = corpo
         rt = p.with_suffix("").with_suffix(".redteam.md")
         meta["redteam"] = rt.read_text(encoding="utf-8") if rt.exists() else ""
-        meta["posterior"] = score.pontuar(meta, evid)["posterior"]
+        _s = score.pontuar(meta, evid)
+        meta["posterior"] = _s["posterior"]
+        meta["detalhe"] = _s["detalhe"]
         hips.append(meta)
 
     vivas = [h for h in hips if h.get("escopo") == "one_piece"
@@ -410,6 +412,46 @@ footer code{background:var(--papel);color:var(--tinta)}
 .ref{color:var(--mar);text-decoration:none;border-bottom:1.5px dotted currentColor;
   font:700 .92em var(--mono)}
 .ref:hover{background:var(--ouro);color:var(--tinta)}
+.tabela{width:100%;border-collapse:separate;border-spacing:0;margin:1rem 0;
+  border:3px solid var(--tinta);border-radius:14px;overflow:hidden;background:var(--papel);
+  box-shadow:var(--sombra)}
+.tabela th{background:var(--tinta);color:var(--papel);font:700 .72rem/1 var(--titulo);
+  text-transform:uppercase;letter-spacing:.05em;padding:.7rem .9rem;text-align:left}
+.tabela td{padding:.65rem .9rem;border-top:2px solid rgba(21,16,22,.12);font-size:.92rem}
+.tabela tr:nth-child(even) td{background:var(--papel-2)}
+.tabela .num{text-align:right;font:700 .8rem var(--mono);white-space:nowrap}
+.tabela a{font-weight:700}
+.botao-grande{display:inline-block;background:var(--ouro);border:3px solid var(--tinta);
+  border-radius:12px;padding:.7rem 1.2rem;font:400 1.35rem/1 var(--display);
+  letter-spacing:.03em;text-transform:uppercase;text-decoration:none;
+  box-shadow:var(--sombra);transition:transform .14s;margin:0 .5rem .5rem 0}
+.botao-grande:hover{transform:translate(-2px,-3px)}
+.botao-grande.alt{background:var(--mar);color:#fff}
+pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .9rem;
+  margin:.6rem 0;overflow-x:auto;font:.78rem/1.55 var(--mono);white-space:pre}
+.card pre.cmd{font-size:.72rem}
+.estado{max-width:62ch;margin:2.4rem auto 0;background:var(--papel);border:3px solid var(--tinta);
+  border-radius:16px;box-shadow:var(--sombra);padding:1.2rem 1.4rem;text-align:left}
+.estado p{margin:.5rem 0}
+.estado b{font:400 1.25rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;
+  color:var(--vermelho);display:block;margin-bottom:.2rem}
+.estado .miudo{font-size:.9rem;opacity:.8;border-top:2px dotted rgba(21,16,22,.2);
+  padding-top:.6rem;margin-top:.8rem}
+.legenda-rot{display:grid;gap:.5rem;margin:-.6rem 0 1.8rem}
+.legenda-rot div{display:grid;grid-template-columns:9.5rem 1fr;gap:.7rem;align-items:baseline}
+.legenda-rot dd{font-size:.9rem;margin:0}
+.selo.morta{background:var(--tinta);color:var(--papel)}
+.selo.ferida{background:var(--papel-2);color:var(--vermelho-esc);border-color:var(--vermelho);
+  border-style:dashed}
+.vered{display:inline-flex;align-items:center;gap:.5rem;margin:.2rem 0 1rem;
+  font:600 .92rem var(--titulo);background:var(--papel-2);border:2.5px solid var(--tinta);
+  border-radius:999px;padding:.35rem .8rem}
+.vered b{font:400 1.05rem/1 var(--display);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--vermelho)}
+.vered.refutada{background:var(--tinta);color:var(--papel)}
+.vered.refutada b{color:var(--ouro)}
+.conta{font:700 .74rem/1.5 var(--mono);opacity:.72;margin:.3rem 0 1rem;
+  border-bottom:2px dotted rgba(21,16,22,.2);padding-bottom:.6rem}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
@@ -632,7 +674,8 @@ if (topo) {
 
 SITE = "https://seculo-perdido.vercel.app"
 NAV = [("/", "index.html", "Hipóteses"), ("/grafo", "grafo.html", "Grafo"),
-       ("/evidencias", "evidencias.html", "Evidências"), ("/metodo", "metodo.html", "Método")]
+       ("/evidencias", "evidencias.html", "Evidências"), ("/metodo", "metodo.html", "Método"),
+       ("/dados", "dados.html", "Dados & API")]
 
 
 def cabeca(titulo: str, desc: str, ativo: str) -> str:
@@ -725,9 +768,23 @@ def pagina_hipoteses(evid, hips, meta) -> str:
             f'<div class="prev"><b>{p.get("status", "")}</b>'
             f'<span>{html.escape(p.get("texto", ""))}</span></div>'
             for p in h.get("prediz") or [])
-        rt = (f'<details class="rt"><summary>relatório do red team</summary>'
+        vered = ""
+        if h.get("redteam"):
+            m = re.search(r"[Vv]eredito:?\s*\**\s*(refutada|ferida|sobrevive)",
+                          h["redteam"])
+            sup = re.search(r"(\d+)\s+suposi", h["redteam"])
+            if m:
+                vered = (f'<p class="vered {m.group(1)}"><b>red team</b> '
+                         f'{m.group(1)}'
+                         + (f' · {sup.group(1)} suposições sem evidência' if sup else "")
+                         + "</p>")
+        rt = (vered + f'<details class="rt"><summary>relatório completo do red team</summary>'
               f'<div class="rt-corpo">{markdown_leve(h["redteam"], 5)}</div></details>'
               ) if h.get("redteam") else ""
+        cortes = [d.strip() for d in (h.get("detalhe") or []) if "[teto" in d]
+        tetos = ("· " + "; ".join(c.replace("[teto cap]", "teto de capítulo em")
+                                   .replace("[teto arco]", "teto de arco em")
+                                   for c in cortes[:2])) if cortes else ""
         legenda = (f'{h["fatia"]*100:.0f}% da probabilidade repartida'
                    if h["fatia"] else "fora do escopo do tesouro")
         estado = ", ferida pelo red team" if (ferida and st == "viva") else ""
@@ -743,6 +800,9 @@ def pagina_hipoteses(evid, hips, meta) -> str:
       <a class="perma" href="#{h['id']}" title="link para esta hipótese">§</a></span>
   </summary>
   <div class="corpo">
+    <p class="conta">a priori {h.get("prior", 0):.2f} → posterior {h["posterior"]:.2f}
+      · {len(h.get("apoia") or [])} apoios, {len(h.get("contradiz") or [])} contradições
+      {tetos}</p>
     {markdown_leve(h.get("corpo", ""))}
     <h4>Evidências a favor · {len(h.get("apoia") or [])}</h4>{apo or "<p>—</p>"}
     <h4>Evidências contra · {len(h.get("contradiz") or [])}</h4>{con or "<p>—</p>"}
@@ -761,6 +821,16 @@ def pagina_hipoteses(evid, hips, meta) -> str:
   <p class="sub">Não é um blog de teorias. Toda afirmação aqui aponta para um átomo de
   evidência verificável, toda hipótese arrisca previsões que podem dar errado, e um
   validador determinístico recusa qualquer coisa que não tenha fonte.</p>
+  <div class="estado">
+    <p><b>Onde estamos.</b> A leitura mais provável hoje é que o One Piece seja
+    o <strong>legado dirigido de Joy Boy</strong> — palavras, um pedido e as condições de
+    uma promessa, endereçados a quem chegasse depois dele.</p>
+    <p>Ela lidera em <strong>100% de 2000 sorteios</strong> que sacodem todos os pesos, e
+    continua liderando mesmo jogando fora tudo que foi publicado depois do capítulo 1100.
+    Ainda assim está <strong>ferida</strong>: o red team achou seis suposições sem evidência.</p>
+    <p class="miudo">O que mudou no capítulo 1190: Gaban diz a Imu que conhece
+    <em>as palavras</em> de Joy Boy — e que não pretende segui-las.</p>
+  </div>
   <div class="painel">
     <div><b data-alvo="{meta['n_ev']}">{meta['n_ev']}</b><small>átomos de evidência</small></div>
     <div><b data-alvo="{meta['n_hip']}">{meta['n_hip']}</b><small>hipóteses</small></div>
@@ -774,6 +844,14 @@ def pagina_hipoteses(evid, hips, meta) -> str:
   <p class="intro">A porcentagem é a repartição da probabilidade entre hipóteses mutuamente
   exclusivas — e ela assume que a resposta certa está entre as listadas, que é justamente o
   que não se pode garantir. Abra o dossiê de cada uma para ver os elos, as previsões e o ataque que sofreu.</p>
+  <dl class="legenda-rot">
+    <div><dt><span class="selo">a priori 0,20</span></dt>
+      <dd>a probabilidade antes de olhar as evidências, escolhida a mão e justificada por escrito</dd></div>
+    <div><dt><span class="selo ferida">ferida</span></dt>
+      <dd>sobreviveu ao ataque, mas com custo — <strong>nenhuma das 15 saiu intacta</strong></dd></div>
+    <div><dt><span class="selo morta">refutada</span></dt>
+      <dd>saiu do páreo; o motivo fica escrito no cemitério, lá embaixo</dd></div>
+  </dl>
   {"".join(bloco(h, i) for i, h in enumerate(vivas))}
 </div></section>
 
@@ -820,8 +898,9 @@ def pagina_evidencias(evid, hips, meta) -> str:
         refs = citado.get(ident, [])
         if refs:
             cita = '<div class="ev-cita">citado por ' + " ".join(
-                f'<a href="/#{hid}" class="cita {rot}" title="{hid} {rot} este átomo">'
-                f'{hid}<i>{"apoia" if rot == "apoia" else "contradiz"}</i></a>'
+                f'<a href="/#{hid}" class="cita {rot}" '
+                f'title="este átomo {rot} a hipótese {hid}">'
+                f'<i>{rot}</i>{hid}</a>'
                 for hid, rot, _ in refs) + "</div>"
         else:
             cita = '<div class="ev-cita orfao">órfão — nenhuma hipótese cita este átomo</div>'
@@ -894,7 +973,36 @@ def pagina_metodo(meta) -> str:
     <div class="card"><h3>Portão</h3><p>Um validador sem IA recusa o commit se uma citação
     apontar para átomo inexistente ou se a justificativa não corresponder ao texto citado.
     É o que impede alucinação de virar conteúdo.</p></div>
+    <div class="card"><h3>Curador</h3><p>Alguém decide e assina. O cálculo é insumo, não
+    veredito — <strong>um número que muda sem justificativa escrita é inválido</strong>, e a
+    justificativa fica versionada junto com o dado.</p></div>
   </div>
+
+  <div class="cab" style="margin-top:3rem"><h2>Quem escreve isto</h2></div>
+  <p class="intro">Os átomos, as hipóteses e os ataques são redigidos por agentes de LLM a
+  partir das fontes permitidas, sob uma regra que vale mais que todas as outras: <strong>o
+  que o modelo lembra não é fonte</strong>. Se uma cena não tem átomo, ela não pode ser
+  afirmada — nem por quem escreve. É o oposto do uso comum de IA para teoria de fandom, em
+  que o modelo despeja o que acha que lembra. O validador existe justamente porque essa
+  regra precisa ser executável, e não apenas prometida.</p>
+
+  <div class="cab" style="margin-top:3rem"><h2>O ranking aguenta?</h2></div>
+  <p class="intro">Três testes rodam contra o próprio resultado, e os números ficam
+  publicados mesmo quando são desconfortáveis.</p>
+  <table class="tabela">
+    <thead><tr><th>teste</th><th>o que faz</th><th>resultado</th></tr></thead>
+    <tbody>
+      <tr><td><code>perturbar</code></td><td>sacode todos os pesos e prioris em 2000 sorteios</td>
+        <td>a líder vence em <strong>100%</strong></td></tr>
+      <tr><td><code>remover</code></td><td>tira um átomo por vez e remede</td>
+        <td>nenhum troca o líder</td></tr>
+      <tr><td><code>recencia</code></td><td>joga fora tudo acima do capítulo 1100</td>
+        <td>a mesma hipótese lidera</td></tr>
+    </tbody>
+  </table>
+  <p class="intro">Nem sempre foi assim: nas rodadas anteriores a líder vencia 97,9%, depois
+  82,1%, depois 66,5% — e houve um momento em que ela caía para penúltima ao cortar o arco
+  em publicação. O que consertou não foi o modelo, foi extrair 74 átomos de arcos antigos.</p>
 
   <div class="cab" style="margin-top:3.4rem"><h2>O que não sabemos</h2></div>
   <p class="intro">Três limites que o próprio arquivo mede e publica, em vez de esconder.</p>
@@ -983,6 +1091,108 @@ def pagina_grafo(meta) -> str:
 <button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button>""" + RODAPE)
 
 
+def pagina_dados(meta, tamanhos) -> str:
+    def kb(n):
+        return f"{tamanhos.get(n, 0)/1024:.0f} KB"
+    arquivos = [
+        ("tudo.json", "base inteira, com metadados e vocabulário", "json"),
+        ("evidencias.json", f"os {meta['n_ev']} átomos, com quem cita cada um", "json"),
+        ("hipoteses.json", "hipóteses com elos, previsões e red team", "json"),
+        ("meta.json", "só os metadados — comece por aqui, é leve", "json"),
+        ("evidencias.csv", "átomos em planilha", "csv"),
+        ("elos.csv", "cada ligação hipótese↔átomo, com peso e justificativa", "csv"),
+        ("hipoteses.csv", "hipóteses em planilha", "csv"),
+        ("evidencias.ndjson", "um átomo por linha, para pipeline", "ndjson"),
+        ("seculo-perdido.md", "tudo em markdown — bom para ler ou dar a um LLM", "md"),
+        ("grafo.json", "nós e relações tipadas do explorador", "json"),
+    ]
+    linhas = "".join(
+        f'<tr><td><a href="/dados/{n}" download><code>{n}</code></a></td>'
+        f'<td>{d}</td><td class="num">{kb(n)}</td></tr>' for n, d, _ in arquivos)
+    return (cabeca("Dados & API — Século Perdido",
+                   "Baixe a base inteira em JSON, CSV ou Markdown, ou consulte por "
+                   "MCP direto do Claude Code.", "dados.html") +
+            f"""<main><section style="border-top:0"><div class="env">
+  <div class="cab"><h1>Leve a base inteira</h1>
+    <span class="n">CC BY-SA 3.0</span></div>
+  <p class="intro">Tudo que está no site sai daqui, e sai em formato aberto. Não há
+  cadastro, chave nem limite de requisição — é arquivo estático. Se você for reusar,
+  a licença pede atribuição e que a obra derivada mantenha a mesma licença.</p>
+
+  <p style="margin:.5rem 0 2rem">
+    <a class="botao-grande" href="/dados/seculo-perdido.zip" download>
+      baixar tudo · {kb("seculo-perdido.zip")}</a></p>
+
+  <table class="tabela">
+    <thead><tr><th>arquivo</th><th>o que é</th><th class="num">tamanho</th></tr></thead>
+    <tbody>{linhas}</tbody>
+  </table>
+
+  <div class="cab" style="margin-top:3.4rem"><h2>Perguntar pelo Claude Code</h2></div>
+  <p class="intro">Em vez de ler 289 átomos, dá para perguntar. O repositório traz um
+  servidor <strong>MCP</strong> que expõe a base como ferramentas de consulta — funciona
+  no Claude Code, no Claude Desktop e em qualquer cliente que fale MCP.</p>
+
+  <div class="grade">
+    <div class="card"><h3>1. Sem clonar nada</h3>
+      <p>Baixe só o servidor e rode em modo remoto: ele lê os dados publicados aqui.</p>
+      <pre class="cmd">curl -O https://seculo-perdido.vercel.app/mcp/servidor.py</pre>
+      <p>Depois acrescente ao <code>~/.claude.json</code>:</p>
+      <pre class="cmd">{{
+  "mcpServers": {{
+    "seculo-perdido": {{
+      "command": "python3",
+      "args": ["/caminho/servidor.py", "--remoto"]
+    }}
+  }}
+}}</pre>
+      <p>Só precisa de Python 3. Nenhuma dependência.</p>
+    </div>
+    <div class="card"><h3>2. Com o repositório</h3>
+      <p>Clonando, o servidor lê <code>data/</code> direto e você ganha as ferramentas
+      de linha de comando junto.</p>
+      <pre class="cmd">git clone {meta['repo']}
+cd seculo-perdido
+pip install pyyaml</pre>
+      <p>E no <code>~/.claude.json</code>, sem o <code>--remoto</code>:</p>
+      <pre class="cmd">"args": ["/caminho/seculo-perdido/mcp/servidor.py"]</pre>
+    </div>
+  </div>
+
+  <div class="cab" style="margin-top:3rem"><h2>O que dá para perguntar</h2></div>
+  <table class="tabela">
+    <thead><tr><th>ferramenta</th><th>para quê</th></tr></thead>
+    <tbody>
+      <tr><td><code>estado_do_arquivo</code></td><td>panorama: ranking, capítulo coberto, órfãos</td></tr>
+      <tr><td><code>buscar_evidencia</code></td><td>por texto, tema, capítulo ou confiabilidade</td></tr>
+      <tr><td><code>obter_evidencia</code></td><td>um átomo pelo id, com quem o cita</td></tr>
+      <tr><td><code>listar_hipoteses</code></td><td>todas, com probabilidade e contagem de elos</td></tr>
+      <tr><td><code>obter_hipotese</code></td><td>dossiê completo, incluindo o red team</td></tr>
+      <tr><td><code>comparar_hipoteses</code></td><td>base compartilhada e onde a evidência diverge</td></tr>
+    </tbody>
+  </table>
+  <p class="intro" style="margin-top:1.4rem">Perguntas que funcionam bem:
+  <em>“o que sustenta a hipótese líder e qual o furo dela?”</em> ·
+  <em>“tem evidência de que o One Piece seja um objeto físico?”</em> ·
+  <em>“o que H-05 e H-08 têm em comum?”</em> ·
+  <em>“quais átomos ninguém está usando?”</em></p>
+
+  <div class="cab" style="margin-top:3rem"><h2>A skill</h2></div>
+  <p class="intro">Junto vai uma <strong>skill</strong> que ensina o assistente a usar a
+  base direito: citar o id de cada átomo, nunca afirmar de memória, distinguir
+  <em>ferida</em> de <em>refutada</em>, e não repetir a porcentagem sem a ressalva de que
+  ela assume exaustividade. Ela é configurável — dá para limitar por capítulo, para não
+  tomar spoiler, ou restringir a evidência canônica.</p>
+  <p style="margin-bottom:2rem">
+    <a class="botao-grande" href="/mcp/SKILL.md" download>baixar a skill</a>
+    <a class="botao-grande alt" href="/mcp/servidor.py" download>baixar o servidor</a></p>
+
+  <blockquote>Se você usar isto para responder a alguém, cite os ids. O valor do
+  arquivo não é a resposta que ele dá, é o fato de a resposta poder ser conferida.</blockquote>
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
+
+
 def main() -> int:
     evid, hips = carregar()
     SAIDA.mkdir(exist_ok=True)
@@ -994,12 +1204,18 @@ def main() -> int:
         "cap": max(caps) if caps else 0,
         "n_nos": 0, "n_rels": 0,
     }
+
+    tamanhos = {p.name: p.stat().st_size for p in (SAIDA / "dados").glob("*")} \
+        if (SAIDA / "dados").is_dir() else {}
+    if (SAIDA / "grafo.json").exists():
+        tamanhos["grafo.json"] = (SAIDA / "grafo.json").stat().st_size
     gj = SAIDA / "grafo.json"
     if gj.exists():
         g = json.loads(gj.read_text(encoding="utf-8"))["meta"]
         meta["n_nos"], meta["n_rels"] = g["n_nos"], g["n_rels"]
     repo = git("remote", "get-url", "origin", padrao="")
     repo = re.sub(r"\.git$", "", repo) or "https://github.com/pedropasinn/seculo-perdido"
+    meta["repo"] = repo
     iso = git("log", "-1", "--format=%cI", padrao="")[:19] or "2026-08-11T00:00:00"
     dia, mes, ano = iso[8:10], iso[5:7], iso[0:4]
     MESES = ["", "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
@@ -1014,10 +1230,15 @@ def main() -> int:
         "evidencias.html": pagina_evidencias(evid, hips, meta),
         "metodo.html": pagina_metodo(meta),
         "grafo.html": pagina_grafo(meta),
+        "dados.html": pagina_dados(meta, tamanhos),
     }
     for nome, conteudo in paginas.items():
         (SAIDA / nome).write_text(conteudo.replace(RODAPE, rodape), encoding="utf-8")
     (SAIDA / "estilo.css").write_text(CSS.strip() + "\n", encoding="utf-8")
+    import shutil
+    (SAIDA / "mcp").mkdir(exist_ok=True)
+    shutil.copy2(RAIZ / "mcp" / "servidor.py", SAIDA / "mcp" / "servidor.py")
+    shutil.copy2(RAIZ / "skill" / "seculo-perdido" / "SKILL.md", SAIDA / "mcp" / "SKILL.md")
     (SAIDA / "robots.txt").write_text(
         f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(

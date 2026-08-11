@@ -1,0 +1,123 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dados &amp; API — Século Perdido</title>
+<meta name="description" content="Baixe a base inteira em JSON, CSV ou Markdown, ou consulte por MCP direto do Claude Code.">
+<link rel="canonical" href="https://seculo-perdido.vercel.app/dados">
+<meta property="og:title" content="Dados &amp; API — Século Perdido">
+<meta property="og:description" content="Baixe a base inteira em JSON, CSV ou Markdown, ou consulte por MCP direto do Claude Code.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seculo-perdido.vercel.app/dados">
+<meta property="og:site_name" content="Século Perdido">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://seculo-perdido.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Século Perdido — arquivo de evidências sobre o que é o One Piece">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dados &amp; API — Século Perdido">
+<meta name="twitter:description" content="Baixe a base inteira em JSON, CSV ou Markdown, ou consulte por MCP direto do Claude Code.">
+<meta name="twitter:image" content="https://seculo-perdido.vercel.app/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head><body>
+<header class="topo"><div class="env">
+  <a class="marca" href="/">Século<span>·</span>Perdido</a>
+  <nav class="topo-nav"><a href="/">Hipóteses</a><a href="/grafo">Grafo</a><a href="/evidencias">Evidências</a><a href="/metodo">Método</a><a href="/dados" aria-current="page">Dados & API</a></nav>
+</div></header><main><section style="border-top:0"><div class="env">
+  <div class="cab"><h1>Leve a base inteira</h1>
+    <span class="n">CC BY-SA 3.0</span></div>
+  <p class="intro">Tudo que está no site sai daqui, e sai em formato aberto. Não há
+  cadastro, chave nem limite de requisição — é arquivo estático. Se você for reusar,
+  a licença pede atribuição e que a obra derivada mantenha a mesma licença.</p>
+
+  <p style="margin:.5rem 0 2rem">
+    <a class="botao-grande" href="/dados/seculo-perdido.zip" download>
+      baixar tudo · 440 KB</a></p>
+
+  <table class="tabela">
+    <thead><tr><th>arquivo</th><th>o que é</th><th class="num">tamanho</th></tr></thead>
+    <tbody><tr><td><a href="/dados/tudo.json" download><code>tudo.json</code></a></td><td>base inteira, com metadados e vocabulário</td><td class="num">602 KB</td></tr><tr><td><a href="/dados/evidencias.json" download><code>evidencias.json</code></a></td><td>os 289 átomos, com quem cita cada um</td><td class="num">241 KB</td></tr><tr><td><a href="/dados/hipoteses.json" download><code>hipoteses.json</code></a></td><td>hipóteses com elos, previsões e red team</td><td class="num">351 KB</td></tr><tr><td><a href="/dados/meta.json" download><code>meta.json</code></a></td><td>só os metadados — comece por aqui, é leve</td><td class="num">1 KB</td></tr><tr><td><a href="/dados/evidencias.csv" download><code>evidencias.csv</code></a></td><td>átomos em planilha</td><td class="num">81 KB</td></tr><tr><td><a href="/dados/elos.csv" download><code>elos.csv</code></a></td><td>cada ligação hipótese↔átomo, com peso e justificativa</td><td class="num">56 KB</td></tr><tr><td><a href="/dados/hipoteses.csv" download><code>hipoteses.csv</code></a></td><td>hipóteses em planilha</td><td class="num">4 KB</td></tr><tr><td><a href="/dados/evidencias.ndjson" download><code>evidencias.ndjson</code></a></td><td>um átomo por linha, para pipeline</td><td class="num">222 KB</td></tr><tr><td><a href="/dados/seculo-perdido.md" download><code>seculo-perdido.md</code></a></td><td>tudo em markdown — bom para ler ou dar a um LLM</td><td class="num">132 KB</td></tr><tr><td><a href="/dados/grafo.json" download><code>grafo.json</code></a></td><td>nós e relações tipadas do explorador</td><td class="num">284 KB</td></tr></tbody>
+  </table>
+
+  <div class="cab" style="margin-top:3.4rem"><h2>Perguntar pelo Claude Code</h2></div>
+  <p class="intro">Em vez de ler 289 átomos, dá para perguntar. O repositório traz um
+  servidor <strong>MCP</strong> que expõe a base como ferramentas de consulta — funciona
+  no Claude Code, no Claude Desktop e em qualquer cliente que fale MCP.</p>
+
+  <div class="grade">
+    <div class="card"><h3>1. Sem clonar nada</h3>
+      <p>Baixe só o servidor e rode em modo remoto: ele lê os dados publicados aqui.</p>
+      <pre class="cmd">curl -O https://seculo-perdido.vercel.app/mcp/servidor.py</pre>
+      <p>Depois acrescente ao <code>~/.claude.json</code>:</p>
+      <pre class="cmd">{
+  "mcpServers": {
+    "seculo-perdido": {
+      "command": "python3",
+      "args": ["/caminho/servidor.py", "--remoto"]
+    }
+  }
+}</pre>
+      <p>Só precisa de Python 3. Nenhuma dependência.</p>
+    </div>
+    <div class="card"><h3>2. Com o repositório</h3>
+      <p>Clonando, o servidor lê <code>data/</code> direto e você ganha as ferramentas
+      de linha de comando junto.</p>
+      <pre class="cmd">git clone https://github.com/pedropasinn/seculo-perdido
+cd seculo-perdido
+pip install pyyaml</pre>
+      <p>E no <code>~/.claude.json</code>, sem o <code>--remoto</code>:</p>
+      <pre class="cmd">"args": ["/caminho/seculo-perdido/mcp/servidor.py"]</pre>
+    </div>
+  </div>
+
+  <div class="cab" style="margin-top:3rem"><h2>O que dá para perguntar</h2></div>
+  <table class="tabela">
+    <thead><tr><th>ferramenta</th><th>para quê</th></tr></thead>
+    <tbody>
+      <tr><td><code>estado_do_arquivo</code></td><td>panorama: ranking, capítulo coberto, órfãos</td></tr>
+      <tr><td><code>buscar_evidencia</code></td><td>por texto, tema, capítulo ou confiabilidade</td></tr>
+      <tr><td><code>obter_evidencia</code></td><td>um átomo pelo id, com quem o cita</td></tr>
+      <tr><td><code>listar_hipoteses</code></td><td>todas, com probabilidade e contagem de elos</td></tr>
+      <tr><td><code>obter_hipotese</code></td><td>dossiê completo, incluindo o red team</td></tr>
+      <tr><td><code>comparar_hipoteses</code></td><td>base compartilhada e onde a evidência diverge</td></tr>
+    </tbody>
+  </table>
+  <p class="intro" style="margin-top:1.4rem">Perguntas que funcionam bem:
+  <em>“o que sustenta a hipótese líder e qual o furo dela?”</em> ·
+  <em>“tem evidência de que o One Piece seja um objeto físico?”</em> ·
+  <em>“o que H-05 e H-08 têm em comum?”</em> ·
+  <em>“quais átomos ninguém está usando?”</em></p>
+
+  <div class="cab" style="margin-top:3rem"><h2>A skill</h2></div>
+  <p class="intro">Junto vai uma <strong>skill</strong> que ensina o assistente a usar a
+  base direito: citar o id de cada átomo, nunca afirmar de memória, distinguir
+  <em>ferida</em> de <em>refutada</em>, e não repetir a porcentagem sem a ressalva de que
+  ela assume exaustividade. Ela é configurável — dá para limitar por capítulo, para não
+  tomar spoiler, ou restringir a evidência canônica.</p>
+  <p style="margin-bottom:2rem">
+    <a class="botao-grande" href="/mcp/SKILL.md" download>baixar a skill</a>
+    <a class="botao-grande alt" href="/mcp/servidor.py" download>baixar o servidor</a></p>
+
+  <blockquote>Se você usar isto para responder a alguém, cite os ids. O valor do
+  arquivo não é a resposta que ele dá, é o fato de a resposta poder ser conferida.</blockquote>
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main><footer><div class="env">
+<p><strong>Fontes.</strong> Os átomos de evidência são paráfrases nossas de material da
+<a href="https://onepiece.fandom.com" rel="noopener">One Piece Wiki</a>, disponível sob
+<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener">CC BY-SA 3.0</a>;
+alguns citam análises de tradução do
+<a href="https://thelibraryofohara.com" rel="noopener">The Library of Ohara</a>, com atribuição
+no campo <code>fonte_url</code> de cada átomo. Os dados deste site são publicados sob a mesma
+licença CC BY-SA 3.0. Nenhum scan ou scanlation é usado.</p>
+<p><strong>Spoilers</strong> até o capítulo 1190. <em>One Piece</em> é obra de Eiichiro Oda,
+publicada pela Shueisha — este é um projeto de fã, sem vínculo com os detentores dos direitos.</p>
+<p><strong>Licenças.</strong> O código é MIT; os dados de <code>data/</code> são CC BY-SA 3.0,
+pela cláusula share-alike da fonte.</p>
+<p><a href="https://github.com/pedropasinn/seculo-perdido">pedropasinn/seculo-perdido</a> ·
+<a href="https://github.com/pedropasinn/seculo-perdido/commits/main">histórico de mudanças</a> ·
+atualizado em <time datetime="2026-08-11T19:09:03">11 de agosto de 2026</time></p>
+</div></footer><script src="app.js"></script></body></html>

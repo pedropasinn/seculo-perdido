@@ -26,7 +26,7 @@
 </head><body>
 <header class="topo"><div class="env">
   <a class="marca" href="/">Século<span>·</span>Perdido</a>
-  <nav class="topo-nav"><a href="/">Hipóteses</a><a href="/grafo">Grafo</a><a href="/evidencias">Evidências</a><a href="/metodo" aria-current="page">Método</a></nav>
+  <nav class="topo-nav"><a href="/">Hipóteses</a><a href="/grafo">Grafo</a><a href="/evidencias">Evidências</a><a href="/metodo" aria-current="page">Método</a><a href="/dados">Dados & API</a></nav>
 </div></header><main>
 <section style="border-top:0"><div class="env">
   <div class="cab"><h1>Como isto funciona</h1></div>
@@ -47,7 +47,36 @@
     <div class="card"><h3>Portão</h3><p>Um validador sem IA recusa o commit se uma citação
     apontar para átomo inexistente ou se a justificativa não corresponder ao texto citado.
     É o que impede alucinação de virar conteúdo.</p></div>
+    <div class="card"><h3>Curador</h3><p>Alguém decide e assina. O cálculo é insumo, não
+    veredito — <strong>um número que muda sem justificativa escrita é inválido</strong>, e a
+    justificativa fica versionada junto com o dado.</p></div>
   </div>
+
+  <div class="cab" style="margin-top:3rem"><h2>Quem escreve isto</h2></div>
+  <p class="intro">Os átomos, as hipóteses e os ataques são redigidos por agentes de LLM a
+  partir das fontes permitidas, sob uma regra que vale mais que todas as outras: <strong>o
+  que o modelo lembra não é fonte</strong>. Se uma cena não tem átomo, ela não pode ser
+  afirmada — nem por quem escreve. É o oposto do uso comum de IA para teoria de fandom, em
+  que o modelo despeja o que acha que lembra. O validador existe justamente porque essa
+  regra precisa ser executável, e não apenas prometida.</p>
+
+  <div class="cab" style="margin-top:3rem"><h2>O ranking aguenta?</h2></div>
+  <p class="intro">Três testes rodam contra o próprio resultado, e os números ficam
+  publicados mesmo quando são desconfortáveis.</p>
+  <table class="tabela">
+    <thead><tr><th>teste</th><th>o que faz</th><th>resultado</th></tr></thead>
+    <tbody>
+      <tr><td><code>perturbar</code></td><td>sacode todos os pesos e prioris em 2000 sorteios</td>
+        <td>a líder vence em <strong>100%</strong></td></tr>
+      <tr><td><code>remover</code></td><td>tira um átomo por vez e remede</td>
+        <td>nenhum troca o líder</td></tr>
+      <tr><td><code>recencia</code></td><td>joga fora tudo acima do capítulo 1100</td>
+        <td>a mesma hipótese lidera</td></tr>
+    </tbody>
+  </table>
+  <p class="intro">Nem sempre foi assim: nas rodadas anteriores a líder vencia 97,9%, depois
+  82,1%, depois 66,5% — e houve um momento em que ela caía para penúltima ao cortar o arco
+  em publicação. O que consertou não foi o modelo, foi extrair 74 átomos de arcos antigos.</p>
 
   <div class="cab" style="margin-top:3.4rem"><h2>O que não sabemos</h2></div>
   <p class="intro">Três limites que o próprio arquivo mede e publica, em vez de esconder.</p>
@@ -79,5 +108,5 @@ publicada pela Shueisha — este é um projeto de fã, sem vínculo com os deten
 pela cláusula share-alike da fonte.</p>
 <p><a href="https://github.com/pedropasinn/seculo-perdido">pedropasinn/seculo-perdido</a> ·
 <a href="https://github.com/pedropasinn/seculo-perdido/commits/main">histórico de mudanças</a> ·
-atualizado em <time datetime="2026-08-11T19:07:57">11 de agosto de 2026</time></p>
+atualizado em <time datetime="2026-08-11T19:09:03">11 de agosto de 2026</time></p>
 </div></footer><script src="app.js"></script></body></html>

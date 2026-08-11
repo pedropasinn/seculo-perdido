@@ -14,6 +14,7 @@ site:
 
 web:
 	@python3 tools/grafo.py
+	@python3 tools/exportar.py
 	@python3 tools/site.py
 	@node --check web/app.js && node --check web/grafo.js && echo "  js ok" 
 
