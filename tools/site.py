@@ -10,9 +10,11 @@ from __future__ import annotations
 
 import html
 import json
+import unicodedata
 import re
 import subprocess
 import sys
+from collections import Counter
 from pathlib import Path
 
 import yaml
@@ -31,12 +33,22 @@ ROTULO_ESCOPO = {
     "outro": "outro",
 }
 
+ROTULO_TIPO = {
+    "narracao": "narração", "fala": "fala", "imagem": "imagem", "capa": "capa",
+    "sbs": "SBS", "databook": "databook", "entrevista": "entrevista",
+}
+
 ROTULO_CONF = {
     "canonico": "canônico",
     "sbs": "SBS",
     "ambiguo": "ambíguo",
     "traducao_disputada": "tradução disputada",
 }
+
+
+def sem_acento(s: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", s)
+                   if unicodedata.category(c) != "Mn")
 
 
 def ler(p: Path) -> tuple[dict, str]:
@@ -258,23 +270,23 @@ details.rt pre{padding:0 .9rem 1rem;white-space:pre-wrap;font:.8rem/1.6 var(--mo
   color:var(--tinta);padding:.7rem .9rem;border-radius:12px;box-shadow:var(--sombra-sm);
   font:600 .95rem var(--corpo)}
 .busca input{flex:1;min-width:15rem}
-.busca input:focus,.busca select:focus{outline:0;background:var(--papel-2);
-  transform:translate(-1px,-2px)}
-.ev-item{background:var(--papel);border:2.5px solid var(--tinta);border-radius:12px;
+.busca input:focus-visible,.busca select:focus-visible{outline:3px solid var(--tinta);
+  outline-offset:2px;background:var(--papel-2)}
+.ev-item{content-visibility:auto;contain-intrinsic-size:auto 132px;background:var(--papel);border:2.5px solid var(--tinta);border-radius:12px;
   box-shadow:var(--sombra-sm);padding:.9rem 1.1rem;margin-bottom:.8rem;
   display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:start;
   transition:transform .14s}
 .ev-item:hover{transform:translate(-2px,-2px)}
 .ev-item:target{background:var(--ouro);animation:pisca .9s ease 2}
 @keyframes pisca{50%{background:var(--papel-2)}}
-.ev-id{font:700 .74rem/1.4 var(--mono);color:#fff;background:var(--mar);padding:.25rem .45rem;
+.ev-id{font:700 .74rem/1.4 var(--mono);color:#fff;background:#166d9c;text-decoration:none;padding:.25rem .45rem;
   border:2px solid var(--tinta);border-radius:7px;display:inline-block}
 .ev-cap{display:block;margin-top:.35rem;font:700 .7rem/1.4 var(--titulo);opacity:.65}
 .ev-txt{font-size:.99rem;font-weight:500;text-wrap:pretty}
 .ev-tags{margin-top:.55rem;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
 .tag{font:700 .66rem/1 var(--titulo);letter-spacing:.03em;text-transform:uppercase;
   border:2px solid var(--tinta);padding:.26rem .45rem;border-radius:999px;background:var(--papel-2)}
-.tag.canonico{background:var(--verde);color:#fff}
+.tag.canonico{background:#1f7d55;color:#fff}
 .tag.traducao_disputada{background:var(--vermelho);color:#fff}
 .tag.ambiguo{background:var(--ouro)}
 .tag.sbs{background:var(--roxo);color:#fff}
@@ -310,6 +322,47 @@ footer code{background:var(--papel);color:var(--tinta)}
   .ev-item{grid-template-columns:1fr}
   .capa h1{-webkit-text-stroke:2px var(--tinta)}
 }
+
+/* barra so corre quando entra em vista */
+.sonda i{display:block;height:100%;width:0;border-right:2.5px solid var(--tinta);
+  background:repeating-linear-gradient(45deg,var(--ouro) 0 9px,var(--ouro-esc) 9px 18px)}
+.sonda[data-visivel] i{width:var(--pct);transition:width .95s cubic-bezier(.2,1.2,.3,1)}
+/* impacto de mangá ao abrir o dossiê */
+.hip-cab{position:relative;overflow:hidden}
+.hip-cab.bateu::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:conic-gradient(from 0deg,var(--ouro) 0 3deg,transparent 3deg 30deg);
+  animation:bate .38s ease-out both}
+@keyframes bate{from{opacity:.55;transform:scale(.2)}to{opacity:0;transform:scale(1.5)}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ev-cita{margin-top:.5rem;display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;
+  font:700 .66rem/1 var(--titulo);text-transform:uppercase;letter-spacing:.03em;opacity:.85}
+.ev-cita .cita{text-decoration:none;border:2px solid var(--tinta);border-radius:999px;
+  padding:.22rem .45rem;background:#e4f6ec}
+.ev-cita .cita.contradiz{background:#ffe3e0}
+.ev-cita .cita i{font-style:normal;opacity:.6;margin-left:.25rem;font-size:.9em}
+.ev-cita .cita:hover{background:var(--ouro)}
+.ev-cita.orfao{opacity:.55;font-style:italic;text-transform:none;letter-spacing:0}
+mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
+.ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
+.ev-item[hidden]{display:none}
+:focus-visible{outline:3px solid var(--mar);outline-offset:3px;border-radius:4px}
+#ao-topo{position:fixed;right:1.1rem;bottom:1.1rem;z-index:70;width:3rem;height:3rem;
+  border-radius:50%;border:3px solid var(--tinta);background:var(--ouro);cursor:pointer;
+  font:400 1.5rem/1 var(--display);box-shadow:var(--sombra);transition:transform .14s}
+#ao-topo:hover{transform:translateY(-3px)}
+#ao-topo[hidden]{display:none}
+/* pipeline numerado: a ordem dos papéis é o conteúdo */
+.grade.passos{counter-reset:passo}
+.grade.passos .card{counter-increment:passo;position:relative;padding-top:2.1rem}
+.grade.passos .card::before{content:counter(passo);position:absolute;top:-.9rem;left:1.1rem;
+  width:2.1rem;height:2.1rem;border-radius:50%;background:var(--tinta);color:var(--ouro);
+  display:grid;place-items:center;font:400 1.2rem/1 var(--display);border:3px solid var(--tinta)}
+.grade.passos .card::after{content:"→";position:absolute;right:-1.15rem;top:50%;
+  transform:translateY(-50%);font:700 1.3rem var(--titulo);color:var(--tinta);opacity:.45}
+.grade.passos .card:last-child::after{content:""}
+@media(max-width:52rem){.grade.passos .card::after{content:"↓";right:50%;top:auto;bottom:-1.4rem;
+  transform:translateX(50%)}}
 
 /* ---------- grafo ---------- */
 .g-wrap{display:grid;grid-template-columns:1fr 21rem;gap:1rem;height:min(74vh,780px)}
@@ -366,47 +419,165 @@ footer code{background:var(--papel);color:var(--tinta)}
 """
 
 JS = """
-document.querySelectorAll('.hip-cab').forEach(b=>{
-  b.addEventListener('click',()=>b.closest('.hip').classList.toggle('aberta'));
-});
-const cx=document.getElementById('busca'), fc=document.getElementById('filtro-conf'),
-      ft=document.getElementById('filtro-tema'), lista=document.getElementById('lista-ev');
-function filtra(){
-  if(!lista) return;
-  const q=(cx.value||'').toLowerCase().trim(), c=fc.value, t=ft.value;
-  let n=0;
-  lista.querySelectorAll('.ev-item').forEach(el=>{
-    const ok = (!q || el.dataset.busca.includes(q))
-            && (!c || el.dataset.conf===c)
-            && (!t || el.dataset.temas.includes(t));
-    el.style.display = ok?'':'none'; if(ok) n++;
+/* ---- acordeao das hipoteses ---------------------------------------- */
+document.querySelectorAll('.hip-cab').forEach(b => {
+  b.addEventListener('click', () => {
+    const hip = b.closest('.hip');
+    const aberta = hip.classList.toggle('aberta');
+    b.setAttribute('aria-expanded', String(aberta));   // faltava: leitor de tela
+    if (aberta) { b.classList.add('bateu');
+      b.addEventListener('animationend', () => b.classList.remove('bateu'), {once:true}); }
   });
-  document.getElementById('conta').textContent = n;
-  document.getElementById('vazio').style.display = n?'none':'block';
+});
+
+/* ---- barras so animam quando entram em vista ------------------------ */
+/* antes disso elas corriam no load: quando o leitor chegava na oitava
+   hipotese a animacao tinha acabado havia meio minuto. */
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.dataset.visivel = '1'; io.unobserve(e.target); } });
+}, {threshold:.4});
+document.querySelectorAll('.sonda').forEach(el => io.observe(el));
+
+/* ---- contadores da capa -------------------------------------------- */
+const suave = t => 1 - Math.pow(1 - t, 3);
+const ioNum = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    ioNum.unobserve(e.target);
+    const alvo = +e.target.dataset.alvo, t0 = performance.now();
+    (function passo(t){
+      const k = Math.min((t - t0) / 850, 1);
+      e.target.textContent = Math.round(alvo * suave(k));
+      if (k < 1) requestAnimationFrame(passo);
+    })(t0);
+  });
+}, {threshold:.6});
+document.querySelectorAll('[data-alvo]').forEach(el => ioNum.observe(el));
+
+/* ---- indice de evidencias ------------------------------------------ */
+const cx = document.getElementById('busca'), fc = document.getElementById('filtro-conf'),
+      ft = document.getElementById('filtro-tema'), lista = document.getElementById('lista-ev'),
+      orf = document.getElementById('so-orfaos');
+let visiveis = [], cursor = -1;
+
+function esc(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function semAcento(s){ return s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+
+function filtra(){
+  if (!lista) return;
+  const bruto = (cx.value || '').trim();
+  const termos = semAcento(bruto.toLowerCase()).split(/\s+/).filter(Boolean);
+  const c = fc.value, tema = ft.value, soOrf = orf && orf.checked;
+  visiveis = []; cursor = -1;
+  lista.querySelectorAll('.ev-item').forEach(el => {
+    const hay = el.dataset.busca;
+    const ok = termos.every(w => hay.includes(w))
+            && (!c || el.dataset.conf === c)
+            && (!tema || el.dataset.temas.includes('|' + tema + '|'))
+            && (!soOrf || el.dataset.orfao === '1');
+    el.hidden = !ok;
+    el.classList.remove('selecionado');
+    if (ok) visiveis.push(el);
+    const alvo = el.querySelector('.ev-txt');
+    if (!alvo) return;
+    const puro = alvo.dataset.puro || (alvo.dataset.puro = alvo.textContent);
+    if (ok && bruto.length > 1) {
+      const re = new RegExp('(' + esc(bruto) + ')', 'gi');
+      alvo.innerHTML = semAcento(puro).match(re)
+        ? puro.replace(new RegExp('(' + esc(bruto) + ')', 'gi'), '<mark>$1</mark>') : puro;
+    } else if (alvo.innerHTML !== puro) { alvo.textContent = puro; }
+  });
+  document.getElementById('conta').textContent = visiveis.length;
+  document.getElementById('vazio').hidden = visiveis.length > 0;
+  const p = new URLSearchParams();
+  if (bruto) p.set('q', bruto);
+  if (c) p.set('conf', c);
+  if (tema) p.set('tema', tema);
+  if (soOrf) p.set('orfaos', '1');
+  history.replaceState(null, '', p.toString() ? '?' + p : location.pathname);
 }
-[cx,fc,ft].forEach(el=>el&&el.addEventListener('input',filtra));
+
+let tempo;
+function agenda(){ clearTimeout(tempo); tempo = setTimeout(filtra, 110); }
+[cx, fc, ft, orf].forEach(el => el && el.addEventListener('input', agenda));
+
+/* estado vem da URL, e a lista e filtrada no load — bfcache devolvia campo
+   preenchido com a lista inteira e o contador mentindo */
+if (lista) {
+  const u = new URLSearchParams(location.search);
+  if (u.get('q')) cx.value = u.get('q');
+  if (u.get('conf')) fc.value = u.get('conf');
+  if (u.get('tema')) ft.value = u.get('tema');
+  if (u.get('orfaos')) orf.checked = true;
+  filtra();
+  /* deep link com filtro ativo caia num item escondido: limpa e vai */
+  if (location.hash && document.querySelector(location.hash)?.hidden) {
+    cx.value = ''; fc.value = ''; ft.value = ''; if (orf) orf.checked = false;
+    filtra(); document.querySelector(location.hash).scrollIntoView();
+  }
+}
+
+/* setas percorrem os resultados sem tirar a mao do teclado */
+if (cx) cx.addEventListener('keydown', ev => {
+  if (!['ArrowDown','ArrowUp','Enter'].includes(ev.key) || !visiveis.length) return;
+  ev.preventDefault();
+  if (ev.key === 'Enter' && cursor >= 0) { location.hash = visiveis[cursor].id; return; }
+  visiveis.forEach(el => el.classList.remove('selecionado'));
+  cursor = ev.key === 'ArrowDown'
+    ? Math.min(cursor + 1, visiveis.length - 1) : Math.max(cursor - 1, 0);
+  const alvo = visiveis[cursor];
+  alvo.classList.add('selecionado');
+  alvo.scrollIntoView({block:'nearest', behavior:'smooth'});
+});
+
+/* ---- voltar ao topo ------------------------------------------------- */
+const topo = document.getElementById('ao-topo');
+if (topo) {
+  addEventListener('scroll', () => { topo.hidden = scrollY < 700; }, {passive:true});
+  topo.onclick = () => scrollTo({top:0, behavior:'smooth'});
+}
 """
 
 
+SITE = "https://seculo-perdido.vercel.app"
+NAV = [("/", "index.html", "Hipóteses"), ("/grafo", "grafo.html", "Grafo"),
+       ("/evidencias", "evidencias.html", "Evidências"), ("/metodo", "metodo.html", "Método")]
+
+
 def cabeca(titulo: str, desc: str, ativo: str) -> str:
-    nav = [("index.html", "Hipóteses"), ("grafo.html", "Grafo"),
-           ("evidencias.html", "Evidências"), ("metodo.html", "Método")]
+    url = SITE + next((u for u, a, _ in NAV if a == ativo), "/")
+    marca_atual = ' aria-current="page"'
     itens = "".join(
-        f'<a href="{u}"{" aria-current=page" if u == ativo else ""}>{t}</a>' for u, t in nav)
+        f'<a href="{u}"{marca_atual if a == ativo else ""}>{r}</a>'
+        for u, a, r in NAV)
     return f"""<!doctype html><html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(titulo)}</title>
 <meta name="description" content="{html.escape(desc)}">
+<link rel="canonical" href="{url}">
 <meta property="og:title" content="{html.escape(titulo)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="website">
+<meta property="og:url" content="{url}">
+<meta property="og:site_name" content="Século Perdido">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="{SITE}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Século Perdido — arquivo de evidências sobre o que é o One Piece">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(titulo)}">
+<meta name="twitter:description" content="{html.escape(desc)}">
+<meta name="twitter:image" content="{SITE}/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo.css">
 </head><body>
 <header class="topo"><div class="env">
-  <a class="marca" href="index.html">Século<span>·</span>Perdido</a>
+  <a class="marca" href="/">Século<span>·</span>Perdido</a>
   <nav class="topo-nav">{itens}</nav>
 </div></header>"""
 
@@ -421,7 +592,11 @@ no campo <code>fonte_url</code> de cada átomo. Os dados deste site são publica
 licença CC BY-SA 3.0. Nenhum scan ou scanlation é usado.</p>
 <p><strong>Spoilers</strong> até o capítulo 1190. <em>One Piece</em> é obra de Eiichiro Oda,
 publicada pela Shueisha — este é um projeto de fã, sem vínculo com os detentores dos direitos.</p>
-<p>Código e dados: <a href="__REPO__" rel="noopener">__REPO_CURTO__</a> · gerado em __COMMIT__</p>
+<p><strong>Licenças.</strong> O código é MIT; os dados de <code>data/</code> são CC BY-SA 3.0,
+pela cláusula share-alike da fonte.</p>
+<p><a href="__REPO__">__REPO_CURTO__</a> ·
+<a href="__REPO__/commits/main">histórico de mudanças</a> ·
+atualizado em <time datetime="__DATA_ISO__">__DATA__</time></p>
 </div></footer></body></html>"""
 
 
@@ -442,13 +617,13 @@ def pagina_hipoteses(evid, hips, meta) -> str:
         pct = (f'{h["fatia"]*100:.0f}<small style="font-size:.55em">%</small>'
                if h["fatia"] else '†')
         apo = "".join(
-            f'<div class="elo"><a class="ev" href="evidencias.html#{e["ev"]}">{e["ev"]}</a>'
+            f'<div class="elo"><a class="ev" href="/evidencias#{e["ev"]}">{e["ev"]}</a>'
             f'<div><div class="como">{html.escape(e.get("como", ""))}</div>'
             f'<div class="peso">peso {e.get("peso", 0)} · '
             f'{html.escape(str(evid.get(e["ev"], {}).get("fonte", "?")))}</div></div></div>'
             for e in h.get("apoia") or [])
         con = "".join(
-            f'<div class="elo contra"><a class="ev" href="evidencias.html#{e["ev"]}">{e["ev"]}</a>'
+            f'<div class="elo contra"><a class="ev" href="/evidencias#{e["ev"]}">{e["ev"]}</a>'
             f'<div><div class="como">{html.escape(e.get("como", ""))}</div>'
             f'<div class="peso">peso {e.get("peso", 0)} · '
             f'{html.escape(str(evid.get(e["ev"], {}).get("fonte", "?")))}</div></div></div>'
@@ -464,7 +639,7 @@ def pagina_hipoteses(evid, hips, meta) -> str:
   <span class="hip-id">{h["id"]}</span>
   <span class="hip-enun">{html.escape(h.get("enunciado", ""))}</span>
   <span class="hip-pct">{pct}</span>
-  <span class="sonda"><i style="width:{max(h['fatia']*100, 1):.1f}%;animation-delay:{i*.06:.2f}s"></i></span>
+  <span class="sonda" style="--pct:{max(h['fatia']*100, 1):.1f}%"><i></i></span>
   <span class="hip-meta">{"".join(selos)}</span>
 </button>
 <div class="corpo">
@@ -486,10 +661,10 @@ def pagina_hipoteses(evid, hips, meta) -> str:
   evidência verificável, toda hipótese arrisca previsões que podem dar errado, e um
   validador determinístico recusa qualquer coisa que não tenha fonte.</p>
   <div class="painel">
-    <div><b>{meta['n_ev']}</b><small>átomos de evidência</small></div>
-    <div><b>{meta['n_hip']}</b><small>hipóteses</small></div>
-    <div><b>{meta['n_mortas']}</b><small>refutadas</small></div>
-    <div><b>{meta['n_rt']}</b><small>ataques de red team</small></div>
+    <div><b data-alvo="{meta['n_ev']}">{meta['n_ev']}</b><small>átomos de evidência</small></div>
+    <div><b data-alvo="{meta['n_hip']}">{meta['n_hip']}</b><small>hipóteses</small></div>
+    <div><b data-alvo="{meta['n_mortas']}">{meta['n_mortas']}</b><small>refutadas</small></div>
+    <div><b data-alvo="{meta['n_rt']}">{meta['n_rt']}</b><small>ataques de red team</small></div>
   </div>
 </div>
 
@@ -514,51 +689,85 @@ def pagina_hipoteses(evid, hips, meta) -> str:
   é isso que impede o projeto de reinventar a mesma teoria ruim daqui a seis meses.</p>
   {"".join(bloco(h) for h in mortas)}
 </div></section>
-</main>""" + RODAPE)
+</main>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button>""" + RODAPE)
 
 
-def pagina_evidencias(evid, meta) -> str:
-    temas = sorted({t for e in evid.values() for t in (e.get("temas") or [])})
+def pagina_evidencias(evid, hips, meta) -> str:
+    # backlink: quem cita cada átomo. Os dados já existiam, faltava inverter o dicionário.
+    citado = {}
+    for h in hips:
+        for rotulo in ("apoia", "contradiz"):
+            for e in h.get(rotulo) or []:
+                citado.setdefault(e["ev"], []).append((h["id"], rotulo, h.get("status")))
+
+    cont_tema = Counter(x for e in evid.values() for x in (e.get("temas") or []))
+    cont_conf = Counter(e.get("confiabilidade", "") for e in evid.values())
+    temas = sorted(cont_tema, key=lambda x: sem_acento(x).casefold())
+
     itens = []
     for ident, e in sorted(evid.items()):
         conf = e.get("confiabilidade", "")
-        tags = f'<span class="tag {conf}">{ROTULO_CONF.get(conf, conf)}</span>' \
-               f'<span class="tag">{html.escape(str(e.get("tipo", "")))}</span>' + \
-               "".join(f'<span class="tag">{html.escape(t)}</span>'
-                       for t in (e.get("temas") or [])[:4])
+        tipo = e.get("tipo", "")
+        tags = (f'<span class="tag {conf}">{ROTULO_CONF.get(conf, conf)}</span>'
+                f'<span class="tag">{html.escape(ROTULO_TIPO.get(tipo, tipo))}</span>' +
+                "".join(f'<span class="tag">{html.escape(x)}</span>'
+                        for x in (e.get("temas") or [])[:4]))
         url = e.get("fonte_url", "")
-        fonte = (f'<a class="fonte" href="{html.escape(url)}" rel="noopener nofollow">verificar fonte</a>'
-                 if url else "")
-        busca = (ident + " " + str(e.get("texto", "")) + " " +
-                 " ".join(e.get("temas") or []) + " " +
-                 " ".join(e.get("atores") or [])).lower()
+        fonte = (f'<a class="fonte" href="{html.escape(url)}" rel="noopener nofollow" '
+                 f'aria-label="verificar fonte de {ident}">verificar fonte</a>' if url else "")
+        refs = citado.get(ident, [])
+        if refs:
+            cita = '<div class="ev-cita">citado por ' + " ".join(
+                f'<a href="/#{hid}" class="cita {rot}" title="{hid} {rot} este átomo">'
+                f'{hid}<i>{"apoia" if rot == "apoia" else "contradiz"}</i></a>'
+                for hid, rot, _ in refs) + "</div>"
+        else:
+            cita = '<div class="ev-cita orfao">órfão — nenhuma hipótese cita este átomo</div>'
+        busca = sem_acento(" ".join([
+            ident, str(e.get("texto", "")), str(e.get("fonte", "")),
+            " ".join(e.get("temas") or []), " ".join(e.get("atores") or []),
+            " ".join(h for h, _, _ in refs)]).lower())
         itens.append(f"""<article class="ev-item" id="{ident}" data-conf="{conf}"
- data-temas="{html.escape("|".join(e.get("temas") or []))}" data-busca="{html.escape(busca)}">
-  <div><span class="ev-id">{ident}</span><span class="ev-cap">{html.escape(str(e.get("fonte", "")))}</span></div>
+ data-temas="|{html.escape("|".join(e.get("temas") or []))}|"
+ data-orfao="{'1' if not refs else '0'}"
+ data-busca="{html.escape(busca)}" aria-labelledby="t-{ident}">
+  <div><a class="ev-id" id="t-{ident}" href="#{ident}">{ident}</a>
+  <span class="ev-cap">{html.escape(str(e.get("fonte", "")))}</span></div>
   <div><div class="ev-txt">{html.escape(str(e.get("texto", "")))}</div>
-  <div class="ev-tags">{tags} {fonte}</div></div>
+  <div class="ev-tags">{tags} {fonte}</div>{cita}</div>
 </article>""")
 
-    ops_t = "".join(f'<option value="{html.escape(t)}">{html.escape(t)}</option>' for t in temas)
+    ops_c = "".join(
+        f'<option value="{c}">{ROTULO_CONF.get(c, c)} ({n})</option>'
+        for c, n in sorted(cont_conf.items(), key=lambda x: -x[1]) if c)
+    ops_t = "".join(f'<option value="{html.escape(x)}">{html.escape(x)} ({cont_tema[x]})</option>'
+                    for x in temas)
+    n_orf = sum(1 for i in evid if i not in citado)
     return (cabeca("Evidências — Século Perdido",
-                   "Todos os átomos de evidência do arquivo, com fonte e confiabilidade.",
+                   "Todos os átomos de evidência do arquivo, com fonte, confiabilidade e "
+                   "as hipóteses que os citam.",
                    "evidencias.html") + f"""<main><section style="border-top:0"><div class="env">
-  <div class="cab"><h2>Átomos de evidência</h2><span class="n"><span id="conta">{len(evid)}</span> de {len(evid)}</span></div>
+  <div class="cab"><h1>Átomos de evidência</h1>
+    <span class="n"><span id="conta" aria-live="polite">{len(evid)}</span> de {len(evid)}</span></div>
   <p class="intro">Um átomo é uma afirmação verificável, com fonte e nível de confiabilidade.
   Ele não interpreta — interpretar é papel das hipóteses. Quando a afirmação depende da escolha
-  do tradutor, ela é marcada como <em>tradução disputada</em> e seu peso é limitado.</p>
-  <div class="busca">
-    <input id="busca" type="search" placeholder="buscar por texto, personagem, tema ou id…" autocomplete="off">
-    <select id="filtro-conf">
-      <option value="">toda confiabilidade</option>
-      <option value="canonico">canônico</option><option value="ambiguo">ambíguo</option>
-      <option value="traducao_disputada">tradução disputada</option><option value="sbs">SBS</option>
-    </select>
+  do tradutor, ela é marcada como <em>tradução disputada</em> e seu peso fica limitado.
+  Cada átomo mostra quais hipóteses o citam, e em que direção.</p>
+  <form class="busca" role="search" onsubmit="return false">
+    <label class="sr-only" for="busca">Buscar átomo por texto, personagem, tema ou ID</label>
+    <input id="busca" type="search" placeholder="buscar por texto, personagem, tema ou ID…"
+           autocomplete="off">
+    <label class="sr-only" for="filtro-conf">Filtrar por confiabilidade</label>
+    <select id="filtro-conf"><option value="">qualquer confiabilidade</option>{ops_c}</select>
+    <label class="sr-only" for="filtro-tema">Filtrar por tema</label>
     <select id="filtro-tema"><option value="">todos os temas</option>{ops_t}</select>
-  </div>
+    <label class="g-chip"><input type="checkbox" id="so-orfaos">só órfãos ({n_orf})</label>
+  </form>
   <div id="lista-ev">{"".join(itens)}</div>
-  <p class="vazio" id="vazio" style="display:none">Nenhum átomo corresponde a esse filtro.</p>
-</div></section></main>""" + RODAPE)
+  <p class="vazio" id="vazio" hidden>Nenhum átomo corresponde a esta busca.</p>
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
 
 
 def pagina_metodo(meta) -> str:
@@ -566,12 +775,12 @@ def pagina_metodo(meta) -> str:
                    "Como o arquivo funciona: átomos, hipóteses, red team e o portão que "
                    "recusa afirmação sem fonte.", "metodo.html") + f"""<main>
 <section style="border-top:0"><div class="env">
-  <div class="cab"><h2>Como isto funciona</h2></div>
+  <div class="cab"><h1>Como isto funciona</h1></div>
   <p class="intro">O problema clássico da teoria de fandom é que ela é elástica: se molda a
   qualquer capítulo novo e nunca pode estar errada. Este arquivo foi construído para tornar
   isso impossível.</p>
 
-  <div class="grade">
+  <div class="grade passos">
     <div class="card"><h3>Átomo</h3><p>Uma afirmação verificável sobre a obra, com fonte,
     capítulo e confiabilidade declarada. Não interpreta. Se não existe átomo, a afirmação
     não pode ser feita — nem por quem escreve.</p></div>
@@ -586,8 +795,7 @@ def pagina_metodo(meta) -> str:
     É o que impede alucinação de virar conteúdo.</p></div>
   </div>
 
-  <h4 style="margin-top:3rem"></h4>
-  <div class="cab"><h2>O que não sabemos</h2></div>
+  <div class="cab" style="margin-top:3.4rem"><h2>O que não sabemos</h2></div>
   <p class="intro">Três limites que o próprio arquivo mede e publica, em vez de esconder.</p>
   <blockquote>A porcentagem assume que a resposta certa está entre as hipóteses listadas.
   Essa é a premissa mais frágil de todas, e nenhum teste estatístico a alcança — só
@@ -602,7 +810,8 @@ def pagina_metodo(meta) -> str:
   <p class="intro">O arquivo é atualizado a cada capítulo novo. O histórico do repositório é
   parte do projeto: o valor não é a teoria final, é o rastro de uma hipótese subindo e caindo
   ao longo dos capítulos. Estado atual: capítulo {meta['cap']}, {meta['n_ev']} átomos.</p>
-</div></section></main>""" + RODAPE)
+</div></section></main>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button>""" + RODAPE)
 
 
 def pagina_grafo(meta) -> str:
@@ -620,7 +829,7 @@ def pagina_grafo(meta) -> str:
                    "Explorador do grafo de evidências: nós com propriedades e relações "
                    "tipadas entre hipóteses, átomos, temas e personagens.", "grafo.html") +
             f"""<main><section style="border-top:0;padding-top:2rem"><div class="env">
-  <div class="cab"><h2>O grafo</h2><span class="n">{meta['n_nos']} nós · {meta['n_rels']} relações</span></div>
+  <div class="cab"><h1>O grafo</h1><span class="n">{meta['n_nos']} nós · {meta['n_rels']} relações</span></div>
   <p class="intro">Cada ligação tem um tipo e propriedades próprias — não é só "estão
   conectados". Uma aresta <code>:APOIA</code> carrega o peso e a justificativa que ligam
   aquele átomo àquela hipótese. Comece pelas hipóteses e vá abrindo: clique para ver as
@@ -644,7 +853,8 @@ def pagina_grafo(meta) -> str:
   órfão</strong>: evidência que ainda não pertence a nenhuma hipótese. Acúmulo de órfãos é o
   sintoma de uma alternativa que ninguém formulou — foi assim que três hipóteses deste
   arquivo nasceram.</p>
-</div></section></main>""" + RODAPE)
+</div></section></main>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button>""" + RODAPE)
 
 
 def main() -> int:
@@ -664,19 +874,32 @@ def main() -> int:
         meta["n_nos"], meta["n_rels"] = g["n_nos"], g["n_rels"]
     repo = git("remote", "get-url", "origin", padrao="")
     repo = re.sub(r"\.git$", "", repo) or "https://github.com/pedropasinn/seculo-perdido"
+    iso = git("log", "-1", "--format=%cI", padrao="")[:19] or "2026-08-11T00:00:00"
+    dia, mes, ano = iso[8:10], iso[5:7], iso[0:4]
+    MESES = ["", "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
+             "agosto", "setembro", "outubro", "novembro", "dezembro"]
+    legivel = f"{int(dia)} de {MESES[int(mes)]} de {ano}"
     rodape = (RODAPE.replace("__REPO__", repo)
               .replace("__REPO_CURTO__", repo.replace("https://github.com/", ""))
-              .replace("__COMMIT__", git("rev-parse", "--short", "HEAD", padrao="local")))
+              .replace("__DATA_ISO__", iso).replace("__DATA__", legivel))
     global RODAPE_ATUAL
     paginas = {
         "index.html": pagina_hipoteses(evid, hips, meta),
-        "evidencias.html": pagina_evidencias(evid, meta),
+        "evidencias.html": pagina_evidencias(evid, hips, meta),
         "metodo.html": pagina_metodo(meta),
         "grafo.html": pagina_grafo(meta),
     }
     for nome, conteudo in paginas.items():
         (SAIDA / nome).write_text(conteudo.replace(RODAPE, rodape), encoding="utf-8")
     (SAIDA / "estilo.css").write_text(CSS.strip() + "\n", encoding="utf-8")
+    (SAIDA / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+    urls = "".join(
+        f"<url><loc>{SITE}{u}</loc><lastmod>{iso[:10]}</lastmod></url>" for u, _, _ in NAV)
+    (SAIDA / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + "</urlset>",
+        encoding="utf-8")
     (SAIDA / "app.js").write_text(JS.strip() + "\n", encoding="utf-8")
     for nome in paginas:
         p = SAIDA / nome

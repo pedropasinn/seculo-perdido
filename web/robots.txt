@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seculo-perdido.vercel.app/sitemap.xml
