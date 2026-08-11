@@ -23,6 +23,27 @@ Alucinar um painel que não existe é o único erro fatal deste projeto.
 **Proibido:** ingerir scans ou scanlations. Além do problema legal, traduções piratas
 são a maior fonte de teoria morta do fandom.
 
+## A tradução é a superfície de ataque mais barata
+
+Três dos erros já corrigidos neste repositório vieram de a paráfrase em inglês ter
+uma palavra que o japonês não tem. Antes de dar peso alto a um átomo, pergunte se a
+afirmação sobrevive à troca do tradutor.
+
+Casos já documentados, que valem como regra de leitura:
+
+- **笑う cobre rir e sorrir com o mesmo verbo.** "Roger sorriu", "Oden riu",
+  "a tripulação gargalhou" podem ser o mesmo lexema no original. Não construa
+  distinção entre sorrir e gargalhar sem checar o raw.
+- **A obra não diz que o relato de Laugh Tale era engraçado**, diz que causou riso.
+  "Hilário" era interpolação da wiki (ver `EV-0972-01`).
+- **"Funny tale" era escolha de tradutor**: a última linha de *Binks' Sake* é
+  笑い話, os mesmos caracteres de *Laugh Tale* (ver `EV-0488-01`).
+- **"Great Kingdom" pode não ser nome próprio** — 巨大な王国 é adjetivo comum
+  ("um reino imenso"). Pendência aberta em `EV-0395-03`.
+
+Quando a afirmação depender da escolha do tradutor, `confiabilidade:
+traducao_disputada` e peso ≤ 0.4. O validador avisa acima disso.
+
 ## As duas entidades
 
 **Átomo de evidência** (`data/evidencias/EV-*.md`) — uma afirmação verificável,
