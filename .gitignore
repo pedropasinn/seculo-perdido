@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+
+# pacote de origem, redundante com a raiz
+franky/

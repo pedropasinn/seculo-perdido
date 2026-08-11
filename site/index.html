@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wiki de Evidências — One Piece</title>
+<style>
+ :root{--tinta:#1b1a17;--papel:#f4f1ea;--fraco:#7a736a;--linha:#ddd6c9;--vermelho:#9c2b2b}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--papel);color:var(--tinta);
+      font:16px/1.6 ui-serif,Georgia,serif;padding:2rem 1.2rem;max-width:52rem;margin:auto}
+ h1{font-size:1.5rem;margin:0 0 .2rem}
+ .sub{color:var(--fraco);font-size:.9rem;margin-bottom:2rem}
+ .hip{border-left:3px solid var(--linha);padding:.2rem 0 .2rem 1rem;margin:1.6rem 0}
+ .hip.refutada{opacity:.55;border-color:var(--vermelho)}
+ .id{font:600 .75rem ui-monospace,monospace;color:var(--fraco);letter-spacing:.04em}
+ .enun{font-weight:600;margin:.25rem 0 .5rem}
+ .barra{height:5px;background:var(--linha);border-radius:3px;overflow:hidden;margin:.5rem 0}
+ .barra i{display:block;height:100%;background:var(--tinta)}
+ .elo{font-size:.85rem;margin:.35rem 0;padding-left:.8rem;border-left:2px solid var(--linha)}
+ .elo.contra{border-color:var(--vermelho)}
+ .prev{font-size:.85rem;color:var(--fraco)}
+ details{margin-top:.5rem}summary{cursor:pointer;font-size:.85rem;color:var(--fraco)}
+ code{font:.8rem ui-monospace,monospace;background:#e9e4d9;padding:.05rem .3rem;border-radius:3px}
+</style>
+<h1>Wiki de Evidências — One Piece</h1>
+<div class="sub">Hipóteses ordenadas por probabilidade. Toda afirmação aponta para um átomo verificável.</div>
+<div id="app"></div>
+<script id="dados" type="application/json">{"evidencias": [{"id": "EV-0967-11", "fonte": "cap 967", "fonte_url": "https://onepiece.fandom.com/wiki/Chapter_967", "tipo": "narracao", "confiabilidade": "canonico", "texto": "A tripulacao de Roger gargalha ao encontrar o tesouro em Laugh Tale, e Roger comenta que chegaram cedo demais.", "atores": ["Gol D. Roger", "Rayleigh", "Oden"], "temas": ["Laugh Tale", "One Piece", "riso", "Joy Boy"], "corpo": "O riso coletivo e a restricao temporal sao as duas ancoras mais fortes de\nqualquer hipotese sobre o tesouro."}, {"id": "EV-1113-02", "fonte": "cap 1113", "fonte_url": "https://onepiece.fandom.com/wiki/Chapter_1113", "tipo": "fala", "confiabilidade": "canonico", "texto": "Vegapunk anuncia ao mundo que o nivel do mar vai subir e que o mundo enfrentara um afundamento global.", "atores": ["Vegapunk"], "temas": ["Século Vazio", "afundamento", "profecia"], "corpo": "Contexto: transmissao global de Egghead. Liga o destino do Reino Antigo a um\nevento futuro, nao apenas passado."}, {"id": "EV-1180-04", "fonte": "cap 1180", "fonte_url": "https://onepiece.fandom.com/wiki/Chapter_1180", "tipo": "imagem", "confiabilidade": "ambiguo", "texto": "Imu demonstra em Elbaf um poder ligado a sua Akuma no Mi, apresentado como superior ao Haki do Conquistador.", "atores": ["Imu"], "temas": ["Imu", "poder", "Elbaf"], "corpo": "Marcado como ambiguo: a natureza exata da fruta ainda nao foi nomeada no texto."}], "hipoteses": [{"id": "H-04", "enunciado": "O One Piece e o registro completo do Seculo Vazio, cuja divulgacao destroi a legitimidade do Governo Mundial.", "escopo": "one_piece", "status": "viva", "prior": 0.45, "apoia": [{"ev": "EV-1113-02", "peso": 0.2, "como": "Vegapunk anuncia ao mundo o afundamento global, provando que uma transmissao mundial de informacao e viavel e que um registro pode ter efeito destrutivo."}], "contradiz": [{"ev": "EV-0967-11", "peso": 0.3, "como": "A gargalhada coletiva da tripulacao de Roger em Laugh Tale e dificil de explicar como reacao a leitura de um registro historico."}], "prediz": [{"texto": "Se verdadeiro, Robin estara fisicamente presente e sera indispensavel na chegada a Laugh Tale.", "status": "aberta"}], "concorrentes": ["H-03"], "corpo": "## O caso a favor\n\nO Governo mata por informacao, nao por ouro. Ohara existe para pagar esta cena.", "redteam": ""}, {"id": "H-03", "enunciado": "O One Piece e um artefato funcional do Reino Antigo, cuja ativacao depende de condicoes que nao existiam na epoca de Roger.", "escopo": "one_piece", "status": "viva", "prior": 0.3, "apoia": [{"ev": "EV-0967-11", "peso": 0.35, "como": "A fala de Roger sobre terem chegado cedo demais em Laugh Tale indica restricao temporal, compativel com algo que precisa ser ativado."}, {"ev": "EV-1113-02", "peso": 0.25, "como": "O anuncio de Vegapunk sobre o mar subir e o afundamento global sugere que o evento do Reino Antigo se repete, o que da funcao a um artefato."}], "contradiz": [{"ev": "EV-0967-11", "peso": 0.2, "como": "A gargalhada da tripulacao de Roger ao ver o tesouro em Laugh Tale nao e a reacao esperada diante de um dispositivo tecnico."}], "prediz": [{"texto": "Se verdadeiro, a Mother Flame sera explicitamente ligada a tecnologia do Reino Antigo antes do fim do arco de Elbaf.", "status": "aberta"}, {"texto": "Se verdadeiro, Laugh Tale contera estrutura construida, nao apenas registros escritos.", "status": "aberta"}], "concorrentes": ["H-04"], "corpo": "## O caso a favor\n\nRoger chegou, viu, e concluiu que nao era o momento. Isso e mais facil de explicar\npor uma condicao material do que por uma condicao emocional.\n\n## O que mataria esta hipotese\n\nUma cena mostrando Laugh Tale como sitio puramente documental.", "redteam": ""}]}</script>
+<script>
+const d = JSON.parse(document.getElementById('dados').textContent);
+const ev = Object.fromEntries(d.evidencias.map(e => [e.id, e]));
+const esc = s => (s||'').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+document.getElementById('app').innerHTML = d.hipoteses.map(h => `
+ <div class="hip ${h.status}">
+  <div class="id">${h.id} · ${h.status} · ${(h.prior*100).toFixed(0)}%</div>
+  <div class="barra"><i style="width:${h.prior*100}%"></i></div>
+  <div class="enun">${esc(h.enunciado)}</div>
+  ${(h.apoia||[]).map(a=>`<div class="elo"><code>${a.ev}</code> ${esc(a.como)}
+     <span class="prev">— ${esc(ev[a.ev]?.fonte||'?')}, peso ${a.peso}</span></div>`).join('')}
+  ${(h.contradiz||[]).map(a=>`<div class="elo contra"><code>${a.ev}</code> ${esc(a.como)}
+     <span class="prev">— ${esc(ev[a.ev]?.fonte||'?')}, peso ${a.peso}</span></div>`).join('')}
+  <details><summary>previsões (${(h.prediz||[]).length})</summary>
+   ${(h.prediz||[]).map(p=>`<div class="prev">[${p.status}] ${esc(p.texto)}</div>`).join('')}
+  </details>
+ </div>`).join('');
+</script>
+</html>

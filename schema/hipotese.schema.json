@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hipotese",
+  "type": "object",
+  "required": ["id", "enunciado", "status", "prior", "apoia", "contradiz", "prediz"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^H-[0-9]{2,3}$" },
+    "enunciado": { "type": "string", "minLength": 20 },
+    "escopo": { "enum": ["one_piece", "seculo_vazio", "imu", "joy_boy", "poneglyph", "outro"] },
+    "status": { "enum": ["viva", "refutada", "confirmada", "dormente"] },
+    "prior": { "type": "number", "minimum": 0, "maximum": 1 },
+    "apoia": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ev", "peso", "como"],
+        "properties": {
+          "ev": { "type": "string", "pattern": "^EV-" },
+          "peso": { "type": "number", "minimum": 0, "maximum": 1 },
+          "como": { "type": "string", "minLength": 15 }
+        }
+      }
+    },
+    "contradiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ev", "peso", "como"],
+        "properties": {
+          "ev": { "type": "string", "pattern": "^EV-" },
+          "peso": { "type": "number", "minimum": 0, "maximum": 1 },
+          "como": { "type": "string", "minLength": 15 }
+        }
+      }
+    },
+    "prediz": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["texto", "status"],
+        "properties": {
+          "texto": { "type": "string", "minLength": 20 },
+          "status": { "enum": ["aberta", "cumprida", "falhada"] },
+          "resolvida_por": { "type": "string" }
+        }
+      }
+    },
+    "concorrentes": { "type": "array", "items": { "type": "string" } },
+    "redteam_ultimo": { "type": "string" }
+  }
+}

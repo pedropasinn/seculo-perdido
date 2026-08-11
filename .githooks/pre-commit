@@ -1,0 +1,3 @@
+#!/bin/sh
+# portao de fundamentacao: nenhum commit passa sem validate.py limpo
+exec python3 tools/validate.py --raiz "$(git rev-parse --show-toplevel)"

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atomo de evidencia",
+  "type": "object",
+  "required": ["id", "fonte", "tipo", "confiabilidade", "texto", "temas"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^EV-[0-9]{4}-[0-9]{2}$",
+      "description": "EV-<capitulo>-<sequencia>. Ex: EV-1113-02"
+    },
+    "fonte": {
+      "type": "string",
+      "description": "Referencia humana: 'cap 1113', 'SBS vol 79', 'Vivre Card Imu'"
+    },
+    "fonte_url": { "type": "string" },
+    "tipo": { "enum": ["fala", "narracao", "imagem", "sbs", "databook", "entrevista", "capa"] },
+    "confiabilidade": {
+      "enum": ["canonico", "sbs", "ambiguo", "traducao_disputada"],
+      "description": "traducao_disputada = versoes divergem; peso reduzido no scoring."
+    },
+    "texto": {
+      "type": "string",
+      "minLength": 10,
+      "description": "A afirmacao EM SUAS PROPRIAS PALAVRAS. Nao copiar o dialogo inteiro."
+    },
+    "atores": { "type": "array", "items": { "type": "string" } },
+    "temas": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "notas": { "type": "string" }
+  }
+}
