@@ -90,7 +90,7 @@ section{padding:3.4rem 0}
   border:2.5px solid var(--tinta);border-radius:3px;margin-top:.2rem}
 .cab .n{font:700 .78rem/1 var(--mono);background:var(--tinta);color:var(--papel);
   padding:.34rem .6rem;border-radius:999px}
-.intro{max-width:70ch;margin-bottom:2rem;font-weight:500;background:var(--papel);
+.intro{margin-bottom:2rem;font-weight:500;background:var(--papel);
   padding:.95rem 1.2rem;border-radius:12px;border:2px solid rgba(21,16,22,.14);
   box-shadow:3px 3px 0 rgba(21,16,22,.07)}
 
