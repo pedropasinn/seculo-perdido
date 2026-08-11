@@ -239,8 +239,8 @@ section{padding:3.4rem 0}
 .cab .n{font:700 .78rem/1 var(--mono);background:var(--tinta);color:var(--papel);
   padding:.34rem .6rem;border-radius:999px}
 .intro{max-width:70ch;margin-bottom:2rem;font-weight:500;background:var(--papel);
-  padding:.85rem 1.1rem;border-radius:12px;border-left:5px solid var(--ouro);
-  box-shadow:2px 2px 0 rgba(21,16,22,.09)}
+  padding:.95rem 1.2rem;border-radius:12px;border:2px solid rgba(21,16,22,.14);
+  box-shadow:3px 3px 0 rgba(21,16,22,.07)}
 
 /* ---------- hipóteses ---------- */
 .hip{background:var(--papel);border:3px solid var(--tinta);border-radius:16px;
@@ -356,9 +356,11 @@ details.rt summary::before{content:"⚔ "}
 .card:nth-child(2) h3{color:var(--mar)}.card:nth-child(3) h3{color:var(--vermelho-esc)}
 .card:nth-child(4) h3{color:var(--verde)}
 .card p{font-size:.94rem;font-weight:500}
-blockquote{background:var(--papel);border:3px solid var(--tinta);border-left-width:10px;
-  border-radius:12px;padding:1rem 1.2rem;margin:1.1rem 0;max-width:64ch;font-weight:500;
-  box-shadow:var(--sombra-sm)}
+blockquote{background:var(--papel-2);border:3px solid var(--tinta);
+  border-radius:12px;padding:1.1rem 1.3rem 1.1rem 3.1rem;margin:1.1rem 0;max-width:64ch;
+  font-weight:500;box-shadow:var(--sombra-sm);position:relative}
+blockquote::before{content:"\201C";position:absolute;left:.7rem;top:.1rem;
+  font:400 3.2rem/1 var(--display);color:var(--ouro)}
 
 footer{background:var(--tinta);color:#e7ddc9;border-top:4px solid var(--tinta);
   padding:2.6rem 0 3.5rem;font-size:.88rem;margin-top:3rem}
