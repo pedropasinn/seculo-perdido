@@ -118,6 +118,9 @@ def carregar():
         evid[meta["id"]] = meta
 
     hips = []
+    brutos = [ler(p)[0] for p in sorted((RAIZ / "data" / "hipoteses").glob("H-*.md"))
+              if not p.name.endswith(".redteam.md")]
+    score.indexar_compartilhamento(brutos)
     for p in sorted((RAIZ / "data" / "hipoteses").glob("H-*.md")):
         if p.name.endswith(".redteam.md"):
             continue

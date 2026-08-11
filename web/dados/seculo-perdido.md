@@ -1,7 +1,7 @@
 # Século Perdido — arquivo completo
 
 Arquivo de evidências sobre o mistério central de One Piece.  
-Capítulo mais recente: 1190 · 289 átomos · 15 hipóteses
+Capítulo mais recente: 1190 · 289 átomos · 17 hipóteses
 
 Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0). One Piece é obra de Eiichiro Oda / Shueisha.
 
@@ -9,7 +9,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 
 ## Hipóteses
 
-### H-05 — viva · fatia 30.7%
+### H-05 — viva · fatia 27.7%
 
 **O One Piece é o legado dirigido de Joy Boy: palavras, um pedido e as condições de uma promessa, endereçados a quem chegasse depois dele.**
 
@@ -38,7 +38,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - prevê [aberta]: Se verdadeiro, o conteúdo revelado em Laugh Tale terá forma de mensagem dirigida a quem chegar, e Luffy responderá com uma decisão explícita em vez de tomar posse de algo.
 - prevê [aberta]: Se verdadeiro, o texto de Laugh Tale terá vocativo dirigido a quem chega e enunciará uma condição a cumprir, e nenhum poder ou arma será concedido por alcançá-lo — as duas cláusulas juntas, que é o que separa esta hipótese de H-03, H-04 e H-08.
 
-### H-08 — viva · fatia 22.0%
+### H-08 — viva · fatia 21.2%
 
 **O One Piece é o gatilho de um evento agendado: chegar lá com a pessoa certa executa a virada que o Harley chama de Terceiro Mundo, independentemente do que esteja escrito ou guardado.**
 
@@ -72,7 +72,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - prevê [aberta]: Se verdadeiro, um evento global visível fora de Laugh Tale ocorrerá no mesmo capítulo da chegada, e não como consequência posterior de uma decisão tomada lá dentro.
 - prevê [aberta]: Se verdadeiro, a obra usará o termo Dia da Promessa numa cena que trate do One Piece ou de Laugh Tale, ligando explicitamente a profecia ao tesouro.
 
-### H-11 — viva · fatia 20.0%
+### H-11 — viva · fatia 19.8%
 
 **O One Piece é um objeto físico comum e sem poder próprio, e seu valor está no ato de partilhá-lo: quem o encontra reúne o mundo ao distribuí-lo, não ao possuí-lo.**
 
@@ -92,7 +92,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - prevê [aberta]: Se verdadeiro, o One Piece será mostrado sendo distribuído ou consumido, e não guardado, exibido nem instalado em algum lugar.
 - prevê [aberta]: Se verdadeiro, o One Piece mudará de mãos ou será repartido entre pessoas de mais de uma raça ou facção no mesmo arco em que for encontrado, sem que nenhuma leitura de Poneglyph seja necessária para isso.
 
-### H-04 — viva · fatia 12.8%
+### H-04 — viva · fatia 13.9%
 
 **O One Piece é o registro completo do Século Perdido, cuja divulgação destrói a legitimidade do Governo Mundial.**
 
@@ -169,7 +169,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - prevê [aberta]: Se verdadeiro, algo em Laugh Tale mudará de estado pela presença ou pela ação de quem chega, sem depender de leitura, e essa mudança será mostrada no mesmo arco da chegada.
 - prevê [aberta]: Se verdadeiro, Laugh Tale conterá estrutura construída e operável, e não apenas registros escritos.
 
-### H-02 — viva · fatia 4.0%
+### H-02 — viva · fatia 6.9%
 
 **O One Piece não é um objeto com poder próprio: seu valor é relacional e histórico, e o efeito no mundo vem do que a existência do anúncio provocou, não do conteúdo.**
 
@@ -188,7 +188,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - prevê [aberta]: Se verdadeiro, alcançar Laugh Tale não concederá a ninguém poder, arma ou capacidade nova, e o Governo Mundial não cairá como consequência direta do achado.
 - prevê [aberta]: Se verdadeiro, o que houver em Laugh Tale não conterá instrução, pedido nem condição dirigida a quem chegar — cláusula que separa esta hipótese de H-05.
 
-### H-06 — viva · fatia 0.6%
+### H-06 — viva · fatia 0.4%
 
 **O One Piece é a terceira arma ancestral, Uranus, ou a chave de acesso a ela, guardada no fim da Grand Line.**
 
@@ -339,6 +339,40 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - − `EV-0967-11` (peso 0.25) — A tripulação de Roger gargalha ao encontrar o tesouro em Laugh Tale e Roger comenta que chegaram cedo demais: rir não é a reação esperada diante de um espólio arqueológico.
 - prevê [aberta]: Se verdadeiro, o que houver em Laugh Tale será datado na obra como anterior ao Século Perdido, e não como obra de Joy Boy ou do Reino Antigo.
 - prevê [aberta]: Se verdadeiro, Joy Boy será mostrado recebendo ou encontrando o One Piece em vez de criá-lo.
+
+### H-16 — viva · fatia 0.0%
+
+**As raças do céu vieram de fora do planeta: Skypieanos, Shandia e Birkanos descendem de uma civilização lunar que desceu à Estrela Azul por esgotamento de recursos, e a tecnologia dela é anterior ao Reino Antigo.**
+
+- + `EV-0470-02` (peso 0.45) — Pelos murais, Enel descobre que Skypieanos, Shandia e Birkanos se originaram todos da mesma cidade lunar: a origem comum das três raças do céu está desenhada na própria lua.
+- + `EV-0472-01` (peso 0.4) — Os murais dizem que o nome da cidade lunar era Birka e que seus habitantes partiram para a Estrela Azul: há nome e motivo para a descida, e o nome reaparece numa ilha do céu.
+- + `EV-0470-01` (peso 0.35) — Os murais da cidade lunar mostram uma civilização antiga de gente alada que vivia na lua: a existência da civilização é afirmada por registro pictórico e não por dedução.
+- + `EV-0466-01` (peso 0.35) — Escavando a cratera aberta pelos piratas espaciais, Enel encontra sob a crosta da lua uma cidade: a estrutura física existe e foi visitada, não é lenda.
+- + `EV-0468-01` (peso 0.3) — A descarga elétrica de Enel recarrega a cidade lunar e os autômatos antigos parados dentro dela: a tecnologia continua funcional depois de milênios, e responde a energia.
+- + `EV-0279-01` (peso 0.3) — A ilha do céu onde Enel nasceu chamava-se Birka: o topônimo da cidade lunar reaparece como nome de uma terra no céu, o que é o padrão de quem migra e renomeia.
+- + `EV-0453-01` (peso 0.25) — Os quatro autômatos construídos pelo professor Tsukimi na Ilha Karakuri viajaram do planeta até a lua: a obra estabelece que o trajeto entre os dois é possível.
+- + `EV-1033-01` (peso 0.25) — Queen afirma que os Lunarians eram chamados de deuses num passado distante e sobrevivem em qualquer ambiente natural: há uma raça associada à lua pelo próprio nome, tratada como divina.
+- − `EV-0274-03` (peso 0.35) — Segundo a fonte, as tribos que vieram da lua perderam com o tempo qualquer registro da própria origem: se a memória se perdeu, tudo que sustenta esta hipótese depende de uma história de capa e de murais que ninguém no presente leu.
+- − `EV-0472-02` (peso 0.25) — Segundo os murais, os habitantes da cidade lunar desceram até a estrela azul usando balões: a obra descreve a travessia como atmosférica e não espacial, o que enfraquece a leitura de civilização interplanetária.
+- prevê [aberta]: Se verdadeiro, a linha principal da obra — e não uma história de capa — afirmará a origem lunar de alguma das raças do céu, por boca de personagem ou por documento lido em cena.
+- prevê [aberta]: Se verdadeiro, a tecnologia dos autômatos lunares reaparecerá ligada à energia antiga que move o gigante de ferro, e não como curiosidade isolada.
+
+### H-17 — viva · fatia 0.0%
+
+**Os Poneglyphs são um sistema de sobrevivência de mensagem projetado contra o apagamento: indestrutíveis, espalhados entre povos distintos e confiados a guardiões que não sabem lê-los.**
+
+- + `EV-0290-01` (peso 0.45) — Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si: o objeto do dever herdado é a pedra, e não o patrimônio.
+- + `EV-0290-03` (peso 0.5) — Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: guardar sem poder ler é exatamente o que um sistema desenhado contra o apagamento exige, porque o guardião não pode revelar o que não entende.
+- + `EV-0290-02` (peso 0.35) — Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada por defender o Poneglyph: o custo pago pela guarda mostra que a função era prioritária sobre a própria sobrevivência.
+- + `EV-0818-02` (peso 0.4) — Os Poneglyphs foram inventados pelo clã Kouzuki, cujos ancestrais os esculpiram no fim do Século Perdido: há autoria, data e intenção de projeto, e não acúmulo espontâneo.
+- + `EV-0395-10` (peso 0.4) — Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é sobreviver à própria derrota.
+- + `EV-0272-03` (peso 0.3) — Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época da guerra: a distribuição é ato deliberado de guerra, e não geografia acidental.
+- + `EV-0301-01` (peso 0.25) — Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs recolhidas na viagem o Rio Poneglyph será revelado: o sistema é projetado para só se completar quando as partes forem reunidas.
+- + `EV-0395-09` (peso 0.3) — Ohara só conseguiu inferir a existência do reino cruzando informação de várias fontes e de vários Poneglyphs, porque nenhum deles sozinho o nomeia: é a assinatura de um segredo repartido de propósito.
+- − `EV-1085-02` (peso 0.45) — Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: se a dispersão foi erro de uma pessoa, ela não foi projeto de ninguém.
+- − `EV-1085-03` (peso 0.3) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a obra atribui a distribuição a um acidente histórico com consequência não pretendida.
+- prevê [aberta]: Se verdadeiro, aparecerá outro povo guardando um Poneglyph sem saber lê-lo, com a mesma estrutura de dever herdado dos Shandia.
+- prevê [aberta]: Se verdadeiro, a obra mostrará que a escolha de onde cada pedra ficou obedeceu a um critério, e não ao acaso da fuga.
 
 ---
 

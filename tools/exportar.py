@@ -57,9 +57,11 @@ def main() -> int:
         meta["corpo"] = corpo
         rt = p.with_suffix("").with_suffix(".redteam.md")
         meta["redteam"] = rt.read_text(encoding="utf-8") if rt.exists() else ""
-        meta["posterior"] = round(score.pontuar(meta, evid)["posterior"], 4)
         hips.append(meta)
 
+    score.indexar_compartilhamento(hips)      # antes de pontuar
+    for h in hips:
+        h["posterior"] = round(score.pontuar(h, evid)["posterior"], 4)
     vivas = [h for h in hips if h.get("escopo") == "one_piece"
              and h.get("status") in {"viva", "confirmada"}]
     soma = sum(h["posterior"] for h in vivas) or 1.0

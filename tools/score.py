@@ -107,6 +107,38 @@ def contribuicao(peso: float, conf: str) -> float:
     return efetivo * 1.6
 
 
+# --- correcao de independencia -------------------------------------------
+# score trata cada elo como fator de Bayes independente. Um atomo que apoia k
+# hipoteses concorrentes do mesmo escopo NAO distingue entre elas: em Bayes, uma
+# evidencia igualmente compativel com k alternativas nao altera a razao entre
+# elas. Contar cheio para cada uma infla todas juntas.
+#
+# O fator divide a contribuicao pelo numero de hipoteses do mesmo escopo que
+# recebem a MESMA relacao daquele atomo. Um atomo que apoia uma e contradiz
+# outra continua valendo integral nas duas — esse discrimina, e e justamente o
+# tipo de evidencia que decide.
+_COMPART: dict[tuple[str, str, str], int] = {}
+
+
+def indexar_compartilhamento(hipoteses: list[dict]) -> None:
+    _COMPART.clear()
+    contagem: dict[tuple[str, str, str], int] = {}
+    for h in hipoteses:
+        if h.get("status") not in {"viva", "confirmada"}:
+            continue
+        esc = str(h.get("escopo") or "outro")
+        for rotulo in ("apoia", "contradiz"):
+            for elo in h.get(rotulo) or []:
+                k = (elo.get("ev", ""), rotulo, esc)
+                contagem[k] = contagem.get(k, 0) + 1
+    _COMPART.update(contagem)
+
+
+def fator_discriminacao(ev: str, rotulo: str, escopo: str) -> float:
+    k = _COMPART.get((ev, rotulo, str(escopo or "outro")), 1)
+    return 1.0 / max(k, 1)
+
+
 def pontuar(hip: dict, evidencias: dict[str, dict]) -> dict:
     prior = float(hip.get("prior") or 0.5)
     prior = min(max(prior, 0.01), 0.99)
@@ -120,9 +152,11 @@ def pontuar(hip: dict, evidencias: dict[str, dict]) -> dict:
             ev = evidencias.get(elo.get("ev", ""))
             if not ev:
                 continue
-            delta = sinal * contribuicao(elo.get("peso", 0), ev.get("confiabilidade", ""))
+            fd = fator_discriminacao(elo.get("ev", ""), rotulo, hip.get("escopo", ""))
+            delta = sinal * contribuicao(elo.get("peso", 0), ev.get("confiabilidade", "")) * fd
             por_fonte[str(ev.get("fonte", "?"))] += delta
-            detalhe.append(f"    {elo['ev']:<14} {rotulo:<10} {delta:+.2f}")
+            marca = f"  (÷{round(1/fd)} compartilhado)" if fd < 1 else ""
+            detalhe.append(f"    {elo['ev']:<14} {rotulo:<10} {delta:+.2f}{marca}")
 
     # teto por capitulo, depois teto por arco sobre o que sobrou
     por_arco: dict[str, float] = defaultdict(float)
@@ -176,6 +210,9 @@ def normalizar_por_escopo(linhas: list[tuple[dict, dict]]) -> dict[str, list[tup
 
 def main() -> int:
     evidencias = carregar_evidencias()
+    todas = [ler(p) for p in sorted((RAIZ / "data" / "hipoteses").glob("H-*.md"))
+             if not p.name.endswith(".redteam.md")]
+    indexar_compartilhamento(todas)
     alvos = sys.argv[1:]
     arquivos = sorted((RAIZ / "data" / "hipoteses").glob("H-*.md"))
     arquivos = [p for p in arquivos if not p.name.endswith(".redteam.md")]

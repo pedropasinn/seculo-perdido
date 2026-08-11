@@ -33,12 +33,15 @@ ESCOPO = "one_piece"
 def carregar() -> tuple[dict, list[dict]]:
     evidencias = score.carregar_evidencias()
     hipoteses = []
+    todas_h = []
     for p in sorted((RAIZ / "data" / "hipoteses").glob("H-*.md")):
         if p.name.endswith(".redteam.md"):
             continue
         h = score.ler(p)
+        todas_h.append(h)
         if h.get("escopo") == ESCOPO and h.get("status") in {"viva", "confirmada"}:
             hipoteses.append(h)
+    score.indexar_compartilhamento(todas_h)
     return evidencias, hipoteses
 
 

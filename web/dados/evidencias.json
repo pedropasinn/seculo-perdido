@@ -251,7 +251,14 @@
    "Grande Guerra"
   ],
   "contexto": "O resumo da fonte usa 'the enemy' sem nomear quem era. A pedra chega durante a guerra: não é patrimônio antigo da cidade, é depósito de guerra.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época da guerra: a distribuição é ato deliberado de guerra, e não geografia acidental."
+   }
+  ]
  },
  {
   "id": "EV-0272-04",
@@ -325,7 +332,14 @@
   ],
   "notas": "A página da wiki cita o cap 274 para o mito, mas a afirmação de que os registros se perderam mistura o capítulo com a história de capa. Marcado ambiguo por isso.",
   "contexto": "O ponto estrutural: um povo que veio de outro corpo celeste e esqueceu que veio.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "contradiz",
+    "peso": 0.35,
+    "justificativa": "Segundo a fonte, as tribos que vieram da lua perderam com o tempo qualquer registro da própria origem: se a memória se perdeu, tudo que sustenta esta hipótese depende de uma história de capa e de murais que ninguém no presente leu."
+   }
+  ]
  },
  {
   "id": "EV-0277-01",
@@ -362,7 +376,14 @@
    "Skypiea"
   ],
   "contexto": "Fixa o nome da ilha natal, que a história de capa depois vai reencontrar na lua.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "A ilha do céu onde Enel nasceu chamava-se Birka: o topônimo da cidade lunar reaparece como nome de uma terra no céu, o que é o padrão de quem migra e renomeia."
+   }
+  ]
  },
  {
   "id": "EV-0287-01",
@@ -399,7 +420,14 @@
    "Shandora"
   ],
   "contexto": "Deixa explícito o objeto da guarda: a pedra, não o tesouro. Kalgara autoriza a tripulação a levar todo o ouro que conseguir carregar, menos o campanário.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.45,
+    "justificativa": "Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si: o objeto do dever herdado é a pedra, e não o patrimônio."
+   }
+  ]
  },
  {
   "id": "EV-0290-02",
@@ -417,7 +445,14 @@
    "Grande Guerra"
   ],
   "contexto": "Motivo declarado da destruição dito por um personagem, não pelo narrador. Não há, na fonte, nome para quem atacou.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada por defender o Poneglyph: o custo pago pela guarda mostra que a função era prioritária sobre a própria sobrevivência."
+   }
+  ]
  },
  {
   "id": "EV-0290-03",
@@ -435,7 +470,14 @@
    "leitura"
   ],
   "contexto": "Guarda sem leitura: o dever sobreviveu ao conteúdo.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.5,
+    "justificativa": "Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: guardar sem poder ler é exatamente o que um sistema desenhado contra o apagamento exige, porque o guardião não pode revelar o que não entende."
+   }
+  ]
  },
  {
   "id": "EV-0290-04",
@@ -516,6 +558,12 @@
     "relacao": "apoia",
     "peso": 0.25,
     "justificativa": "Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs recolhidas na viagem o Rio Poneglyph será finalmente revelado: a obra já opera com a ideia de que o achado final é uma chave que torna legível o que se juntou antes."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs recolhidas na viagem o Rio Poneglyph será revelado: o sistema é projetado para só se completar quando as partes forem reunidas."
    }
   ]
  },
@@ -1315,6 +1363,12 @@
     "relacao": "contradiz",
     "peso": 0.2,
     "justificativa": "Os estudiosos de Ohara só descobriram a existência de um país que não existe mais cruzando vários documentos e poneglyphs, e não por uma única fonte: se a história se reconstrói por triangulação, ela não está guardada num achado único no fim da rota."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Ohara só conseguiu inferir a existência do reino cruzando informação de várias fontes e de vários Poneglyphs, porque nenhum deles sozinho o nomeia: é a assinatura de um segredo repartido de propósito."
    }
   ]
  },
@@ -1346,6 +1400,12 @@
     "relacao": "contradiz",
     "peso": 0.25,
     "justificativa": "Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: o destinatário declarado é o mundo inteiro, e não a pessoa esperada que este enunciado exige."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.4,
+    "justificativa": "Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é sobreviver à própria derrota."
    }
   ]
  },
@@ -1836,7 +1896,14 @@
   ],
   "notas": "História de capa. Confirma a mesma via de transporte descrita nos murais, agora no sentido inverso e na época presente.",
   "contexto": "Segundo caso de viagem planeta-lua por balão na mesma história, o que trata a distância como travessia atmosférica, não espacial.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Os quatro autômatos construídos pelo professor Tsukimi na Ilha Karakuri viajaram do planeta até a lua: a obra estabelece que o trajeto entre os dois é possível."
+   }
+  ]
  },
  {
   "id": "EV-0466-01",
@@ -1855,7 +1922,14 @@
   ],
   "notas": "História de capa, publicada nas páginas de título dos caps 428 a 474. Não aparece na narrativa principal.",
   "contexto": "A cidade estava enterrada, não na superfície: quem chegasse à lua sem cavar não a encontraria.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Escavando a cratera aberta pelos piratas espaciais, Enel encontra sob a crosta da lua uma cidade: a estrutura física existe e foi visitada, não é lenda."
+   }
+  ]
  },
  {
   "id": "EV-0468-01",
@@ -1874,7 +1948,14 @@
   ],
   "notas": "História de capa.",
   "contexto": "A maquinaria antiga estava intacta e só faltava energia: o problema da cidade era alimentação, não ruína técnica.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "A descarga elétrica de Enel recarrega a cidade lunar e os autômatos antigos parados dentro dela: a tecnologia continua funcional depois de milênios, e responde a energia."
+   }
+  ]
  },
  {
   "id": "EV-0470-01",
@@ -1893,7 +1974,14 @@
   ],
   "notas": "História de capa. O título da página de capa fala em 'povo alado da lua dos tempos antigos'.",
   "contexto": "As asas são o traço que liga o povo lunar aos habitantes das ilhas do céu.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Os murais da cidade lunar mostram uma civilização antiga de gente alada que vivia na lua: a existência da civilização é afirmada por registro pictórico e não por dedução."
+   }
+  ]
  },
  {
   "id": "EV-0470-02",
@@ -1914,7 +2002,14 @@
   ],
   "notas": "História de capa, não narrativa principal. A wiki registra ainda, como trivia sem referência de capítulo, que 'Shandora' remeteria ao sânscrito 'Chandra', lua; isso é observação editorial, não afirmação da obra.",
   "contexto": "Une três povos que, na linha principal, aparecem como estrangeiros uns aos outros e em guerra há quatrocentos anos.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.45,
+    "justificativa": "Pelos murais, Enel descobre que Skypieanos, Shandia e Birkanos se originaram todos da mesma cidade lunar: a origem comum das três raças do céu está desenhada na própria lua."
+   }
+  ]
  },
  {
   "id": "EV-0472-01",
@@ -1934,7 +2029,14 @@
   ],
   "notas": "História de capa. O nome repete o da ilha do céu natal de Enel, registrada em EV-0279-01.",
   "contexto": "Motivo declarado da migração: exaustão de recursos. Não há, na fonte, menção a guerra como causa da saída.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.4,
+    "justificativa": "Os murais dizem que o nome da cidade lunar era Birka e que seus habitantes partiram para a Estrela Azul: há nome e motivo para a descida, e o nome reaparece numa ilha do céu."
+   }
+  ]
  },
  {
   "id": "EV-0472-02",
@@ -1954,7 +2056,14 @@
   ],
   "notas": "História de capa.",
   "contexto": "O meio de transporte declarado é balão, não nave: a descida da lua ao planeta é tratada como viagem possível com tecnologia simples.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "contradiz",
+    "peso": 0.25,
+    "justificativa": "Segundo os murais, os habitantes da cidade lunar desceram até a estrela azul usando balões: a obra descreve a travessia como atmosférica e não espacial, o que enfraquece a leitura de civilização interplanetária."
+   }
+  ]
  },
  {
   "id": "EV-0488-01",
@@ -3162,7 +3271,14 @@
    "Seculo Perdido"
   ],
   "contexto": "Elo material entre Wano e a preservação da história.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.4,
+    "justificativa": "Os Poneglyphs foram inventados pelo clã Kouzuki, cujos ancestrais os esculpiram no fim do Século Perdido: há autoria, data e intenção de projeto, e não acúmulo espontâneo."
+   }
+  ]
  },
  {
   "id": "EV-0818-03",
@@ -4328,6 +4444,12 @@
     "relacao": "apoia",
     "peso": 0.25,
     "justificativa": "Queen afirma que os Lunarians eram chamados de deuses num passado distante e sobrevivem em qualquer ambiente natural, o que aponta para uma era anterior com outra ordem de poder."
+   },
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Queen afirma que os Lunarians eram chamados de deuses num passado distante e sobrevivem em qualquer ambiente natural: há uma raça associada à lua pelo próprio nome, tratada como divina."
    }
   ]
  },
@@ -5149,7 +5271,14 @@
    "Imu"
   ],
   "contexto": "Se os Poneglyphs se espalharam por erro, a rede de pistas que leva a Laugh Tale não foi planejada por Joy Boy sozinho.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.45,
+    "justificativa": "Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: se a dispersão foi erro de uma pessoa, ela não foi projeto de ninguém."
+   }
+  ]
  },
  {
   "id": "EV-1085-03",
@@ -5179,6 +5308,12 @@
     "relacao": "contradiz",
     "peso": 0.35,
     "justificativa": "O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a rede de pistas que leva ao tesouro é acidente de outra pessoa, não endereçamento de Joy Boy."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a obra atribui a distribuição a um acidente histórico com consequência não pretendida."
    }
   ]
  },

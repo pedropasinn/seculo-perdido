@@ -47,9 +47,11 @@ def main() -> int:
             continue
         meta, corpo = ler(p)
         meta["corpo"] = corpo
-        meta["posterior"] = score.pontuar(meta, evid)["posterior"]
         hips.append(meta)
 
+    score.indexar_compartilhamento(hips)      # antes de pontuar
+    for h in hips:
+        h["posterior"] = score.pontuar(h, evid)["posterior"]
     vivas = [h for h in hips if h.get("escopo") == "one_piece"
              and h.get("status") in {"viva", "confirmada"}]
     soma = sum(h["posterior"] for h in vivas) or 1.0

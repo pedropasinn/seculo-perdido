@@ -1,169 +1,156 @@
-# Século Perdido — o que é o One Piece, por evidência
+<div align="center">
 
-**Site: https://seculo-perdido.vercel.app**
+# Século Perdido
 
-Sistema de raciocínio baseado em evidências sobre o mistério central de *One Piece*.
-Não é um blog de teorias: toda afirmação aponta para um átomo verificável, toda
-hipótese arrisca previsões falseáveis, e um validador determinístico bloqueia
-qualquer coisa que o LLM tenha inventado.
+**O que é o One Piece? Uma resposta que pode estar errada — e que diz onde.**
 
-## Licenças
+### [→ seculo-perdido.vercel.app](https://seculo-perdido.vercel.app)
 
-- **Código** (`tools/`, `Makefile`): MIT, ver `LICENSE`.
-- **Dados** (`data/`): CC BY-SA 3.0, ver `data/LICENSE`. Os átomos são paráfrases
-  nossas de material da [One Piece Wiki](https://onepiece.fandom.com), que é
-  CC BY-SA — a cláusula share-alike obriga a manter a licença, e a atribuição
-  fica no campo `fonte_url` de cada átomo.
+[![site](https://img.shields.io/badge/site-seculo--perdido.vercel.app-ffb703?style=for-the-badge)](https://seculo-perdido.vercel.app)
+[![dados](https://img.shields.io/badge/dados-CC%20BY--SA%203.0-2f9e6e?style=for-the-badge)](data/LICENSE)
+[![código](https://img.shields.io/badge/código-MIT-1a7fb5?style=for-the-badge)](LICENSE)
 
-*One Piece* é obra de Eiichiro Oda, publicada pela Shueisha. Projeto de fã, sem
-vínculo com os detentores dos direitos. Nenhum scan ou scanlation é usado.
-Spoilers até o capítulo 1190.
+</div>
 
-## Começar
+---
+
+Todo fandom tem teorias. O problema é que elas são **elásticas**: se moldam a
+qualquer capítulo novo, nunca podem estar erradas, e por isso nunca ensinam nada.
+
+Este repositório tenta o contrário. Toda afirmação sobre a obra aponta para um
+**átomo de evidência** com fonte e capítulo. Toda hipótese arrisca **previsões que
+podem dar errado**. Cada uma é atacada por um **red team que não vê os argumentos
+a favor**. E um validador sem IA recusa o commit se uma citação não corresponder
+ao texto citado.
+
+Hoje são **289 átomos**, **17 hipóteses** e **17 relatórios de ataque** — cobrindo
+até o capítulo 1190.
+
+> Nenhuma hipótese sobreviveu intacta ao red team. Cinco foram refutadas e estão
+> no cemitério, com o motivo escrito. Isso é o produto, não o defeito.
+
+---
+
+## O que tem no site
+
+| | |
+|---|---|
+| **[Hipóteses](https://seculo-perdido.vercel.app/)** | as alternativas ranqueadas, cada uma com elos, previsões e o ataque que sofreu |
+| **[Grafo](https://seculo-perdido.vercel.app/grafo)** | 434 nós e 1457 relações tipadas, no espírito do Neo4j — a aresta carrega peso e justificativa |
+| **[Cronologia](https://seculo-perdido.vercel.app/cronologia)** | a linha do tempo do mundo, com a fonte de cada marco |
+| **[Evidências](https://seculo-perdido.vercel.app/evidencias)** | os 289 átomos, com busca e as hipóteses que citam cada um |
+| **[Histórico](https://seculo-perdido.vercel.app/historico)** | o rastro: cada rodada, o que entrou e o que mudou de posição |
+| **[Método](https://seculo-perdido.vercel.app/metodo)** | como funciona, e o que o próprio arquivo não sabe |
+| **[Dados & API](https://seculo-perdido.vercel.app/dados)** | a base inteira em JSON, CSV e Markdown, e o servidor MCP |
+
+## Pergunte à base pelo Claude Code
+
+O repositório traz um **servidor MCP** sem nenhuma dependência além da biblioteca
+padrão. Funciona sem clonar nada:
 
 ```bash
-make check                      # portão de fundamentação
-make site                       # gera site/index.html
-python3 tools/score.py H-03     # log-odds de uma hipótese
-make sensibilidade              # o ranking sobrevive a mexer nos pesos?
-python3 tools/site.py           # gera o site publico em web/
+curl -O https://seculo-perdido.vercel.app/mcp/servidor.py
+```
+
+```json
+{
+  "mcpServers": {
+    "seculo-perdido": {
+      "command": "python3",
+      "args": ["/caminho/servidor.py", "--remoto"]
+    }
+  }
+}
+```
+
+Seis ferramentas: `estado_do_arquivo`, `buscar_evidencia`, `obter_evidencia`,
+`listar_hipoteses`, `obter_hipotese` e `comparar_hipoteses` — esta última mostra
+onde a mesma evidência puxa duas hipóteses para lados opostos.
+
+Junto vai uma [skill](skill/seculo-perdido/SKILL.md) que ensina o assistente a
+citar o id de cada átomo, nunca afirmar de memória e não repetir a porcentagem
+sem a ressalva de que ela assume exaustividade.
+
+## As três regras que sustentam tudo
+
+**1. Nada sai da memória do modelo.** Os átomos são escritos por agentes de LLM a
+partir de fontes permitidas — One Piece Wiki, SBS, databooks, entrevistas. Se uma
+cena não tem átomo, ela não pode ser afirmada, nem por quem escreve. Alucinar um
+painel é o único erro fatal do projeto.
+
+**2. Sem previsão falseável, não entra.** É a única barreira contra a teoria que
+se molda a qualquer desfecho.
+
+**3. O red team ataca no escuro.** Ele recebe o enunciado, as previsões e a base
+de evidência — nunca os argumentos a favor. O relatório fica publicado junto da
+hipótese, inclusive quando ela sobrevive.
+
+## O que este arquivo admite não saber
+
+Está publicado, não escondido no código:
+
+- A porcentagem **assume que a resposta certa está entre as listadas**. É a
+  premissa mais frágil, e nenhum teste estatístico a alcança.
+- **71% do apoio da hipótese líder** vem de átomos que também alimentam rivais.
+  Contando só evidência exclusiva, ela cai da 1ª para a 6ª posição.
+- Onze átomos apoiam pares de hipóteses **declaradamente concorrentes**.
+- Boa parte da evidência vem do arco em publicação, e leitura recente pesa mais
+  do que deveria. Há teto por capítulo e por arco justamente por isso.
+- Os átomos que não pertencem a hipótese nenhuma já fizeram **cinco hipóteses
+  nascerem** — o acúmulo é tratado como sintoma, não como sobra.
+
+```bash
+make sensibilidade     # o ranking sobrevive a mexer nos pesos? e sem o arco atual?
+```
+
+## Rodar
+
+Só precisa de Python 3 e PyYAML.
+
+```bash
+make check      # o portão: recusa citação sem lastro
+make web        # gera o site em web/
+make score      # log-odds das hipóteses
 python3 tools/buscar.py "roger laugh tale"
 ```
 
-Nenhuma dependência além de PyYAML.
+O ciclo de um capítulo novo:
+
+```
+make extract CAP=1191   →  extrator lê a fonte e escreve átomos
+make link               →  vinculador conecta aos existentes
+make redteam            →  red team ataca as hipóteses afetadas
+make curate             →  curador atualiza status e priors, e assina
+make check && make web  →  valida e republica
+```
 
 ## Estrutura
 
 ```
-CLAUDE.md              regras mestras — o Claude Code lê isso primeiro
-schema/                contratos JSON dos dois tipos de documento
-data/evidencias/       átomos EV-<cap>-<seq>.md
-data/hipoteses/        hipóteses H-##.md  +  H-##.redteam.md
-agents/                prompts dos quatro papéis
-tools/validate.py      portão de fundamentação (determinístico)
-tools/score.py         log-odds — insumo, não decisão
-tools/sensibilidade.py o ranking é do dado ou dos pesos?
-tools/coletar.py       baixa wikitext preservando as refs de capítulo
-tools/buscar.py        busca lexical
-tools/render.py        site estático
+data/evidencias/         289 átomos EV-<capítulo>-<seq>.md
+data/hipoteses/          17 hipóteses + os relatórios de red team
+data/cronologia.md       os marcos datados, cada um citando seus átomos
+agents/                  os prompts dos quatro papéis
+tools/validate.py        o portão, determinístico e sem IA
+tools/score.py           log-odds, com teto por capítulo e por arco
+tools/independencia.py   quanto do apoio de cada hipótese é emprestado
+tools/sensibilidade.py   o ranking é do dado ou dos pesos?
+tools/site.py            gera o site — estático, sem framework
+mcp/servidor.py          servidor MCP, sem dependências
 ```
 
-## Publicação
+## Licenças e fontes
 
-O site em `web/` é gerado por `make web` e servido pelo Vercel direto do
-repositório — cada push em `main` republica. Não há build step nem framework:
-HTML, CSS e um JS de 30 linhas para busca.
+O **código** é MIT. Os **dados** são CC BY-SA 3.0, porque são paráfrases de
+material da [One Piece Wiki](https://onepiece.fandom.com), que é CC BY-SA — e a
+cláusula share-alike obriga. A atribuição está no campo `fonte_url` de cada
+átomo. Algumas análises de tradução vêm do
+[The Library of Ohara](https://thelibraryofohara.com), igualmente atribuídas.
 
-```
-make web        # regenera web/ a partir de data/
-git push        # o Vercel republica sozinho
-```
+**Nenhum scan ou scanlation é usado**, por decisão de projeto. E o site não
+reproduz arte, páginas nem diálogo íntegro da obra — as ilustrações são
+originais, porque as imagens da wiki são material protegido da Shueisha e da Toei
+e o *fair use* que ampara a wiki não se transfere.
 
-## Fluxo de um capítulo novo
-
-```
-make extract CAP=1191   →  átomos novos
-make link               →  elos de apoio/contradição
-make redteam            →  ataque hostil às hipóteses afetadas
-make curate             →  status e prioris atualizados
-make check && make web  →  valida e republica
-git commit              →  o histórico é o registro da teoria evoluindo
-```
-
-## Fontes
-
-Permitido: One Piece Wiki (CC BY-SA), SBS, databooks, entrevistas, anotações
-próprias feitas a partir de cópias legais.
-Proibido: scans e scanlations.
-
-### The Library of Ohara
-
-`thelibraryofohara.com` é veículo de fonte permitida, não fonte em si. Ele
-publica traduções de SBS e de databook (que o `CLAUDE.md` autoriza) e análises
-gramaticais do japonês original. A regra de uso:
-
-- **Tradução/glosa do japonês** — vira átomo, com confiabilidade `ambiguo`
-  quando a afirmação é identidade lexical verificável (ex.: o Harley usa
-  literalmente 約束の日, *Dia da Promessa*) e `traducao_disputada` quando depende
-  da leitura do analista (ex.: a lua crescente designar o clã Kouzuki).
-- **SBS e Vivre Card traduzidos** — átomo com `tipo: sbs` ou `tipo: databook`.
-- **Chapter Secrets** — mistura fato e interpretação na mesma frase. Serve para
-  achar o que extrair, nunca para citar direto.
-- **The True History / MEGA-Theory** — teoria de fã. Não é fonte de átomo em
-  nenhuma hipótese. Uso legítimo: testar se o nosso conjunto de hipóteses é
-  exaustivo, que é a premissa mais frágil das fatias acima.
-
-A API REST do site é aberta: `/wp-json/wp/v2/posts?categories=<id>&_fields=…`.
-Categorias úteis: `the-true-history` (1070851), `sbs` (139757),
-`vivre-card-databook` (648324575).
-
-## Escopo inicial
-
-Século Perdido, Joy Boy, Laugh Tale, Imu, Poneglyphs, D. — cerca de 300 átomos.
-Só escale depois que o ciclo rodar limpo nesse recorte.
-
-## Estado (2026-08-11, último capítulo publicado: 1190)
-
-197 átomos, 15 hipóteses, seis rodadas de curadoria. Doze hipóteses disputam o
-escopo `one_piece` (mutuamente exclusivas); três são de escopo auxiliar.
-
-As três últimas — H-11, H-12, H-13 — não nasceram aqui. Vieram de um teste de
-exaustividade: nove agentes leram a série *True History* do Library of Ohara
-procurando alternativas que o repositório não tivesse formulado, e acharam três.
-Isso importa porque a fatia assume que a resposta está entre as listadas, e essa
-premissa é a única que os testes de sensibilidade não conseguem medir. Das
-três, duas foram refutadas no mesmo dia pelo Red Team; H-11 sobreviveu ferida e
-ficou em quarto lugar.
-
-| id | o que afirma | status | fatia |
-|----|--------------|--------|-------|
-| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 31% |
-| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 22% |
-| H-11 | objeto comum cujo valor está no ato de partilhá-lo | viva, ferida | 20% |
-| H-04 | registro completo do Século Perdido | viva, ferida | 13% |
-| H-03 | artefato funcional do Reino Antigo | viva, ferida | 10% |
-| H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 4% |
-| H-06 | a arma ancestral Uranus | viva, ferida | 1% |
-| H-01, H-07, H-12, H-13, H-15 | ver cemitério abaixo | **refutadas** | — |
-
-Fora do escopo do tesouro: **H-09** (Imu usurpou soberania anterior, prior 0,32),
-**H-10** (a fruta Nika seleciona quem a come, 0,32) e **H-14** (houve um ciclo
-industrial anterior ao Reino Antigo, 0,38, ferida).
-
-A fatia é a repartição do posterior dentro do escopo, e assume que a resposta
-certa está entre as hipóteses listadas — o que é exatamente o que o repositório
-não pode garantir. Leia `data/hipoteses/_orfaos.md` antes de confiar nela: átomo
-órfão acumulado é o sintoma de uma nona alternativa que ninguém formulou.
-
-Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estão em
-`data/hipoteses/H-*.redteam.md` e valem mais que as fatias.
-
-## Leia isto antes de citar o ranking
-
-`make sensibilidade` roda três testes contra o próprio resultado:
-
-- **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em 2000
-  sorteios. H-05 lidera em **100%**. Nas rodadas anteriores o primeiro colocado
-  ficou em 97,9%, depois 82,1%, depois 66,5%; a extração dos arcos antigos
-  inverteu a tendência.
-- **remover** — tira um átomo por vez. Nenhum troca o líder. Leia isso com a
-  ressalva que a própria história deste arquivo impõe: na rodada 2 este teste
-  também não acusava nada, e o motivo era que a base ainda não tinha as
-  concorrentes certas. Um teste que passa mede o conjunto atual de hipóteses,
-  não a realidade.
-- **recencia** — e aqui está o resultado que justifica a sessão inteira. H-05
-  tirava 62,8% do apoio do arco atual; agora tira **29,7%**. H-04 tira 6,2%.
-  Cortando tudo acima do cap. 1100, o ranking vira
-  `H-05 > H-04 > H-03 > H-02 > H-11 > H-08` — **a mesma hipótese lidera antes e
-  depois do corte**, pela primeira vez desde que o teste existe.
-
-O que mudou não foi o modelo, foi a base: 74 átomos novos de Ohara/Enies Lobby e
-da Ilha dos Homens-Peixe. Enquanto o repositório só tinha lido o arco em
-publicação, o topo da tabela media entusiasmo com o capítulo da semana. Agora
-mede evidência distribuída ao longo da obra.
-
-Duas ressalvas permanecem. H-08 ainda tira 48,3% do apoio de Elbaf e o segundo
-ataque mostrou que seu enunciado não descreve a evidência — o gatilho observado é
-co-presença de pessoas, não chegada a um lugar. E `_orfaos.md` abriu um cluster
-novo: nenhuma hipótese viva trata de **como** o Governo suprime, só do que ele
-esconde.
+*One Piece* é obra de Eiichiro Oda, publicada pela Shueisha. Este é um projeto de
+fã, sem vínculo com os detentores dos direitos. **Spoilers até o capítulo 1190.**
