@@ -148,6 +148,11 @@ def git(*args, padrao=""):
 
 
 CSS = """
+/* a fonte de fallback e ajustada para ocupar o mesmo espaco da Bangers.
+   Sem isto o titulo da capa encolhia de 94px para 47px quando a fonte chegava,
+   e a pagina inteira subia junto: CLS medido de 0,179. */
+@font-face{font-family:"Bangers-fb";src:local("Impact"),local("Haettenschweiler"),local("Arial Black");
+  size-adjust:62.7%;ascent-override:105%;descent-override:24%;line-gap-override:0%}
 :root{
   /* Grand Line: mar, tesouro, bandeira, pergaminho */
   --papel:#fff6e2; --papel-2:#ffeecb; --tinta:#151016;
@@ -157,7 +162,7 @@ CSS = """
   --verde:#217a53; --roxo:#7048a8;
   --sombra:6px 6px 0 var(--tinta);
   --sombra-sm:3px 3px 0 var(--tinta);
-  --display:"Bangers",Impact,sans-serif;
+  --display:"Bangers","Bangers-fb",Impact,sans-serif;
   --titulo:"Baloo 2",system-ui,sans-serif;
   --corpo:"Nunito",system-ui,sans-serif;
   --mono:"Space Mono",ui-monospace,monospace;
@@ -745,7 +750,7 @@ def cabeca(titulo: str, desc: str, ativo: str) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="/estilo.__HCSS__.css">
 </head><body>
 <a class="pula" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="env">
@@ -1329,7 +1334,23 @@ def main() -> int:
     }
     for nome, conteudo in paginas.items():
         (SAIDA / nome).write_text(conteudo.replace(RODAPE, rodape), encoding="utf-8")
-    (SAIDA / "estilo.css").write_text(CSS.strip() + "\n", encoding="utf-8")
+    import hashlib
+    css_txt, js_txt = CSS.strip() + "\n", JS.strip() + "\n"
+    h_css = hashlib.sha256(css_txt.encode()).hexdigest()[:8]
+    h_js = hashlib.sha256(js_txt.encode()).hexdigest()[:8]
+    h_gj = hashlib.sha256((SAIDA / "grafo.js").read_bytes()).hexdigest()[:8] \
+        if (SAIDA / "grafo.js").exists() else "0"
+    for velho in SAIDA.glob("estilo.*.css"):
+        velho.unlink()
+    for velho in SAIDA.glob("app.*.js"):
+        velho.unlink()
+    for velho in SAIDA.glob("grafo.*.js"):
+        if velho.name != "grafo.js":
+            velho.unlink()
+    (SAIDA / f"estilo.{h_css}.css").write_text(css_txt, encoding="utf-8")
+    (SAIDA / f"app.{h_js}.js").write_text(js_txt, encoding="utf-8")
+    (SAIDA / f"grafo.{h_gj}.js").write_bytes((SAIDA / "grafo.js").read_bytes())
+    (SAIDA / "estilo.css").write_text(css_txt, encoding="utf-8")
     import shutil
     (SAIDA / "mcp").mkdir(exist_ok=True)
     shutil.copy2(RAIZ / "mcp" / "servidor.py", SAIDA / "mcp" / "servidor.py")
@@ -1345,9 +1366,11 @@ def main() -> int:
     (SAIDA / "app.js").write_text(JS.strip() + "\n", encoding="utf-8")
     for nome in paginas:
         p = SAIDA / nome
-        js = "grafo.js" if nome == "grafo.html" else "app.js"
-        p.write_text(p.read_text(encoding="utf-8").replace(
-            "</body>", f'<script src="{js}"></script></body>'), encoding="utf-8")
+        js = f"/grafo.{h_gj}.js" if nome == "grafo.html" else f"/app.{h_js}.js"
+        p.write_text(p.read_text(encoding="utf-8")
+                     .replace("__HCSS__", h_css)
+                     .replace("</body>", f'<script src="{js}"></script></body>'),
+                     encoding="utf-8")
     print(f"{SAIDA}  ({meta['n_ev']} atomos, {meta['n_hip']} hipoteses, cap {meta['cap']})")
     return 0
 

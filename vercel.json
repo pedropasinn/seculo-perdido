@@ -5,5 +5,38 @@
   "trailingSlash": false,
   "framework": null,
   "buildCommand": null,
-  "installCommand": null
+  "installCommand": null,
+  "headers": [
+    {
+      "source": "/(.*)\\.[0-9a-f]{8}\\.(css|js)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/dados/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "access-control-allow-origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/(og.png|favicon.svg)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ]
 }
