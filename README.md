@@ -47,24 +47,44 @@ Permitido: One Piece Wiki (CC BY-SA), SBS, databooks, entrevistas, anotações
 próprias feitas a partir de cópias legais.
 Proibido: scans e scanlations.
 
+### The Library of Ohara
+
+`thelibraryofohara.com` é veículo de fonte permitida, não fonte em si. Ele
+publica traduções de SBS e de databook (que o `CLAUDE.md` autoriza) e análises
+gramaticais do japonês original. A regra de uso:
+
+- **Tradução/glosa do japonês** — vira átomo, com confiabilidade `ambiguo`
+  quando a afirmação é identidade lexical verificável (ex.: o Harley usa
+  literalmente 約束の日, *Dia da Promessa*) e `traducao_disputada` quando depende
+  da leitura do analista (ex.: a lua crescente designar o clã Kouzuki).
+- **SBS e Vivre Card traduzidos** — átomo com `tipo: sbs` ou `tipo: databook`.
+- **Chapter Secrets** — mistura fato e interpretação na mesma frase. Serve para
+  achar o que extrair, nunca para citar direto.
+- **The True History / MEGA-Theory** — teoria de fã. Não é fonte de átomo em
+  nenhuma hipótese. Uso legítimo: testar se o nosso conjunto de hipóteses é
+  exaustivo, que é a premissa mais frágil das fatias acima.
+
+A API REST do site é aberta: `/wp-json/wp/v2/posts?categories=<id>&_fields=…`.
+Categorias úteis: `the-true-history` (1070851), `sbs` (139757),
+`vivre-card-databook` (648324575).
+
 ## Escopo inicial
 
 Século Vazio, Joy Boy, Laugh Tale, Imu, Poneglyphs, D. — cerca de 300 átomos.
 Só escale depois que o ciclo rodar limpo nesse recorte.
 
-## Estado (2026-08-11, mangá no cap. 1191)
+## Estado (2026-08-11, último capítulo publicado: 1190)
 
-83 átomos, 10 hipóteses. O ciclo completo — extrair, vincular, red team, curar —
-rodou uma vez sobre o recorte inicial. Oito hipóteses disputam o escopo
-`one_piece` (mutuamente exclusivas); duas são de escopo auxiliar.
+91 átomos, 10 hipóteses, três rodadas de curadoria. Oito hipóteses disputam o
+escopo `one_piece` (mutuamente exclusivas); duas são de escopo auxiliar.
 
 | id | o que afirma | status | fatia |
 |----|--------------|--------|-------|
-| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 42% |
-| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 23% |
+| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 36% |
+| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 29% |
 | H-04 | registro completo do Século Vazio | viva, ferida | 19% |
-| H-03 | artefato funcional do Reino Antigo | viva, ferida | 8% |
-| H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 6% |
+| H-03 | artefato funcional do Reino Antigo | viva, ferida | 9% |
+| H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 5% |
 | H-06 | a arma ancestral Uranus | viva, ferida | 1% |
 | H-01 | tesouro material de ouro e joias | **refutada** | — |
 | H-07 | o Reino Antigo submerso reaparecendo | **refutada** | — |
@@ -81,8 +101,10 @@ Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estã
 
 `make sensibilidade` roda três testes contra o próprio resultado:
 
-- **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em 2000
-  sorteios. H-05 lidera em 97,9%: a ordem não é artefato dos números digitados.
+- **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em milhares de
+  sorteios. H-05 lidera em **83,8%**: a ordem não é artefato dos números
+  digitados, mas deixou de ser confortável. Na rodada 2 eram 97,9%; a
+  desambiguação do Harley encurtou a distância para H-08.
 - **remover** — tira um átomo por vez. Nenhum átomo isolado troca o líder, o que
   contraria em parte o Red Team de H-05, que apontou `EV-1190-03` como ponto
   único de falha. Os dois estão certos sobre coisas diferentes: o score não
