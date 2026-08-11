@@ -48,6 +48,17 @@ tools/buscar.py        busca lexical
 tools/render.py        site estático
 ```
 
+## Publicação
+
+O site em `web/` é gerado por `make web` e servido pelo Vercel direto do
+repositório — cada push em `main` republica. Não há build step nem framework:
+HTML, CSS e um JS de 30 linhas para busca.
+
+```
+make web        # regenera web/ a partir de data/
+git push        # o Vercel republica sozinho
+```
+
 ## Fluxo de um capítulo novo
 
 ```
@@ -55,7 +66,7 @@ make extract CAP=1191   →  átomos novos
 make link               →  elos de apoio/contradição
 make redteam            →  ataque hostil às hipóteses afetadas
 make curate             →  status e prioris atualizados
-make check && make site →  valida e publica
+make check && make web  →  valida e republica
 git commit              →  o histórico é o registro da teoria evoluindo
 ```
 

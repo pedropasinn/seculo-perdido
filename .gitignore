@@ -8,3 +8,4 @@ franky/
 
 # saida do gerador de site (regenerada por tools/site.py)
 # mantida no git para o deploy estatico do Vercel
+.vercel
