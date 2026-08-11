@@ -1,0 +1,209 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Histórico — Século Perdido</title>
+<meta name="description" content="O rastro do arquivo: cada rodada, o que entrou e o que mudou de posição.">
+<link rel="canonical" href="https://seculo-perdido.vercel.app/historico">
+<meta property="og:title" content="Histórico — Século Perdido">
+<meta property="og:description" content="O rastro do arquivo: cada rodada, o que entrou e o que mudou de posição.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seculo-perdido.vercel.app/historico">
+<meta property="og:site_name" content="Século Perdido">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://seculo-perdido.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Século Perdido — arquivo de evidências sobre o que é o One Piece">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Histórico — Século Perdido">
+<meta name="twitter:description" content="O rastro do arquivo: cada rodada, o que entrou e o que mudou de posição.">
+<meta name="twitter:image" content="https://seculo-perdido.vercel.app/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/estilo.e3aa4db6.css">
+</head><body>
+<a class="pula" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="env">
+  <a class="marca" href="/">Século<span>·</span>Perdido</a>
+  <nav class="topo-nav"><a href="/">Hipóteses</a><a href="/grafo">Grafo</a><a href="/cronologia">Cronologia</a><a href="/evidencias">Evidências</a><a href="/historico" aria-current="page">Histórico</a><a href="/metodo">Método</a><a href="/dados">Dados & API</a></nav>
+</div></header>
+<a id="conteudo" tabindex="-1"></a><main><section style="border-top:0"><div class="env">
+  <div class="cab"><h1>O rastro</h1><span class="n">25 rodadas</span></div>
+  <p class="intro">O valor deste projeto não é a resposta que ele dá hoje, é o registro de
+  uma hipótese subindo e caindo ao longo dos capítulos. Cada rodada abaixo é um estado
+  completo do arquivo, com o que entrou de evidência e o que isso fez com o ranking — em
+  ordem inversa, do mais recente para o começo.</p>
+  <ol class="linha"><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Sistema de evidências One Piece: esqueleto inicial</h3>
+    <p>Portão determinístico (validate.py), scoring em log-odds, quatro papéis de agente, 3 átomos e 2 hipóteses de semente. Hook pre-commit roda o portão.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/60833adf571bf4c9b7fc54bc3c1cd01505d51c49">60833ad</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Primeiro ciclo completo: 87 atomos, 10 hipoteses, 10 ataques</h3>
+    <p>Extracao a partir da One Piece Wiki (CC BY-SA) sobre o recorte inicial — Seculo Vazio, Joy Boy, Laugh Tale, Imu, Poneglyphs, D. — ate o cap 1190.</p><p>Oito hipoteses disputam o escopo one_piece; duas de escopo auxiliar nasceram do relatorio de orfaos. O Red Team rodou em contexto isolado, uma por hipotese: H-01 e H-07 refutadas, as outras oito feridas. Nenhuma sobreviveu</p><p>intacta.</p><p>Dois erros do Curador foram pegos pelos ataques e corrigidos indo a fonte, nao apagando a frase: uma previsao sobre Barba Negra sem atomo nenhum, e H-10 negando a acidentalidade de um trajeto que ninguem tinha extraido. O</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/0cef774fdf85b6f4b412ad5a8726e11db335073d">0cef774</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Testes de sensibilidade: o ranking e do dado ou dos pesos?</h3>
+    <p>tools/sensibilidade.py com tres modos, todos deterministicos:</p><p>perturbar  2000 sorteios com ruido nos pesos e prioris. H-05 lidera em 97.9% — a ordem nao e artefato dos numeros digitados.</p><p>remover    tira um atomo por vez. Nenhum troca o lider, o que contraria em parte o Red Team de H-05: o score nao desaba sem EV-1190-03, mas o enunciado deixa de ser distinguivel de H-04.</p><p>recencia   41% dos atomos vem dos caps 1101-1200, e H-05 tira 62.8% do seu apoio do arco atual. Cortando acima do cap 1100 o ranking vira H-04 &gt; H-02 &gt; H-05.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/a95bce7e849363c2cb4031229d89aa5715ac6de3">a95bce7</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Rodada 3: o Harley desambiguado palavra por palavra</h3>
+    <p>Fonte nova: as analises de traducao do Library of Ohara, que glosam o japones original. Isso corrige o que eu tinha afirmado antes — que SBS e databook nao cobriam o misterio central. Nao cobrem NA WIKI; traduzidos, existem.</p><p>O efeito sobre H-08 e nos dois sentidos, e os dois ficaram registrados:</p><p>a favor  — cai a acusacao de circularidade do Red Team. O verso do Terceiro Mundo usa literalmente 約束の日, Dia da Promessa, o mesmo termo da promessa que Noah espera cumprir (EV-0648-01). A ponte entre profecia e tesouro deixa de ser fornecida pela hipotese.</p><p>contra   — o mesmo verso diz 片われ月の声を聞く, ouvir as vozes da lua crescente, e &#x27;ouvir vozes&#x27; e como Roger descreve LER poneglyph.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/ea91a1bdf9b6bce14fc295da6fbfcf4e98bebf17">ea91a1b</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Rodada 4: teste de exaustividade com nove leitores externos</h3>
+    <p>Nove agentes leram a serie True History do Library of Ohara procurando alternativas que o repositorio nao tivesse formulado. Era o unico teste que a sensibilidade nao alcanca: as fatias assumem que a resposta esta entre as</p><p>hipoteses listadas, e nada media essa premissa.</p><p>Acharam tres. H-11 (objeto comum cujo valor esta na partilha) entrou em quarto lugar e sobreviveu ferida. H-12 (Binks&#x27; Sake e o registro) e H-13 (One Piece nomeia o estado final do mundo) foram refutadas no mesmo dia:</p><p>H-12  o enunciado afirma um universal, &#x27;nunca foi ocultado&#x27;, e a base tinha tres ocultamentos canonicos consumados (EV-1190-04, EV-1069-01, EV-1084-01). Um universal cai com um contraexemplo; havia tres.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/1e43433cd92fc57865e0c5826508f598f63c772c">1e43433</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Sensibilidade recalculada: EV-1190-03 e ponto unico de falha</h3>
+    <p>Com H-11 no pareo, o teste `remover` passou a detectar o que o Red Team de H-05 tinha apontado na primeira rodada: sem EV-1190-03 a lideranca vai para H-08. Na rodada 2 o mesmo teste dizia que nenhum atomo isolado trocava o</p><p>lider — o atomo tambem contradiz H-03 e H-07, e enquanto essas contradicoes compensavam, o efeito ficava escondido.</p><p>Licao registrada no README: um teste que passa nao e prova de robustez, e prova de que a base ainda nao tinha as concorrentes certas.</p><p>Numeros atualizados: perturbar 82.1%; recencia mostra H-05 62.8%, H-08 61.7%, H-03 54.5% e H-04 12.4% de dependencia do arco atual.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/aca330d266b47a07aa92702b58cc0578296e6009">aca330d</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Rodada 5: o mural de Elbaf a fundo, e uma troca de lideranca</h3>
+    <p>Tinhamos o mural em duas frases tiradas da wiki. Ele tem tres paineis densos, e ler a fundo mudou o topo da tabela: H-08 assume a lideranca (30%), H-05 cai para 27% e H-11 sobe para 21%.</p><p>CORRECAO DE INTEGRIDADE. Os versos do Harley aparecem no cap 1138, nao no 1136 — o 1136 e onde Jarul so menciona o livro. Como o id codifica o capitulo, quatro atomos estavam mal enderecados desde a rodada 1, entre eles o que sustenta H-08.</p><p>Migrados 1136 -&gt; 1138 com as referencias das hipoteses atualizadas.</p><p>CORRECAO DE CONTEUDO. EV-1138-02 listava Loki e Zunesha no mural. A wiki os lista; a analise painel a painel nao menciona Loki e afirma que Zunesha NAO aparece. Os &#x27;dois chifres&#x27; do monstro provavelmente vieram de Emet, descrito no</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/d444b42eeb775c517c1439af4f39868eb715f300">d444b42</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Teto por arco, e as duas hipoteses que os orfaos exigiam</h3>
+    <p>O relatorio de orfaos acusava ha tres rodadas e o agrupamento era sempre o mesmo: instalacao de tres mil anos em Elbaf, Arvore Adam mais velha que isso, a Lua cercada de Mother Flames no painel do Primeiro Mundo, os Lunarians</p><p>chamados de deuses, o Kami no Kuni no alto da Red Line. Todas as onze hipoteses assumiam que a historia comeca no Reino Antigo ha novecentos anos.</p><p>H-14  (escopo seculo_vazio) houve uma civilizacao industrial anterior; o mundo ja passou por pelo menos dois colapsos. Nao concorre com as do tesouro — ataca uma premissa que todas compartilhavam.</p><p>H-15  (escopo one_piece) o tesouro e heranca do ciclo anterior, que o Reino Antigo guardou sem ter criado. Ancorada em EV-1116-01, que diz que Joy Boy PRESERVOU as armas: preservar pressupoe que ja existiam.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/c60cf3b8936c551fbfeff24d38e0012b11aa5a55">c60cf3b</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Rodada 6: 74 atomos de arcos antigos, e o vies de recencia cede</h3>
+    <p>O teste `recencia` existia desde a rodada 3 acusando que o topo da tabela era propriedade do arco em publicacao. Atacamos com dado em vez de reponderacao:</p><p>extracao a fundo de Ohara/Enies Lobby (45 atomos) e Ilha dos Homens-Peixe (29).</p><p>Base de 123 para 197.</p><p>Resultado: H-05 tirava 62.8% do apoio do arco atual, agora tira 29.7%. Pela primeira vez desde que o teste existe, a MESMA hipotese lidera antes e depois do corte do cap 1100. E `perturbar` foi de 66.5% para 100%.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/cc4bc3cf769e585cdc4227da2feb6f26847b6ce1">cc4bc3c</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Site publico, licencas e 89 atomos de Wano e Skypiea</h3>
+    <p>tools/site.py gera web/ — estatico puro, sem framework, mesmo principio do resto do repositorio. Tres paginas: hipoteses com o dossie completo de cada uma (elos, previsoes e o relatorio do red team), indice de evidencias com</p><p>busca e filtro, e a pagina de metodo que explica por que confiar e o que o proprio arquivo nao sabe.</p><p>LICENCAS, que e o que faltava para publicar: codigo MIT; data/ em CC BY-SA 3.0, porque os atomos sao parafrase de material da One Piece Wiki, que e CC BY-SA, e a clausula share-alike obriga. Atribuicao no fonte_url de cada atomo e no rodape</p><p>de todas as paginas.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/7a39dbd3c93c852b6508fd1e626b0bb20cdfa43f">7a39dbd</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Documenta a publicacao: make web e deploy automatico no push</h3>
+    
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/3ffed88c4e49b0f79a15404871d25561ad830c1a">3ffed88</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Século Perdido: novo nome e visual de manga</h3>
+    <p>Nome trocado em tudo — repo, projeto Vercel, dominio, interface e os 68 arquivos de data/ que usavam o termo. O replace foi feito nos dois lados (atomos e justificativas das hipoteses) de uma vez, entao as similaridades do</p><p>portao se mantiveram: make check segue em 0 erros.</p><p>Visual refeito para o registro da obra. Paleta Grand Line: vermelho de bandeira, ouro de tesouro, azul de mar e pergaminho quente, sobre halftone de mangá. Bordas grossas e sombras solidas deslocadas, como quadro de mangá; cada</p><p>cartao com rotacao propria de um grau ou dois para nada ficar alinhado demais.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/10a17fbfcb9f71cf31072da08599c9b6f4ca1cca">10a17fb</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Explorador de grafo: nos com label e relacoes tipadas</h3>
+    <p>tools/grafo.py monta um grafo de propriedades a partir de data/ e emite web/grafo.json. O modelo e o de um banco de grafos, e e isso que faz a ligacao ter significado — uma aresta nao diz &quot;estao conectados&quot;, ela e :APOIA com peso</p><p>0.45 e a justificativa escrita:</p><p>(:Evidencia)-[:APOIA     {peso, como}]-&gt;(:Hipotese) (:Evidencia)-[:CONTRADIZ {peso, como}]-&gt;(:Hipotese) (:Hipotese) -[:CONCORRE_COM]-&gt;(:Hipotese) (:Evidencia)-[:TEM_TEMA]-&gt;(:Tema) (:Evidencia)-[:MENCIONA]-&gt;(:Ator)</p><p>432 nos e 1437 relacoes. Temas e atores com menos de tres ocorrencias ficam de fora: viravam ruido sem informar nada.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/165d83a2256c1b41b2c469a0288f33b7d7140b0e">165d83a</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Revisao do site: bugs de filtro, acessibilidade, SEO e backlinks</h3>
+    <p>Tres agentes revisaram as paginas com parser e navegador headless. O que eles acharam de errado, corrigido:</p><p>FILTROS DAVAM RESPOSTA ERRADA O filtro de tema casava por substring: &quot;ancestrais&quot; trazia 27 atomos em vez de 1, porque pegava &quot;armas ancestrais&quot;; &quot;ouro&quot; trazia 8 por causa de &quot;tesouro&quot;. Agora o data-temas e delimitado por barras e a comparacao e exata.</p><p>A opcao SBS do filtro de confiabilidade nunca retornava nada — nao existe atomo SBS na base. As opcoes passam a sair dos valores presentes, com a contagem de cada uma ao lado.</p><p>A busca era cega a acento e literal: &quot;seculo&quot; achava 43 e &quot;século&quot; achava 1; &quot;robin ohara&quot; achava zero. Agora normaliza acento dos dois lados e trata os termos como conjuncao.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/fb1d7a1b5e5991ef17b635315d6a97e0aa296596">fb1d7a1</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Corrige app.js quebrado em producao e reestrutura o acordeao</h3>
+    <p>O agente de revisao achou um erro meu que derrubou o site inteiro: escrevi a regex de escape numa string Python nao-raw, o \] virou ] e o app.js publicado tinha SyntaxError. Nenhum JS rodava no ar — busca, filtros, acordeao, barras de</p><p>probabilidade e contadores, todos mortos, e as barras apareciam como 2px de borda. JS = r&quot;&quot;&quot; resolve, e agora `node --check` roda no make web e no hook de pre-commit.</p><p>ACORDEAO NATIVO. Trocado &lt;button&gt;+&lt;div hidden&gt; por &lt;details&gt;/&lt;summary&gt;. Isso resolve quatro coisas de uma vez: a pagina passa a ter conteudo sem JS (antes, sem JS, 4.7k caracteres visiveis contra 12.5k), o estado aberto/fechado e do</p><p>browser (o aria-expanded nunca era atualizado), o summary vira ponto de foco nativo, e o enunciado virou &lt;h3&gt; — antes a pagina ia de H2 direto para quinze H4 iguais chamados &quot;O caso a favor&quot;.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/219798e8ea382406b159191232d592413cba17e1">219798e</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Acentuacao: 307 arquivos de data/ corrigidos</h3>
+    <p>O conteudo era publicado num site em pt-BR com &quot;tripulacao&quot;, &quot;historia&quot;, &quot;seculo&quot; e &quot;nao&quot; — e treze dos quinze ENUNCIADOS, que sao o texto mais visivel da pagina, tinham &quot;e&quot; no lugar de &quot;é&quot;. Herdei o padrao do pacote original e</p><p>segui com ele por seis rodadas.</p><p>Dois agentes em paralelo, um por faixa de id, para nao disputar arquivo. O metodo importa: passe deterministico com dicionario para as formas inequivocas, e passe contextual para o que exige leitura — e→é, esta→está, crases, tem→têm,</p><p>futuros. Um verificador comparava cada arquivo com o snapshot e falhava se o texto SEM acento divergisse um byte, garantindo que so a acentuacao mudou.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/48fbebb35632e888116d5c53325c32f41f6fcf0e">48fbebb</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Container de 66rem para 85rem</h3>
+    <p>Pedido do Pedro. Como a 85rem o texto corrido passaria de 180 caracteres por linha, limitei a linha de leitura em ch nos elementos que nao tinham teto — justificativas dos elos, texto dos atomos, enunciados e previsoes — mantendo a</p><p>faixa legivel de 74 a 86 caracteres. A largura extra vai para onde ela serve:</p><p>grafo, listas e a coluna lateral do explorador, que passou de 21rem para 24rem.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/cdaa068fe42f9c72602280e25128180fb5e484b8">cdaa068</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Painel de ajustes no grafo e legibilidade sobre o halftone</h3>
+    <p>LEGIBILIDADE. Os pontos do fundo eram var(--tinta), quase preto, a cada 14px — 17:1 de contraste competindo com as letras de qualquer texto que nao estivesse dentro de um cartao. Passaram para 8.5% de opacidade numa grade de 22px: a</p><p>textura de papel continua, o ruido sai. A mancha vermelha de canto caiu de 14% para 7% e ganhou mascara radial, para desaparecer em vez de cortar reto.</p><p>Alem disso, o texto corrido que ficava direto sobre o fundo agora tem folha propria: .intro virou bloco de papel com faixa dourada na lateral, o subtitulo da capa ganhou cartao com borda, e os titulos de secao receberam halo de papel</p><p>no text-shadow.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/6f6575c2b63d41296ba41a6342a034cb54b32685">6f6575c</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Remove barra colorida na lateral dos blocos</h3>
+    <p>Preferencia ja registrada do Pedro e que eu quebrei: nada de border-left colorida, em bloco nenhum. Da cara de interface gerada por IA.</p><p>.intro passa a se destacar por fundo, borda uniforme e elevacao. blockquote troca a borda esquerda grossa por aspa tipografica em ::before, com a Bangers em dourado — resolve a mesma funcao com vocabulario do proprio site.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/286433a5037e72ecd272712101794554ad193fa5">286433a</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Tira o max-width do .intro</h3>
+    <p>Os paragrafos de introducao passam a ocupar a largura do container.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/3535000878baf15bb70daeff12b2089c060603af">3535000</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Dados abertos, servidor MCP, skill, e melhorias de conteudo</h3>
+    <p>DADOS ABERTOS. tools/exportar.py publica a base inteira em web/dados/: JSON, CSV, NDJSON, um markdown de 132 KB para ler de uma vez, e um zip com tudo mais a licenca. Sem cadastro, sem chave, sem limite — e arquivo estatico. A pagina</p><p>/dados lista tamanhos e explica cada formato.</p><p>SERVIDOR MCP em mcp/servidor.py. JSON-RPC por stdio, sem dependencia alem da biblioteca padrao — um servidor MCP que exige pip install de meia duzia de pacotes nao e instalado por ninguem. Roda em dois modos: com o repositorio</p><p>clonado le data/ direto; com --remoto baixa os dados publicados e dispensa o clone. Seis ferramentas: estado_do_arquivo, buscar_evidencia, obter_evidencia, listar_hipoteses, obter_hipotese e comparar_hipoteses.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/ed5009fd2995afc808b6b7499a552ab6c788f1a6">ed5009f</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Independencia dos elos, e consertos no explorador de grafo</h3>
+    <p>O ACHADO. Um agente analisando o grafo encontrou um furo que os testes de sensibilidade nao alcancam, porque eles medem os pesos e nunca a estrutura:</p><p>score.py trata cada elo como fator de Bayes independente, e a independencia falha de dois jeitos. Correlacao de FONTE ja estava freada pelos dois tetos.</p><p>Correlacao de ATOMO nao estava medida — e e maior.</p><p>tools/independencia.py mede. O resultado desconforta:</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/1acca275754a73946fac53dfe02dc1c3815d712c">1acca27</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Acessibilidade: grafo por teclado, equivalente textual e bloqueadores</h3>
+    <p>Auditoria com navegador headless nos seis viewports. O que ela achou:</p><p>BLOQUEADORES 15 links focaveis dentro de aria-hidden=&quot;true&quot; — o permalink § estava dentro do span de selos marcado como escondido E dentro do &lt;summary&gt;, entao o foco parava num elemento que nao anuncia nada e o Enter disparava o link E o</p><p>acordeao ao mesmo tempo. Saiu para dentro do dossie, com aria-label.</p><p>O grafo era 100% inoperavel por teclado e invisivel para leitor de tela: o canvas tinha tabIndex -1, sem role, sem label, e as 30 ligacoes do painel eram &lt;div onclick&gt; com tabIndex -1. Agora o canvas e focavel, tem role e</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/5eb56c630785daffc071aa1bb43456f42c476d71">5eb56c6</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Desempenho: o grafo dormia nunca, e a fonte movia a pagina inteira</h3>
+    <p>Auditoria com navegador headless, CDP e throttling. Tres achados com numero:</p><p>O GRAFO QUEIMAVA UM CORE PARADO. Com sete nos assentados na tela e nada se mexendo, 32 a 40% de um core — redesenhando o mesmo quadro. Com 304 nos, 97.8%.</p><p>E o botao &quot;pausar&quot; nao parava o desenho, so a fisica: continuava em 97.7%.</p><p>prefers-reduced-motion tinha o mesmo defeito, entao a opcao de acessibilidade nao reduzia CPU nenhuma.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/8f68c8da101206e99ce47502a3eb48a941b685b0">8f68c8d</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Corrige o header de cache: source do Vercel e path-to-regexp</h3>
+    <p>O padrao anterior era regex livre e nunca casava, entao os assets com hash continuavam saindo com max-age=0. Os de /dados/ funcionaram porque o padrao era simples o bastante.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/bcbb744986dac812eb8805d404a5f4e217c9c83f">bcbb744</a></div>
+  </div></li></ol>
+  <p class="intro">O histórico completo, commit a commit, está em
+  <a href="https://github.com/pedropasinn/seculo-perdido/commits/main">pedropasinn/seculo-perdido</a>.
+  Nada é reescrito: quando uma hipótese cai, o motivo fica escrito e ela vai para o
+  cemitério em vez de ser apagada.</p>
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main><footer><div class="env">
+<p><strong>Fontes.</strong> Os átomos de evidência são paráfrases nossas de material da
+<a href="https://onepiece.fandom.com" rel="noopener">One Piece Wiki</a>, disponível sob
+<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener">CC BY-SA 3.0</a>;
+alguns citam análises de tradução do
+<a href="https://thelibraryofohara.com" rel="noopener">The Library of Ohara</a>, com atribuição
+no campo <code>fonte_url</code> de cada átomo. Os dados deste site são publicados sob a mesma
+licença CC BY-SA 3.0. Nenhum scan ou scanlation é usado.</p>
+<p><strong>Spoilers</strong> até o capítulo 1190. <em>One Piece</em> é obra de Eiichiro Oda,
+publicada pela Shueisha — este é um projeto de fã, sem vínculo com os detentores dos direitos.</p>
+<p><strong>Licenças.</strong> O código é MIT; os dados de <code>data/</code> são CC BY-SA 3.0,
+pela cláusula share-alike da fonte.</p>
+<p><a href="https://github.com/pedropasinn/seculo-perdido">pedropasinn/seculo-perdido</a> ·
+<a href="https://github.com/pedropasinn/seculo-perdido/commits/main">histórico de mudanças</a> ·
+atualizado em <time datetime="2026-08-11T19:43:29">11 de agosto de 2026</time></p>
+</div></footer><script src="/app.a7a530bf.js"></script></body></html>

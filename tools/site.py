@@ -472,6 +472,39 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
   letter-spacing:.04em;text-transform:uppercase}
 .tabela-grafo .tabela{margin:0 1rem 1rem;box-shadow:none}
 .tabela-grafo .intro{margin:0 1rem 1rem}
+.ico{vertical-align:-.22em;margin-right:.45rem;color:var(--vermelho)}
+.linha{list-style:none;margin:1.5rem 0;padding:0;position:relative}
+.linha::before{content:"";position:absolute;left:8.4rem;top:.5rem;bottom:.5rem;width:4px;
+  background:repeating-linear-gradient(180deg,var(--tinta) 0 8px,transparent 8px 14px)}
+.marco{display:grid;grid-template-columns:8.4rem 1fr;gap:1.6rem;margin-bottom:1.1rem;
+  position:relative}
+.marco::before{content:"";position:absolute;left:7.75rem;top:1.15rem;width:1.35rem;
+  height:1.35rem;border-radius:50%;background:var(--ouro);border:3px solid var(--tinta);z-index:1}
+.marco.ambigua::before{background:var(--papel-2)}
+.marco.disputada::before{background:var(--vermelho)}
+.marco-data{text-align:right;font:700 .78rem/1.4 var(--mono);padding-top:1.2rem;opacity:.75}
+.marco-corpo{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;
+  box-shadow:var(--sombra-sm);padding:.9rem 1.1rem}
+.marco-corpo h3{font:400 1.4rem/1.15 var(--display);letter-spacing:.03em;
+  text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center}
+.marco-corpo p{font-size:.94rem;margin:.35rem 0}
+.marco-ev{margin-top:.6rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.marco-ev a{font:700 .68rem var(--mono);text-decoration:none;background:var(--papel-2);
+  border:2px solid var(--tinta);border-radius:999px;padding:.22rem .45rem}
+.marco-ev a:hover{background:var(--ouro)}
+.legenda-cert{display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;
+  font:700 .72rem var(--titulo);text-transform:uppercase;letter-spacing:.03em;margin:-.6rem 0 1.2rem}
+.legenda-cert .pt{width:.9rem;height:.9rem;border-radius:50%;border:2.5px solid var(--tinta);
+  display:inline-block;margin-right:.25rem;vertical-align:-.1em}
+.legenda-cert .pt.canonica{background:var(--ouro)}
+.legenda-cert .pt.ambigua{background:var(--papel-2)}
+.legenda-cert .pt.disputada{background:var(--vermelho)}
+@media(max-width:620px){
+  .linha::before{left:.55rem}
+  .marco{grid-template-columns:1fr;gap:.3rem;padding-left:2.2rem}
+  .marco::before{left:0;top:.4rem}
+  .marco-data{text-align:left;padding-top:0}
+}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
@@ -716,8 +749,10 @@ if (topo) {
 
 SITE = "https://seculo-perdido.vercel.app"
 NAV = [("/", "index.html", "Hipóteses"), ("/grafo", "grafo.html", "Grafo"),
-       ("/evidencias", "evidencias.html", "Evidências"), ("/metodo", "metodo.html", "Método"),
-       ("/dados", "dados.html", "Dados & API")]
+       ("/cronologia", "cronologia.html", "Cronologia"),
+       ("/evidencias", "evidencias.html", "Evidências"),
+       ("/historico", "historico.html", "Histórico"),
+       ("/metodo", "metodo.html", "Método"), ("/dados", "dados.html", "Dados & API")]
 
 
 def cabeca(titulo: str, desc: str, ativo: str) -> str:
@@ -1293,6 +1328,90 @@ pip install pyyaml</pre>
 <button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
 
 
+ICONES = {
+    "poneglyph": '<path d="M6 3h12l2 4v14H4V7z" fill="none" stroke="currentColor" stroke-width="2"/>'
+                 '<path d="M8 10h8M8 14h8M8 18h5" stroke="currentColor" stroke-width="2"/>',
+    "chama": '<path d="M12 2c3 5-2 6 0 10 1.5 3 5 1 5 5a5 5 0 01-10 0c0-3 2-4 2-7 0-3-2-4 3-8z" '
+             'fill="none" stroke="currentColor" stroke-width="2"/>',
+    "lua": '<path d="M16 3a9 9 0 100 18 7 7 0 010-18z" fill="none" stroke="currentColor" stroke-width="2"/>',
+    "coroa": '<path d="M3 8l4 4 5-8 5 8 4-4v11H3z" fill="none" stroke="currentColor" stroke-width="2"/>',
+    "navio": '<path d="M4 16h16l-2 5H6zM12 3v13M12 6l7 3-7 3" fill="none" stroke="currentColor" '
+             'stroke-width="2"/>',
+    "sol": '<circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>'
+           '<path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" '
+           'stroke="currentColor" stroke-width="2"/>',
+    "relogio": '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>'
+               '<path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/>',
+}
+
+
+def icone(nome, tam=22):
+    return (f'<svg class="ico" viewBox="0 0 24 24" width="{tam}" height="{tam}" '
+            f'aria-hidden="true">{ICONES.get(nome, ICONES["poneglyph"])}</svg>')
+
+
+def pagina_cronologia(meta, cron, evid) -> str:
+    marcos = sorted(cron.get("marcos") or [], key=lambda m: m.get("ordem", 0))
+    icos = ["poneglyph", "chama", "lua", "coroa", "navio", "sol", "relogio"]
+    itens = []
+    for i, m in enumerate(marcos):
+        refs = " ".join(f'<a href="/evidencias#{e}">{e}</a>' for e in m.get("ev") or [])
+        cert = m.get("certeza", "canonica")
+        itens.append(f"""<li class="marco {cert}">
+  <div class="marco-data">{html.escape(str(m.get("quando", "")))}</div>
+  <div class="marco-corpo">
+    <h3>{icone(icos[i % len(icos)])}{html.escape(str(m.get("titulo", "")))}</h3>
+    <p>{html.escape(" ".join(str(m.get("texto", "")).split()))}</p>
+    <div class="marco-ev">{refs}</div>
+  </div></li>""")
+    return (cabeca("Cronologia — Século Perdido",
+                   "A linha do tempo do mundo de One Piece reconstruída só a partir de "
+                   "evidência datada, com a fonte de cada marco.", "cronologia.html") +
+            f"""<main><section style="border-top:0"><div class="env">
+  <div class="cab"><h1>Cronologia do mundo</h1>
+    <span class="n">{len(marcos)} marcos</span></div>
+  <p class="intro">{html.escape(" ".join(str(cron.get("descricao", "")).split()))}</p>
+  <p class="legenda-cert">
+    <span class="pt canonica"></span> a obra afirma
+    <span class="pt ambigua"></span> leitura de painel ou estimativa de personagem
+    <span class="pt disputada"></span> depende da escolha do tradutor</p>
+  <ol class="linha">{"".join(itens)}</ol>
+  <p class="intro">A régua não é uniforme de propósito: a obra data com precisão os últimos
+  cinquenta anos e é vaga sobre tudo que veio antes do Século Perdido. O intervalo entre os
+  três mil anos da instalação de Elbaf e os novecentos do Século Perdido é o buraco mais
+  gritante daqui — dois milênios sobre os quais o arquivo tem uma frase.</p>
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
+
+
+def pagina_historico(meta, rodadas) -> str:
+    itens = []
+    for r in rodadas:
+        corpo = "".join(f"<p>{html.escape(l)}</p>" for l in r["corpo"][:4] if l.strip())
+        itens.append(f"""<li class="marco canonica">
+  <div class="marco-data">{r['data']}</div>
+  <div class="marco-corpo">
+    <h3>{icone("relogio")}{html.escape(r['titulo'])}</h3>
+    {corpo}
+    <div class="marco-ev"><a href="{meta['repo']}/commit/{r['hash']}">{r['hash'][:7]}</a></div>
+  </div></li>""")
+    return (cabeca("Histórico — Século Perdido",
+                   "O rastro do arquivo: cada rodada, o que entrou e o que mudou de posição.",
+                   "historico.html") + f"""<main><section style="border-top:0"><div class="env">
+  <div class="cab"><h1>O rastro</h1><span class="n">{len(rodadas)} rodadas</span></div>
+  <p class="intro">O valor deste projeto não é a resposta que ele dá hoje, é o registro de
+  uma hipótese subindo e caindo ao longo dos capítulos. Cada rodada abaixo é um estado
+  completo do arquivo, com o que entrou de evidência e o que isso fez com o ranking — em
+  ordem inversa, do mais recente para o começo.</p>
+  <ol class="linha">{"".join(itens)}</ol>
+  <p class="intro">O histórico completo, commit a commit, está em
+  <a href="{meta['repo']}/commits/main">{meta['repo'].replace("https://github.com/", "")}</a>.
+  Nada é reescrito: quando uma hipótese cai, o motivo fica escrito e ela vai para o
+  cemitério em vez de ser apagada.</p>
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
+
+
 def main() -> int:
     evid, hips = carregar()
     SAIDA.mkdir(exist_ok=True)
@@ -1316,6 +1435,40 @@ def main() -> int:
     repo = git("remote", "get-url", "origin", padrao="")
     repo = re.sub(r"\.git$", "", repo) or "https://github.com/pedropasinn/seculo-perdido"
     meta["repo"] = repo
+
+    cron = {}
+    pc = RAIZ / "data" / "cronologia.md"
+    if pc.exists():
+        cron, _ = ler(pc)
+
+    # o rastro sai do proprio git: os commits de rodada sao a narrativa
+    rodadas = []
+    bruto = git("log", "--format=%H|%cI|%s|%b", "--reverse", padrao="")
+    for bloco in bruto.split("\n\ncommit-sep\n\n") if "commit-sep" in bruto else [bruto]:
+        pass
+    linhas = git("log", "--format=%H\t%cI\t%s", padrao="").splitlines()
+    MES = ["", "jan", "fev", "mar", "abr", "mai", "jun",
+           "jul", "ago", "set", "out", "nov", "dez"]
+    for ln in linhas:
+        partes = ln.split("\t")
+        if len(partes) < 3:
+            continue
+        h, iso, titulo = partes[0], partes[1], partes[2]
+        corpo = git("log", "-1", "--format=%b", h, padrao="").split("\n")
+        corpo = [c for c in corpo if c.strip() and not c.startswith("Co-Authored")]
+        junto, atual = [], ""
+        for c in corpo:
+            if not c.strip():
+                continue
+            atual = (atual + " " + c.strip()).strip()
+            if c.rstrip().endswith((".", ":", "?")) or len(atual) > 210:
+                junto.append(atual)
+                atual = ""
+        if atual:
+            junto.append(atual)
+        rodadas.append({"hash": h, "titulo": titulo, "corpo": junto,
+                        "data": f"{int(iso[8:10])} {MES[int(iso[5:7])]}"})
+    rodadas.reverse()
     iso = git("log", "-1", "--format=%cI", padrao="")[:19] or "2026-08-11T00:00:00"
     dia, mes, ano = iso[8:10], iso[5:7], iso[0:4]
     MESES = ["", "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
@@ -1331,6 +1484,8 @@ def main() -> int:
         "metodo.html": pagina_metodo(meta),
         "grafo.html": pagina_grafo(meta, hips, evid),
         "dados.html": pagina_dados(meta, tamanhos),
+        "cronologia.html": pagina_cronologia(meta, cron, evid),
+        "historico.html": pagina_historico(meta, rodadas),
     }
     for nome, conteudo in paginas.items():
         (SAIDA / nome).write_text(conteudo.replace(RODAPE, rodape), encoding="utf-8")

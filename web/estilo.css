@@ -322,6 +322,39 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
   letter-spacing:.04em;text-transform:uppercase}
 .tabela-grafo .tabela{margin:0 1rem 1rem;box-shadow:none}
 .tabela-grafo .intro{margin:0 1rem 1rem}
+.ico{vertical-align:-.22em;margin-right:.45rem;color:var(--vermelho)}
+.linha{list-style:none;margin:1.5rem 0;padding:0;position:relative}
+.linha::before{content:"";position:absolute;left:8.4rem;top:.5rem;bottom:.5rem;width:4px;
+  background:repeating-linear-gradient(180deg,var(--tinta) 0 8px,transparent 8px 14px)}
+.marco{display:grid;grid-template-columns:8.4rem 1fr;gap:1.6rem;margin-bottom:1.1rem;
+  position:relative}
+.marco::before{content:"";position:absolute;left:7.75rem;top:1.15rem;width:1.35rem;
+  height:1.35rem;border-radius:50%;background:var(--ouro);border:3px solid var(--tinta);z-index:1}
+.marco.ambigua::before{background:var(--papel-2)}
+.marco.disputada::before{background:var(--vermelho)}
+.marco-data{text-align:right;font:700 .78rem/1.4 var(--mono);padding-top:1.2rem;opacity:.75}
+.marco-corpo{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;
+  box-shadow:var(--sombra-sm);padding:.9rem 1.1rem}
+.marco-corpo h3{font:400 1.4rem/1.15 var(--display);letter-spacing:.03em;
+  text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center}
+.marco-corpo p{font-size:.94rem;margin:.35rem 0}
+.marco-ev{margin-top:.6rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.marco-ev a{font:700 .68rem var(--mono);text-decoration:none;background:var(--papel-2);
+  border:2px solid var(--tinta);border-radius:999px;padding:.22rem .45rem}
+.marco-ev a:hover{background:var(--ouro)}
+.legenda-cert{display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;
+  font:700 .72rem var(--titulo);text-transform:uppercase;letter-spacing:.03em;margin:-.6rem 0 1.2rem}
+.legenda-cert .pt{width:.9rem;height:.9rem;border-radius:50%;border:2.5px solid var(--tinta);
+  display:inline-block;margin-right:.25rem;vertical-align:-.1em}
+.legenda-cert .pt.canonica{background:var(--ouro)}
+.legenda-cert .pt.ambigua{background:var(--papel-2)}
+.legenda-cert .pt.disputada{background:var(--vermelho)}
+@media(max-width:620px){
+  .linha::before{left:.55rem}
+  .marco{grid-template-columns:1fr;gap:.3rem;padding-left:2.2rem}
+  .marco::before{left:0;top:.4rem}
+  .marco-data{text-align:left;padding-top:0}
+}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
