@@ -78,8 +78,8 @@ Só escale depois que o ciclo rodar limpo nesse recorte.
 
 ## Estado (2026-08-11, último capítulo publicado: 1190)
 
-123 átomos, 13 hipóteses, cinco rodadas de curadoria. Onze hipóteses disputam o
-escopo `one_piece` (mutuamente exclusivas); duas são de escopo auxiliar.
+197 átomos, 15 hipóteses, seis rodadas de curadoria. Doze hipóteses disputam o
+escopo `one_piece` (mutuamente exclusivas); três são de escopo auxiliar.
 
 As três últimas — H-11, H-12, H-13 — não nasceram aqui. Vieram de um teste de
 exaustividade: nove agentes leram a série *True History* do Library of Ohara
@@ -91,17 +91,18 @@ ficou em quarto lugar.
 
 | id | o que afirma | status | fatia |
 |----|--------------|--------|-------|
-| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 30% |
-| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 27% |
-| H-11 | objeto comum cujo valor está no ato de partilhá-lo | viva, ferida | 21% |
-| H-04 | registro completo do Século Vazio | viva, ferida | 12% |
-| H-03 | artefato funcional do Reino Antigo | viva, ferida | 6% |
+| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 31% |
+| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 22% |
+| H-11 | objeto comum cujo valor está no ato de partilhá-lo | viva, ferida | 20% |
+| H-04 | registro completo do Século Vazio | viva, ferida | 13% |
+| H-03 | artefato funcional do Reino Antigo | viva, ferida | 10% |
 | H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 4% |
 | H-06 | a arma ancestral Uranus | viva, ferida | 1% |
-| H-12 | *Binks' Sake* é o registro; Laugh Tale é a chave | **refutada** | — |
-| H-13 | "One Piece" nomeia o estado final do mundo | **refutada** | — |
-| H-01 | tesouro material de ouro e joias | **refutada** | — |
-| H-07 | o Reino Antigo submerso reaparecendo | **refutada** | — |
+| H-01, H-07, H-12, H-13, H-15 | ver cemitério abaixo | **refutadas** | — |
+
+Fora do escopo do tesouro: **H-09** (Imu usurpou soberania anterior, prior 0,32),
+**H-10** (a fruta Nika seleciona quem a come, 0,32) e **H-14** (houve um ciclo
+industrial anterior ao Reino Antigo, 0,38, ferida).
 
 A fatia é a repartição do posterior dentro do escopo, e assume que a resposta
 certa está entre as hipóteses listadas — o que é exatamente o que o repositório
@@ -116,22 +117,27 @@ Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estã
 `make sensibilidade` roda três testes contra o próprio resultado:
 
 - **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em 2000
-  sorteios. H-08 lidera em **66,5%**, H-05 em 29,0%. É a liderança mais frágil
-  já medida aqui: nas rodadas anteriores o primeiro colocado ficava em 97,9% e
-  depois 82,1%. Cada rodada de evidência nova aproximou o pelotão.
-- **remover** — tira um átomo por vez. Dois átomos derrubam a liderança sozinhos,
-  e os dois são do **mesmo capítulo 1190**: `EV-1190-01` e `EV-1190-05`. Sem
-  qualquer um deles, quem lidera é H-05. Na rodada 2 este teste não acusava nada;
-  na 4 acusava `EV-1190-03`. Um teste que passa não é prova de robustez — é prova
-  de que a base ainda não tinha as concorrentes certas.
-- **recencia** — H-08 tira **69,3%** do apoio de capítulos acima do 1100, H-05
-  tira 62,8%, H-03 54,5%, H-11 42,7% — e H-04 apenas 12,4%. Cortando tudo acima
-  do cap. 1100, o ranking vira `H-04 > H-02 > H-05 > H-03 > H-11 > H-08`: a
-  líder atual cai para penúltima.
+  sorteios. H-05 lidera em **100%**. Nas rodadas anteriores o primeiro colocado
+  ficou em 97,9%, depois 82,1%, depois 66,5%; a extração dos arcos antigos
+  inverteu a tendência.
+- **remover** — tira um átomo por vez. Nenhum troca o líder. Leia isso com a
+  ressalva que a própria história deste arquivo impõe: na rodada 2 este teste
+  também não acusava nada, e o motivo era que a base ainda não tinha as
+  concorrentes certas. Um teste que passa mede o conjunto atual de hipóteses,
+  não a realidade.
+- **recencia** — e aqui está o resultado que justifica a sessão inteira. H-05
+  tirava 62,8% do apoio do arco atual; agora tira **29,7%**. H-04 tira 6,2%.
+  Cortando tudo acima do cap. 1100, o ranking vira
+  `H-05 > H-04 > H-03 > H-02 > H-11 > H-08` — **a mesma hipótese lidera antes e
+  depois do corte**, pela primeira vez desde que o teste existe.
 
-Juntando os três: a liderança de H-08 depende quase inteiramente do arco de Elbaf
-e desmancha se um de dois átomos do capítulo 1190 cair. O `TETO_POR_FONTE` do
-`score.py` freia um capítulo que empurra sozinho, mas não freia quinze capítulos
-do mesmo arco empurrando juntos. Enquanto Elbaf não fechar, o topo da tabela diz
-mais sobre o que estamos lendo agora do que sobre o que o One Piece é — e a única
-hipótese que se sustenta em evidência antiga continua sendo H-04.
+O que mudou não foi o modelo, foi a base: 74 átomos novos de Ohara/Enies Lobby e
+da Ilha dos Homens-Peixe. Enquanto o repositório só tinha lido o arco em
+publicação, o topo da tabela media entusiasmo com o capítulo da semana. Agora
+mede evidência distribuída ao longo da obra.
+
+Duas ressalvas permanecem. H-08 ainda tira 48,3% do apoio de Elbaf e o segundo
+ataque mostrou que seu enunciado não descreve a evidência — o gatilho observado é
+co-presença de pessoas, não chegada a um lugar. E `_orfaos.md` abriu um cluster
+novo: nenhuma hipótese viva trata de **como** o Governo suprime, só do que ele
+esconde.

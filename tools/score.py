@@ -37,7 +37,19 @@ TETO_POR_FONTE = 1.2
 # ...so que o teto por capitulo nao freia quinze capitulos do MESMO arco
 # empurrando juntos, que foi o que o teste de recencia mostrou: a lider tirava
 # 69% do apoio de um arco so. Este segundo teto age sobre o arco inteiro.
-TETO_POR_ARCO = 1.8
+#
+# Mas um teto FIXO por arco pune quem extrai bem: dez capitulos distintos de
+# Ohara somavam +4.56 e eram cortados para +1.80, o mesmo que quatro capitulos
+# dariam. Isso premia base rala. O teto entao escala com a raiz do numero de
+# capitulos distintos que contribuem — que e a forma classica de tamanho
+# efetivo de amostra sob correlacao: mais capitulos carregam mais informacao
+# independente, com retorno decrescente.
+#
+#   1 capitulo  -> 1.2   (o teto por capitulo ja domina, nada muda)
+#   4 capitulos -> 2.4
+#  10 capitulos -> 3.8
+#  16 capitulos -> 4.8
+TETO_ARCO_BASE = 1.2
 
 # faixas aproximadas. Nao precisam ser exatas: o objetivo e agrupar capitulos que
 # foram publicados juntos e que por isso se correlacionam, nao catalogar a obra.
@@ -114,17 +126,21 @@ def pontuar(hip: dict, evidencias: dict[str, dict]) -> dict:
 
     # teto por capitulo, depois teto por arco sobre o que sobrou
     por_arco: dict[str, float] = defaultdict(float)
+    caps_do_arco: dict[str, set[str]] = defaultdict(set)
     for fonte, soma in por_fonte.items():
         limitado = max(-TETO_POR_FONTE, min(TETO_POR_FONTE, soma))
         if abs(limitado) < abs(soma):
             detalhe.append(f"    [teto cap] {fonte}: {soma:+.2f} -> {limitado:+.2f}")
         por_arco[arco(fonte)] += limitado
+        caps_do_arco[arco(fonte)].add(str(fonte))
 
     total = 0.0
     for nome, soma in por_arco.items():
-        limitado = max(-TETO_POR_ARCO, min(TETO_POR_ARCO, soma))
+        teto = TETO_ARCO_BASE * math.sqrt(len(caps_do_arco[nome]))
+        limitado = max(-teto, min(teto, soma))
         if abs(limitado) < abs(soma):
-            detalhe.append(f"    [teto arco] {nome}: {soma:+.2f} -> {limitado:+.2f}")
+            detalhe.append(f"    [teto arco] {nome} ({len(caps_do_arco[nome])} caps, "
+                           f"teto {teto:.2f}): {soma:+.2f} -> {limitado:+.2f}")
         total += limitado
 
     logodds += total
