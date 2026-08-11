@@ -11,6 +11,7 @@ qualquer coisa que o LLM tenha inventado.
 make check                      # portão de fundamentação
 make site                       # gera site/index.html
 python3 tools/score.py H-03     # log-odds de uma hipótese
+make sensibilidade              # o ranking sobrevive a mexer nos pesos?
 python3 tools/buscar.py "roger laugh tale"
 ```
 
@@ -26,6 +27,8 @@ data/hipoteses/        hipóteses H-##.md  +  H-##.redteam.md
 agents/                prompts dos quatro papéis
 tools/validate.py      portão de fundamentação (determinístico)
 tools/score.py         log-odds — insumo, não decisão
+tools/sensibilidade.py o ranking é do dado ou dos pesos?
+tools/coletar.py       baixa wikitext preservando as refs de capítulo
 tools/buscar.py        busca lexical
 tools/render.py        site estático
 ```
@@ -112,20 +115,25 @@ Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estã
 
 `make sensibilidade` roda três testes contra o próprio resultado:
 
-- **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em milhares de
-  sorteios. H-05 lidera em **83,8%**: a ordem não é artefato dos números
-  digitados, mas deixou de ser confortável. Na rodada 2 eram 97,9%; a
-  desambiguação do Harley encurtou a distância para H-08.
-- **remover** — tira um átomo por vez. Nenhum átomo isolado troca o líder, o que
-  contraria em parte o Red Team de H-05, que apontou `EV-1190-03` como ponto
-  único de falha. Os dois estão certos sobre coisas diferentes: o score não
-  desaba sem esse átomo, mas o *enunciado* deixa de ser distinguível de H-04.
-- **recencia** — e aqui está o problema. 41% dos átomos vêm dos capítulos
-  1101-1200, e H-05 tira **62,8%** do seu apoio do arco atual. Cortando tudo
-  acima do cap. 1100, o ranking vira `H-04 > H-02 > H-05`.
+- **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em 2000
+  sorteios. H-05 lidera em **82,1%**: a ordem não é artefato dos números
+  digitados, mas não é confortável. Na rodada 2 eram 97,9%; a desambiguação do
+  Harley e a entrada de H-11 encurtaram a distância.
+- **remover** — tira um átomo por vez. **`EV-1190-03` derruba a liderança
+  sozinho**: sem ele, quem lidera é H-08. É exatamente o ponto único de falha que
+  o Red Team de H-05 apontou na primeira rodada. Vale registrar que na rodada 2
+  esse mesmo teste dizia que nenhum átomo isolado trocava o líder — o átomo
+  também contradiz H-03 e H-07, e enquanto essas contradições compensavam, o
+  efeito ficava escondido. Um teste que passa não é prova de robustez; é prova de
+  que a base ainda não tinha as concorrentes certas.
+- **recencia** — 41% dos átomos vêm dos capítulos 1101-1200. H-05 tira **62,8%**
+  do seu apoio do arco atual, H-08 tira 61,7%, H-03 tira 54,5% — e H-04 apenas
+  12,4%. Cortando tudo acima do cap. 1100, o ranking vira
+  `H-04 > H-02 > H-05 > H-03 > H-11 > H-08`.
 
-Ou seja: a liderança de H-05 é propriedade do arco de Elbaf. O `TETO_POR_FONTE`
-do `score.py` freia um capítulo que empurra sozinho, mas não freia quinze
-capítulos do mesmo arco empurrando juntos. Enquanto Elbaf não fechar, trate a
-ordem como provisória — e trate 62,8% como uma medida de quanto o entusiasmo
-com o capítulo da semana está entrando no resultado.
+Juntando os três: a liderança de H-05 depende de um único capítulo publicado há
+poucas semanas, e o segundo e o terceiro colocados dependem do mesmo arco. O
+`TETO_POR_FONTE` do `score.py` freia um capítulo que empurra sozinho, mas não
+freia quinze capítulos do mesmo arco empurrando juntos. Enquanto Elbaf não
+fechar, o topo da tabela diz mais sobre o que estamos lendo agora do que sobre o
+que o One Piece é.
