@@ -1,3 +1,11 @@
 #!/bin/sh
 # portao de fundamentacao: nenhum commit passa sem validate.py limpo
-exec python3 tools/validate.py --raiz "$(git rev-parse --show-toplevel)"
+raiz=$(git rev-parse --show-toplevel)
+python3 "$raiz/tools/validate.py" --raiz "$raiz" || exit 1
+# e o site nao vai ao ar com JS quebrado (ja aconteceu: string nao-raw comeu
+# uma barra invertida e derrubou o app.js inteiro em producao)
+if command -v node >/dev/null 2>&1; then
+  for f in "$raiz"/web/*.js; do
+    [ -f "$f" ] && { node --check "$f" || { echo "ERRO js: $f"; exit 1; }; }
+  done
+fi

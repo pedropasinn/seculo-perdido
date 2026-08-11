@@ -1,13 +1,22 @@
-/* ---- acordeao das hipoteses ---------------------------------------- */
-document.querySelectorAll('.hip-cab').forEach(b => {
-  b.addEventListener('click', () => {
-    const hip = b.closest('.hip');
-    const aberta = hip.classList.toggle('aberta');
-    b.setAttribute('aria-expanded', String(aberta));   // faltava: leitor de tela
-    if (aberta) { b.classList.add('bateu');
-      b.addEventListener('animationend', () => b.classList.remove('bateu'), {once:true}); }
+/* ---- acordeao ------------------------------------------------------- */
+/* <details>/<summary> nativo: abre sem JS, o browser cuida do estado e do
+   foco. O JS aqui e so o impacto de manga e a abertura por link direto. */
+document.querySelectorAll('.hip details').forEach(d => {
+  d.addEventListener('toggle', () => {
+    if (!d.open) return;
+    const s = d.querySelector('summary');
+    s.classList.add('bateu');
+    s.addEventListener('animationend', () => s.classList.remove('bateu'), {once:true});
   });
 });
+function abrePeloHash(){
+  if (!location.hash) return;
+  const alvo = document.querySelector(location.hash);
+  const det = alvo && alvo.querySelector(':scope > details');
+  if (det) { det.open = true; alvo.scrollIntoView({block:'start'}); }
+}
+addEventListener('hashchange', abrePeloHash);
+document.fonts ? document.fonts.ready.then(abrePeloHash) : abrePeloHash();
 
 /* ---- barras so animam quando entram em vista ------------------------ */
 /* antes disso elas corriam no load: quando o leitor chegava na oitava
@@ -39,8 +48,8 @@ const cx = document.getElementById('busca'), fc = document.getElementById('filtr
       orf = document.getElementById('so-orfaos');
 let visiveis = [], cursor = -1;
 
-function esc(s){ return s.replace(/[.*+?^${}()|[\]\]/g, '\$&'); }
-function semAcento(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+function esc(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function semAcento(s){ return s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
 
 function filtra(){
   if (!lista) return;

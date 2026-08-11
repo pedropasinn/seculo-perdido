@@ -57,22 +57,57 @@ def ler(p: Path) -> tuple[dict, str]:
     return (yaml.safe_load(fm) or {}), corpo.strip()
 
 
-def markdown_leve(txt: str) -> str:
-    """Subconjunto suficiente para os corpos que escrevemos."""
+ITEM = re.compile(r"^\s*(?:[-*]|\d+[.)])\s+")
+
+
+def markdown_leve(txt: str, nivel: int = 4) -> str:
+    """Subconjunto suficiente para os corpos e para os relatorios de red team.
+
+    A versao anterior transformava CADA linha de um bloco de lista em <li>, o que
+    picava bullets longos em varios itens soltos. Agora a linha so abre item novo
+    se comecar com marcador; o resto e continuacao.
+    """
     out = []
     for bloco in re.split(r"\n{2,}", txt.strip()):
-        b = html.escape(bloco.strip())
-        b = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", b, flags=re.S)
-        b = re.sub(r"`(.+?)`", r"<code>\1</code>", b)
-        if b.startswith("## "):
-            out.append(f"<h4>{b[3:]}</h4>")
-        elif b.startswith("- ") or b.startswith("1. "):
-            itens = "".join(f"<li>{re.sub(r'^([-*]|\d+\.)\s*', '', l)}</li>"
-                            for l in b.splitlines() if l.strip())
-            out.append(f"<ul>{itens}</ul>")
-        else:
-            out.append(f"<p>{b.replace(chr(10), ' ')}</p>")
+        b = bloco.strip()
+        if not b:
+            continue
+        cab = re.match(r"^(#{1,4})\s+(.*)", b)
+        if cab and "\n" not in b:
+            n = min(nivel + len(cab.group(1)) - 2, 6)
+            out.append(f"<h{n}>{fmt(cab.group(2))}</h{n}>")
+            continue
+        if ITEM.match(b):
+            itens, atual = [], ""
+            for l in b.splitlines():
+                if ITEM.match(l):
+                    if atual:
+                        itens.append(atual)
+                    atual = ITEM.sub("", l).strip()
+                elif l.strip():
+                    atual += " " + l.strip()
+            if atual:
+                itens.append(atual)
+            out.append("<ul>" + "".join(f"<li>{fmt(i)}</li>" for i in itens) + "</ul>")
+            continue
+        if b.startswith("> "):
+            texto = " ".join(l.lstrip("> ").strip() for l in b.splitlines())
+            out.append(f"<blockquote>{fmt(texto)}</blockquote>")
+            continue
+        if set(b) <= set("-=|") and len(b) > 3:
+            continue
+        out.append(f"<p>{fmt(' '.join(l.strip() for l in b.splitlines()))}</p>")
     return "".join(out)
+
+
+def fmt(s: str) -> str:
+    s = html.escape(s)
+    s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s, flags=re.S)
+    s = re.sub(r"(?<![\w*])\*([^*\n]+?)\*(?![\w*])", r"<em>\1</em>", s)
+    s = re.sub(r"`(.+?)`", r"<code>\1</code>", s)
+    s = re.sub(r"\b(EV-\d{4}-\d{2})\b", r'<a class="ref" href="/evidencias#\1">\1</a>', s)
+    s = re.sub(r"(?<![-\w])(H-\d{2})(?![-\w])", r'<a class="ref" href="/#\1">\1</a>', s)
+    return s
 
 
 def carregar():
@@ -116,8 +151,8 @@ CSS = """
   --papel:#fff6e2; --papel-2:#ffeecb; --tinta:#151016;
   --vermelho:#e03131; --vermelho-esc:#a51d1d;
   --ouro:#ffb703; --ouro-esc:#e08e00;
-  --mar:#1a7fb5; --mar-esc:#0d5580;
-  --verde:#2f9e6e; --roxo:#7048a8;
+  --mar:#166d9c; --mar-esc:#0d5580;
+  --verde:#217a53; --roxo:#7048a8;
   --sombra:6px 6px 0 var(--tinta);
   --sombra-sm:3px 3px 0 var(--tinta);
   --display:"Bangers",Impact,sans-serif;
@@ -126,7 +161,7 @@ CSS = """
   --mono:"Space Mono",ui-monospace,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
 body{
   background:var(--papel); color:var(--tinta);
   font:400 17px/1.62 var(--corpo); -webkit-font-smoothing:antialiased;
@@ -205,14 +240,16 @@ section{padding:3.4rem 0}
 .hip{background:var(--papel);border:3px solid var(--tinta);border-radius:16px;
   box-shadow:var(--sombra);margin-bottom:1.5rem;overflow:hidden;transition:transform .16s}
 .hip:hover{transform:translate(-2px,-3px)}
-.hip:nth-child(even){transform:rotate(.35deg)}
-.hip:nth-child(even):hover{transform:rotate(.35deg) translate(-2px,-3px)}
+.hip:nth-of-type(even){transform:rotate(.35deg)}
+.hip:nth-of-type(even):hover{transform:rotate(.35deg) translate(-2px,-3px)}
+.hip details{border:0}
+.hip summary::-webkit-details-marker{display:none}
+.hip summary::marker{content:""}
 .hip-cab{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;
-  cursor:pointer;background:none;border:0;color:inherit;text-align:left;width:100%;
-  font:inherit;padding:1.2rem 1.3rem}
+  cursor:pointer;list-style:none;padding:1.2rem 1.3rem}
 .hip-id{font:700 .78rem/1 var(--mono);background:var(--mar);color:#fff;padding:.35rem .55rem;
   border:2px solid var(--tinta);border-radius:8px}
-.hip-enun{font:600 1.14rem/1.4 var(--titulo);text-wrap:pretty}
+.hip-enun{font:600 1.14rem/1.4 var(--titulo);text-wrap:pretty;margin:0}
 .hip-pct{font:400 2.1rem/1 var(--display);color:var(--vermelho);letter-spacing:.02em;white-space:nowrap}
 .sonda{grid-column:1/4;height:16px;background:var(--papel-2);border:2.5px solid var(--tinta);
   border-radius:999px;overflow:hidden;margin-top:.2rem}
@@ -220,10 +257,10 @@ section{padding:3.4rem 0}
   background:repeating-linear-gradient(45deg,var(--ouro) 0 9px,var(--ouro-esc) 9px 18px);
   animation:sonda 1s cubic-bezier(.2,1.2,.3,1) both}
 @keyframes sonda{from{width:0!important}}
-.hip:nth-child(1) .sonda i{background:repeating-linear-gradient(45deg,var(--ouro) 0 9px,var(--ouro-esc) 9px 18px)}
-.hip:nth-child(2) .sonda i{background:repeating-linear-gradient(45deg,var(--mar) 0 9px,var(--mar-esc) 9px 18px)}
-.hip:nth-child(3) .sonda i{background:repeating-linear-gradient(45deg,var(--verde) 0 9px,#217a53 9px 18px)}
-.hip:nth-child(n+4) .sonda i{background:repeating-linear-gradient(45deg,var(--roxo) 0 9px,#523381 9px 18px)}
+.hip[data-rank="0"] .sonda i{background:repeating-linear-gradient(45deg,var(--ouro) 0 9px,var(--ouro-esc) 9px 18px)}
+.hip[data-rank="1"] .sonda i{background:repeating-linear-gradient(45deg,var(--mar) 0 9px,var(--mar-esc) 9px 18px)}
+.hip[data-rank="2"] .sonda i{background:repeating-linear-gradient(45deg,var(--verde) 0 9px,#217a53 9px 18px)}
+.hip .sonda i{background:repeating-linear-gradient(45deg,var(--roxo) 0 9px,#523381 9px 18px)}
 .hip-meta{grid-column:1/4;display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.2rem}
 .selo{font:700 .7rem/1 var(--titulo);letter-spacing:.04em;text-transform:uppercase;
   background:var(--papel-2);border:2px solid var(--tinta);padding:.32rem .55rem;border-radius:999px}
@@ -232,8 +269,7 @@ section{padding:3.4rem 0}
 .hip[data-status="refutada"] .hip-pct{color:var(--tinta);font-size:1.6rem;opacity:.5}
 .hip[data-status="refutada"] .hip-enun{text-decoration:line-through;text-decoration-thickness:2px;
   text-decoration-color:var(--vermelho)}
-.corpo{display:none;padding:0 1.3rem 1.4rem}
-.hip.aberta .corpo{display:block;animation:desdobra .26s ease both}
+.corpo{padding:0 1.3rem 1.4rem;animation:desdobra .26s ease both}
 @keyframes desdobra{from{opacity:0;transform:translateY(-8px)}}
 .corpo h4{font:400 1.25rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;
   color:var(--vermelho);margin:1.6rem 0 .6rem}
@@ -261,8 +297,15 @@ details.rt summary{cursor:pointer;padding:.7rem .9rem;font:400 1.15rem/1 var(--d
   letter-spacing:.05em;text-transform:uppercase;color:var(--ouro);list-style:none}
 details.rt summary::-webkit-details-marker{display:none}
 details.rt summary::before{content:"⚔ "}
-details.rt pre{padding:0 .9rem 1rem;white-space:pre-wrap;font:.8rem/1.6 var(--mono);
-  color:#e7ddc9;max-height:32rem;overflow:auto}
+.rt-corpo{padding:0 1rem 1rem;color:#e7ddc9;max-height:34rem;overflow:auto;font-size:.9rem}
+.rt-corpo h5,.rt-corpo h6{font:400 1.05rem/1.2 var(--display);letter-spacing:.04em;
+  color:var(--ouro);margin:1rem 0 .4rem;text-transform:uppercase}
+.rt-corpo p{margin:.5rem 0;max-width:66ch}
+.rt-corpo ul{margin:.4rem 0 .4rem 1.1rem}
+.rt-corpo li{margin:.25rem 0}
+.rt-corpo code{background:#2a2230;color:var(--ouro)}
+.rt-corpo strong{color:#fff}
+.rt-corpo .ref{color:var(--ouro)}
 
 /* ---------- evidências ---------- */
 .busca{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.6rem}
@@ -316,6 +359,15 @@ footer{background:var(--tinta);color:#e7ddc9;border-top:4px solid var(--tinta);
 footer p{max-width:64ch;margin:.7rem 0}
 footer a{color:var(--ouro)}
 footer code{background:var(--papel);color:var(--tinta)}
+@media(max-width:560px){
+  header.topo{position:static}
+  nav.topo-nav{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:.2rem;
+    scrollbar-width:none}
+  nav.topo-nav::-webkit-scrollbar{display:none}
+  nav.topo-nav a{padding:.45rem .6rem;white-space:nowrap}
+  .topo .env{gap:.7rem;padding:.6rem 1rem}
+  .marca{font-size:1.5rem}
+}
 @media(max-width:640px){
   .hip-cab{grid-template-columns:1fr auto;padding:1rem}
   .hip-id{display:none}
@@ -343,6 +395,13 @@ footer code{background:var(--papel);color:var(--tinta)}
 .ev-cita .cita i{font-style:normal;opacity:.6;margin-left:.25rem;font-size:.9em}
 .ev-cita .cita:hover{background:var(--ouro)}
 .ev-cita.orfao{opacity:.55;font-style:italic;text-transform:none;letter-spacing:0}
+.perma{margin-left:auto;text-decoration:none;font:700 .9rem var(--mono);opacity:.35;
+  padding:.1rem .35rem;border-radius:5px}
+.perma:hover{opacity:1;background:var(--ouro)}
+.hip-meta{align-items:center}
+.ref{color:var(--mar);text-decoration:none;border-bottom:1.5px dotted currentColor;
+  font:700 .92em var(--mono)}
+.ref:hover{background:var(--ouro);color:var(--tinta)}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
@@ -418,17 +477,26 @@ mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 """
 
-JS = """
-/* ---- acordeao das hipoteses ---------------------------------------- */
-document.querySelectorAll('.hip-cab').forEach(b => {
-  b.addEventListener('click', () => {
-    const hip = b.closest('.hip');
-    const aberta = hip.classList.toggle('aberta');
-    b.setAttribute('aria-expanded', String(aberta));   // faltava: leitor de tela
-    if (aberta) { b.classList.add('bateu');
-      b.addEventListener('animationend', () => b.classList.remove('bateu'), {once:true}); }
+JS = r"""
+/* ---- acordeao ------------------------------------------------------- */
+/* <details>/<summary> nativo: abre sem JS, o browser cuida do estado e do
+   foco. O JS aqui e so o impacto de manga e a abertura por link direto. */
+document.querySelectorAll('.hip details').forEach(d => {
+  d.addEventListener('toggle', () => {
+    if (!d.open) return;
+    const s = d.querySelector('summary');
+    s.classList.add('bateu');
+    s.addEventListener('animationend', () => s.classList.remove('bateu'), {once:true});
   });
 });
+function abrePeloHash(){
+  if (!location.hash) return;
+  const alvo = document.querySelector(location.hash);
+  const det = alvo && alvo.querySelector(':scope > details');
+  if (det) { det.open = true; alvo.scrollIntoView({block:'start'}); }
+}
+addEventListener('hashchange', abrePeloHash);
+document.fonts ? document.fonts.ready.then(abrePeloHash) : abrePeloHash();
 
 /* ---- barras so animam quando entram em vista ------------------------ */
 /* antes disso elas corriam no load: quando o leitor chegava na oitava
@@ -613,9 +681,11 @@ def pagina_hipoteses(evid, hips, meta) -> str:
             selos.append('<span class="selo ferida">ferida pelo red team</span>')
         if st == "refutada":
             selos.append('<span class="selo ferida">refutada</span>')
-        selos.append(f'<span class="selo">prior {h.get("prior", 0):.2f}</span>')
+        selos.append(f'<span class="selo" title="probabilidade atribuída antes de olhar '
+                     f'as evidências">a priori {h.get("prior", 0):.2f}</span>'.replace(
+                         f'{h.get("prior", 0):.2f}', f'{h.get("prior", 0):.2f}'.replace(".", ",")))
         pct = (f'{h["fatia"]*100:.0f}<small style="font-size:.55em">%</small>'
-               if h["fatia"] else '†')
+               if h["fatia"] else ('†' if st == "refutada" else '—'))
         apo = "".join(
             f'<div class="elo"><a class="ev" href="/evidencias#{e["ev"]}">{e["ev"]}</a>'
             f'<div><div class="como">{html.escape(e.get("como", ""))}</div>'
@@ -633,22 +703,30 @@ def pagina_hipoteses(evid, hips, meta) -> str:
             f'<span>{html.escape(p.get("texto", ""))}</span></div>'
             for p in h.get("prediz") or [])
         rt = (f'<details class="rt"><summary>relatório do red team</summary>'
-              f'<pre>{html.escape(h["redteam"])}</pre></details>') if h.get("redteam") else ""
-        return f"""<article class="hip" data-status="{st}">
-<button class="hip-cab" aria-expanded="false">
-  <span class="hip-id">{h["id"]}</span>
-  <span class="hip-enun">{html.escape(h.get("enunciado", ""))}</span>
-  <span class="hip-pct">{pct}</span>
-  <span class="sonda" style="--pct:{max(h['fatia']*100, 1):.1f}%"><i></i></span>
-  <span class="hip-meta">{"".join(selos)}</span>
-</button>
-<div class="corpo">
-  {markdown_leve(h.get("corpo", ""))}
-  <h4>Evidência a favor · {len(h.get("apoia") or [])}</h4>{apo or "<p>—</p>"}
-  <h4>Evidência contra · {len(h.get("contradiz") or [])}</h4>{con or "<p>—</p>"}
-  <h4>Previsões falseáveis</h4>{prev or "<p>—</p>"}
-  {rt}
-</div></article>"""
+              f'<div class="rt-corpo">{markdown_leve(h["redteam"], 5)}</div></details>'
+              ) if h.get("redteam") else ""
+        legenda = (f'{h["fatia"]*100:.0f}% da probabilidade repartida'
+                   if h["fatia"] else "fora do escopo do tesouro")
+        estado = ", ferida pelo red team" if (ferida and st == "viva") else ""
+        return f"""<article class="hip" id="{h['id']}" data-rank="{i}" data-status="{st}">
+<details>
+  <summary class="hip-cab">
+    <span class="hip-id" aria-hidden="true">{h["id"]}</span>
+    <h3 class="hip-enun">{html.escape(h.get("enunciado", ""))}
+      <span class="sr-only"> — {h["id"]}, {legenda}, hipótese {st}{estado}</span></h3>
+    <span class="hip-pct" aria-hidden="true">{pct}</span>
+    <span class="sonda" style="--pct:{max(h['fatia']*100, 1):.1f}%" aria-hidden="true"><i></i></span>
+    <span class="hip-meta" aria-hidden="true">{"".join(selos)}
+      <a class="perma" href="#{h['id']}" title="link para esta hipótese">§</a></span>
+  </summary>
+  <div class="corpo">
+    {markdown_leve(h.get("corpo", ""))}
+    <h4>Evidências a favor · {len(h.get("apoia") or [])}</h4>{apo or "<p>—</p>"}
+    <h4>Evidências contra · {len(h.get("contradiz") or [])}</h4>{con or "<p>—</p>"}
+    <h4>Previsões falseáveis</h4>{prev or "<p>—</p>"}
+    {rt}
+  </div>
+</details></article>"""
 
     return (cabeca("Século Perdido — o que é o One Piece, por evidência",
                    "Hipóteses ranqueadas sobre o mistério central de One Piece, cada uma "
@@ -669,17 +747,17 @@ def pagina_hipoteses(evid, hips, meta) -> str:
 </div>
 
 <section><div class="env">
-  <div class="cab"><h2>As alternativas</h2><span class="n">escopo: o que é o tesouro</span></div>
+  <div class="cab"><h2>As alternativas</h2><span class="n">{len(vivas)} hipóteses · o que é o tesouro</span></div>
   <p class="intro">A porcentagem é a repartição da probabilidade entre hipóteses mutuamente
   exclusivas — e ela assume que a resposta certa está entre as listadas, que é justamente o
-  que não se pode garantir. Clique para abrir o dossiê de cada uma.</p>
+  que não se pode garantir. Abra o dossiê de cada uma para ver os elos, as previsões e o ataque que sofreu.</p>
   {"".join(bloco(h, i) for i, h in enumerate(vivas))}
 </div></section>
 
 <section><div class="env">
-  <div class="cab"><h2>Fora do tesouro</h2><span class="n">hipóteses auxiliares</span></div>
-  <p class="intro">Estas não disputam a pergunta central: podem ser verdadeiras junto com
-  qualquer uma das de cima.</p>
+  <div class="cab"><h2>Fora do tesouro</h2><span class="n">{len(outras)} auxiliares</span></div>
+  <p class="intro">Estas não disputam a pergunta central: podem ser verdadeiras ao mesmo
+  tempo que qualquer uma das anteriores.</p>
   {"".join(bloco(h) for h in outras)}
 </div></section>
 
