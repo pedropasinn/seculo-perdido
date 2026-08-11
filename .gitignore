@@ -5,3 +5,6 @@ __pycache__/
 # pacote de origem, redundante com a raiz
 franky/
 .cache/
+
+# saida do gerador de site (regenerada por tools/site.py)
+# mantida no git para o deploy estatico do Vercel

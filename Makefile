@@ -1,4 +1,4 @@
-.PHONY: check score buscar site coletar novo-atomo nova-hipotese
+.PHONY: check score buscar site web coletar novo-atomo nova-hipotese
 
 check:
 	@python3 tools/validate.py --raiz .
@@ -11,6 +11,9 @@ buscar:
 
 site:
 	@python3 tools/render.py
+
+web:
+	@python3 tools/site.py
 
 coletar:
 	@python3 tools/coletar.py $(P)

@@ -1,9 +1,23 @@
-# Wiki de Evidências — One Piece
+# Século Vazio — o que é o One Piece, por evidência
 
-Sistema de raciocínio baseado em evidências sobre o mistério central de One Piece.
+**Site: https://seculo-vazio.vercel.app**
+
+Sistema de raciocínio baseado em evidências sobre o mistério central de *One Piece*.
 Não é um blog de teorias: toda afirmação aponta para um átomo verificável, toda
 hipótese arrisca previsões falseáveis, e um validador determinístico bloqueia
 qualquer coisa que o LLM tenha inventado.
+
+## Licenças
+
+- **Código** (`tools/`, `Makefile`): MIT, ver `LICENSE`.
+- **Dados** (`data/`): CC BY-SA 3.0, ver `data/LICENSE`. Os átomos são paráfrases
+  nossas de material da [One Piece Wiki](https://onepiece.fandom.com), que é
+  CC BY-SA — a cláusula share-alike obriga a manter a licença, e a atribuição
+  fica no campo `fonte_url` de cada átomo.
+
+*One Piece* é obra de Eiichiro Oda, publicada pela Shueisha. Projeto de fã, sem
+vínculo com os detentores dos direitos. Nenhum scan ou scanlation é usado.
+Spoilers até o capítulo 1190.
 
 ## Começar
 
@@ -12,6 +26,7 @@ make check                      # portão de fundamentação
 make site                       # gera site/index.html
 python3 tools/score.py H-03     # log-odds de uma hipótese
 make sensibilidade              # o ranking sobrevive a mexer nos pesos?
+python3 tools/site.py           # gera o site publico em web/
 python3 tools/buscar.py "roger laugh tale"
 ```
 
