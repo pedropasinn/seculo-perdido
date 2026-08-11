@@ -166,15 +166,17 @@ body{
   background:var(--papel); color:var(--tinta);
   font:400 17px/1.62 var(--corpo); -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(var(--tinta) 0.9px, transparent 0.9px),
+    radial-gradient(rgba(21,16,22,.085) 1px, transparent 1.1px),
     linear-gradient(180deg,var(--papel-2),var(--papel) 22rem);
-  background-size:14px 14px, 100% 100%;
+  background-size:22px 22px, 100% 100%;
   background-attachment:fixed;
 }
 body::before{ /* halftone de canto, como sombreado de mangá */
-  content:"";position:fixed;right:-6rem;top:-6rem;width:28rem;height:28rem;z-index:0;
-  pointer-events:none;opacity:.14;border-radius:50%;
-  background:radial-gradient(var(--vermelho) 1.6px,transparent 1.7px);background-size:11px 11px;
+  content:"";position:fixed;right:-8rem;top:-8rem;width:26rem;height:26rem;z-index:0;
+  pointer-events:none;opacity:.07;border-radius:50%;
+  background:radial-gradient(var(--vermelho) 1.4px,transparent 1.6px);background-size:14px 14px;
+  -webkit-mask-image:radial-gradient(circle,#000 40%,transparent 72%);
+  mask-image:radial-gradient(circle,#000 40%,transparent 72%);
 }
 .env{max-width:85rem;margin:0 auto;padding:0 1.4rem;position:relative;z-index:1}
 a{color:inherit}
@@ -210,7 +212,9 @@ nav.topo-nav a[aria-current]{background:var(--ouro);transform:rotate(-2deg)}
   display:inline-block;animation:balanca 3.6s ease-in-out infinite}
 @keyframes entra{from{opacity:0;transform:scale(.86) rotate(-3deg)}}
 @keyframes balanca{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
-.capa .sub{margin:1.8rem auto 0;max-width:54ch;font-size:1.12rem;font-weight:500}
+.capa .sub{margin:1.8rem auto 0;max-width:56ch;font-size:1.12rem;font-weight:500;
+  background:var(--papel);padding:1rem 1.3rem;border-radius:14px;
+  border:2.5px solid var(--tinta);box-shadow:var(--sombra-sm)}
 .painel{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.6rem}
 .painel div{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;
   box-shadow:var(--sombra);padding:.9rem 1.3rem;min-width:8.5rem;
@@ -228,13 +232,15 @@ nav.topo-nav a[aria-current]{background:var(--ouro);transform:rotate(-2deg)}
 /* ---------- seções ---------- */
 section{padding:3.4rem 0}
 .cab{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin-bottom:.6rem}
-.cab h2{font:400 2.5rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;
-  color:var(--tinta)}
-.cab h2::after{content:"";display:block;height:5px;background:var(--ouro);
+.cab h1,.cab h2{font:400 2.5rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;
+  color:var(--tinta);text-shadow:0 0 6px var(--papel),0 0 12px var(--papel)}
+.cab h1::after,.cab h2::after{content:"";display:block;height:5px;background:var(--ouro);
   border:2.5px solid var(--tinta);border-radius:3px;margin-top:.2rem}
 .cab .n{font:700 .78rem/1 var(--mono);background:var(--tinta);color:var(--papel);
   padding:.34rem .6rem;border-radius:999px}
-.intro{max-width:62ch;margin-bottom:2rem;font-weight:500}
+.intro{max-width:70ch;margin-bottom:2rem;font-weight:500;background:var(--papel);
+  padding:.85rem 1.1rem;border-radius:12px;border-left:5px solid var(--ouro);
+  box-shadow:2px 2px 0 rgba(21,16,22,.09)}
 
 /* ---------- hipóteses ---------- */
 .hip{background:var(--papel);border:3px solid var(--tinta);border-radius:16px;
@@ -451,6 +457,21 @@ mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px
   border:2px solid var(--tinta);border-radius:999px;padding:.2rem .5rem;
   font:700 .64rem/1 var(--titulo);text-transform:uppercase}
 .g-leg i{width:.6rem;height:.6rem;border-radius:50%;border:1.5px solid var(--tinta)}
+.g-ajustes{position:relative}
+.g-ajustes[open]>summary{background:var(--tinta);color:var(--ouro)}
+.g-ajustes summary{list-style:none}
+.g-ajustes summary::-webkit-details-marker{display:none}
+.g-ctrl{position:absolute;top:2.4rem;left:0;z-index:5;width:17rem;background:var(--papel);
+  border:3px solid var(--tinta);border-radius:14px;box-shadow:var(--sombra);padding:.8rem;
+  display:flex;flex-direction:column;gap:.55rem;max-height:60vh;overflow-y:auto}
+.g-ctrl label{display:grid;font:700 .66rem/1.3 var(--titulo);text-transform:uppercase;
+  letter-spacing:.03em;gap:.2rem}
+.g-ctrl output{font:700 .72rem var(--mono);color:var(--mar);justify-self:end;margin-top:-1rem}
+.g-ctrl input[type=range]{width:100%;accent-color:var(--vermelho);margin:0}
+.g-ctrl select{border:2px solid var(--tinta);border-radius:8px;padding:.25rem;
+  font:600 .74rem var(--corpo);background:var(--papel)}
+.g-ctrl .g-check{display:flex;flex-direction:row;align-items:center;gap:.4rem;text-transform:none}
+.g-ctrl .g-bt{margin-top:.3rem}
 #painel{background:var(--papel);border:3px solid var(--tinta);border-radius:16px;
   box-shadow:var(--sombra);padding:1rem;overflow-y:auto}
 #painel h4{font:400 1.6rem/1 var(--display);letter-spacing:.03em;margin:.5rem 0 .7rem}
@@ -920,6 +941,31 @@ def pagina_grafo(meta) -> str:
         {chips}
         <button class="g-bt" id="g-tudo">abrir tudo</button>
         <button class="g-bt" id="g-reset">recomeçar</button>
+        <button class="g-bt" id="g-pausa" aria-pressed="false">pausar</button>
+        <details class="g-ajustes"><summary class="g-bt">ajustes</summary>
+          <div class="g-ctrl">
+            <label>repulsão <output data-eco="c-repulsao"></output>
+              <input id="c-repulsao" type="range" min="400" max="9000" step="100"></label>
+            <label>rigidez das arestas <output data-eco="c-mola"></output>
+              <input id="c-mola" type="range" min="0.0008" max="0.03" step="0.0008"></label>
+            <label>distância de repouso <output data-eco="c-dist"></output>
+              <input id="c-dist" type="range" min="50" max="360" step="5"></label>
+            <label>gravidade ao centro <output data-eco="c-grav"></output>
+              <input id="c-grav" type="range" min="0" max="0.008" step="0.0002"></label>
+            <label>atrito <output data-eco="c-atrito"></output>
+              <input id="c-atrito" type="range" min="0.5" max="0.98" step="0.01"></label>
+            <label>tamanho dos nós <output data-eco="c-tam"></output>
+              <input id="c-tam" type="range" min="0.5" max="2.4" step="0.1"></label>
+            <label>rótulo das arestas
+              <select id="c-rot-a"><option value="auto">automático</option>
+                <option value="sempre">sempre</option><option value="nunca">nunca</option></select></label>
+            <label>rótulo dos nós
+              <select id="c-rot-n"><option value="auto">automático</option>
+                <option value="sempre">sempre</option><option value="nunca">nunca</option></select></label>
+            <label class="g-check"><input id="c-seta" type="checkbox"> setas de direção</label>
+            <button class="g-bt" id="g-padrao" type="button">voltar ao padrão</button>
+          </div>
+        </details>
       </div>
       <canvas id="cv"></canvas>
       <div class="g-legenda">{leg}</div>

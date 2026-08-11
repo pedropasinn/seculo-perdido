@@ -24,7 +24,25 @@ let vis = new Set();            // ids visiveis
 let sel = null, hover = null;
 let cam = {x:0, y:0, z:1};
 let arrastando = null, panDe = null;
+let pausado = false;
 const tiposOn = new Set(['APOIA','CONTRADIZ','CONCORRE_COM']);
+
+/* parametros da simulacao e do desenho, todos ajustaveis no painel */
+const cfg = {
+  repulsao: 2600,      // quanto os nos se empurram
+  mola: 0.0055,        // rigidez das arestas
+  distancia: 128,      // comprimento de repouso da aresta
+  gravidade: 0.0016,   // atracao ao centro
+  atrito: 0.86,        // amortecimento (1 = sem atrito)
+  tamanho: 1,          // multiplicador do raio dos nos
+  rotArestas: 'auto',  // sempre | auto | nunca
+  rotNos: 'auto',
+  curvar: false,
+  seta: true,
+};
+const LS = 'grafo-cfg';
+try { Object.assign(cfg, JSON.parse(localStorage.getItem(LS) || '{}')); } catch(e){}
+const salvar = () => { try { localStorage.setItem(LS, JSON.stringify(cfg)); } catch(e){} };
 
 function corDe(n){
   if (n.label === 'Hipotese') return n.props.status === 'refutada' ? COR.HipoteseMorta : COR.Hipotese;
@@ -36,9 +54,9 @@ function corDe(n){
   }
   return COR[n.label] || '#888';
 }
-const raio = n => n.label === 'Hipotese' ? 13 + (n.props.fatia||0)*26
+const raio = n => cfg.tamanho * (n.label === 'Hipotese' ? 13 + (n.props.fatia||0)*26
                 : n.label === 'Evidencia' ? 7
-                : 8 + Math.min(n.grau,26)*0.28;
+                : 8 + Math.min(n.grau,26)*0.28);
 
 function relsVis(){
   return RELS.filter(r => tiposOn.has(r.tipo) && vis.has(r.de) && vis.has(r.para));
@@ -77,7 +95,7 @@ function passo(){
       let dx = b.x-a.x, dy = b.y-a.y, d2 = dx*dx+dy*dy;
       if (d2 < 1) { dx = Math.random()-.5; dy = Math.random()-.5; d2 = 1; }
       if (d2 > 360000) continue;
-      const f = 2600/d2, d = Math.sqrt(d2);
+      const f = cfg.repulsao/d2, d = Math.sqrt(d2);
       const fx = dx/d*f, fy = dy/d*f;
       a.vx -= fx; a.vy -= fy; b.vx += fx; b.vy += fy;
     }
@@ -85,15 +103,17 @@ function passo(){
   rs.forEach(r => {
     const a = NOS.get(r.de), b = NOS.get(r.para);
     const dx = b.x-a.x, dy = b.y-a.y, d = Math.hypot(dx,dy)||1;
-    const alvo = r.tipo === 'CONCORRE_COM' ? 210 : r.tipo === 'TEM_TEMA' || r.tipo === 'MENCIONA' ? 120 : 128;
-    const f = (d-alvo)*0.0055;
+    const alvo = r.tipo === 'CONCORRE_COM' ? cfg.distancia*1.64
+               : (r.tipo === 'TEM_TEMA' || r.tipo === 'MENCIONA') ? cfg.distancia*0.94
+               : cfg.distancia;
+    const f = (d-alvo)*cfg.mola;
     const fx = dx/d*f, fy = dy/d*f;
     a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
   });
   ns.forEach(n => {
-    n.vx -= n.x*0.0016; n.vy -= n.y*0.0016;          // gravidade ao centro
+    n.vx -= n.x*cfg.gravidade; n.vy -= n.y*cfg.gravidade;
     if (n === arrastando) { n.vx = n.vy = 0; return; }
-    n.vx *= 0.86; n.vy *= 0.86;
+    n.vx *= cfg.atrito; n.vy *= cfg.atrito;
     n.x += Math.max(-9, Math.min(9, n.vx));
     n.y += Math.max(-9, Math.min(9, n.vy));
   });
@@ -123,7 +143,7 @@ function desenha(){
     ctx.beginPath(); ctx.moveTo(pa.x,pa.y); ctx.lineTo(pb.x,pb.y); ctx.stroke();
     ctx.setLineDash([]);
     // seta
-    if (r.tipo !== 'CONCORRE_COM'){
+    if (cfg.seta && r.tipo !== 'CONCORRE_COM'){
       const ang = Math.atan2(pb.y-pa.y, pb.x-pa.x), rb = raio(b)*cam.z+3;
       const px = pb.x-Math.cos(ang)*rb, py = pb.y-Math.sin(ang)*rb, s = 7*cam.z;
       ctx.fillStyle = CORREL[r.tipo]; ctx.beginPath();
@@ -133,7 +153,10 @@ function desenha(){
       ctx.closePath(); ctx.fill();
     }
     // rotulo da relacao: so com zoom ou foco, senao vira sopa
-    if ((cam.z > 0.85 || (sel && foco)) && ctx.globalAlpha > .5){
+    const mostraRot = cfg.rotArestas === 'sempre' ? true
+                    : cfg.rotArestas === 'nunca' ? false
+                    : (cam.z > 0.85 || (sel && foco));
+    if (mostraRot && ctx.globalAlpha > .5){
       const mx = (pa.x+pb.x)/2, my = (pa.y+pb.y)/2;
       const txt = r.props.peso ? `${r.tipo} ${r.props.peso}` : r.tipo;
       ctx.font = `700 ${9.5*Math.min(cam.z,1.5)}px "Space Mono",monospace`;
@@ -159,7 +182,10 @@ function desenha(){
     ctx.strokeStyle = TINTA; ctx.stroke();
     if (n.props.orfao){ ctx.setLineDash([3*cam.z,3*cam.z]); ctx.lineWidth=1.6*cam.z;
       ctx.beginPath(); ctx.arc(p.x,p.y,r*esc+4*cam.z,0,6.284); ctx.stroke(); ctx.setLineDash([]); }
-    if (cam.z > 0.55 || n.label === 'Hipotese'){
+    const mostraNome = cfg.rotNos === 'sempre' ? true
+                     : cfg.rotNos === 'nunca' ? false
+                     : (cam.z > 0.55 || n.label === 'Hipotese');
+    if (mostraNome){
       const t = n.nome;
       ctx.font = `700 ${Math.min(12*cam.z,15)}px "Space Mono",monospace`;
       ctx.textAlign = 'center'; ctx.textBaseline = 'top';
@@ -172,7 +198,7 @@ function desenha(){
   ctx.globalAlpha = 1;
 }
 
-function laco(){ passo(); desenha(); requestAnimationFrame(laco); }
+function laco(){ if (!pausado) passo(); desenha(); requestAnimationFrame(laco); }
 
 /* ---------------- interacao ---------------- */
 function noEm(mx,my){
@@ -251,6 +277,41 @@ document.querySelectorAll('[data-tipo]').forEach(el => {
     atualizaContador();
   });
 });
+/* ---------------- painel de parametros ---------------- */
+function liga(id, chave, transf = Number){
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (el.type === 'checkbox') el.checked = !!cfg[chave]; else el.value = cfg[chave];
+  const eco = document.querySelector(`[data-eco="${id}"]`);
+  const pinta = () => { if (eco) eco.textContent = el.type === 'checkbox' ? '' : el.value; };
+  pinta();
+  el.addEventListener('input', () => {
+    cfg[chave] = el.type === 'checkbox' ? el.checked : transf(el.value);
+    pinta(); salvar();
+  });
+}
+liga('c-repulsao','repulsao'); liga('c-mola','mola'); liga('c-dist','distancia');
+liga('c-grav','gravidade'); liga('c-atrito','atrito'); liga('c-tam','tamanho');
+liga('c-seta','seta');
+['rotArestas','rotNos'].forEach(chave => {
+  const el = document.getElementById(chave === 'rotArestas' ? 'c-rot-a' : 'c-rot-n');
+  if (!el) return;
+  el.value = cfg[chave];
+  el.addEventListener('change', () => { cfg[chave] = el.value; salvar(); });
+});
+const btPausa = document.getElementById('g-pausa');
+if (btPausa) btPausa.onclick = () => {
+  pausado = !pausado;
+  btPausa.textContent = pausado ? 'retomar' : 'pausar';
+  btPausa.setAttribute('aria-pressed', String(pausado));
+};
+const btPadrao = document.getElementById('g-padrao');
+if (btPadrao) btPadrao.onclick = () => {
+  Object.assign(cfg, {repulsao:2600, mola:0.0055, distancia:128, gravidade:0.0016,
+                      atrito:0.86, tamanho:1, rotArestas:'auto', rotNos:'auto', seta:true});
+  salvar(); location.reload();
+};
+
 document.getElementById('g-reset').onclick = () => {
   vis = new Set(META.sementes); sel = null; cam = {x:0,y:0,z:1};
   NOS.forEach(n => { n.x = (Math.random()-.5)*300; n.y = (Math.random()-.5)*300; n.vx=n.vy=0; });
