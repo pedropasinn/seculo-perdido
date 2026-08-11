@@ -13,6 +13,7 @@ site:
 	@python3 tools/render.py
 
 web:
+	@python3 tools/grafo.py
 	@python3 tools/site.py
 
 coletar:

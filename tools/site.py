@@ -310,6 +310,58 @@ footer code{background:var(--papel);color:var(--tinta)}
   .ev-item{grid-template-columns:1fr}
   .capa h1{-webkit-text-stroke:2px var(--tinta)}
 }
+
+/* ---------- grafo ---------- */
+.g-wrap{display:grid;grid-template-columns:1fr 21rem;gap:1rem;height:min(74vh,780px)}
+.g-tela{position:relative;background:var(--papel);border:3px solid var(--tinta);
+  border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+#cv{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+.g-barra{position:absolute;left:.7rem;top:.7rem;right:.7rem;display:flex;gap:.45rem;
+  flex-wrap:wrap;align-items:center;pointer-events:none;z-index:2}
+.g-barra>*{pointer-events:auto}
+.g-barra input[type=search]{background:var(--papel);border:2.5px solid var(--tinta);
+  border-radius:999px;padding:.4rem .8rem;font:600 .82rem var(--corpo);width:12rem;
+  box-shadow:var(--sombra-sm)}
+.g-chip{display:inline-flex;align-items:center;gap:.32rem;background:var(--papel);
+  border:2.5px solid var(--tinta);border-radius:999px;padding:.32rem .6rem;cursor:pointer;
+  font:700 .68rem/1 var(--titulo);text-transform:uppercase;letter-spacing:.03em;
+  box-shadow:var(--sombra-sm);user-select:none}
+.g-chip input{accent-color:var(--tinta);margin:0}
+.g-chip i{width:.62rem;height:.62rem;border-radius:50%;border:1.5px solid var(--tinta);display:inline-block}
+.g-bt{background:var(--ouro);border:2.5px solid var(--tinta);border-radius:999px;
+  padding:.34rem .7rem;font:700 .68rem/1 var(--titulo);text-transform:uppercase;
+  letter-spacing:.03em;cursor:pointer;box-shadow:var(--sombra-sm)}
+.g-bt:hover{background:var(--papel)}
+.g-conta{position:absolute;right:.8rem;bottom:.7rem;font:700 .7rem var(--mono);
+  background:var(--tinta);color:var(--papel);padding:.3rem .6rem;border-radius:999px;z-index:2}
+.g-legenda{position:absolute;left:.8rem;bottom:.7rem;display:flex;gap:.5rem;flex-wrap:wrap;z-index:2}
+.g-leg{display:flex;align-items:center;gap:.3rem;background:rgba(255,246,226,.92);
+  border:2px solid var(--tinta);border-radius:999px;padding:.2rem .5rem;
+  font:700 .64rem/1 var(--titulo);text-transform:uppercase}
+.g-leg i{width:.6rem;height:.6rem;border-radius:50%;border:1.5px solid var(--tinta)}
+#painel{background:var(--papel);border:3px solid var(--tinta);border-radius:16px;
+  box-shadow:var(--sombra);padding:1rem;overflow-y:auto}
+#painel h4{font:400 1.6rem/1 var(--display);letter-spacing:.03em;margin:.5rem 0 .7rem}
+#painel h5{font:700 .7rem/1 var(--mono);margin:.9rem 0 .4rem;letter-spacing:.04em}
+.g-lab{display:inline-block;font:700 .66rem/1 var(--titulo);text-transform:uppercase;
+  letter-spacing:.05em;border:2px solid var(--tinta);border-radius:999px;padding:.24rem .5rem}
+.g-prop{display:grid;grid-template-columns:6.2rem 1fr;gap:.5rem;padding:.32rem 0;
+  border-bottom:1px dotted rgba(21,16,22,.18);font-size:.82rem}
+.g-prop b{font:700 .66rem/1.5 var(--mono);text-transform:uppercase;opacity:.6}
+.g-dica{font-size:.85rem;opacity:.7;font-style:italic}
+#g-expandir{width:100%;margin:.8rem 0;background:var(--mar);color:#fff;border:2.5px solid var(--tinta);
+  border-radius:10px;padding:.5rem;font:700 .74rem var(--titulo);text-transform:uppercase;
+  cursor:pointer;box-shadow:var(--sombra-sm)}
+#g-expandir:hover{background:var(--tinta)}
+.g-lig{padding:.4rem .5rem;margin:.25rem 0;background:var(--papel-2);border:2px solid var(--tinta);
+  border-radius:8px;cursor:pointer;font-size:.78rem}
+.g-lig:hover{background:var(--ouro)}
+.g-lig i{display:block;font:700 .64rem var(--mono);opacity:.6;font-style:normal}
+.g-como{display:block;margin-top:.2rem;opacity:.75;font-size:.74rem;line-height:1.4}
+.g-lig-mais{font:700 .7rem var(--mono);opacity:.6;padding:.2rem .5rem}
+.g-ir{display:inline-block;margin:.5rem 0;font:700 .72rem var(--titulo);color:var(--mar)}
+@media(max-width:820px){.g-wrap{grid-template-columns:1fr;height:auto}
+  .g-tela{height:60vh}#painel{max-height:24rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 """
 
@@ -337,8 +389,8 @@ function filtra(){
 
 
 def cabeca(titulo: str, desc: str, ativo: str) -> str:
-    nav = [("index.html", "Hipóteses"), ("evidencias.html", "Evidências"),
-           ("metodo.html", "Método")]
+    nav = [("index.html", "Hipóteses"), ("grafo.html", "Grafo"),
+           ("evidencias.html", "Evidências"), ("metodo.html", "Método")]
     itens = "".join(
         f'<a href="{u}"{" aria-current=page" if u == ativo else ""}>{t}</a>' for u, t in nav)
     return f"""<!doctype html><html lang="pt-BR"><head>
@@ -553,6 +605,48 @@ def pagina_metodo(meta) -> str:
 </div></section></main>""" + RODAPE)
 
 
+def pagina_grafo(meta) -> str:
+    chips = "".join(
+        f'<label class="g-chip"><input type="checkbox" data-tipo="{t}"{" checked" if c else ""}>'
+        f'<i style="background:{cor}"></i>{t}</label>'
+        for t, cor, c in [("APOIA", "#2f9e6e", True), ("CONTRADIZ", "#e03131", True),
+                          ("CONCORRE_COM", "#9a9086", True), ("TEM_TEMA", "#1a7fb5", False),
+                          ("MENCIONA", "#7048a8", False)])
+    leg = "".join(f'<span class="g-leg"><i style="background:{c}"></i>{n}</span>'
+                  for n, c in [("hipótese", "#ffb703"), ("canônico", "#2f9e6e"),
+                               ("ambíguo", "#e8a13a"), ("trad. disputada", "#e03131"),
+                               ("tema", "#1a7fb5"), ("ator", "#7048a8")])
+    return (cabeca("Grafo — Século Perdido",
+                   "Explorador do grafo de evidências: nós com propriedades e relações "
+                   "tipadas entre hipóteses, átomos, temas e personagens.", "grafo.html") +
+            f"""<main><section style="border-top:0;padding-top:2rem"><div class="env">
+  <div class="cab"><h2>O grafo</h2><span class="n">{meta['n_nos']} nós · {meta['n_rels']} relações</span></div>
+  <p class="intro">Cada ligação tem um tipo e propriedades próprias — não é só "estão
+  conectados". Uma aresta <code>:APOIA</code> carrega o peso e a justificativa que ligam
+  aquele átomo àquela hipótese. Comece pelas hipóteses e vá abrindo: clique para ver as
+  propriedades, duplo clique para expandir as ligações, arraste para reorganizar, role para
+  aproximar.</p>
+  <div class="g-wrap">
+    <div class="g-tela">
+      <div class="g-barra">
+        <input id="g-busca" type="search" placeholder="buscar e centralizar…" autocomplete="off">
+        {chips}
+        <button class="g-bt" id="g-tudo">abrir tudo</button>
+        <button class="g-bt" id="g-reset">recomeçar</button>
+      </div>
+      <canvas id="cv"></canvas>
+      <div class="g-legenda">{leg}</div>
+      <div class="g-conta" id="g-conta"></div>
+    </div>
+    <aside id="painel"></aside>
+  </div>
+  <p class="intro" style="margin-top:1.4rem">O contorno tracejado marca <strong>átomo
+  órfão</strong>: evidência que ainda não pertence a nenhuma hipótese. Acúmulo de órfãos é o
+  sintoma de uma alternativa que ninguém formulou — foi assim que três hipóteses deste
+  arquivo nasceram.</p>
+</div></section></main>""" + RODAPE)
+
+
 def main() -> int:
     evid, hips = carregar()
     SAIDA.mkdir(exist_ok=True)
@@ -562,7 +656,12 @@ def main() -> int:
         "n_mortas": sum(1 for h in hips if h["status"] == "refutada"),
         "n_rt": len(list((RAIZ / "data" / "hipoteses").glob("*.redteam.md"))),
         "cap": max(caps) if caps else 0,
+        "n_nos": 0, "n_rels": 0,
     }
+    gj = SAIDA / "grafo.json"
+    if gj.exists():
+        g = json.loads(gj.read_text(encoding="utf-8"))["meta"]
+        meta["n_nos"], meta["n_rels"] = g["n_nos"], g["n_rels"]
     repo = git("remote", "get-url", "origin", padrao="")
     repo = re.sub(r"\.git$", "", repo) or "https://github.com/pedropasinn/seculo-perdido"
     rodape = (RODAPE.replace("__REPO__", repo)
@@ -573,6 +672,7 @@ def main() -> int:
         "index.html": pagina_hipoteses(evid, hips, meta),
         "evidencias.html": pagina_evidencias(evid, meta),
         "metodo.html": pagina_metodo(meta),
+        "grafo.html": pagina_grafo(meta),
     }
     for nome, conteudo in paginas.items():
         (SAIDA / nome).write_text(conteudo.replace(RODAPE, rodape), encoding="utf-8")
@@ -580,8 +680,9 @@ def main() -> int:
     (SAIDA / "app.js").write_text(JS.strip() + "\n", encoding="utf-8")
     for nome in paginas:
         p = SAIDA / nome
+        js = "grafo.js" if nome == "grafo.html" else "app.js"
         p.write_text(p.read_text(encoding="utf-8").replace(
-            "</body>", '<script src="app.js"></script></body>'), encoding="utf-8")
+            "</body>", f'<script src="{js}"></script></body>'), encoding="utf-8")
     print(f"{SAIDA}  ({meta['n_ev']} atomos, {meta['n_hip']} hipoteses, cap {meta['cap']})")
     return 0
 
