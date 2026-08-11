@@ -1,6 +1,6 @@
-# Século Vazio — o que é o One Piece, por evidência
+# Século Perdido — o que é o One Piece, por evidência
 
-**Site: https://seculo-vazio.vercel.app**
+**Site: https://seculo-perdido.vercel.app**
 
 Sistema de raciocínio baseado em evidências sobre o mistério central de *One Piece*.
 Não é um blog de teorias: toda afirmação aponta para um átomo verificável, toda
@@ -99,7 +99,7 @@ Categorias úteis: `the-true-history` (1070851), `sbs` (139757),
 
 ## Escopo inicial
 
-Século Vazio, Joy Boy, Laugh Tale, Imu, Poneglyphs, D. — cerca de 300 átomos.
+Século Perdido, Joy Boy, Laugh Tale, Imu, Poneglyphs, D. — cerca de 300 átomos.
 Só escale depois que o ciclo rodar limpo nesse recorte.
 
 ## Estado (2026-08-11, último capítulo publicado: 1190)
@@ -120,7 +120,7 @@ ficou em quarto lugar.
 | H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 31% |
 | H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 22% |
 | H-11 | objeto comum cujo valor está no ato de partilhá-lo | viva, ferida | 20% |
-| H-04 | registro completo do Século Vazio | viva, ferida | 13% |
+| H-04 | registro completo do Século Perdido | viva, ferida | 13% |
 | H-03 | artefato funcional do Reino Antigo | viva, ferida | 10% |
 | H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 4% |
 | H-06 | a arma ancestral Uranus | viva, ferida | 1% |

@@ -9,7 +9,7 @@ descrevem COMO o Governo suprime. Nenhuma hipótese viva trata disso.
 
 - EV-0096-01 — Woop Slap pergunta, sobre Luffy, se aquilo e o sonho dele ou o destino dele.
 - EV-0099-01 — Testemunhas da execucao de Roger afirmam que ele sorriu pouco antes de morrer.
-- EV-0272-01 — Ha indicacao de que a Grande Guerra do Seculo Vazio levou a queda da cidade de Shandora.
+- EV-0272-01 — Ha indicacao de que a Grande Guerra do Seculo Perdido levou a queda da cidade de Shandora.
 - EV-0393-03 — A Marinha rastreou pelos pertences dos arqueologos mortos a origem da equipe de Olvia ate Ohara, e so entao um
 - EV-0394-06 — Clover exigiu falar diretamente com os Cinco Anciaos.
 - EV-0395-12 — Clover responde que o passado e algo que a humanidade deve aceitar e contra o qual deve se precaver.

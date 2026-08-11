@@ -93,7 +93,7 @@ Se o validador reclamar, **conserte o dado, não o validador**.
 
 ## Escopo inicial
 
-Não tente cobrir 1190 capítulos. O recorte de partida é: Século Vazio, Joy Boy,
+Não tente cobrir 1190 capítulos. O recorte de partida é: Século Perdido, Joy Boy,
 Laugh Tale, Imu, Poneglyphs, D. Cerca de 300 átomos. Só escale depois que o ciclo
 completo rodar limpo nesse recorte.
 
