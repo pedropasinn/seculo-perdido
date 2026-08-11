@@ -76,3 +76,23 @@ não pode garantir. Leia `data/hipoteses/_orfaos.md` antes de confiar nela: áto
 
 Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estão em
 `data/hipoteses/H-*.redteam.md` e valem mais que as fatias.
+
+## Leia isto antes de citar o ranking
+
+`make sensibilidade` roda três testes contra o próprio resultado:
+
+- **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em 2000
+  sorteios. H-05 lidera em 97,9%: a ordem não é artefato dos números digitados.
+- **remover** — tira um átomo por vez. Nenhum átomo isolado troca o líder, o que
+  contraria em parte o Red Team de H-05, que apontou `EV-1190-03` como ponto
+  único de falha. Os dois estão certos sobre coisas diferentes: o score não
+  desaba sem esse átomo, mas o *enunciado* deixa de ser distinguível de H-04.
+- **recencia** — e aqui está o problema. 41% dos átomos vêm dos capítulos
+  1101-1200, e H-05 tira **62,8%** do seu apoio do arco atual. Cortando tudo
+  acima do cap. 1100, o ranking vira `H-04 > H-02 > H-05`.
+
+Ou seja: a liderança de H-05 é propriedade do arco de Elbaf. O `TETO_POR_FONTE`
+do `score.py` freia um capítulo que empurra sozinho, mas não freia quinze
+capítulos do mesmo arco empurrando juntos. Enquanto Elbaf não fechar, trate a
+ordem como provisória — e trate 62,8% como uma medida de quanto o entusiasmo
+com o capítulo da semana está entrando no resultado.

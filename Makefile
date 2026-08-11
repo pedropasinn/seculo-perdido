@@ -15,6 +15,14 @@ site:
 coletar:
 	@python3 tools/coletar.py $(P)
 
+# o ranking e do dado ou dos pesos? rode antes de reportar qualquer ordem
+sensibilidade:
+	@python3 tools/sensibilidade.py perturbar
+	@echo
+	@python3 tools/sensibilidade.py remover
+	@echo
+	@python3 tools/sensibilidade.py recencia
+
 # ciclo de capitulo novo — rode cada etapa como sub-agente no Claude Code
 extract:
 	@python3 tools/coletar.py "Chapter $(CAP)"
