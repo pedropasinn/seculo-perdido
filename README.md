@@ -78,7 +78,7 @@ Só escale depois que o ciclo rodar limpo nesse recorte.
 
 ## Estado (2026-08-11, último capítulo publicado: 1190)
 
-108 átomos, 13 hipóteses, quatro rodadas de curadoria. Onze hipóteses disputam o
+123 átomos, 13 hipóteses, cinco rodadas de curadoria. Onze hipóteses disputam o
 escopo `one_piece` (mutuamente exclusivas); duas são de escopo auxiliar.
 
 As três últimas — H-11, H-12, H-13 — não nasceram aqui. Vieram de um teste de
@@ -91,11 +91,11 @@ ficou em quarto lugar.
 
 | id | o que afirma | status | fatia |
 |----|--------------|--------|-------|
-| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 31% |
-| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 25% |
-| H-04 | registro completo do Século Vazio | viva, ferida | 19% |
-| H-11 | objeto comum cujo valor está no ato de partilhá-lo | viva, ferida | 14% |
-| H-03 | artefato funcional do Reino Antigo | viva, ferida | 7% |
+| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 30% |
+| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 27% |
+| H-11 | objeto comum cujo valor está no ato de partilhá-lo | viva, ferida | 21% |
+| H-04 | registro completo do Século Vazio | viva, ferida | 12% |
+| H-03 | artefato funcional do Reino Antigo | viva, ferida | 6% |
 | H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 4% |
 | H-06 | a arma ancestral Uranus | viva, ferida | 1% |
 | H-12 | *Binks' Sake* é o registro; Laugh Tale é a chave | **refutada** | — |
@@ -116,24 +116,22 @@ Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estã
 `make sensibilidade` roda três testes contra o próprio resultado:
 
 - **perturbar** — sacode todos os pesos (±0,15) e prioris (±0,05) em 2000
-  sorteios. H-05 lidera em **82,1%**: a ordem não é artefato dos números
-  digitados, mas não é confortável. Na rodada 2 eram 97,9%; a desambiguação do
-  Harley e a entrada de H-11 encurtaram a distância.
-- **remover** — tira um átomo por vez. **`EV-1190-03` derruba a liderança
-  sozinho**: sem ele, quem lidera é H-08. É exatamente o ponto único de falha que
-  o Red Team de H-05 apontou na primeira rodada. Vale registrar que na rodada 2
-  esse mesmo teste dizia que nenhum átomo isolado trocava o líder — o átomo
-  também contradiz H-03 e H-07, e enquanto essas contradições compensavam, o
-  efeito ficava escondido. Um teste que passa não é prova de robustez; é prova de
-  que a base ainda não tinha as concorrentes certas.
-- **recencia** — 41% dos átomos vêm dos capítulos 1101-1200. H-05 tira **62,8%**
-  do seu apoio do arco atual, H-08 tira 61,7%, H-03 tira 54,5% — e H-04 apenas
-  12,4%. Cortando tudo acima do cap. 1100, o ranking vira
-  `H-04 > H-02 > H-05 > H-03 > H-11 > H-08`.
+  sorteios. H-08 lidera em **66,5%**, H-05 em 29,0%. É a liderança mais frágil
+  já medida aqui: nas rodadas anteriores o primeiro colocado ficava em 97,9% e
+  depois 82,1%. Cada rodada de evidência nova aproximou o pelotão.
+- **remover** — tira um átomo por vez. Dois átomos derrubam a liderança sozinhos,
+  e os dois são do **mesmo capítulo 1190**: `EV-1190-01` e `EV-1190-05`. Sem
+  qualquer um deles, quem lidera é H-05. Na rodada 2 este teste não acusava nada;
+  na 4 acusava `EV-1190-03`. Um teste que passa não é prova de robustez — é prova
+  de que a base ainda não tinha as concorrentes certas.
+- **recencia** — H-08 tira **69,3%** do apoio de capítulos acima do 1100, H-05
+  tira 62,8%, H-03 54,5%, H-11 42,7% — e H-04 apenas 12,4%. Cortando tudo acima
+  do cap. 1100, o ranking vira `H-04 > H-02 > H-05 > H-03 > H-11 > H-08`: a
+  líder atual cai para penúltima.
 
-Juntando os três: a liderança de H-05 depende de um único capítulo publicado há
-poucas semanas, e o segundo e o terceiro colocados dependem do mesmo arco. O
-`TETO_POR_FONTE` do `score.py` freia um capítulo que empurra sozinho, mas não
-freia quinze capítulos do mesmo arco empurrando juntos. Enquanto Elbaf não
-fechar, o topo da tabela diz mais sobre o que estamos lendo agora do que sobre o
-que o One Piece é.
+Juntando os três: a liderança de H-08 depende quase inteiramente do arco de Elbaf
+e desmancha se um de dois átomos do capítulo 1190 cair. O `TETO_POR_FONTE` do
+`score.py` freia um capítulo que empurra sozinho, mas não freia quinze capítulos
+do mesmo arco empurrando juntos. Enquanto Elbaf não fechar, o topo da tabela diz
+mais sobre o que estamos lendo agora do que sobre o que o One Piece é — e a única
+hipótese que se sustenta em evidência antiga continua sendo H-04.
