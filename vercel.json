@@ -8,7 +8,7 @@
   "installCommand": null,
   "headers": [
     {
-      "source": "/(.*)\\.[0-9a-f]{8}\\.(css|js)",
+      "source": "/estilo.:hash([0-9a-f]{8}).css",
       "headers": [
         {
           "key": "cache-control",
@@ -17,12 +17,39 @@
       ]
     },
     {
-      "source": "/dados/(.*)",
+      "source": "/app.:hash([0-9a-f]{8}).js",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/grafo.:hash([0-9a-f]{8}).js",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/dados/:arquivo*",
       "headers": [
         {
           "key": "cache-control",
           "value": "public, max-age=3600"
         },
+        {
+          "key": "access-control-allow-origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/mcp/:arquivo*",
+      "headers": [
         {
           "key": "access-control-allow-origin",
           "value": "*"
