@@ -28,6 +28,8 @@ sensibilidade:
 	@python3 tools/sensibilidade.py remover
 	@echo
 	@python3 tools/sensibilidade.py recencia
+	@echo
+	@python3 tools/independencia.py
 
 # ciclo de capitulo novo — rode cada etapa como sub-agente no Claude Code
 extract:

@@ -79,6 +79,26 @@ empurrando na mesma direção.
 O efeito não é cosmético — ele trocou o primeiro colocado. Se você discordar da
 correlação por arco, mexa em `ARCOS` e no teto, não nos pesos dos elos.
 
+## A independência dos elos é falsa de dois jeitos
+
+`score.py` trata cada elo como fator de Bayes independente. Isso falha por duas
+vias, e por muito tempo só uma estava tratada:
+
+- **correlação de fonte** — átomos do mesmo capítulo ou arco andam juntos. Freada
+  por `TETO_POR_FONTE` e `TETO_POR_ARCO`.
+- **correlação de átomo** — o *mesmo* átomo alimenta hipóteses concorrentes.
+  Medida por `tools/independencia.py`, e **é maior que a primeira**.
+
+Em 11/08/2026 a medição mostrou que a líder tirava **71% do apoio de átomos
+compartilhados com rivais**, enquanto H-14 tirava 0%. Ordenando só por evidência
+exclusiva, a líder caía do 1º para o 6º lugar. Onze átomos apoiam pares de
+hipóteses que se *declaram concorrentes* — evidência que não discrimina, contada
+como positiva dos dois lados.
+
+Isso não invalida o ranking, mas muda o que ele significa: uma hipótese com base
+emprestada sobe junto com as rivais em vez de vencer delas. Rode
+`python3 tools/independencia.py` antes de afirmar que alguma lidera.
+
 ## Portão de fundamentação
 
 Antes de qualquer commit: `make check`.

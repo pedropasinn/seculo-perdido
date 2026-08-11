@@ -25,6 +25,7 @@ let sel = null, hover = null;
 let cam = {x:0, y:0, z:1};
 let arrastando = null, panDe = null;
 let pausado = false;
+const mostraTudo = new Set();
 const tiposOn = new Set(['APOIA','CONTRADIZ','CONCORRE_COM']);
 
 /* parametros da simulacao e do desenho, todos ajustaveis no painel */
@@ -120,12 +121,15 @@ function passo(){
 }
 
 /* ---------------- desenho ---------------- */
-function tela(n){ return { x: cv.clientWidth/2 + (n.x+cam.x)*cam.z,
-                           y: cv.clientHeight/2 + (n.y+cam.y)*cam.z }; }
+function tela(n){ return { x: (LARG || cv.clientWidth)/2 + (n.x+cam.x)*cam.z,
+                           y: (ALT || cv.clientHeight)/2 + (n.y+cam.y)*cam.z }; }
 
+let LARG = 0, ALT = 0;
+addEventListener('resize', () => { LARG = 0; });
 function desenha(){
   const L = cv.clientWidth, A = cv.clientHeight, dpr = window.devicePixelRatio||1;
-  if (cv.width !== L*dpr){ cv.width = L*dpr; cv.height = A*dpr; }
+  if (cv.width !== L*dpr || cv.height !== A*dpr){ cv.width = L*dpr; cv.height = A*dpr; }
+  LARG = L; ALT = A;
   ctx.setTransform(dpr,0,0,dpr,0,0);
   ctx.clearRect(0,0,L,A);
 
@@ -155,7 +159,7 @@ function desenha(){
     // rotulo da relacao: so com zoom ou foco, senao vira sopa
     const mostraRot = cfg.rotArestas === 'sempre' ? true
                     : cfg.rotArestas === 'nunca' ? false
-                    : (cam.z > 0.85 || (sel && foco));
+                    : (cam.z > 1.6 || (sel && foco));
     if (mostraRot && ctx.globalAlpha > .5){
       const mx = (pa.x+pb.x)/2, my = (pa.y+pb.y)/2;
       const txt = r.props.peso ? `${r.tipo} ${r.props.peso}` : r.tipo;
@@ -198,6 +202,16 @@ function desenha(){
   ctx.globalAlpha = 1;
 }
 
+function caber(margem = 0.9){
+  const ns = [...vis].map(id => NOS.get(id)).filter(Boolean);
+  if (!ns.length) return;
+  const xs = ns.map(n => n.x), ys = ns.map(n => n.y);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs);
+  const y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const bw = Math.max(x1 - x0, 60) + 90, bh = Math.max(y1 - y0, 60) + 90;
+  cam.z = Math.max(0.25, Math.min(3, margem * Math.min(cv.clientWidth/bw, cv.clientHeight/bh)));
+  cam.x = -(x0 + x1) / 2; cam.y = -(y0 + y1) / 2;
+}
 function laco(){ if (!pausado) passo(); desenha(); requestAnimationFrame(laco); }
 
 /* ---------------- interacao ---------------- */
@@ -223,15 +237,19 @@ function seleciona(n){
   const ligs = RELS.filter(r => (r.de===n.id||r.para===n.id) && tiposOn.has(r.tipo));
   const porTipo = {};
   ligs.forEach(r => { (porTipo[r.tipo] = porTipo[r.tipo]||[]).push(r); });
-  const listaLigs = Object.entries(porTipo).map(([tipo, rr]) => `
+  const ordem = ['CONTRADIZ','APOIA','TEM_TEMA','MENCIONA','CONCORRE_COM'];
+  const listaLigs = Object.entries(porTipo)
+    .sort((a,b) => ordem.indexOf(a[0]) - ordem.indexOf(b[0]))
+    .map(([tipo, rr]) => `
     <div class="g-rel-grupo"><h5 style="color:${CORREL[tipo]}">:${tipo} · ${rr.length}</h5>
-    ${rr.slice(0,14).map(r => {
+    ${rr.slice(0, mostraTudo.has(n.id+tipo) ? 999 : 14).map(r => {
       const outro = r.de===n.id ? r.para : r.de, no = NOS.get(outro);
       const dir = r.de===n.id ? '→' : '←';
       return `<div class="g-lig" data-ir="${outro}">${dir} <b>${no?no.nome:outro}</b>
         ${r.props.peso?`<i>peso ${r.props.peso}</i>`:''}
         ${r.props.como?`<span class="g-como">${r.props.como.slice(0,150)}${r.props.como.length>150?'…':''}</span>`:''}</div>`;
-    }).join('')}${rr.length>14?`<div class="g-lig-mais">+ ${rr.length-14}</div>`:''}</div>`).join('');
+    }).join('')}${rr.length>14 && !mostraTudo.has(n.id+tipo)
+      ? `<button class="g-lig-mais" data-mais="${n.id+tipo}">+ ${rr.length-14} restantes</button>` : ''}</div>`).join('');
   const link = n.label==='Evidencia' ? `<a class="g-ir" href="evidencias.html#${n.id}">ver no índice de evidências →</a>`
              : n.label==='Hipotese' ? `<a class="g-ir" href="index.html">ver dossiê completo →</a>` : '';
   painel.innerHTML = `<div class="g-lab" style="background:${corDe(n)}">${n.label}</div>
@@ -239,13 +257,16 @@ function seleciona(n){
     <button id="g-expandir">expandir ligações</button>${listaLigs}`;
   const bt = document.getElementById('g-expandir');
   if (bt) bt.onclick = () => { mostrar([...vizinhos(n.id)], n.id); seleciona(n); };
+  painel.querySelectorAll('[data-mais]').forEach(el => el.onclick = () => {
+    mostraTudo.add(el.dataset.mais); seleciona(n);
+  });
   painel.querySelectorAll('[data-ir]').forEach(el => el.onclick = () => {
     const alvo = el.dataset.ir; mostrar([alvo], n.id); seleciona(NOS.get(alvo));
   });
   if (infoSel) infoSel.textContent = n.nome;
 }
 
-cv.addEventListener('mousemove', ev => {
+cv.addEventListener('pointermove', ev => {
   const r = cv.getBoundingClientRect(), mx = ev.clientX-r.left, my = ev.clientY-r.top;
   if (arrastando){
     arrastando.x = (mx - cv.clientWidth/2)/cam.z - cam.x;
@@ -255,12 +276,35 @@ cv.addEventListener('mousemove', ev => {
   if (panDe){ cam.x += (mx-panDe.x)/cam.z; cam.y += (my-panDe.y)/cam.z; panDe = {x:mx,y:my}; return; }
   const n = noEm(mx,my); hover = n?n.id:null; cv.style.cursor = n?'pointer':'grab';
 });
-cv.addEventListener('mousedown', ev => {
+cv.addEventListener('pointerdown', ev => {
   const r = cv.getBoundingClientRect(), mx = ev.clientX-r.left, my = ev.clientY-r.top;
   const n = noEm(mx,my);
   if (n){ arrastando = n; seleciona(n); } else { panDe = {x:mx,y:my}; cv.style.cursor='grabbing'; }
 });
-window.addEventListener('mouseup', () => { arrastando = null; panDe = null; });
+window.addEventListener('pointerup', () => { arrastando = null; panDe = null; });
+window.addEventListener('pointercancel', () => { arrastando = null; panDe = null; });
+/* pinca para zoom */
+let toques = new Map(), distIni = 0, zIni = 1;
+cv.addEventListener('pointerdown', ev => { toques.set(ev.pointerId, ev);
+  if (toques.size === 2){ const [a,b] = [...toques.values()];
+    distIni = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY); zIni = cam.z;
+    arrastando = null; panDe = null; } });
+cv.addEventListener('pointermove', ev => {
+  if (!toques.has(ev.pointerId)) return;
+  toques.set(ev.pointerId, ev);
+  if (toques.size === 2 && distIni){ const [a,b] = [...toques.values()];
+    const d = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY);
+    cam.z = Math.max(0.25, Math.min(3, zIni * d / distIni)); } });
+['pointerup','pointercancel'].forEach(e =>
+  window.addEventListener(e, ev => { toques.delete(ev.pointerId); if (toques.size < 2) distIni = 0; }));
+/* toque longo expande, no lugar do duplo clique */
+let tLongo;
+cv.addEventListener('pointerdown', ev => { if (ev.pointerType === 'mouse') return;
+  const r = cv.getBoundingClientRect();
+  const n = noEm(ev.clientX-r.left, ev.clientY-r.top);
+  if (n) tLongo = setTimeout(() => { mostrar([...vizinhos(n.id)], n.id); seleciona(n); }, 520); });
+['pointerup','pointermove','pointercancel'].forEach(e =>
+  cv.addEventListener(e, () => clearTimeout(tLongo)));
 cv.addEventListener('dblclick', ev => {
   const r = cv.getBoundingClientRect();
   const n = noEm(ev.clientX-r.left, ev.clientY-r.top);
@@ -319,7 +363,10 @@ document.getElementById('g-reset').onclick = () => {
 };
 document.getElementById('g-tudo').onclick = () => {
   mostrar([...NOS.keys()].filter(id => NOS.get(id).label !== 'Tema' && NOS.get(id).label !== 'Ator'));
+  setTimeout(() => caber(0.86), 1100);
 };
+const btCaber = document.getElementById('g-caber');
+if (btCaber) btCaber.onclick = () => caber();
 if (cxBusca) cxBusca.addEventListener('keydown', ev => {
   if (ev.key !== 'Enter') return;
   const q = cxBusca.value.toLowerCase().trim(); if(!q) return;
@@ -335,6 +382,8 @@ fetch('grafo.json').then(r => r.json()).then(d => {
                        n.vx = n.vy = 0; NOS.set(n.id, n); });
   RELS = d.rels; META = d.meta;
   vis = new Set(META.sementes);
-  seleciona(null); atualizaContador(); laco();
+  seleciona(null); atualizaContador();
+  setTimeout(() => caber(0.82), 900);
+  laco();
 });
 })();

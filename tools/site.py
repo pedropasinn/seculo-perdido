@@ -452,6 +452,15 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
 .vered.refutada b{color:var(--ouro)}
 .conta{font:700 .74rem/1.5 var(--mono);opacity:.72;margin:.3rem 0 1rem;
   border-bottom:2px dotted rgba(21,16,22,.2);padding-bottom:.6rem}
+.achados{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.9rem;
+  margin:0 0 1.4rem}
+.achado{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;
+  box-shadow:var(--sombra-sm);padding:.85rem 1rem;display:flex;gap:.7rem;align-items:flex-start}
+.achado b{font:400 2rem/1 var(--display);color:var(--vermelho);letter-spacing:.02em}
+.achado:nth-child(2) b{color:var(--mar)}
+.achado:nth-child(3) b{color:var(--roxo)}
+.achado:nth-child(4) b{color:var(--verde)}
+.achado span{font-size:.86rem;font-weight:500;line-height:1.4}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
@@ -1004,6 +1013,31 @@ def pagina_metodo(meta) -> str:
   82,1%, depois 66,5% — e houve um momento em que ela caía para penúltima ao cortar o arco
   em publicação. O que consertou não foi o modelo, foi extrair 74 átomos de arcos antigos.</p>
 
+  <div class="cab" style="margin-top:3rem"><h2>O furo que ainda está aberto</h2></div>
+  <p class="intro">O cálculo trata cada elo como independente, e não é. Um mesmo átomo
+  costuma alimentar várias hipóteses — inclusive hipóteses que se declaram concorrentes.
+  Medindo quanto do apoio de cada uma vem de evidência compartilhada:</p>
+  <table class="tabela">
+    <thead><tr><th>hipótese</th><th>apoio emprestado</th><th class="num">base própria</th></tr></thead>
+    <tbody>
+      <tr><td>H-05 <em>(a líder)</em></td><td>71,4%</td><td class="num">2,08</td></tr>
+      <tr><td>H-02</td><td>55,0%</td><td class="num">1,44</td></tr>
+      <tr><td>H-03</td><td>40,9%</td><td class="num">2,08</td></tr>
+      <tr><td>H-04</td><td>30,9%</td><td class="num">8,72</td></tr>
+      <tr><td>H-08</td><td>23,9%</td><td class="num">5,70</td></tr>
+      <tr><td>H-14</td><td>0,0%</td><td class="num">4,62</td></tr>
+    </tbody>
+  </table>
+  <p class="intro">Contando <strong>só evidência exclusiva</strong>, a ordem vira
+  <code>H-08 &gt; H-04 &gt; H-14 &gt; H-11 &gt; H-09 &gt; H-05</code> — a líder cai para
+  sexto. E há <strong>onze átomos que apoiam pares de hipóteses declaradamente
+  concorrentes</strong>, ou seja, evidência que não discrimina sendo contada como positiva
+  dos dois lados. Isso não invalida o ranking, mas muda o que ele significa: uma hipótese
+  com base emprestada sobe junto com as rivais em vez de vencer delas.</p>
+  <blockquote>Este furo foi encontrado por um agente analisando o grafo, não pelos testes
+  de sensibilidade — que medem os pesos, nunca a estrutura. Está publicado aqui antes de
+  estar consertado.</blockquote>
+
   <div class="cab" style="margin-top:3.4rem"><h2>O que não sabemos</h2></div>
   <p class="intro">Três limites que o próprio arquivo mede e publica, em vez de esconder.</p>
   <blockquote>A porcentagem assume que a resposta certa está entre as hipóteses listadas.
@@ -1044,6 +1078,16 @@ def pagina_grafo(meta) -> str:
   aquele átomo àquela hipótese. Comece pelas hipóteses e vá abrindo: clique para ver as
   propriedades, duplo clique para expandir as ligações, arraste para reorganizar, role para
   aproximar.</p>
+  <div class="achados">
+    <div class="achado"><b>71%</b><span>do apoio da hipótese líder vem de átomos que também
+      alimentam rivais — ela sobe junto, em vez de vencer</span></div>
+    <div class="achado"><b>19</b><span>átomos decidem entre hipóteses: apoiam uma e
+      contradizem outra. Os outros 135 só empurram num sentido</span></div>
+    <div class="achado"><b>47%</b><span>do arquivo não pertence a hipótese nenhuma, e não
+      está espalhado: 40 desses átomos falam de Shandora, Birka e da lua</span></div>
+    <div class="achado"><b>11</b><span>átomos apoiam pares de hipóteses que se declaram
+      concorrentes — evidência que não discrimina, contada dos dois lados</span></div>
+  </div>
   <div class="g-wrap">
     <div class="g-tela">
       <div class="g-barra">
@@ -1051,6 +1095,7 @@ def pagina_grafo(meta) -> str:
         {chips}
         <button class="g-bt" id="g-tudo">abrir tudo</button>
         <button class="g-bt" id="g-reset">recomeçar</button>
+        <button class="g-bt" id="g-caber">caber na tela</button>
         <button class="g-bt" id="g-pausa" aria-pressed="false">pausar</button>
         <details class="g-ajustes"><summary class="g-bt">ajustes</summary>
           <div class="g-ctrl">

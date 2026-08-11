@@ -302,6 +302,15 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
 .vered.refutada b{color:var(--ouro)}
 .conta{font:700 .74rem/1.5 var(--mono);opacity:.72;margin:.3rem 0 1rem;
   border-bottom:2px dotted rgba(21,16,22,.2);padding-bottom:.6rem}
+.achados{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.9rem;
+  margin:0 0 1.4rem}
+.achado{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;
+  box-shadow:var(--sombra-sm);padding:.85rem 1rem;display:flex;gap:.7rem;align-items:flex-start}
+.achado b{font:400 2rem/1 var(--display);color:var(--vermelho);letter-spacing:.02em}
+.achado:nth-child(2) b{color:var(--mar)}
+.achado:nth-child(3) b{color:var(--roxo)}
+.achado:nth-child(4) b{color:var(--verde)}
+.achado span{font-size:.86rem;font-weight:500;line-height:1.4}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
