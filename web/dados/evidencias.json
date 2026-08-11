@@ -186,7 +186,14 @@
    "datacao"
   ],
   "contexto": "Contexto: Robin lendo a lápide da cidade no Upper Yard, provavelmente erguida pelos próprios descendentes. Relevante porque data a fundação de Shandora antes do Século Perdido e o sumiço do povo dentro dele.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.15,
+    "justificativa": "A lápide erguida nas ruínas registra que a cidade se chamava Shandora, que prosperou há mais de 1100 anos e que seu povo desapareceu de forma inexplicada há 800 anos: um monumento comum atravessou os mesmos oitocentos anos e preservou o registro, o que mostra que sobreviver ao apagamento não exigia a engenharia atribuída às pedras."
+   }
+  ]
  },
  {
   "id": "EV-0261-02",
@@ -204,7 +211,14 @@
    "Skypiea"
   ],
   "contexto": "A conexão é feita pela própria personagem dentro da cena, não por interpretação externa.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Robin percebe que o desaparecimento do povo de Shandora há 800 anos cai exatamente dentro dos cem anos ausentes da história do mundo e cogita que a ilha do céu tenha feito parte dessa história não contada: a lacuna tem contorno datável, condição para existir um registro que a preencha."
+   }
+  ]
  },
  {
   "id": "EV-0272-01",
@@ -218,7 +232,14 @@
    "Grande Guerra"
   ],
   "contexto": "A wiki usa 'has been indicated' — não há afirmação direta em texto.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.15,
+    "justificativa": "Há indicação de que a Grande Guerra do Século Perdido levou à queda da cidade de Shandora: a cidade que guardava a pedra caiu na guerra, que é exatamente o apagamento contra o qual o sistema teria sido projetado."
+   }
+  ]
  },
  {
   "id": "EV-0272-02",
@@ -233,7 +254,20 @@
    "escrita antiga"
   ],
   "contexto": "Importa porque mostra a escrita dos Poneglyphs sendo usada fora deles, em arquitetura comum da cidade.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Nas ruínas de Shandora há uma parede coberta de escrita no mesmo sistema em que os Poneglyphs são gravados: a cidade do céu escrevia na escrita do Reino Antigo, o que a coloca dentro da civilização terrestre em vez de descendente de uma tecnologia lunar anterior a ela."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Nas ruínas de Shandora há uma parede coberta de escrita no mesmo sistema em que os Poneglyphs são gravados: se a escrita aparecia em arquitetura comum da cidade, os antepassados dos guardiões a liam, e a incapacidade de ler é perda posterior e não desenho."
+   }
+  ]
  },
  {
   "id": "EV-0272-03",
@@ -277,7 +311,14 @@
    "sino de ouro"
   ],
   "contexto": "Dedução que liga a pedra ao sino antes de qualquer um dos dois ser encontrado.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Robin deduz das anotações de Noland que o Poneglyph de Shandora estava junto do grande sino, pendurado no centro dos quatro altares da cidade: a pedra ocupava o ponto central e mais protegido, o que é escolha de colocação e não acaso de fuga."
+   }
+  ]
  },
  {
   "id": "EV-0274-01",
@@ -296,7 +337,14 @@
    "mito"
   ],
   "contexto": "Primeira aparição do destino lunar na obra, ainda como lenda de folclore birkano, sem qualquer menção à lua.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Enel descreve a Fairy Vearth como um lugar de terra ilimitada onde, segundo as lendas do lugar em que nasceu, mora Deus, e diz que voltar para lá é voltar para onde pertence: a ilha do céu guarda como folclore a ideia de que sua gente pertence a outro lugar, que é o resíduo esperado de uma migração."
+   }
+  ]
  },
  {
   "id": "EV-0274-02",
@@ -315,7 +363,14 @@
   ],
   "notas": "A wiki registra a divergência Endless x Fairy como questão de tradução e dublagem. Não construir argumento sobre a palavra 'fairy' sozinha.",
   "contexto": "Caso clássico de escolha de tradutor virando teoria: em japonês o mesmo termo carrega os dois sentidos.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "O nome do lugar procurado por Enel é escrito com kanji que se lê como terra sem fim e furigana que se lê Fairy Vearth, de modo que as duas traduções correntes estão ambas no original: o destino que esta hipótese identifica com a lua é nomeado por termo de folclore, e a identificação depende da história de capa."
+   }
+  ]
  },
  {
   "id": "EV-0274-03",
@@ -359,7 +414,14 @@
    "lua"
   ],
   "contexto": "Relevante porque a nave que depois alcança a lua é feita do ouro da cidade que veio da lua.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Enel escravizou o esquadrão divino de Gan Fall para extrair todo o ouro de Shandora e usou esse ouro na construção da arca Maxim: o meio material que depois alcança a lua sai da cidade do céu, ligando os dois pontos por um mesmo recurso."
+   }
+  ]
  },
  {
   "id": "EV-0279-01",
@@ -495,7 +557,14 @@
    "ancestrais"
   ],
   "contexto": "Três funções declaradas do mesmo objeto: sinal, farol funerário e desafio. O título do cap 301 é justamente 'Eu estava aqui'.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Segundo Kalgara, o sino de ouro foi feito para anunciar ao mundo que eles estão ali e para avisar invasores de que os Shandia não os temem: junto da pedra existe um segundo canal, sonoro e não escrito, com a mesma função de não deixar o povo ser apagado."
+   }
+  ]
  },
  {
   "id": "EV-0300-01",
@@ -513,7 +582,14 @@
    "lua"
   ],
   "contexto": "Última aparição de Enel na linha principal; tudo o que vem depois está na história de capa.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-16",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Depois de derrotado por Luffy, Enel recupera a consciência, religa a arca Maxim e parte rumo a Fairy Vearth ainda na linha principal: a viagem começa dentro da obra e não dentro da história de capa, o que reduz a objeção de que todo o eixo lunar é narrativa paralela."
+   }
+  ]
  },
  {
   "id": "EV-0301-01",
@@ -584,7 +660,14 @@
    "Shandora"
   ],
   "contexto": "Primeira menção de Poseidon na obra. Robin comenta para si que é mais uma arma com nome de deus, como Pluton, e que não lhe interessa.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "contradiz",
+    "peso": 0.25,
+    "justificativa": "O Poneglyph dos Shandia estava na base do Sino Dourado e ao lê-lo Robin encontra o registro de uma arma ancestral chamada Poseidon: o texto que a obra mostra sendo lido em cena neste arco registra arma, e não a história do Século Perdido."
+   }
+  ]
  },
  {
   "id": "EV-0301-03",
@@ -604,7 +687,20 @@
   ],
   "notas": "Este átomo registra o conteúdo da inscrição; quem a gravou fisicamente só é revelado no flashback de Oden, no bloco do cap 966.",
   "contexto": "A mensagem está gravada na própria pedra, ao lado do texto antigo. É o único recado de Roger deixado num Poneglyph que a obra mostra sendo lido.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-05",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Ao lado do texto antigo há uma segunda inscrição, assinada por Gol D. Roger, dizendo que eles estiveram ali, encontraram o texto e seguiram a orientação dele: Roger responde ao que leu deixando por escrito uma mensagem para quem viesse depois, que é a forma de legado dirigido."
+   },
+   {
+    "hipotese": "H-08",
+    "relacao": "contradiz",
+    "peso": 0.25,
+    "justificativa": "A inscrição assinada por Gol D. Roger diz que eles estiveram ali, encontraram o texto e seguiram a orientação dele: o avanço até o fim da rota se dá por achar e seguir texto, e não por chegar a um lugar com a pessoa certa."
+   }
+  ]
  },
  {
   "id": "EV-0301-04",
@@ -621,7 +717,14 @@
    "tipologia"
   ],
   "contexto": "Distinção formulada dentro da cena, antes de a obra nomear Road Poneglyphs.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.4,
+    "justificativa": "Robin recorda que existem dois tipos de Poneglyph, os que carregam informação e os que revelam onde estão os outros: uma camada de índice que aponta para as demais pedras é arquitetura de sistema, e não acúmulo de monumentos avulsos."
+   }
+  ]
  },
  {
   "id": "EV-0301-05",
@@ -640,7 +743,20 @@
    "Roger"
   ],
   "contexto": "É a partir dessa conclusão que Robin decide seguir a orientação das pedras que já leu até o fim da Grand Line.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Robin conclui que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história: se o registro só se compõe pela soma das pedras espalhadas, ele não está inteiro num achado único no fim da rota."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.45,
+    "justificativa": "Robin conclui que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história, e que a pedra de Shandora já cumpriu sua função porque Roger achou aquilo que ela indicava: a leitura conjunta é a propriedade de um sistema desenhado para que nenhuma peça isolada baste."
+   }
+  ]
  },
  {
   "id": "EV-0301-06",
@@ -660,7 +776,20 @@
   ],
   "notas": "Tradução de uma citação literária curta; a fórmula 'recorders of history' pode variar entre tradutores.",
   "contexto": "O chefe Shandia reconhece a frase, o que prova que a fórmula sobreviveu na tradição oral do povo mesmo depois de perdida a leitura.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-05",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "A tábua de pedra que Robin encontrou no Upper Yard diz que diante do cerne da verdade não há necessidade de palavras e que seus autores são os registradores da história: quem gravou se apresenta como registrador e nega que palavras sejam necessárias, o oposto de um legado feito de palavras e de um pedido."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "A tábua de pedra que Robin encontrou no Upper Yard diz que seus autores são os registradores da história e aponta os Shandia como protetores antigos do texto: o próprio texto separa quem registra de quem protege, que é a divisão de papéis que esta hipótese atribui ao projeto."
+   }
+  ]
  },
  {
   "id": "EV-0301-07",
@@ -698,7 +827,14 @@
    "leitura"
   ],
   "contexto": "Ponto de virada: até aqui a leitura da escrita antiga era tratada como exclusividade de Ohara.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Robin fica chocada ao descobrir que o Rei dos Piratas não só chegou à ilha do céu como sabia ler a escrita dos Poneglyphs: quem chegou ao fim da rota era leitor, o que sustenta a metade documental desta hipótese."
+   }
+  ]
  },
  {
   "id": "EV-0301-09",
@@ -716,7 +852,14 @@
    "guarda"
   ],
   "contexto": "Encerramento formal de um dever de guarda que durou desde o Século Perdido.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Ao saber por Robin que o desejo de seus ancestrais já foi cumprido, o chefe Shandia desaba em lágrimas, entendendo que seu povo não precisa mais lutar pela pedra: a guarda era dever herdado, sustentado por gerações que não conheciam o conteúdo do que defendiam."
+   }
+  ]
  },
  {
   "id": "EV-0302-01",
@@ -933,7 +1076,14 @@
    "CP9"
   ],
   "contexto": "A cadeia causal do massacre começa num detalhe material, não numa denúncia.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "A Marinha rastreou pelos pertences dos arqueólogos mortos a origem da equipe de Olvia até Ohara, e só então um destacamento do CP9 foi enviado à ilha: a cadeia começa num achado material sobre uma expedição, e não numa avaliação do conteúdo do registro."
+   }
+  ]
  },
  {
   "id": "EV-0393-04",
@@ -1120,7 +1270,14 @@
    "Cinco Anciaos"
   ],
   "contexto": "Um arqueólogo de uma ilha do West Blue pede e obtém linha direta com o topo do Governo Mundial; a conversa acontece no capítulo seguinte.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.15,
+    "justificativa": "Clover exigiu falar diretamente com os Cinco Anciãos: o que ele tinha a dizer era matéria da cúpula do Governo Mundial e não de polícia, o que dimensiona o valor político do conteúdo histórico em disputa."
+   }
+  ]
  },
  {
   "id": "EV-0395-01",
@@ -1462,7 +1619,14 @@
    "proibicao"
   ],
   "contexto": "Contra-argumento direto a EV-0395-11: conhecer o risco é a condição de conter o risco.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Clover responde que o passado é algo que a humanidade deve aceitar e contra o qual deve se precaver: a defesa dele situa o objeto da proibição no conhecimento do passado, e é a réplica direta ao argumento das armas que pesa contra esta hipótese."
+   }
+  ]
  },
  {
   "id": "EV-0395-13",
@@ -1654,7 +1818,14 @@
    "Governo Mundial"
   ],
   "contexto": "Coerente com EV-0395-17: a autorização do Buster Call é anterior à chegada do CP9, logo a investigação era formalidade.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Clover conclui que o Governo Mundial pretendia desde o início levar a operação ao nível da destruição total da ilha: a decisão precede a investigação, logo o alvo era o que a ilha sabia e não um crime apurado."
+   }
+  ]
  },
  {
   "id": "EV-0396-03",
@@ -1876,7 +2047,14 @@
    "Buster Call"
   ],
   "contexto": "Mecânica: o procedimento é irreversível por desenho, e a única exceção passa por combinação anterior ao disparo.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Uma vez anunciados os alvos, o Buster Call não pode ser revogado, mas o almirante que o lidera pode poupar um ponto específico mediante acordo prévio com a frota: o procedimento é instrumento padrão com exceção negociável, e não medida excepcional reservada a quem ameaça a legitimidade."
+   }
+  ]
  },
  {
   "id": "EV-0453-01",
@@ -3298,7 +3476,14 @@
    "Wano"
   ],
   "contexto": "A linhagem da leitura não morreu com Oden: o pai dele, tido por morto, ainda a possui.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: em Wano a mesma linhagem que guarda a pedra sabe lê-la e escrevê-la, o oposto da separação entre guardião e leitor que este enunciado afirma."
+   }
+  ]
  },
  {
   "id": "EV-0820-01",
@@ -3336,7 +3521,14 @@
    "punicao"
   ],
   "contexto": "Uma testemunha viva da guerra, condenada a obedecer. EV-1040-01 só registra a camaradagem com Joy Boy.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-09",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: uma sentença supõe uma autoridade com poder para julgar e punir no fim do Século Perdido, isto é, uma soberania em exercício antes do regime atual."
+   }
+  ]
  },
  {
   "id": "EV-0821-02",
@@ -3355,7 +3547,14 @@
    "Kouzuki Momonosuke"
   ],
   "contexto": "Um ser de mais de mil anos só pode ser interrogado por quem tem a habilidade. Limita quem, no presente, pode obter testemunho direto do Século Perdido.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Zunesha possui a Voz de Todas as Coisas e só consegue falar telepaticamente com quem tem a mesma habilidade: ouvir vozes ganha aqui um referente que não tem nada de leitura, o que enfraquece a ponte entre o verso profético e a leitura de um registro."
+   }
+  ]
  },
  {
   "id": "EV-0822-01",
@@ -3489,7 +3688,14 @@
    "navegacao"
   ],
   "contexto": "O caminho até o tesouro passa obrigatoriamente pela leitura de um texto antigo. Não é\numa rota que se descubra navegando.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Roger concluiu que só alcançaria a última ilha com a informação gravada nos Poneglyphs, e apresentou a Barba Branca e a Oden a transcrição de um deles: a informação gravada nas pedras é a única via para o destino final, ou seja, o sistema retém aquilo que nenhum outro suporte guardou."
+   }
+  ]
  },
  {
   "id": "EV-0966-05",
@@ -3509,7 +3715,14 @@
    "Oden"
   ],
   "contexto": "O prazo é curto e a função é específica: Oden entra na tripulação como leitor, não como\nguerreiro.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Roger pediu a Barba Branca que lhe emprestasse Oden por um ano, com a finalidade declarada de decifrar os Road Poneglyphs: a viagem final foi montada em torno de um leitor emprestado, precedente direto da indispensabilidade de tradutor que esta hipótese prevê."
+   }
+  ]
  },
  {
   "id": "EV-0966-06",
@@ -3527,7 +3740,14 @@
    "escrita antiga"
   ],
   "contexto": "A escassez de leitores não é acidente histórico: é política de transmissão da própria\nfamília que esculpiu as pedras.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: restringir a cifra a um herdeiro por geração é decisão de projeto, e separa deliberadamente a pedra de quem sabe lê-la."
+   }
+  ]
  },
  {
   "id": "EV-0966-07",
@@ -3545,7 +3765,20 @@
    "Skypiea"
   ],
   "contexto": "Achar a pedra é capacidade auditiva de Roger; ler a pedra é capacidade de Oden. São duas\ncompetências distintas, e a tripulação precisou das duas.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: fixa em cena que ouvir vozes é o modo de acesso ao conteúdo de um Poneglyph, que é a ponte lexical de que o apoio profético desta hipótese depende."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a pedra sinaliza a própria presença a quem pode ouvi-la, que é propriedade de sobrevivência do suporte e não do conteúdo."
+   }
+  ]
  },
  {
   "id": "EV-0966-08",
@@ -3565,7 +3798,20 @@
    "mensagem"
   ],
   "contexto": "Um Kouzuki escreveu na escrita antiga a mando de um pirata: a inscrição de Poneglyphs não\né capacidade extinta com o Século Perdido, continuou disponível na era moderna.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-05",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Foi Oden quem gravou, na escrita antiga, a mensagem que Roger ditou junto ao Poneglyph do sino de ouro de Shandora, registrando que estivera ali: Roger repetiu o gesto de deixar mensagem gravada para quem viesse depois, que é a forma do legado dirigido atribuída a Joy Boy."
+   },
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Foi Oden quem gravou, na escrita antiga, a mensagem que Roger ditou junto ao Poneglyph do sino de ouro de Shandora, registrando que estivera ali: o suporte continuou sendo usado oitocentos anos depois para deixar mensagem a leitores futuros, o que mostra o sistema em operação e não em ruína."
+   }
+  ]
  },
  {
   "id": "EV-0967-02",
@@ -3673,7 +3919,20 @@
    "Laugh Tale"
   ],
   "contexto": "Um dos poucos enunciados da obra que atribui autoria ao tesouro: quem deixou o que está em\nLaugh Tale é a mesma parte que criou as armas ancestrais. Toda a identificação repousa\nnesta única frase resumida pela wiki; se o original disser apenas \"o tesouro daquela época\",\na atribuição cai.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-03",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Rayleigh garantiu a Netuno que a tripulação de Roger não estava atrás da arma ancestral, e sim do tesouro de quem criou a arma: o tesouro é atribuído aos construtores da arma, isto é, à mesma engenharia antiga de que esta hipótese depende."
+   },
+   {
+    "hipotese": "H-06",
+    "relacao": "contradiz",
+    "peso": 0.45,
+    "justificativa": "Rayleigh garantiu a Netuno que a tripulação de Roger não estava atrás da arma ancestral, e sim do tesouro de quem criou a arma: a obra separa explicitamente o tesouro buscado da arma ancestral, que é justamente a identificação de que esta hipótese precisa."
+   }
+  ]
  },
  {
   "id": "EV-0967-06",
@@ -3693,7 +3952,14 @@
    "Ilha dos Homens-Peixe"
   ],
   "contexto": "O Poneglyph aponta um lugar e o lugar está vazio. Isso obriga a leitura de que o texto\nantigo descreve uma função recorrente, não um objeto guardado num cofre.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-06",
+    "relacao": "contradiz",
+    "peso": 0.25,
+    "justificativa": "A arma ancestral Poseidon não estava na Ilha dos Homens-Peixe quando a tripulação de Roger chegou, apesar de o Poneglyph de Skypiea indicar que ela estaria lá: as armas ancestrais são procuradas onde os Poneglyphs apontam, e o lugar apontado não é o fim da rota."
+   }
+  ]
  },
  {
   "id": "EV-0967-07",
@@ -3713,7 +3979,14 @@
    "Ilha dos Homens-Peixe"
   ],
   "contexto": "A identificação de Poseidon com uma pessoa por nascer é feita vinte e cinco anos antes de\nRobin chegar à mesma conclusão, e por um rei que só tinha uma previsão nas mãos.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Netuno, que ainda nem era casado, concluiu diante dos Piratas de Roger que sua futura filha seria a Poseidon, apoiado na previsão de Shyarly de que nasceria em breve uma sereia capaz de falar com os Reis do Mar: a obra opera com nascimento previsto e datado, que é a marca de um calendário e não de uma busca."
+   }
+  ]
  },
  {
   "id": "EV-0967-08",
@@ -3734,7 +4007,26 @@
    "diario de Oden"
   ],
   "contexto": "O inventário do que há em Laugh Tale, tal como a obra o enumera: três corpos de\nconhecimento histórico. Nenhum item da lista é um objeto.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-03",
+    "relacao": "contradiz",
+    "peso": 0.25,
+    "justificativa": "Oden registrou por escrito que, na ilha final, a tripulação descobriu as verdades sobre o Século Perdido, sobre o significado do D. e sobre as armas ancestrais: o que a ilha entrega são verdades descobertas, e não um dispositivo que se opere."
+   },
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.4,
+    "justificativa": "Oden registrou por escrito que, na ilha final, a tripulação descobriu as verdades sobre o Século Perdido, sobre o significado do D. e sobre as armas ancestrais: é o inventário do que há na ilha final, e ele é inteiramente informacional, com o Século Perdido em primeiro lugar."
+   },
+   {
+    "hipotese": "H-11",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Oden registrou por escrito que, na ilha final, a tripulação descobriu as verdades sobre o Século Perdido, sobre o significado do D. e sobre as armas ancestrais: o que a ilha final entrega são verdades descobertas, e verdade não se reparte nem se consome como um objeto físico comum."
+   }
+  ]
  },
  {
   "id": "EV-0967-09",
@@ -3753,7 +4045,14 @@
    "Laugh Tale"
   ],
   "contexto": "O isolamento de Wano é posterior a alguma coisa. O que Oden decide fazer depois só faz\nsentido à luz desta linha.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Na ilha final Oden aprendeu que Wano já estivera conectada ao resto do mundo: o que se aprende na ilha final é história apagada, e a desconexão de um país inteiro é o tipo de fato que o registro do Século Perdido restituiria."
+   }
+  ]
  },
  {
   "id": "EV-0967-10",
@@ -3773,7 +4072,20 @@
    "Seculo Perdido"
   ],
   "contexto": "Datação explícita: o achado é do fim do Século Perdido e ficou intocado por oito séculos.\nA cifra dos oitocentos anos vem da página da tripulação na wiki, que cobre os capítulos\n967 e 968 no mesmo parágrafo.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-05",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "O tesouro encontrado na ilha final tinha sido deixado ali por Joy Boy oitocentos anos antes: o que existe na ilha foi deixado por alguém, com oitocentos anos entre quem deixa e quem encontra, que é a forma de um legado endereçado ao futuro."
+   },
+   {
+    "hipotese": "H-15",
+    "relacao": "contradiz",
+    "peso": 0.4,
+    "justificativa": "O tesouro encontrado na ilha final tinha sido deixado ali por Joy Boy oitocentos anos antes: a obra data o tesouro em oitocentos anos e o atribui a Joy Boy, e não a um ciclo anterior ao Reino Antigo."
+   }
+  ]
  },
  {
   "id": "EV-0967-11",
@@ -3838,7 +4150,14 @@
    "traducao"
   ],
   "contexto": "O ato de nomear é canônico; a glosa não é. Vale aqui a mesma pendência de EV-0488-01 e a\ncorreção de EV-0972-01: 笑い話 são os caracteres de Laugh Tale e de Binks' Sake, e a wiki\nverte como \"funny story\", palavra que impõe comicidade a um lexema que não a exige.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "O nome Laugh Tale foi dado pelo próprio Roger, em referência ao que a paráfrase em inglês chama de uma história de rir: o nome da ilha aponta para um relato, e relato é a forma do registro que esta hipótese põe no fim da rota."
+   }
+  ]
  },
  {
   "id": "EV-0968-01",
@@ -3933,7 +4252,20 @@
    "Era dos Piratas"
   ],
   "contexto": "O nome é exógeno e coletivo. Quem o cunhou não viu o que há na ilha, o que enfraquece\nqualquer leitura que trate \"One Piece\" como descrição fiel do achado.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-02",
+    "relacao": "apoia",
+    "peso": 0.4,
+    "justificativa": "Foi o mundo, e não Roger, que deu o nome de One Piece ao conjunto de tudo o que ele obteve na viagem final: o nome nasce da repercussão pública do anúncio e não de nenhuma propriedade do que foi obtido."
+   },
+   {
+    "hipotese": "H-11",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Foi o mundo, e não Roger, que deu o nome de One Piece ao conjunto de tudo o que ele obteve na viagem final: o nome cobre o conjunto de tudo o que foi obtido, e não um objeto único que se pudesse repartir."
+   }
+  ]
  },
  {
   "id": "EV-0968-05",
@@ -3953,7 +4285,20 @@
    "apagamento"
   ],
   "contexto": "Elo direto entre o conteúdo de Laugh Tale e a política de apagamento do D.: quem leu a\nmensagem entende sozinho por que o Governo apaga a letra. Complementa EV-1190-04, que dá\na mesma ordem pelo lado de quem a emitiu.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Roger se irritou por o Governo Mundial divulgar seu nome como Gold Roger, escondendo o Gol D., mas disse compreender o motivo do encobrimento à luz do que a tripulação aprenderá em Laugh Tale: o que se aprende em Laugh Tale explica uma política de encobrimento do Governo, que é a ligação entre conteúdo e legitimidade que esta hipótese afirma."
+   },
+   {
+    "hipotese": "H-09",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Roger se irritou por o Governo Mundial divulgar seu nome como Gold Roger, escondendo o Gol D., e disse compreender o motivo do encobrimento à luz do que a tripulação aprenderá em Laugh Tale: o regime administra quem pode carregar a inicial, e o próprio Roger liga esse encobrimento ao que o Século Perdido esconde."
+   }
+  ]
  },
  {
   "id": "EV-0968-06",
@@ -3973,7 +4318,14 @@
    "retorno"
   ],
   "contexto": "A abertura tem prazo e destinatário. Oden volta de Laugh Tale tratando o retorno de Joy Boy\ncomo evento datável o bastante para se preparar antes dele.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Ao ser deixado em Wano pela tripulação, Oden declarou que abriria as fronteiras do país antes do dia em que Joy Boy aparecer: ele trata a aparição de Joy Boy como um dia que virá e organiza um preparativo político em função desse dia."
+   }
+  ]
  },
  {
   "id": "EV-0968-07",
@@ -4009,7 +4361,14 @@
    "riso"
   ],
   "contexto": "Aviso de método para todo átomo cuja única testemunha é o diário: a obra demonstra, de\npropósito, que Oden embeleza o registro na direção do sorriso. Onde o diário diz que\nalguém riu, cabe descontar.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-04",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Os diários de Oden contradizem o que o capítulo mostra: ele escreveu que nenhuma lágrima foi derramada na despedida de Roger enquanto os painéis mostram a tripulação em prantos: o registro escrito de Oden é fonte demonstradamente infiel, e é dele que vem o inventário do que foi descoberto na ilha final."
+   }
+  ]
  },
  {
   "id": "EV-0969-01",
@@ -4028,7 +4387,14 @@
    "execucao"
   ],
   "contexto": "Segunda ocorrência do par riso/tragédia associado ao que a tripulação aprendeu.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-02",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Ao receber a notícia da execução de Roger, Oden chorou e riu ao mesmo tempo, maravilhado com os feitos de Roger em vida: o riso na obra é reação de identificação com uma pessoa e com o que ela fez, e não aquisição de um bem."
+   }
+  ]
  },
  {
   "id": "EV-0972-01",
@@ -4122,7 +4488,14 @@
    "ameaca"
   ],
   "contexto": "O isolamento é defensivo e deliberado, decidido por quem sabia ler os Poneglyphs. Junto com\nEV-0967-09, fecha a sequência: Wano era ligada ao mundo, os Kouzuki a fecharam, e a\nreabertura tem hora marcada.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Oden revelou publicamente, da panela de execução, que foi a própria família Kouzuki que fechou Wano ao resto do mundo, para proteger o país de uma grande força externa: a mesma linhagem que esculpiu as pedras organizou o isolamento do país como proteção, o que é custódia planejada e não acaso."
+   }
+  ]
  },
  {
   "id": "EV-0972-04",
@@ -4141,7 +4514,14 @@
    "oitocentos anos"
   ],
   "contexto": "Oden não descreve um tesouro a ser achado, e sim alguém a ser recebido, e atribui a espera\nao mundo todo, não só a Wano.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "apoia",
+    "peso": 0.35,
+    "justificativa": "Oden afirmou que Wano e o mundo inteiro aguardam a chegada de uma figura ligada a um intervalo de oitocentos anos, e que quando ela aparecer Wano deve recebê-la e trabalhar ao lado dela: é espera datada por uma pessoa, com conduta combinada de antemão para o dia em que ela aparecer."
+   }
+  ]
  },
  {
   "id": "EV-0972-05",
@@ -4178,7 +4558,14 @@
    "Wano"
   ],
   "contexto": "Segunda vez no bloco em que uma data futura é tratada como calculável. A primeira foram os\nvinte e cinco anos ouvidos dos Reis do Mar em EV-0968-01.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Na carta deixada a Toki, Oden previu que em vinte anos estouraria uma guerra e que chegaria ao Novo Mundo uma força capaz de derrubar Kaidou: é previsão com prazo declarado que a obra depois cumpriu, o que eleva o valor probatório das predições datadas de que esta hipótese vive."
+   }
+  ]
  },
  {
   "id": "EV-0972-07",
@@ -4255,7 +4642,14 @@
    "nove sombras"
   ],
   "contexto": "Marcado ambíguo de propósito: a fonte consultada não reproduz o texto da profecia, só a\nleitura que os personagens fizeram dela, e a wiki referencia essa leitura aos capítulos 919\ne 920, fora deste bloco. Quem for dar peso a este átomo precisa antes buscar o texto\noriginal da fala.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Seguidores dos Kouzuki e o próprio Orochi entenderam a profecia de Toki como o anúncio de que, dali a vinte anos, nove sombras vingariam Oden, derrubariam Orochi e abririam as fronteiras de Wano: dentro da obra uma profecia com prazo de vinte anos é lida como agenda a cumprir, e não como metáfora."
+   }
+  ]
  },
  {
   "id": "EV-0973-04",
@@ -4393,7 +4787,14 @@
    "fracasso"
   ],
   "contexto": "Terceira peça da série que inclui EV-1043-01 (Zunesha declara o retorno) e EV-1188-01 (Imu nega). O título é afirmado e negado várias vezes na obra.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-10",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Kaidou afirma que Luffy não conseguiu se tornar o novo Joy Boy: se a fruta tivesse selecionado o portador certo, um fracasso declarado em cena em se tornar o novo Joy Boy seria estranho."
+   }
+  ]
  },
  {
   "id": "EV-1023-01",
@@ -4512,7 +4913,14 @@
    "Zunesha"
   ],
   "contexto": "",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-10",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Joy Boy foi camarada de Zunesha durante sua vida: é o que qualifica Zunesha como testemunha direta do primeiro portador, e não como personagem repetindo lenda."
+   }
+  ]
  },
  {
   "id": "EV-1041-01",
@@ -4579,7 +4987,14 @@
    "destino"
   ],
   "contexto": "Testemunha ocular de 800 anos atrás fazendo a identificação, não narração onisciente.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-10",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto, depositando confiança nele: uma testemunha direta do primeiro portador lê a chegada do poder a Luffy como destino, e não como acaso."
+   }
+  ]
  },
  {
   "id": "EV-1050-01",
@@ -4683,7 +5098,14 @@
    "armas ancestrais"
   ],
   "contexto": "Fecha o circuito aberto na saga de Arabasta: o que Robin leu no túmulo real e só agora diz em voz alta.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Robin afirma que o Poneglyph do Reino de Arabasta indicava que a arma ancestral Pluton está em Wano: uma pedra de um reino aponta para outro país do outro lado do mundo, ou seja, as peças se referenciam entre si e formam rede, em vez de achados isolados."
+   }
+  ]
  },
  {
   "id": "EV-1053-04",
@@ -4702,7 +5124,14 @@
    "armas ancestrais"
   ],
   "contexto": "Confirmação vinda da linha do xogunato, independente da leitura do Poneglyph de Arabasta.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-06",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Sukiyaki confirma a Robin que Pluton está de fato em Wano: mais uma arma ancestral confirmada em cena num país do meio do mundo, o que reforça que o depósito das armas não é o fim da Grand Line."
+   }
+  ]
  },
  {
   "id": "EV-1053-05",
@@ -4739,7 +5168,14 @@
    "Joy Boy"
   ],
   "contexto": "Oden condicionou isso ao retorno de Joy Boy: a agenda dele previa entregar uma arma ao futuro.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Abrir as fronteiras de Wano significa literalmente derrubar as muralhas montanhosas e liberar Pluton: o ato prometido para o dia esperado tem consequência física de escala global, que é o tipo de virada que esta hipótese atribui ao evento agendado."
+   }
+  ]
  },
  {
   "id": "EV-1055-02",
@@ -4760,7 +5196,20 @@
    "afundamento"
   ],
   "contexto": "Descer até ela é descrito como descer alguns séculos. A data coincide com o fim do Século Perdido.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-07",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Abaixo do castelo, atrás de uma janela de vidro, há uma cidade inteira submersa e preservada, que Sukiyaki identifica como a Wano de 800 anos atrás: a obra mostra em cena que uma cidade inteira pode ficar submersa e preservada desde o Século Perdido, que é o mecanismo que esta hipótese precisava ter."
+   },
+   {
+    "hipotese": "H-14",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Abaixo do castelo, atrás de uma janela de vidro, há uma cidade inteira submersa e preservada, que Sukiyaki identifica como a Wano de 800 anos atrás: é justamente o vestígio material visto em cena que a previsão desta hipótese pede, e ele está datado em 800 anos, dentro do Século Perdido e não num ciclo anterior."
+   }
+  ]
  },
  {
   "id": "EV-1055-03",
@@ -4778,7 +5227,14 @@
    "afundamento"
   ],
   "contexto": "Limite explícito do que a linha do xogunato preservou.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-07",
+    "relacao": "apoia",
+    "peso": 0.15,
+    "justificativa": "Sukiyaki declara não saber como a antiga Wano acabou submersa: quem custodia a cidade submersa não tem explicação para o afundamento, o que mantém disponível a inundação do Século Perdido como causa."
+   }
+  ]
  },
  {
   "id": "EV-1055-04",
@@ -4797,7 +5253,14 @@
    "muralhas"
   ],
   "contexto": "É hipótese do próprio personagem, não narração. Note que aqui a água não é do mar e a inundação é local, ao contrário do afundamento do Reino Antigo.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-07",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Sukiyaki propõe que a antiga Wano ficava ao nível do mar na base do Monte Fuji e afundou porque as muralhas erguidas na fronteira impediram a água da chuva de escoar: o único afundamento explicado na obra tem causa local e doméstica, e não a inundação global de que esta hipótese depende."
+   }
+  ]
  },
  {
   "id": "EV-1055-05",
@@ -4817,7 +5280,14 @@
    "Poneglyphs"
   ],
   "contexto": "O acesso ao Road Poneglyph passa pela cela do ex-xogum: quem controla o castelo controla a rota para Laugh Tale.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.3,
+    "justificativa": "Sukiyaki conduz Robin e Law por uma escada que desce do quarto secreto até a câmara subterrânea onde está o Road Poneglyph de Wano, abaixo da cidade submersa: pôr a pedra numa câmara subterrânea sob uma cidade submersa é escolha de esconderijo, que é o critério de colocação que a previsão desta hipótese exige."
+   }
+  ]
  },
  {
   "id": "EV-1055-06",
@@ -4836,7 +5306,14 @@
    "Poneglyphs"
   ],
   "contexto": "Os outros dois são os de Zou e de Big Mom, este último copiado por Brook.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-08",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Com a leitura do Road Poneglyph de Wano, os Chapéus de Palha passam a conhecer três dos quatro necessários para chegar a Laugh Tale: chegar depende de acumular leituras de Poneglyph, o que amarra o desfecho à decifração e não à mera presença de quem quer que seja."
+   }
+  ]
  },
  {
   "id": "EV-1055-07",
@@ -4875,7 +5352,14 @@
    "Poneglyphs"
   ],
   "contexto": "O segredo do xogunato foi furado por uma capacidade física banal, não por leitura.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.2,
+    "justificativa": "Sukiyaki admite que Kaidou e Orochi souberam do Poneglyph subterrâneo porque Jack, por ser homem-peixe, podia explorar as ruínas submersas: o esconderijo cedeu a um traço biológico banal de um subordinado, o que mostra custódia frágil em vez de projeto robusto."
+   }
+  ]
  },
  {
   "id": "EV-1055-09",
@@ -4915,7 +5399,14 @@
    "transmissao"
   ],
   "contexto": "Separa duas fontes de conhecimento: a herança do xogunato, que para na localização da arma, e o que Oden viu com Roger, que ninguém em Wano herdou.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "apoia",
+    "peso": 0.25,
+    "justificativa": "Sukiyaki diz que tudo o que contou lhe foi transmitido pela linha do xogunato e que desconhece o que Oden aprendeu nas viagens fora de Wano: o que a linhagem transmite é a custódia e o relato herdado, e não o conteúdo que o próprio filho foi buscar fora."
+   }
+  ]
  },
  {
   "id": "EV-1056-01",
@@ -4952,7 +5443,14 @@
    "Monkey D. Luffy"
   ],
   "contexto": "Contraste com Crocodile, Spandam e o Governo Mundial: quem está mais perto da arma é quem menos a quer.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-06",
+    "relacao": "contradiz",
+    "peso": 0.3,
+    "justificativa": "Perguntado por Robin se quer obter Pluton, Luffy recusa, dizendo que não precisa dela: o protagonista dispensa em cena uma arma ancestral, o que torna incoerente que o objetivo declarado da viagem dele seja outra arma."
+   }
+  ]
  },
  {
   "id": "EV-1056-03",
@@ -4971,7 +5469,14 @@
    "Caribou"
   ],
   "contexto": "Duas localizações de armas ancestrais vazam juntas para um destinatário ainda anônimo.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-02",
+    "relacao": "apoia",
+    "peso": 0.2,
+    "justificativa": "Caribou escuta escondido a conversa e decide levar a certa pessoa não identificada a informação sobre Pluton e sobre Poseidon: é a informação passar a circular, e não alguma propriedade das coisas nomeadas, que move alguém a agir."
+   }
+  ]
  },
  {
   "id": "EV-1056-04",
@@ -4990,7 +5495,14 @@
    "Laugh Tale"
   ],
   "contexto": "A informação do Road Poneglyph de Wano deixa de ser exclusiva dos Chapéus de Palha no mesmo capítulo em que é obtida.",
-  "citado_por": []
+  "citado_por": [
+   {
+    "hipotese": "H-17",
+    "relacao": "contradiz",
+    "peso": 0.35,
+    "justificativa": "Law entrega aos Piratas de Kid uma cópia em papel do Road Poneglyph de Wano: se o conteúdo passa para o papel e troca de mãos, a indestrutibilidade da pedra deixa de ser o que protege a mensagem."
+   }
+  ]
  },
  {
   "id": "EV-1056-05",

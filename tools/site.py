@@ -905,14 +905,14 @@ def pagina_hipoteses(evid, hips, meta) -> str:
   evidência verificável, toda hipótese arrisca previsões que podem dar errado, e um
   validador determinístico recusa qualquer coisa que não tenha fonte.</p>
   <div class="estado">
-    <p><b>Onde estamos.</b> A leitura mais provável hoje é que o One Piece seja
-    o <strong>legado dirigido de Joy Boy</strong> — palavras, um pedido e as condições de
-    uma promessa, endereçados a quem chegasse depois dele.</p>
-    <p>Ela lidera em <strong>100% de 2000 sorteios</strong> que sacodem todos os pesos, e
-    continua liderando mesmo jogando fora tudo que foi publicado depois do capítulo 1100.
-    Ainda assim está <strong>ferida</strong>: o red team achou seis suposições sem evidência.</p>
-    <p class="miudo">O que mudou no capítulo 1190: Gaban diz a Imu que conhece
-    <em>as palavras</em> de Joy Boy — e que não pretende segui-las.</p>
+    <p><b>Onde estamos.</b> Três leituras estão praticamente empatadas: o One Piece como
+    <strong>legado dirigido de Joy Boy</strong> (24%), como <strong>gatilho de um evento
+    agendado</strong> (21%) e como <strong>registro do Século Perdido</strong> (21%).</p>
+    <p>O empate é novo e tem causa: ao corrigir o cálculo para descontar evidência que
+    apoia várias hipóteses ao mesmo tempo, a dianteira que a primeira tinha encolheu. E,
+    cortando tudo publicado depois do capítulo 1100, quem lidera é a terceira.</p>
+    <p class="miudo">Nenhuma das três saiu intacta do red team. Seis hipóteses já foram
+    refutadas e estão no cemitério, com o motivo escrito.</p>
   </div>
   <div class="painel">
     <div><b data-alvo="{meta['n_ev']}">{meta['n_ev']}</b><small>átomos de evidência</small></div>

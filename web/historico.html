@@ -30,7 +30,7 @@
   <nav class="topo-nav"><a href="/">Hipóteses</a><a href="/grafo">Grafo</a><a href="/cronologia">Cronologia</a><a href="/evidencias">Evidências</a><a href="/historico" aria-current="page">Histórico</a><a href="/metodo">Método</a><a href="/dados">Dados & API</a></nav>
 </div></header>
 <a id="conteudo" tabindex="-1"></a><main><section style="border-top:0"><div class="env">
-  <div class="cab"><h1>O rastro</h1><span class="n">25 rodadas</span></div>
+  <div class="cab"><h1>O rastro</h1><span class="n">27 rodadas</span></div>
   <p class="intro">O valor deste projeto não é a resposta que ele dá hoje, é o registro de
   uma hipótese subindo e caindo ao longo dos capítulos. Cada rodada abaixo é um estado
   completo do arquivo, com o que entrou de evidência e o que isso fez com o ranking — em
@@ -185,6 +185,18 @@
     <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Corrige o header de cache: source do Vercel e path-to-regexp</h3>
     <p>O padrao anterior era regex livre e nunca casava, entao os assets com hash continuavam saindo com max-age=0. Os de /dados/ funcionaram porque o padrao era simples o bastante.</p>
     <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/bcbb744986dac812eb8805d404a5f4e217c9c83f">bcbb744</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Cronologia do mundo, historico das rodadas e icones proprios</h3>
+    <p>CRONOLOGIA. data/cronologia.md com 18 marcos, do acervo de Ohara de cinco mil anos ate o Terceiro Mundo que a profecia espera. Cada marco cita os atomos que o sustentam — 58 referencias — e o portao valida essas citacoes junto com todo</p><p>o resto, porque validate.py varre data/**/*.md. Nenhuma data vem de fora do arquivo.</p><p>A regua nao e uniforme de proposito, e a pagina diz isso: a obra data com precisao os ultimos cinquenta anos e e vaga sobre tudo antes do Seculo Perdido.</p><p>Cada marco carrega a certeza declarada — a obra afirma, leitura de painel, ou depende do tradutor —, com cor propria na linha.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/7380dc9b45d3954728416c0825d5216bbe329233">7380dc9</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Corrige a independencia dos elos, duas hipoteses novas, README</h3>
+    <p>A CORRECAO DO FURO. score.py tratava cada elo como fator de Bayes independente, e um mesmo atomo alimentava varias hipoteses concorrentes ao mesmo tempo — inflando todas juntas em vez de separar uma das outras. Em Bayes,</p><p>evidencia igualmente compativel com k alternativas nao altera a razao entre elas.</p><p>O fator de discriminacao divide a contribuicao pelo numero de hipoteses do mesmo escopo que recebem a MESMA relacao daquele atomo. Um atomo que apoia uma e contradiz outra continua valendo integral nas duas — esse discrimina, e e</p><p>exatamente o tipo de evidencia que decide.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/6952d66729e8349f6967edbe8952fbda7f79788b">6952d66</a></div>
   </div></li></ol>
   <p class="intro">O histórico completo, commit a commit, está em
   <a href="https://github.com/pedropasinn/seculo-perdido/commits/main">pedropasinn/seculo-perdido</a>.
@@ -205,5 +217,5 @@ publicada pela Shueisha — este é um projeto de fã, sem vínculo com os deten
 pela cláusula share-alike da fonte.</p>
 <p><a href="https://github.com/pedropasinn/seculo-perdido">pedropasinn/seculo-perdido</a> ·
 <a href="https://github.com/pedropasinn/seculo-perdido/commits/main">histórico de mudanças</a> ·
-atualizado em <time datetime="2026-08-11T19:43:29">11 de agosto de 2026</time></p>
+atualizado em <time datetime="2026-08-11T19:59:17">11 de agosto de 2026</time></p>
 </div></footer><script src="/app.a7a530bf.js"></script></body></html>

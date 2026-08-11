@@ -9,7 +9,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 
 ## Hipóteses
 
-### H-05 — viva · fatia 27.7%
+### H-05 — viva · fatia 23.5%
 
 **O One Piece é o legado dirigido de Joy Boy: palavras, um pedido e as condições de uma promessa, endereçados a quem chegasse depois dele.**
 
@@ -29,16 +29,20 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0621-02` (peso 0.2) — Neptune diz que o mundo com que sua esposa sonha remonta a centenas de anos e que ancestrais distantes tentaram a mesma coisa, que terminou em sonho desperdiçado e arrependimento: o que sobrou daquela tentativa é arrependimento, coerente com um legado cujo único texto conhecido é um pedido de desculpas.
 - + `EV-0395-05` (peso 0.25) — Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a escolha do suporte é de quem endereça um recado a leitores muito distantes no tempo, que é a forma de um legado dirigido.
 - + `EV-1066-04` (peso 0.2) — Shaka afirma que o Governo Mundial tentou apagar todo conhecimento do Reino Antigo com a intenção de que absolutamente ninguém carregasse os ideais dele: o que se teme é alguém assumir esses ideais, e ideal assumido por um herdeiro é legado dirigido, não crônica.
+- + `EV-0301-03` (peso 0.3) — Ao lado do texto antigo há uma segunda inscrição, assinada por Gol D. Roger, dizendo que eles estiveram ali, encontraram o texto e seguiram a orientação dele: Roger responde ao que leu deixando por escrito uma mensagem para quem viesse depois, que é a forma de legado dirigido.
+- + `EV-0967-10` (peso 0.35) — O tesouro encontrado na ilha final tinha sido deixado ali por Joy Boy oitocentos anos antes: o que existe na ilha foi deixado por alguém, com oitocentos anos entre quem deixa e quem encontra, que é a forma de um legado endereçado ao futuro.
+- + `EV-0966-08` (peso 0.25) — Foi Oden quem gravou, na escrita antiga, a mensagem que Roger ditou junto ao Poneglyph do sino de ouro de Shandora, registrando que estivera ali: Roger repetiu o gesto de deixar mensagem gravada para quem viesse depois, que é a forma do legado dirigido atribuída a Joy Boy.
 - − `EV-1085-03` (peso 0.35) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a rede de pistas que leva ao tesouro é acidente de outra pessoa, não endereçamento de Joy Boy.
 - − `EV-0576-01` (peso 0.25) — Barba Branca declarou que achar o One Piece desencadeará uma guerra indizível que engolfará o mundo inteiro, efeito difícil de derivar de um recado por mais importante que seja.
 - − `EV-1188-01` (peso 0.15) — Imu diz a Luffy que ele não é Joy Boy porque Joy Boy era muito mais forte, sugerindo que o que importa na sucessão é capacidade de combate e não a leitura de um legado.
 - − `EV-0649-04` (peso 0.3) — Neptune afirma que não conhece os detalhes da promessa e que sabe apenas, por lenda transmitida na família real, que um dia alguém viria cumprir em lugar de Joy Boy o que ele prometeu: se as condições se perderam na própria contraparte, o que ele legou não foi um conjunto de condições transmissíveis.
 - − `EV-0632-01` (peso 0.15) — Vander Decken IX afirma que há muito tempo o povo da Ilha dos Homens-Peixe construiu o navio gigante Noah: o meio material da promessa é obra de terceiros, e não parte do que Joy Boy deixou.
 - − `EV-0395-10` (peso 0.25) — Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: o destinatário declarado é o mundo inteiro, e não a pessoa esperada que este enunciado exige.
+- − `EV-0301-06` (peso 0.2) — A tábua de pedra que Robin encontrou no Upper Yard diz que diante do cerne da verdade não há necessidade de palavras e que seus autores são os registradores da história: quem gravou se apresenta como registrador e nega que palavras sejam necessárias, o oposto de um legado feito de palavras e de um pedido.
 - prevê [aberta]: Se verdadeiro, o conteúdo revelado em Laugh Tale terá forma de mensagem dirigida a quem chegar, e Luffy responderá com uma decisão explícita em vez de tomar posse de algo.
 - prevê [aberta]: Se verdadeiro, o texto de Laugh Tale terá vocativo dirigido a quem chega e enunciará uma condição a cumprir, e nenhum poder ou arma será concedido por alcançá-lo — as duas cláusulas juntas, que é o que separa esta hipótese de H-03, H-04 e H-08.
 
-### H-08 — viva · fatia 21.2%
+### H-08 — viva · fatia 21.3%
 
 **O One Piece é o gatilho de um evento agendado: chegar lá com a pessoa certa executa a virada que o Harley chama de Terceiro Mundo, independentemente do que esteja escrito ou guardado.**
 
@@ -59,6 +63,12 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0648-02` (peso 0.25) — Os Reis do Mar dizem a Shirahoshi que há muito tempo estavam esperando por ela: a espera atravessa o tempo e tem como objeto uma pessoa determinada, que é a metade desta hipótese que a evidência sustenta.
 - + `EV-0641-01` (peso 0.2) — Fukaboshi diz que a missão de proteger Noah começou séculos atrás e que tudo o que fizeram por ela se perderia se o navio esmagasse a ilha: a custódia é contada como missão contínua e datada, comportamento de quem cumpre um calendário.
 - + `EV-0636-02` (peso 0.2) — Noah é também chamada de Navio da Promessa, e Dia da Promessa é o termo do verso do Harley para o dia esperado: se o epíteto for do texto, o próprio nome do navio reforça a ponte lexical entre profecia e promessa.
+- + `EV-0972-04` (peso 0.35) — Oden afirmou que Wano e o mundo inteiro aguardam a chegada de uma figura ligada a um intervalo de oitocentos anos, e que quando ela aparecer Wano deve recebê-la e trabalhar ao lado dela: é espera datada por uma pessoa, com conduta combinada de antemão para o dia em que ela aparecer.
+- + `EV-0968-06` (peso 0.3) — Ao ser deixado em Wano pela tripulação, Oden declarou que abriria as fronteiras do país antes do dia em que Joy Boy aparecer: ele trata a aparição de Joy Boy como um dia que virá e organiza um preparativo político em função desse dia.
+- + `EV-0967-07` (peso 0.25) — Netuno, que ainda nem era casado, concluiu diante dos Piratas de Roger que sua futura filha seria a Poseidon, apoiado na previsão de Shyarly de que nasceria em breve uma sereia capaz de falar com os Reis do Mar: a obra opera com nascimento previsto e datado, que é a marca de um calendário e não de uma busca.
+- + `EV-0972-06` (peso 0.25) — Na carta deixada a Toki, Oden previu que em vinte anos estouraria uma guerra e que chegaria ao Novo Mundo uma força capaz de derrubar Kaidou: é previsão com prazo declarado que a obra depois cumpriu, o que eleva o valor probatório das predições datadas de que esta hipótese vive.
+- + `EV-0973-03` (peso 0.2) — Seguidores dos Kouzuki e o próprio Orochi entenderam a profecia de Toki como o anúncio de que, dali a vinte anos, nove sombras vingariam Oden, derrubariam Orochi e abririam as fronteiras de Wano: dentro da obra uma profecia com prazo de vinte anos é lida como agenda a cumprir, e não como metáfora.
+- + `EV-1055-01` (peso 0.2) — Abrir as fronteiras de Wano significa literalmente derrubar as muralhas montanhosas e liberar Pluton: o ato prometido para o dia esperado tem consequência física de escala global, que é o tipo de virada que esta hipótese atribui ao evento agendado.
 - − `EV-1190-02` (peso 0.35) — Imu admite que Luffy é quem esperavam e diz que foi tolo por ter confundido várias coincidências com destino, o que é uma negação explícita da leitura de que há um evento agendado.
 - − `EV-0301-01` (peso 0.3) — Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs o Rio Poneglyph será revelado: a obra condiciona o que acontece lá à leitura prévia, e não à mera presença.
 - − `EV-0818-01` (peso 0.25) — Os quatro Road Poneglyphs lidos em conjunto revelam quatro pontos cujo cruzamento indica a localização de Laugh Tale: chegar lá é resultado de decifrar texto, o que amarra o evento à leitura.
@@ -69,30 +79,12 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - − `EV-0649-05` (peso 0.3) — Neptune responde que Joy Boy não tinha o poder de controlar Reis do Mar e que essa habilidade pertencia à princesa sereia daquela época: o que faltava era a co-presença de quem detém cada poder, e não a chegada de alguém a um lugar.
 - − `EV-0648-04` (peso 0.25) — Os Reis do Mar explicam que a cada várias centenas de anos a rainha deles nasce em forma de sereia, por um motivo que eles próprios desconhecem: a recorrência é apresentada como fato inexplicado, e não como agendamento combinado por alguém.
 - − `EV-0621-01` (peso 0.15) — Otohime declara em praça pública que o Reino Ryugu vai para a superfície e recolhe assinaturas para levar a intenção de migrar ao Levely: a via que a obra mostra para a ilha alcançar seu fim é campanha política, e não a espera de um dia agendado.
+- − `EV-0301-03` (peso 0.25) — A inscrição assinada por Gol D. Roger diz que eles estiveram ali, encontraram o texto e seguiram a orientação dele: o avanço até o fim da rota se dá por achar e seguir texto, e não por chegar a um lugar com a pessoa certa.
+- − `EV-1055-06` (peso 0.2) — Com a leitura do Road Poneglyph de Wano, os Chapéus de Palha passam a conhecer três dos quatro necessários para chegar a Laugh Tale: chegar depende de acumular leituras de Poneglyph, o que amarra o desfecho à decifração e não à mera presença de quem quer que seja.
 - prevê [aberta]: Se verdadeiro, um evento global visível fora de Laugh Tale ocorrerá no mesmo capítulo da chegada, e não como consequência posterior de uma decisão tomada lá dentro.
 - prevê [aberta]: Se verdadeiro, a obra usará o termo Dia da Promessa numa cena que trate do One Piece ou de Laugh Tale, ligando explicitamente a profecia ao tesouro.
 
-### H-11 — viva · fatia 19.8%
-
-**O One Piece é um objeto físico comum e sem poder próprio, e seu valor está no ato de partilhá-lo: quem o encontra reúne o mundo ao distribuí-lo, não ao possuí-lo.**
-
-- + `EV-0968-03` (peso 0.4) — Ao completar o feito Roger dá uma grande festa com a tripulação, trocando bebidas com todos: a reação registrada de quem chegou ao fim da rota foi partilhar, não guardar.
-- + `EV-1000-01` (peso 0.4) — O título do capítulo 1000 é o sake que preparei enquanto esperava por você, Luffy Chapéu de Palha: a obra nomeia um objeto comum preparado e guardado para ser oferecido a alguém que chegaria.
-- + `EV-0585-01` (peso 0.35) — Diante de Ace e Sabo, Luffy declara o objetivo que está no fim do seu sonho, o quadro corta antes da fala e os três trocam taças de sake: o gesto que a obra mostra no lugar da fala é a partilha.
-- + `EV-0967-04` (peso 0.3) — A canção Binks' Sake toca ao longo de todo o capítulo em que a tripulação de Roger chega a Laugh Tale, ligando o achado a uma canção de bebida partilhada.
-- + `EV-1121-01` (peso 0.25) — Vegapunk afirma que o destino do mundo será decidido por quem reivindicar o One Piece e que quem o encontrar pode não ser aquele que Joy Boy esperava: é o uso que se faz da coisa, e não a coisa, que decide.
-- + `EV-1138-03` (peso 0.3) — No texto do Terceiro Mundo do Harley o deus do sol dança e ri, o sol retorna trazendo uma nova manhã e diz-se que dessa vez eles certamente se encontrarão: o desfecho profetizado é um encontro, que é o que uma partilha produz.
-- + `EV-1138-11` (peso 0.35) — No painel do Terceiro Mundo a figura demoníaca segura o Sol enquanto todos os demais tentam libertá-lo: o objetivo desenhado da coalizão não é tomar posse de nada, é devolver ao mundo algo que estava retido.
-- + `EV-1138-14` (peso 0.35) — Ripley considera o mural um sonho de criança precisamente porque ele mostra várias raças diferentes trabalhando juntas, algo de que os gigantes não têm registro: a reunião entre povos é tratada dentro da obra como o que há de mais improvável.
-- + `EV-1138-09` (peso 0.25) — Todas as figuras do painel do Primeiro Mundo são humanas, sem nenhuma outra raça, ao contrário do Terceiro Mundo: o próprio mural narra a passagem da segregação para a reunião.
-- + `EV-0626-02` (peso 0.2) — Otohime diz que o mesmo poder da princesa sereia, se usado com intenção sinistra, pode causar grande destruição: é o uso e a intenção de quem tem a coisa que decidem o efeito, e não a coisa.
-- − `EV-0972-02` (peso 0.35) — Os Piratas de Roger leram a mensagem e decidiram deixar tudo como estava por terem chegado cedo demais: se bastasse partilhar o objeto, nada impedia que o levassem e o partilhassem 25 anos depois.
-- − `EV-0576-01` (peso 0.25) — Barba Branca declarou que achar o One Piece desencadeará uma guerra indizível que engolfará o mundo inteiro, efeito difícil de derivar da distribuição de um objeto comum.
-- − `EV-0966-01` (peso 0.2) — Roger especulou que o Governo Mundial proíbe a pesquisa dos Poneglyphs para que ninguém chegue a Laugh Tale e encontre o que está escondido lá: não se sustenta uma política de estado de 800 anos contra um objeto sem poder.
-- prevê [aberta]: Se verdadeiro, o One Piece será mostrado sendo distribuído ou consumido, e não guardado, exibido nem instalado em algum lugar.
-- prevê [aberta]: Se verdadeiro, o One Piece mudará de mãos ou será repartido entre pessoas de mais de uma raça ou facção no mesmo arco em que for encontrado, sem que nenhuma leitura de Poneglyph seja necessária para isso.
-
-### H-04 — viva · fatia 13.9%
+### H-04 — viva · fatia 21.1%
 
 **O One Piece é o registro completo do Século Perdido, cuja divulgação destrói a legitimidade do Governo Mundial.**
 
@@ -125,6 +117,17 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0398-01` (peso 0.3) — A recompensa de setenta e nove milhões posta sobre Robin aos oito anos foi pela capacidade de ler poneglyphs, e não por ter afundado seis navios da Marinha como se divulgou: o Governo precifica a leitura e falsifica o motivo publicado.
 - + `EV-1066-04` (peso 0.35) — Shaka afirma que o Governo Mundial tentou apagar todo conhecimento do Reino Antigo com a intenção de que absolutamente ninguém carregasse os ideais dele: o que se apaga é conhecimento, isto é, registro, e a tese chega por outra boca que não a de Clover.
 - + `EV-1120-03` (peso 0.2) — Vegapunk afirma que o Governo Mundial deixou Clover vivo por tantos anos de propósito, para segui-lo até seus colegas e eliminar todos de uma vez: a operação mira a rede inteira de quem sabe, e não um crime pontual.
+- + `EV-0301-08` (peso 0.25) — Robin fica chocada ao descobrir que o Rei dos Piratas não só chegou à ilha do céu como sabia ler a escrita dos Poneglyphs: quem chegou ao fim da rota era leitor, o que sustenta a metade documental desta hipótese.
+- + `EV-0395-12` (peso 0.25) — Clover responde que o passado é algo que a humanidade deve aceitar e contra o qual deve se precaver: a defesa dele situa o objeto da proibição no conhecimento do passado, e é a réplica direta ao argumento das armas que pesa contra esta hipótese.
+- + `EV-0261-02` (peso 0.2) — Robin percebe que o desaparecimento do povo de Shandora há 800 anos cai exatamente dentro dos cem anos ausentes da história do mundo e cogita que a ilha do céu tenha feito parte dessa história não contada: a lacuna tem contorno datável, condição para existir um registro que a preencha.
+- + `EV-0396-02` (peso 0.2) — Clover conclui que o Governo Mundial pretendia desde o início levar a operação ao nível da destruição total da ilha: a decisão precede a investigação, logo o alvo era o que a ilha sabia e não um crime apurado.
+- + `EV-0394-06` (peso 0.15) — Clover exigiu falar diretamente com os Cinco Anciãos: o que ele tinha a dizer era matéria da cúpula do Governo Mundial e não de polícia, o que dimensiona o valor político do conteúdo histórico em disputa.
+- + `EV-0967-08` (peso 0.4) — Oden registrou por escrito que, na ilha final, a tripulação descobriu as verdades sobre o Século Perdido, sobre o significado do D. e sobre as armas ancestrais: é o inventário do que há na ilha final, e ele é inteiramente informacional, com o Século Perdido em primeiro lugar.
+- + `EV-0968-05` (peso 0.35) — Roger se irritou por o Governo Mundial divulgar seu nome como Gold Roger, escondendo o Gol D., mas disse compreender o motivo do encobrimento à luz do que a tripulação aprenderá em Laugh Tale: o que se aprende em Laugh Tale explica uma política de encobrimento do Governo, que é a ligação entre conteúdo e legitimidade que esta hipótese afirma.
+- + `EV-0966-05` (peso 0.3) — Roger pediu a Barba Branca que lhe emprestasse Oden por um ano, com a finalidade declarada de decifrar os Road Poneglyphs: a viagem final foi montada em torno de um leitor emprestado, precedente direto da indispensabilidade de tradutor que esta hipótese prevê.
+- + `EV-0967-12` (peso 0.3) — O nome Laugh Tale foi dado pelo próprio Roger, em referência ao que a paráfrase em inglês chama de uma história de rir: o nome da ilha aponta para um relato, e relato é a forma do registro que esta hipótese põe no fim da rota.
+- + `EV-0966-07` (peso 0.2) — Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: fixa em cena que ouvir vozes é o modo de acesso ao conteúdo de um Poneglyph, que é a ponte lexical de que o apoio profético desta hipótese depende.
+- + `EV-0967-09` (peso 0.2) — Na ilha final Oden aprendeu que Wano já estivera conectada ao resto do mundo: o que se aprende na ilha final é história apagada, e a desconexão de um país inteiro é o tipo de fato que o registro do Século Perdido restituiria.
 - − `EV-1117-01` (peso 0.35) — Os Cinco Anciãos interromperam parte da transmissão global de Vegapunk a qualquer custo, mostrando que o Governo consegue conter divulgação de informação e não seria destruído automaticamente por ela.
 - − `EV-0967-11` (peso 0.35) — A gargalhada coletiva da tripulação de Roger ao encontrar o tesouro em Laugh Tale é difícil de explicar como reação à leitura de um registro histórico.
 - − `EV-1121-01` (peso 0.3) — Vegapunk fala em reivindicar o One Piece e diz que quem o encontrar pode não ser aquele que Joy Boy esperava; um registro histórico se divulga, não se reivindica, e não tem destinatário preferido.
@@ -143,10 +146,60 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - − `EV-0396-04` (peso 0.2) — Olvia acusa as pessoas de temerem o passado sem sequer perguntar do que ele trata: se o medo do passado não depende de conhecer o conteúdo, divulgar esse conteúdo não produz por si a queda que esta hipótese prevê.
 - − `EV-0398-02` (peso 0.25) — A Marinha vistoriou as ruínas de Ohara, confirmou que não havia sobreviventes e viu o lago cheio de livros sem dar importância a eles: o regime que supostamente cai se o registro vazar deixou o acervo boiando intacto.
 - − `EV-1066-02` (peso 0.3) — Os livros que os arqueólogos de Ohara jogaram no lago foram recolhidos por gigantes liderados por Jaguar D. Saul e levados para Elbaf: existe um acervo inteiro fora de Laugh Tale, o que tira do fim da rota a exclusividade do registro.
+- − `EV-0301-02` (peso 0.25) — O Poneglyph dos Shandia estava na base do Sino Dourado e ao lê-lo Robin encontra o registro de uma arma ancestral chamada Poseidon: o texto que a obra mostra sendo lido em cena neste arco registra arma, e não a história do Século Perdido.
+- − `EV-0301-05` (peso 0.2) — Robin conclui que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história: se o registro só se compõe pela soma das pedras espalhadas, ele não está inteiro num achado único no fim da rota.
+- − `EV-0393-03` (peso 0.2) — A Marinha rastreou pelos pertences dos arqueólogos mortos a origem da equipe de Olvia até Ohara, e só então um destacamento do CP9 foi enviado à ilha: a cadeia começa num achado material sobre uma expedição, e não numa avaliação do conteúdo do registro.
+- − `EV-0421-01` (peso 0.2) — Uma vez anunciados os alvos, o Buster Call não pode ser revogado, mas o almirante que o lidera pode poupar um ponto específico mediante acordo prévio com a frota: o procedimento é instrumento padrão com exceção negociável, e não medida excepcional reservada a quem ameaça a legitimidade.
+- − `EV-0968-08` (peso 0.2) — Os diários de Oden contradizem o que o capítulo mostra: ele escreveu que nenhuma lágrima foi derramada na despedida de Roger enquanto os painéis mostram a tripulação em prantos: o registro escrito de Oden é fonte demonstradamente infiel, e é dele que vem o inventário do que foi descoberto na ilha final.
+- − `EV-0821-02` (peso 0.2) — Zunesha possui a Voz de Todas as Coisas e só consegue falar telepaticamente com quem tem a mesma habilidade: ouvir vozes ganha aqui um referente que não tem nada de leitura, o que enfraquece a ponte entre o verso profético e a leitura de um registro.
 - prevê [aberta]: Se verdadeiro, a revelação de Laugh Tale não avançará sem a tradução de Robin: ela será indispensável, e não apenas presente na cena.
 - prevê [aberta]: Se verdadeiro, o conteúdo revelado nomeará o Reino Antigo ou o crime fundador dos Vinte Reinos de forma auto-incriminatória, e não apenas descreverá a guerra.
 
-### H-03 — viva · fatia 10.0%
+### H-11 — viva · fatia 12.6%
+
+**O One Piece é um objeto físico comum e sem poder próprio, e seu valor está no ato de partilhá-lo: quem o encontra reúne o mundo ao distribuí-lo, não ao possuí-lo.**
+
+- + `EV-0968-03` (peso 0.4) — Ao completar o feito Roger dá uma grande festa com a tripulação, trocando bebidas com todos: a reação registrada de quem chegou ao fim da rota foi partilhar, não guardar.
+- + `EV-1000-01` (peso 0.4) — O título do capítulo 1000 é o sake que preparei enquanto esperava por você, Luffy Chapéu de Palha: a obra nomeia um objeto comum preparado e guardado para ser oferecido a alguém que chegaria.
+- + `EV-0585-01` (peso 0.35) — Diante de Ace e Sabo, Luffy declara o objetivo que está no fim do seu sonho, o quadro corta antes da fala e os três trocam taças de sake: o gesto que a obra mostra no lugar da fala é a partilha.
+- + `EV-0967-04` (peso 0.3) — A canção Binks' Sake toca ao longo de todo o capítulo em que a tripulação de Roger chega a Laugh Tale, ligando o achado a uma canção de bebida partilhada.
+- + `EV-1121-01` (peso 0.25) — Vegapunk afirma que o destino do mundo será decidido por quem reivindicar o One Piece e que quem o encontrar pode não ser aquele que Joy Boy esperava: é o uso que se faz da coisa, e não a coisa, que decide.
+- + `EV-1138-03` (peso 0.3) — No texto do Terceiro Mundo do Harley o deus do sol dança e ri, o sol retorna trazendo uma nova manhã e diz-se que dessa vez eles certamente se encontrarão: o desfecho profetizado é um encontro, que é o que uma partilha produz.
+- + `EV-1138-11` (peso 0.35) — No painel do Terceiro Mundo a figura demoníaca segura o Sol enquanto todos os demais tentam libertá-lo: o objetivo desenhado da coalizão não é tomar posse de nada, é devolver ao mundo algo que estava retido.
+- + `EV-1138-14` (peso 0.35) — Ripley considera o mural um sonho de criança precisamente porque ele mostra várias raças diferentes trabalhando juntas, algo de que os gigantes não têm registro: a reunião entre povos é tratada dentro da obra como o que há de mais improvável.
+- + `EV-1138-09` (peso 0.25) — Todas as figuras do painel do Primeiro Mundo são humanas, sem nenhuma outra raça, ao contrário do Terceiro Mundo: o próprio mural narra a passagem da segregação para a reunião.
+- + `EV-0626-02` (peso 0.2) — Otohime diz que o mesmo poder da princesa sereia, se usado com intenção sinistra, pode causar grande destruição: é o uso e a intenção de quem tem a coisa que decidem o efeito, e não a coisa.
+- − `EV-0972-02` (peso 0.35) — Os Piratas de Roger leram a mensagem e decidiram deixar tudo como estava por terem chegado cedo demais: se bastasse partilhar o objeto, nada impedia que o levassem e o partilhassem 25 anos depois.
+- − `EV-0576-01` (peso 0.25) — Barba Branca declarou que achar o One Piece desencadeará uma guerra indizível que engolfará o mundo inteiro, efeito difícil de derivar da distribuição de um objeto comum.
+- − `EV-0966-01` (peso 0.2) — Roger especulou que o Governo Mundial proíbe a pesquisa dos Poneglyphs para que ninguém chegue a Laugh Tale e encontre o que está escondido lá: não se sustenta uma política de estado de 800 anos contra um objeto sem poder.
+- − `EV-0967-08` (peso 0.3) — Oden registrou por escrito que, na ilha final, a tripulação descobriu as verdades sobre o Século Perdido, sobre o significado do D. e sobre as armas ancestrais: o que a ilha final entrega são verdades descobertas, e verdade não se reparte nem se consome como um objeto físico comum.
+- − `EV-0968-04` (peso 0.3) — Foi o mundo, e não Roger, que deu o nome de One Piece ao conjunto de tudo o que ele obteve na viagem final: o nome cobre o conjunto de tudo o que foi obtido, e não um objeto único que se pudesse repartir.
+- prevê [aberta]: Se verdadeiro, o One Piece será mostrado sendo distribuído ou consumido, e não guardado, exibido nem instalado em algum lugar.
+- prevê [aberta]: Se verdadeiro, o One Piece mudará de mãos ou será repartido entre pessoas de mais de uma raça ou facção no mesmo arco em que for encontrado, sem que nenhuma leitura de Poneglyph seja necessária para isso.
+
+### H-02 — viva · fatia 12.5%
+
+**O One Piece não é um objeto com poder próprio: seu valor é relacional e histórico, e o efeito no mundo vem do que a existência do anúncio provocou, não do conteúdo.**
+
+- + `EV-0506-01` (peso 0.45) — Roger usou suas palavras finais na execução pública para declarar que o One Piece pertence a quem conseguir encontrá-lo, e assim sozinho deu início à Grande Era dos Piratas: o anúncio, e não o conteúdo, é o que moveu o mundo.
+- + `EV-1085-03` (peso 0.35) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro, ou seja, a caçada nasce de um acidente histórico e não de uma propriedade do tesouro.
+- + `EV-0972-02` (peso 0.3) — Os Piratas de Roger aprenderam a verdadeira história e decidiram deixar tudo como estava, o que é coerente com um achado cujo valor não se transporta nem se gasta.
+- + `EV-0576-02` (peso 0.25) — Barba Branca recusou de Roger a informação de como chegar a Laugh Tale porque seu sonho era ter uma família, o que só faz sentido se o tesouro for algo que se pode dispensar sem perda prática.
+- + `EV-0972-01` (peso 0.25) — Ao aprender a verdadeira história Roger riu e declarou que gostaria de ter vivido na mesma época que Joy Boy: a reação é de identificação com uma pessoa, não de aquisição de um bem.
+- + `EV-0650-02` (peso 0.2) — Caribou, depois de descobrir que Shirahoshi é a arma ancestral Poseidon, tenta sequestrá-la no palácio e é impedido pelos Chapéus de Palha: foi a informação passar a circular, e não nenhuma propriedade nova da arma, que produziu efeito imediato no mundo.
+- + `EV-0396-04` (peso 0.2) — Olvia acusa as pessoas de temerem o passado sem sequer perguntar do que ele trata: o efeito sobre o mundo se produz sem que ninguém conheça o conteúdo, que é exatamente o mecanismo relacional desta hipótese.
+- + `EV-0968-04` (peso 0.4) — Foi o mundo, e não Roger, que deu o nome de One Piece ao conjunto de tudo o que ele obteve na viagem final: o nome nasce da repercussão pública do anúncio e não de nenhuma propriedade do que foi obtido.
+- + `EV-0969-01` (peso 0.2) — Ao receber a notícia da execução de Roger, Oden chorou e riu ao mesmo tempo, maravilhado com os feitos de Roger em vida: o riso na obra é reação de identificação com uma pessoa e com o que ela fez, e não aquisição de um bem.
+- + `EV-1056-03` (peso 0.2) — Caribou escuta escondido a conversa e decide levar a certa pessoa não identificada a informação sobre Pluton e sobre Poseidon: é a informação passar a circular, e não alguma propriedade das coisas nomeadas, que move alguém a agir.
+- − `EV-1121-01` (peso 0.5) — Vegapunk afirma que o destino do mundo será decidido por quem conseguir reivindicar o One Piece, o que atribui ao objeto um poder causal que esta hipótese nega.
+- − `EV-0576-01` (peso 0.3) — Barba Branca declarou que achar o One Piece desencadeará uma guerra indizível que engolfará o mundo inteiro, efeito grande demais para um valor apenas simbólico.
+- − `EV-1122-02` (peso 0.25) — Joy Boy selou parte do seu Haki do Conquistador dentro de Emet atado em nó para ser liberado séculos depois, provando que ele deixava para o futuro coisas com efeito material, não apenas memória.
+- − `EV-0966-01` (peso 0.2) — Roger especulou que o Governo Mundial proíbe a pesquisa dos Poneglyphs para que ninguém chegue a Laugh Tale e encontre o que está escondido lá; não se monta uma política de estado de 800 anos contra uma lição de vida.
+- − `EV-1066-04` (peso 0.25) — Shaka afirma que o Governo Mundial tentou apagar todo conhecimento do Reino Antigo com a intenção de que absolutamente ninguém carregasse os ideais dele: uma política de apagamento desse tamanho tem por alvo um conteúdo determinado, e não a repercussão de um anúncio.
+- prevê [aberta]: Se verdadeiro, alcançar Laugh Tale não concederá a ninguém poder, arma ou capacidade nova, e o Governo Mundial não cairá como consequência direta do achado.
+- prevê [aberta]: Se verdadeiro, o que houver em Laugh Tale não conterá instrução, pedido nem condição dirigida a quem chegar — cláusula que separa esta hipótese de H-05.
+
+### H-03 — viva · fatia 8.9%
 
 **O One Piece é um artefato funcional do Reino Antigo, cuja ativação depende de condições que não existiam na época de Roger.**
 
@@ -160,55 +213,16 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0649-08` (peso 0.15) — Se os termos que a wiki descreve valerem, os habitantes da ilha construíram Noah para que o poder de Poseidon a erguesse até a superfície: seria um artefato com função definida que só opera quando existe a condição que lhe falta. Peso baixo porque o acordo pode ser interpolação.
 - + `EV-0621-04` (peso 0.15) — A crença que a wiki atribui a Otohime e a Neptune é de que o propósito de Noah era a migração em massa dos habitantes da ilha para a superfície: o navio seria um artefato construído para uma função definida e nunca executada.
 - + `EV-0395-04` (peso 0.25) — O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: é demonstração em cena de material do Reino Antigo que a tecnologia atual não destrói nem replica.
+- + `EV-0967-05` (peso 0.2) — Rayleigh garantiu a Netuno que a tripulação de Roger não estava atrás da arma ancestral, e sim do tesouro de quem criou a arma: o tesouro é atribuído aos construtores da arma, isto é, à mesma engenharia antiga de que esta hipótese depende.
 - − `EV-1190-03` (peso 0.4) — Gaban diz conhecer as palavras de Joy Boy e não ter intenção de segui-las: o que a tripulação trouxe de Laugh Tale é descrito como palavras, não como máquina.
 - − `EV-1190-01` (peso 0.35) — Gaban afirma que a insistência de Imu em matar Luffy prova o que Roger disse sobre terem chegado cedo demais e que Luffy é a pessoa esperada: a condição que faltava é uma pessoa, o que dispensa o mecanismo desta hipótese.
 - − `EV-1116-02` (peso 0.25) — A Mother Flame, chama que Vegapunk criou para ser um sol próprio e fonte de energia ilimitada, está incompleta e é criação moderna — não é a energia antiga que esta hipótese precisava emprestar.
 - − `EV-0967-11` (peso 0.2) — A gargalhada da tripulação de Roger ao encontrar o tesouro em Laugh Tale não é a reação esperada diante de um dispositivo técnico.
 - − `EV-0632-01` (peso 0.15) — Vander Decken IX afirma que há muito tempo o povo da Ilha dos Homens-Peixe construiu o navio gigante Noah: o maior artefato antigo deste arco é obra dos próprios habitantes, e não do Reino Antigo de cuja tecnologia esta hipótese depende.
 - − `EV-0395-05` (peso 0.2) — Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: o único artefato antigo que Ohara possuía é descrito como suporte de mensagem, e não como dispositivo que executa alguma função.
+- − `EV-0967-08` (peso 0.25) — Oden registrou por escrito que, na ilha final, a tripulação descobriu as verdades sobre o Século Perdido, sobre o significado do D. e sobre as armas ancestrais: o que a ilha entrega são verdades descobertas, e não um dispositivo que se opere.
 - prevê [aberta]: Se verdadeiro, algo em Laugh Tale mudará de estado pela presença ou pela ação de quem chega, sem depender de leitura, e essa mudança será mostrada no mesmo arco da chegada.
 - prevê [aberta]: Se verdadeiro, Laugh Tale conterá estrutura construída e operável, e não apenas registros escritos.
-
-### H-02 — viva · fatia 6.9%
-
-**O One Piece não é um objeto com poder próprio: seu valor é relacional e histórico, e o efeito no mundo vem do que a existência do anúncio provocou, não do conteúdo.**
-
-- + `EV-0506-01` (peso 0.45) — Roger usou suas palavras finais na execução pública para declarar que o One Piece pertence a quem conseguir encontrá-lo, e assim sozinho deu início à Grande Era dos Piratas: o anúncio, e não o conteúdo, é o que moveu o mundo.
-- + `EV-1085-03` (peso 0.35) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro, ou seja, a caçada nasce de um acidente histórico e não de uma propriedade do tesouro.
-- + `EV-0972-02` (peso 0.3) — Os Piratas de Roger aprenderam a verdadeira história e decidiram deixar tudo como estava, o que é coerente com um achado cujo valor não se transporta nem se gasta.
-- + `EV-0576-02` (peso 0.25) — Barba Branca recusou de Roger a informação de como chegar a Laugh Tale porque seu sonho era ter uma família, o que só faz sentido se o tesouro for algo que se pode dispensar sem perda prática.
-- + `EV-0972-01` (peso 0.25) — Ao aprender a verdadeira história Roger riu e declarou que gostaria de ter vivido na mesma época que Joy Boy: a reação é de identificação com uma pessoa, não de aquisição de um bem.
-- + `EV-0650-02` (peso 0.2) — Caribou, depois de descobrir que Shirahoshi é a arma ancestral Poseidon, tenta sequestrá-la no palácio e é impedido pelos Chapéus de Palha: foi a informação passar a circular, e não nenhuma propriedade nova da arma, que produziu efeito imediato no mundo.
-- + `EV-0396-04` (peso 0.2) — Olvia acusa as pessoas de temerem o passado sem sequer perguntar do que ele trata: o efeito sobre o mundo se produz sem que ninguém conheça o conteúdo, que é exatamente o mecanismo relacional desta hipótese.
-- − `EV-1121-01` (peso 0.5) — Vegapunk afirma que o destino do mundo será decidido por quem conseguir reivindicar o One Piece, o que atribui ao objeto um poder causal que esta hipótese nega.
-- − `EV-0576-01` (peso 0.3) — Barba Branca declarou que achar o One Piece desencadeará uma guerra indizível que engolfará o mundo inteiro, efeito grande demais para um valor apenas simbólico.
-- − `EV-1122-02` (peso 0.25) — Joy Boy selou parte do seu Haki do Conquistador dentro de Emet atado em nó para ser liberado séculos depois, provando que ele deixava para o futuro coisas com efeito material, não apenas memória.
-- − `EV-0966-01` (peso 0.2) — Roger especulou que o Governo Mundial proíbe a pesquisa dos Poneglyphs para que ninguém chegue a Laugh Tale e encontre o que está escondido lá; não se monta uma política de estado de 800 anos contra uma lição de vida.
-- − `EV-1066-04` (peso 0.25) — Shaka afirma que o Governo Mundial tentou apagar todo conhecimento do Reino Antigo com a intenção de que absolutamente ninguém carregasse os ideais dele: uma política de apagamento desse tamanho tem por alvo um conteúdo determinado, e não a repercussão de um anúncio.
-- prevê [aberta]: Se verdadeiro, alcançar Laugh Tale não concederá a ninguém poder, arma ou capacidade nova, e o Governo Mundial não cairá como consequência direta do achado.
-- prevê [aberta]: Se verdadeiro, o que houver em Laugh Tale não conterá instrução, pedido nem condição dirigida a quem chegar — cláusula que separa esta hipótese de H-05.
-
-### H-06 — viva · fatia 0.4%
-
-**O One Piece é a terceira arma ancestral, Uranus, ou a chave de acesso a ela, guardada no fim da Grand Line.**
-
-- + `EV-0650-01` (peso 0.35) — As três armas ancestrais têm nome de divindades e não se limitam a objetos inanimados, incluindo seres vivos, o que permite que Uranus seja qualquer coisa guardada em Laugh Tale.
-- + `EV-0967-02` (peso 0.3) — Joy Boy deixou Poneglyphs descrevendo o paradeiro das armas ancestrais, ligando a rede de Poneglyphs que leva a Laugh Tale ao tema das armas.
-- + `EV-1116-01` (peso 0.25) — Joy Boy teve papel na preservação das três armas ancestrais para que gerações futuras pudessem acessá-las e usá-las, o que torna coerente que tenha guardado a terceira no fim da rota.
-- + `EV-0648-07` (peso 0.15) — Ao ver a filha conversando com os Reis do Mar, Neptune declara que despertou o poder capaz de destruir o mundo: a obra trata uma arma ancestral como poder real de escala mundial, premissa de que esta hipótese precisa para valer a pena guardar a terceira.
-- + `EV-0626-02` (peso 0.15) — Otohime diz que o mesmo poder da princesa sereia, se usado com intenção sinistra, pode causar grande destruição: confirma que uma arma ancestral é capaz de destruição em escala, o que mantém de pé o motivo para esconder a terceira no fim da rota.
-- + `EV-0394-04` (peso 0.2) — Spandine acusa os estudiosos de Ohara de terem como objetivo despertar as armas ancestrais: a acusação oficial liga a rede de poneglyphs ao despertar das armas, que é a ponte de que esta hipótese precisa.
-- + `EV-0395-11` (peso 0.25) — Os Cinco Anciãos afirmam que a continuidade da pesquisa acabará revivendo as armas ancestrais, mesmo que os estudiosos não tenham essa intenção: a própria cúpula declara que seguir os poneglyphs até o fim termina numa arma.
-- − `EV-1089-01` (peso 0.55) — York roubou uma amostra da Mother Flame e a enviou aos Cinco Anciãos e a Imu, que a usaram para energizar uma arma ancestral: se o Governo já opera uma das armas, ela não está esperando em Laugh Tale.
-- − `EV-1053-01` (peso 0.3) — Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na antiga Wano, abaixo do Road Poneglyph do país: o padrão da obra é guardar cada arma longe do fim da rota, não nele.
-- − `EV-0649-02` (peso 0.3) — Shirahoshi herdou o título de Poseidon, poder que aparece numa princesa sereia a cada vários séculos, o que reforça o mesmo padrão: as armas estão espalhadas e vivas no mundo, não guardadas no fim da Grand Line.
-- − `EV-1086-01` (peso 0.25) — Dragon estranha que o Governo só agora tenha usado uma arma capaz de apagar o Reino de Lulusia em segundos, o que reforça que a arma faltante já estava em mãos do Governo.
-- − `EV-0625-01` (peso 0.2) — Aos seis anos, ao gritar de medo quando um Dragão Celestial aponta a arma para sua mãe, Shirahoshi emite ondas de sonar e cinco Reis do Mar surgem: uma arma ancestral se manifesta sozinha numa criança, o oposto de estar guardada no fim da Grand Line.
-- − `EV-0625-02` (peso 0.2) — Vander Decken IX recorda que a lenda de uma princesa sereia capaz de convocar Reis do Mar levou o primeiro Vander Decken ao fundo do mar, e que a história foi passada aos descendentes: o paradeiro de uma arma ancestral circula como lenda hereditária, e não está selado no fim da rota.
-- − `EV-0626-03` (peso 0.15) — Otohime pede aos três filhos que protejam Shirahoshi com a própria vida quando a hora chegar, e Fukaboshi jura cumprir essa promessa à mãe moribunda: a custódia de uma arma ancestral é dever de família numa ilha do meio do mundo, não depósito no fim da Grand Line.
-- − `EV-0649-06` (peso 0.3) — Robin conta que o poneglyph que leu em Skypiea dois anos antes dava a localização de uma das armas ancestrais e dizia que ela estava na Ilha dos Homens-Peixe: quando a obra usa um poneglyph para apontar uma arma, o lugar apontado não é o fim da rota.
-- prevê [aberta]: Se verdadeiro, Uranus será identificado como estando em Laugh Tale ou acessível apenas a partir dela, e não em Mary Geoise.
-- prevê [aberta]: Se verdadeiro, a arma que destruiu o Reino de Lulusia será nomeada como algo diferente de Uranus antes do desfecho da saga.
 
 ### H-01 — refutada · fatia 0.0%
 
@@ -227,17 +241,46 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - prevê [aberta]: Se verdadeiro, a revelação de Laugh Tale mostrará volume físico de riqueza, e não um texto, uma pessoa ou um mecanismo.
 - prevê [aberta]: Se verdadeiro, nenhuma capacidade de leitura de Poneglyph será necessária para usufruir do achado depois de chegar lá.
 
+### H-06 — refutada · fatia 0.0%
+
+**O One Piece é a terceira arma ancestral, Uranus, ou a chave de acesso a ela, guardada no fim da Grand Line.**
+
+- + `EV-0650-01` (peso 0.35) — As três armas ancestrais têm nome de divindades e não se limitam a objetos inanimados, incluindo seres vivos, o que permite que Uranus seja qualquer coisa guardada em Laugh Tale.
+- + `EV-0967-02` (peso 0.3) — Joy Boy deixou Poneglyphs descrevendo o paradeiro das armas ancestrais, ligando a rede de Poneglyphs que leva a Laugh Tale ao tema das armas.
+- + `EV-1116-01` (peso 0.25) — Joy Boy teve papel na preservação das três armas ancestrais para que gerações futuras pudessem acessá-las e usá-las, o que torna coerente que tenha guardado a terceira no fim da rota.
+- + `EV-0648-07` (peso 0.15) — Ao ver a filha conversando com os Reis do Mar, Neptune declara que despertou o poder capaz de destruir o mundo: a obra trata uma arma ancestral como poder real de escala mundial, premissa de que esta hipótese precisa para valer a pena guardar a terceira.
+- + `EV-0626-02` (peso 0.15) — Otohime diz que o mesmo poder da princesa sereia, se usado com intenção sinistra, pode causar grande destruição: confirma que uma arma ancestral é capaz de destruição em escala, o que mantém de pé o motivo para esconder a terceira no fim da rota.
+- + `EV-0394-04` (peso 0.2) — Spandine acusa os estudiosos de Ohara de terem como objetivo despertar as armas ancestrais: a acusação oficial liga a rede de poneglyphs ao despertar das armas, que é a ponte de que esta hipótese precisa.
+- + `EV-0395-11` (peso 0.25) — Os Cinco Anciãos afirmam que a continuidade da pesquisa acabará revivendo as armas ancestrais, mesmo que os estudiosos não tenham essa intenção: a própria cúpula declara que seguir os poneglyphs até o fim termina numa arma.
+- − `EV-1089-01` (peso 0.55) — York roubou uma amostra da Mother Flame e a enviou aos Cinco Anciãos e a Imu, que a usaram para energizar uma arma ancestral: se o Governo já opera uma das armas, ela não está esperando em Laugh Tale.
+- − `EV-1053-01` (peso 0.3) — Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na antiga Wano, abaixo do Road Poneglyph do país: o padrão da obra é guardar cada arma longe do fim da rota, não nele.
+- − `EV-0649-02` (peso 0.3) — Shirahoshi herdou o título de Poseidon, poder que aparece numa princesa sereia a cada vários séculos, o que reforça o mesmo padrão: as armas estão espalhadas e vivas no mundo, não guardadas no fim da Grand Line.
+- − `EV-1086-01` (peso 0.25) — Dragon estranha que o Governo só agora tenha usado uma arma capaz de apagar o Reino de Lulusia em segundos, o que reforça que a arma faltante já estava em mãos do Governo.
+- − `EV-0625-01` (peso 0.2) — Aos seis anos, ao gritar de medo quando um Dragão Celestial aponta a arma para sua mãe, Shirahoshi emite ondas de sonar e cinco Reis do Mar surgem: uma arma ancestral se manifesta sozinha numa criança, o oposto de estar guardada no fim da Grand Line.
+- − `EV-0625-02` (peso 0.2) — Vander Decken IX recorda que a lenda de uma princesa sereia capaz de convocar Reis do Mar levou o primeiro Vander Decken ao fundo do mar, e que a história foi passada aos descendentes: o paradeiro de uma arma ancestral circula como lenda hereditária, e não está selado no fim da rota.
+- − `EV-0626-03` (peso 0.15) — Otohime pede aos três filhos que protejam Shirahoshi com a própria vida quando a hora chegar, e Fukaboshi jura cumprir essa promessa à mãe moribunda: a custódia de uma arma ancestral é dever de família numa ilha do meio do mundo, não depósito no fim da Grand Line.
+- − `EV-0649-06` (peso 0.3) — Robin conta que o poneglyph que leu em Skypiea dois anos antes dava a localização de uma das armas ancestrais e dizia que ela estava na Ilha dos Homens-Peixe: quando a obra usa um poneglyph para apontar uma arma, o lugar apontado não é o fim da rota.
+- − `EV-0967-05` (peso 0.45) — Rayleigh garantiu a Netuno que a tripulação de Roger não estava atrás da arma ancestral, e sim do tesouro de quem criou a arma: a obra separa explicitamente o tesouro buscado da arma ancestral, que é justamente a identificação de que esta hipótese precisa.
+- − `EV-1056-02` (peso 0.3) — Perguntado por Robin se quer obter Pluton, Luffy recusa, dizendo que não precisa dela: o protagonista dispensa em cena uma arma ancestral, o que torna incoerente que o objetivo declarado da viagem dele seja outra arma.
+- − `EV-0967-06` (peso 0.25) — A arma ancestral Poseidon não estava na Ilha dos Homens-Peixe quando a tripulação de Roger chegou, apesar de o Poneglyph de Skypiea indicar que ela estaria lá: as armas ancestrais são procuradas onde os Poneglyphs apontam, e o lugar apontado não é o fim da rota.
+- − `EV-1053-04` (peso 0.2) — Sukiyaki confirma a Robin que Pluton está de fato em Wano: mais uma arma ancestral confirmada em cena num país do meio do mundo, o que reforça que o depósito das armas não é o fim da Grand Line.
+- prevê [aberta]: Se verdadeiro, Uranus será identificado como estando em Laugh Tale ou acessível apenas a partir dela, e não em Mary Geoise.
+- prevê [aberta]: Se verdadeiro, a arma que destruiu o Reino de Lulusia será nomeada como algo diferente de Uranus antes do desfecho da saga.
+
 ### H-07 — refutada · fatia 0.0%
 
 **O One Piece é o próprio Reino Antigo preservado: a cidade ou o território que a inundação do Século Perdido escondeu e que volta a aparecer quando o mar baixar.**
 
 - + `EV-1115-01` (peso 0.4) — Vegapunk conclui que o uso das armas ancestrais elevou o nível do mar em 200 metros e que as ilhas de hoje são os topos dos continentes submersos, o que coloca um mundo inteiro escondido debaixo da água.
 - + `EV-1065-01` (peso 0.25) — Vegapunk teoriza que o Reino Antigo era uma civilização tecnologicamente muito mais avançada, e uma civilização inteira preservada seria de fato o maior tesouro do mundo.
+- + `EV-1055-02` (peso 0.3) — Abaixo do castelo, atrás de uma janela de vidro, há uma cidade inteira submersa e preservada, que Sukiyaki identifica como a Wano de 800 anos atrás: a obra mostra em cena que uma cidade inteira pode ficar submersa e preservada desde o Século Perdido, que é o mecanismo que esta hipótese precisava ter.
+- + `EV-1055-03` (peso 0.15) — Sukiyaki declara não saber como a antiga Wano acabou submersa: quem custodia a cidade submersa não tem explicação para o afundamento, o que mantém disponível a inundação do Século Perdido como causa.
 - − `EV-1125-03` (peso 0.4) — Escravos constroem há 700 anos as megaestruturas Tequila Wolf, Vodka Wolf, Rum Wolf e Bourbon Wolf por encomenda dos Nobres Mundiais: o Governo se prepara para o mar SUBIR mais, não para ele baixar.
 - − `EV-0301-01` (peso 0.3) — Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs o Rio Poneglyph será revelado: o que a obra promete na ilha é um texto, não um continente.
 - − `EV-0972-02` (peso 0.3) — Os Piratas de Roger leram a mensagem e decidiram deixar tudo como estava por terem chegado cedo demais, o que é estranho se o que estivesse lá fosse uma cidade inteira já visível.
 - − `EV-1190-03` (peso 0.25) — Gaban diz conhecer as palavras de Joy Boy e não pretender segui-las: o que se traz de Laugh Tale são palavras, e não se traz um território.
 - − `EV-0395-08` (peso 0.25) — Clover afirma que, antes de o Governo Mundial existir, o mundo era regido por um reino imenso, e que esse reino foi exterminado por um grupo que veio a se tornar o Governo Mundial: exterminado é o verbo do discurso, o oposto de um reino preservado à espera de reaparecer.
+- − `EV-1055-04` (peso 0.3) — Sukiyaki propõe que a antiga Wano ficava ao nível do mar na base do Monte Fuji e afundou porque as muralhas erguidas na fronteira impediram a água da chuva de escoar: o único afundamento explicado na obra tem causa local e doméstica, e não a inundação global de que esta hipótese depende.
 - prevê [aberta]: Se verdadeiro, o nível do mar baixará ou terras submersas emergirão como parte do desfecho, e Laugh Tale será mostrada como parte de uma massa de terra maior.
 
 ### H-09 — viva · fatia 0.0%
@@ -256,6 +299,8 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0395-07` (peso 0.2) — O Governo Mundial foi formado ao fim do Século Perdido, isto é, no instante exato em que a soberania anterior some do registro: troca de regime simultânea ao apagamento é o rastro que uma usurpação deixa.
 - + `EV-1120-01` (peso 0.3) — Clou D. Clover e seu irmão mais velho carregavam o nome secreto D., o irmão foi morto por causa disso e Clover sobreviveu negando o parentesco: matar por portar a inicial é política de linhagem, que é o comportamento que esta hipótese atribui ao soberano.
 - + `EV-1120-02` (peso 0.25) — Clover afirma que se dedicou a desenterrar a verdade do mundo por não aceitar um mundo em que alguém é morto por causa do próprio nome: a perseguição ao nome é o fato que pede explicação, e sucessão disputada é uma explicação para ele.
+- + `EV-0968-05` (peso 0.3) — Roger se irritou por o Governo Mundial divulgar seu nome como Gold Roger, escondendo o Gol D., e disse compreender o motivo do encobrimento à luz do que a tripulação aprenderá em Laugh Tale: o regime administra quem pode carregar a inicial, e o próprio Roger liga esse encobrimento ao que o Século Perdido esconde.
+- + `EV-0821-01` (peso 0.2) — Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: uma sentença supõe uma autoridade com poder para julgar e punir no fim do Século Perdido, isto é, uma soberania em exercício antes do regime atual.
 - − `EV-1181-01` (peso 0.45) — Imu descreve seu poder Omen como algo que reside em todas as coisas e cujos fundamentos são Corrupção, Pacto e inveja, formando o poder da Dominação: negar reinado alheio é doutrina declarada dele, e explica a fúria sem precisar de nenhum trono roubado.
 - − `EV-1181-02` (peso 0.35) — Imu declara que a Dominação é a única bem-aventurança verdadeira do mundo e ao dizer isso recorda uma conversa com Joy Boy e grita o nome dele com raiva: a fúria de Imu aponta para Joy Boy, justamente quem este enunciado exclui do trono.
 - − `EV-1084-01` (peso 0.3) — Lili, rainha de Arabasta no Século Perdido, foi a única dos vinte soberanos a não se mudar para Mary Geoise: a obra já tem vinte soberanos anteriores ao Governo Mundial, o que satisfaz 'houve rei antes' sem nenhuma usurpação de trono único.
@@ -276,10 +321,13 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-1069-01` (peso 0.25) — Segundo Vegapunk, a existência de Nika só está registrada nos textos mais antigos, tendo sido apagada dos documentos modernos: um apagamento tão caro só se justifica se houver algo a temer no retorno dela.
 - + `EV-1175-03` (peso 0.45) — O confidente do Deus da Guerra, o esquilo Ratatoskr, transferiu-se para dentro da arma com o termo japonês usado para transmigração de almas e lá aguardou o retorno de seu mestre até reconhecer Loki: a obra estabelece como fato de mundo que o poder de uma fruta sobrevive ao portador, espera séculos e escolhe a quem se entrega.
 - + `EV-0648-04` (peso 0.15) — Os Reis do Mar explicam que a cada várias centenas de anos a rainha deles nasce em forma de sereia, por um motivo que eles próprios desconhecem: a obra já estabelece um poder que reaparece sozinho através dos séculos, sem que ninguém o administre.
+- + `EV-1046-01` (peso 0.3) — Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto, depositando confiança nele: uma testemunha direta do primeiro portador lê a chegada do poder a Luffy como destino, e não como acaso.
+- + `EV-1040-01` (peso 0.2) — Joy Boy foi camarada de Zunesha durante sua vida: é o que qualifica Zunesha como testemunha direta do primeiro portador, e não como personagem repetindo lenda.
 - − `EV-0001-01` (peso 0.5) — A fruta foi roubada de um navio do Governo pelos Piratas do Ruivo e um menino de sete anos a encontrou largada e a comeu por engano achando que era sobremesa: o trajeto documentado é roubo de terceiros mais engano infantil, sem nenhum ato da fruta.
 - − `EV-1190-02` (peso 0.4) — Imu admite que Luffy é quem esperavam e diz que foi tolo por ter confundido várias coincidências com destino: a obra coloca na boca do antagonista a advertência contra ler seleção onde houve acaso.
 - − `EV-1125-02` (peso 0.25) — Vegapunk nunca conseguiu replicar a energia antiga que move o robô Emet e a máquina só voltou à vida quando os Tambores da Libertação soaram: há rota evidenciada em que um artefato antigo reage a um evento sem querer nada.
 - − `EV-1188-01` (peso 0.15) — Imu diz a Luffy que ele não é Joy Boy porque Joy Boy era muito mais forte: se a fruta escolhesse o herdeiro certo, a diferença de força entre os dois portadores seria estranha.
+- − `EV-1014-01` (peso 0.2) — Kaidou afirma que Luffy não conseguiu se tornar o novo Joy Boy: se a fruta tivesse selecionado o portador certo, um fracasso declarado em cena em se tornar o novo Joy Boy seria estranho.
 - prevê [aberta]: Se verdadeiro, antes do fim da saga a obra mostrará a fruta ou o poder dela recusando, fugindo ou escolhendo por conta própria numa cena em que nenhum evento externo e nenhuma pessoa a acione — as duas exclusões juntas, porque EV-1125-02 e EV-0647-01 já cobrem essas duas rotas sem vontade alguma.
 
 ### H-12 — refutada · fatia 0.0%
@@ -322,6 +370,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - − `EV-1115-01` (peso 0.3) — Vegapunk conclui que o uso das armas ancestrais elevou o nível do mar em 200 metros e que as ilhas de hoje são topos de continentes submersos: ele explica a forma do mundo com um único evento no Século Perdido, sem precisar de ciclo anterior.
 - − `EV-1138-14` (peso 0.25) — Ripley considera o mural um sonho de criança precisamente porque mostra várias raças trabalhando juntas: a fonte principal desta hipótese é descartada como fantasia por quem convive com ela.
 - − `EV-0397-01` (peso 0.2) — Sob bombardeio, os arqueólogos jogaram os livros pelas janelas no lago da ilha para que as palavras de mil anos não se perdessem: o próprio acervo de Ohara é datado em mil anos e não alcança nenhum ciclo anterior ao Século Perdido.
+- − `EV-1055-02` (peso 0.2) — Abaixo do castelo, atrás de uma janela de vidro, há uma cidade inteira submersa e preservada, que Sukiyaki identifica como a Wano de 800 anos atrás: é justamente o vestígio material visto em cena que a previsão desta hipótese pede, e ele está datado em 800 anos, dentro do Século Perdido e não num ciclo anterior.
 - prevê [aberta]: Se verdadeiro, a obra mostrará um vestígio material do ciclo anterior que não seja o mural nem o Harley: construção, máquina ou registro datado, visto em cena e não relatado por terceiro.
 - prevê [aberta]: Se verdadeiro, o conteúdo da instalação de três mil anos em Elbaf será tecnológico e incompatível com a tecnologia do Século Perdido, e não apenas mais antigo que ela.
 
@@ -337,6 +386,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - − `EV-1190-03` (peso 0.4) — Gaban diz conhecer as palavras de Joy Boy e não ter intenção de segui-las: o que a tripulação trouxe de Laugh Tale são palavras de uma pessoa, e não um bem material vindo de outra era.
 - − `EV-1121-01` (peso 0.25) — Vegapunk afirma que quem encontrar o One Piece pode não ser aquele que Joy Boy esperava: a coisa é tratada como tendo destinatário escolhido por Joy Boy, o que combina mal com herança anônima de outra civilização.
 - − `EV-0967-11` (peso 0.25) — A tripulação de Roger gargalha ao encontrar o tesouro em Laugh Tale e Roger comenta que chegaram cedo demais: rir não é a reação esperada diante de um espólio arqueológico.
+- − `EV-0967-10` (peso 0.4) — O tesouro encontrado na ilha final tinha sido deixado ali por Joy Boy oitocentos anos antes: a obra data o tesouro em oitocentos anos e o atribui a Joy Boy, e não a um ciclo anterior ao Reino Antigo.
 - prevê [aberta]: Se verdadeiro, o que houver em Laugh Tale será datado na obra como anterior ao Século Perdido, e não como obra de Joy Boy ou do Reino Antigo.
 - prevê [aberta]: Se verdadeiro, Joy Boy será mostrado recebendo ou encontrando o One Piece em vez de criá-lo.
 
@@ -352,8 +402,13 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0279-01` (peso 0.3) — A ilha do céu onde Enel nasceu chamava-se Birka: o topônimo da cidade lunar reaparece como nome de uma terra no céu, o que é o padrão de quem migra e renomeia.
 - + `EV-0453-01` (peso 0.25) — Os quatro autômatos construídos pelo professor Tsukimi na Ilha Karakuri viajaram do planeta até a lua: a obra estabelece que o trajeto entre os dois é possível.
 - + `EV-1033-01` (peso 0.25) — Queen afirma que os Lunarians eram chamados de deuses num passado distante e sobrevivem em qualquer ambiente natural: há uma raça associada à lua pelo próprio nome, tratada como divina.
+- + `EV-0274-01` (peso 0.3) — Enel descreve a Fairy Vearth como um lugar de terra ilimitada onde, segundo as lendas do lugar em que nasceu, mora Deus, e diz que voltar para lá é voltar para onde pertence: a ilha do céu guarda como folclore a ideia de que sua gente pertence a outro lugar, que é o resíduo esperado de uma migração.
+- + `EV-0300-01` (peso 0.25) — Depois de derrotado por Luffy, Enel recupera a consciência, religa a arca Maxim e parte rumo a Fairy Vearth ainda na linha principal: a viagem começa dentro da obra e não dentro da história de capa, o que reduz a objeção de que todo o eixo lunar é narrativa paralela.
+- + `EV-0277-01` (peso 0.2) — Enel escravizou o esquadrão divino de Gan Fall para extrair todo o ouro de Shandora e usou esse ouro na construção da arca Maxim: o meio material que depois alcança a lua sai da cidade do céu, ligando os dois pontos por um mesmo recurso.
 - − `EV-0274-03` (peso 0.35) — Segundo a fonte, as tribos que vieram da lua perderam com o tempo qualquer registro da própria origem: se a memória se perdeu, tudo que sustenta esta hipótese depende de uma história de capa e de murais que ninguém no presente leu.
 - − `EV-0472-02` (peso 0.25) — Segundo os murais, os habitantes da cidade lunar desceram até a estrela azul usando balões: a obra descreve a travessia como atmosférica e não espacial, o que enfraquece a leitura de civilização interplanetária.
+- − `EV-0272-02` (peso 0.3) — Nas ruínas de Shandora há uma parede coberta de escrita no mesmo sistema em que os Poneglyphs são gravados: a cidade do céu escrevia na escrita do Reino Antigo, o que a coloca dentro da civilização terrestre em vez de descendente de uma tecnologia lunar anterior a ela.
+- − `EV-0274-02` (peso 0.2) — O nome do lugar procurado por Enel é escrito com kanji que se lê como terra sem fim e furigana que se lê Fairy Vearth, de modo que as duas traduções correntes estão ambas no original: o destino que esta hipótese identifica com a lua é nomeado por termo de folclore, e a identificação depende da história de capa.
 - prevê [aberta]: Se verdadeiro, a linha principal da obra — e não uma história de capa — afirmará a origem lunar de alguma das raças do céu, por boca de personagem ou por documento lido em cena.
 - prevê [aberta]: Se verdadeiro, a tecnologia dos autômatos lunares reaparecerá ligada à energia antiga que move o gigante de ferro, e não como curiosidade isolada.
 
@@ -369,8 +424,28 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0272-03` (peso 0.3) — Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época da guerra: a distribuição é ato deliberado de guerra, e não geografia acidental.
 - + `EV-0301-01` (peso 0.25) — Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs recolhidas na viagem o Rio Poneglyph será revelado: o sistema é projetado para só se completar quando as partes forem reunidas.
 - + `EV-0395-09` (peso 0.3) — Ohara só conseguiu inferir a existência do reino cruzando informação de várias fontes e de vários Poneglyphs, porque nenhum deles sozinho o nomeia: é a assinatura de um segredo repartido de propósito.
+- + `EV-0301-05` (peso 0.45) — Robin conclui que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história, e que a pedra de Shandora já cumpriu sua função porque Roger achou aquilo que ela indicava: a leitura conjunta é a propriedade de um sistema desenhado para que nenhuma peça isolada baste.
+- + `EV-0301-04` (peso 0.4) — Robin recorda que existem dois tipos de Poneglyph, os que carregam informação e os que revelam onde estão os outros: uma camada de índice que aponta para as demais pedras é arquitetura de sistema, e não acúmulo de monumentos avulsos.
+- + `EV-0301-06` (peso 0.35) — A tábua de pedra que Robin encontrou no Upper Yard diz que seus autores são os registradores da história e aponta os Shandia como protetores antigos do texto: o próprio texto separa quem registra de quem protege, que é a divisão de papéis que esta hipótese atribui ao projeto.
+- + `EV-0272-04` (peso 0.3) — Robin deduz das anotações de Noland que o Poneglyph de Shandora estava junto do grande sino, pendurado no centro dos quatro altares da cidade: a pedra ocupava o ponto central e mais protegido, o que é escolha de colocação e não acaso de fuga.
+- + `EV-0301-09` (peso 0.3) — Ao saber por Robin que o desejo de seus ancestrais já foi cumprido, o chefe Shandia desaba em lágrimas, entendendo que seu povo não precisa mais lutar pela pedra: a guarda era dever herdado, sustentado por gerações que não conheciam o conteúdo do que defendiam.
+- + `EV-0290-04` (peso 0.2) — Segundo Kalgara, o sino de ouro foi feito para anunciar ao mundo que eles estão ali e para avisar invasores de que os Shandia não os temem: junto da pedra existe um segundo canal, sonoro e não escrito, com a mesma função de não deixar o povo ser apagado.
+- + `EV-0272-01` (peso 0.15) — Há indicação de que a Grande Guerra do Século Perdido levou à queda da cidade de Shandora: a cidade que guardava a pedra caiu na guerra, que é exatamente o apagamento contra o qual o sistema teria sido projetado.
+- + `EV-0966-06` (peso 0.35) — Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: restringir a cifra a um herdeiro por geração é decisão de projeto, e separa deliberadamente a pedra de quem sabe lê-la.
+- + `EV-0966-08` (peso 0.35) — Foi Oden quem gravou, na escrita antiga, a mensagem que Roger ditou junto ao Poneglyph do sino de ouro de Shandora, registrando que estivera ali: o suporte continuou sendo usado oitocentos anos depois para deixar mensagem a leitores futuros, o que mostra o sistema em operação e não em ruína.
+- + `EV-0966-04` (peso 0.3) — Roger concluiu que só alcançaria a última ilha com a informação gravada nos Poneglyphs, e apresentou a Barba Branca e a Oden a transcrição de um deles: a informação gravada nas pedras é a única via para o destino final, ou seja, o sistema retém aquilo que nenhum outro suporte guardou.
+- + `EV-0966-07` (peso 0.3) — Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a pedra sinaliza a própria presença a quem pode ouvi-la, que é propriedade de sobrevivência do suporte e não do conteúdo.
+- + `EV-1053-03` (peso 0.3) — Robin afirma que o Poneglyph do Reino de Arabasta indicava que a arma ancestral Pluton está em Wano: uma pedra de um reino aponta para outro país do outro lado do mundo, ou seja, as peças se referenciam entre si e formam rede, em vez de achados isolados.
+- + `EV-1055-05` (peso 0.3) — Sukiyaki conduz Robin e Law por uma escada que desce do quarto secreto até a câmara subterrânea onde está o Road Poneglyph de Wano, abaixo da cidade submersa: pôr a pedra numa câmara subterrânea sob uma cidade submersa é escolha de esconderijo, que é o critério de colocação que a previsão desta hipótese exige.
+- + `EV-1055-10` (peso 0.25) — Sukiyaki diz que tudo o que contou lhe foi transmitido pela linha do xogunato e que desconhece o que Oden aprendeu nas viagens fora de Wano: o que a linhagem transmite é a custódia e o relato herdado, e não o conteúdo que o próprio filho foi buscar fora.
+- + `EV-0972-03` (peso 0.25) — Oden revelou publicamente, da panela de execução, que foi a própria família Kouzuki que fechou Wano ao resto do mundo, para proteger o país de uma grande força externa: a mesma linhagem que esculpiu as pedras organizou o isolamento do país como proteção, o que é custódia planejada e não acaso.
 - − `EV-1085-02` (peso 0.45) — Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: se a dispersão foi erro de uma pessoa, ela não foi projeto de ninguém.
 - − `EV-1085-03` (peso 0.3) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a obra atribui a distribuição a um acidente histórico com consequência não pretendida.
+- − `EV-0272-02` (peso 0.3) — Nas ruínas de Shandora há uma parede coberta de escrita no mesmo sistema em que os Poneglyphs são gravados: se a escrita aparecia em arquitetura comum da cidade, os antepassados dos guardiões a liam, e a incapacidade de ler é perda posterior e não desenho.
+- − `EV-0261-01` (peso 0.15) — A lápide erguida nas ruínas registra que a cidade se chamava Shandora, que prosperou há mais de 1100 anos e que seu povo desapareceu de forma inexplicada há 800 anos: um monumento comum atravessou os mesmos oitocentos anos e preservou o registro, o que mostra que sobreviver ao apagamento não exigia a engenharia atribuída às pedras.
+- − `EV-1056-04` (peso 0.35) — Law entrega aos Piratas de Kid uma cópia em papel do Road Poneglyph de Wano: se o conteúdo passa para o papel e troca de mãos, a indestrutibilidade da pedra deixa de ser o que protege a mensagem.
+- − `EV-0818-03` (peso 0.3) — Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: em Wano a mesma linhagem que guarda a pedra sabe lê-la e escrevê-la, o oposto da separação entre guardião e leitor que este enunciado afirma.
+- − `EV-1055-08` (peso 0.2) — Sukiyaki admite que Kaidou e Orochi souberam do Poneglyph subterrâneo porque Jack, por ser homem-peixe, podia explorar as ruínas submersas: o esconderijo cedeu a um traço biológico banal de um subordinado, o que mostra custódia frágil em vez de projeto robusto.
 - prevê [aberta]: Se verdadeiro, aparecerá outro povo guardando um Poneglyph sem saber lê-lo, com a mesma estrutura de dever herdado dos Shandia.
 - prevê [aberta]: Se verdadeiro, a obra mostrará que a escolha de onde cada pedra ficou obedeceu a um critério, e não ao acaso da fuga.
 
