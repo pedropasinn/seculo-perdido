@@ -13,9 +13,9 @@ const COR = {
   Hipotese:'#ffb703', HipoteseMorta:'#9a9086', Evidencia:'#2f9e6e',
   EvidenciaAmb:'#e8a13a', EvidenciaDisp:'#e03131', Tema:'#1a7fb5', Ator:'#7048a8',
 };
-const CORREL = {
-  APOIA:'#2f9e6e', CONTRADIZ:'#e03131', CONCORRE_COM:'#9a9086',
-  TEM_TEMA:'#1a7fb5', MENCIONA:'#7048a8',
+const CORREL = {                     // cor da linha
+  APOIA:'#217a53', CONTRADIZ:'#c22626', CONCORRE_COM:'#6f665c',
+  TEM_TEMA:'#166d9c', MENCIONA:'#7048a8',
 };
 const TINTA = '#151016';
 
@@ -245,9 +245,9 @@ function seleciona(n){
     ${rr.slice(0, mostraTudo.has(n.id+tipo) ? 999 : 14).map(r => {
       const outro = r.de===n.id ? r.para : r.de, no = NOS.get(outro);
       const dir = r.de===n.id ? '→' : '←';
-      return `<div class="g-lig" data-ir="${outro}">${dir} <b>${no?no.nome:outro}</b>
+      return `<button type="button" class="g-lig" data-ir="${outro}">${dir} <b>${no?no.nome:outro}</b>
         ${r.props.peso?`<i>peso ${r.props.peso}</i>`:''}
-        ${r.props.como?`<span class="g-como">${r.props.como.slice(0,150)}${r.props.como.length>150?'…':''}</span>`:''}</div>`;
+        ${r.props.como?`<span class="g-como">${r.props.como.slice(0,150)}${r.props.como.length>150?'…':''}</span>`:''}</button>`;
     }).join('')}${rr.length>14 && !mostraTudo.has(n.id+tipo)
       ? `<button class="g-lig-mais" data-mais="${n.id+tipo}">+ ${rr.length-14} restantes</button>` : ''}</div>`).join('');
   const link = n.label==='Evidencia' ? `<a class="g-ir" href="evidencias.html#${n.id}">ver no índice de evidências →</a>`
@@ -376,6 +376,31 @@ if (cxBusca) cxBusca.addEventListener('keydown', ev => {
   if (achou){ mostrar([achou.id]); mostrar([...vizinhos(achou.id)], achou.id);
     seleciona(achou); cam.x = -achou.x; cam.y = -achou.y; }
 });
+
+cv.tabIndex = 0;
+cv.setAttribute('role', 'application');
+cv.addEventListener('keydown', ev => {
+  const ns = [...vis].map(id => NOS.get(id)).filter(Boolean)
+    .sort((a,b) => a.id.localeCompare(b.id));
+  if (!ns.length) return;
+  const i = ns.findIndex(n => n.id === sel);
+  if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown'){
+    ev.preventDefault(); seleciona(ns[(i+1) % ns.length]);
+  } else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp'){
+    ev.preventDefault(); seleciona(ns[(i-1+ns.length) % ns.length]);
+  } else if (ev.key === 'Enter' && sel){
+    ev.preventDefault(); mostrar([...vizinhos(sel)], sel); seleciona(NOS.get(sel));
+  } else if (ev.key === 'f' || ev.key === 'F'){ ev.preventDefault(); caber(); }
+  else if (ev.key === 'Escape'){ seleciona(null); }
+  if (sel){ const n = NOS.get(sel); cam.x = -n.x; cam.y = -n.y; }
+});
+
+/* quem pediu menos movimento comeca com a simulacao parada */
+if (matchMedia('(prefers-reduced-motion: reduce)').matches){
+  pausado = true;
+  const b = document.getElementById('g-pausa');
+  if (b){ b.textContent = 'retomar'; b.setAttribute('aria-pressed','true'); }
+}
 
 fetch('grafo.json').then(r => r.json()).then(d => {
   d.nos.forEach(n => { n.x = (Math.random()-.5)*300; n.y = (Math.random()-.5)*300;

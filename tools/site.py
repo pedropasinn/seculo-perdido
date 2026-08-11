@@ -280,7 +280,7 @@ section{padding:3.4rem 0}
 .corpo{padding:0 1.3rem 1.4rem;animation:desdobra .26s ease both}
 @keyframes desdobra{from{opacity:0;transform:translateY(-8px)}}
 .corpo h4{font:400 1.25rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;
-  color:var(--vermelho);margin:1.6rem 0 .6rem}
+  color:var(--vermelho-esc);margin:1.6rem 0 .6rem}
 .corpo p{margin:.65rem 0;max-width:68ch}
 .corpo ul{margin:.5rem 0 .5rem 1.2rem}
 .corpo li{margin:.3rem 0}
@@ -317,11 +317,11 @@ details.rt summary::before{content:"⚔ "}
 
 /* ---------- evidências ---------- */
 .busca{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.6rem}
-.busca input,.busca select{background:var(--papel);border:3px solid var(--tinta);
+.busca input[type=search],.busca select{background:var(--papel);border:3px solid var(--tinta);
   color:var(--tinta);padding:.7rem .9rem;border-radius:12px;box-shadow:var(--sombra-sm);
   font:600 .95rem var(--corpo)}
-.busca input{flex:1;min-width:15rem}
-.busca input:focus-visible,.busca select:focus-visible{outline:3px solid var(--tinta);
+.busca input[type=search]{flex:1;min-width:15rem}
+.busca input[type=search]:focus-visible,.busca select:focus-visible{outline:3px solid var(--tinta);
   outline-offset:2px;background:var(--papel-2)}
 .ev-item{content-visibility:auto;contain-intrinsic-size:auto 132px;background:var(--papel);border:2.5px solid var(--tinta);border-radius:12px;
   box-shadow:var(--sombra-sm);padding:.9rem 1.1rem;margin-bottom:.8rem;
@@ -461,6 +461,12 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
 .achado:nth-child(3) b{color:var(--roxo)}
 .achado:nth-child(4) b{color:var(--verde)}
 .achado span{font-size:.86rem;font-weight:500;line-height:1.4}
+.tabela-grafo{margin:1.4rem 0;border:3px solid var(--tinta);border-radius:14px;
+  background:var(--papel);box-shadow:var(--sombra-sm)}
+.tabela-grafo>summary{cursor:pointer;padding:.8rem 1rem;font:400 1.15rem/1 var(--display);
+  letter-spacing:.04em;text-transform:uppercase}
+.tabela-grafo .tabela{margin:0 1rem 1rem;box-shadow:none}
+.tabela-grafo .intro{margin:0 1rem 1rem}
 mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px}
 .ev-item.selecionado{outline:4px solid var(--mar);outline-offset:2px}
 .ev-item[hidden]{display:none}
@@ -486,7 +492,7 @@ mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px
 .g-wrap{display:grid;grid-template-columns:1fr 24rem;gap:1rem;height:min(74vh,780px)}
 .g-tela{position:relative;background:var(--papel);border:3px solid var(--tinta);
   border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
-#cv{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+#cv{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
 .g-barra{position:absolute;left:.7rem;top:.7rem;right:.7rem;display:flex;gap:.45rem;
   flex-wrap:wrap;align-items:center;pointer-events:none;z-index:2}
 .g-barra>*{pointer-events:auto}
@@ -547,8 +553,30 @@ mark{background:var(--ouro);color:var(--tinta);padding:0 .12em;border-radius:3px
 .g-lig-mais{font:700 .7rem var(--mono);opacity:.6;padding:.2rem .5rem}
 .g-ir{display:inline-block;margin:.5rem 0;font:700 .72rem var(--titulo);color:var(--mar)}
 @media(max-width:820px){.g-wrap{grid-template-columns:1fr;height:auto}
-  .g-tela{height:60vh}#painel{max-height:24rem}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  .g-tela{height:60vh}#painel{max-height:24rem}
+  .g-ajustes{position:static}
+  .g-ctrl{position:static;width:100%;max-height:none;margin-top:.5rem}
+  .g-barra{position:static;padding:.7rem .7rem 0}
+  .g-tela{display:flex;flex-direction:column;height:auto}
+  #cv{height:56vh;min-height:20rem}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+.perma-linha{margin:0 0 .4rem}
+.perma{text-decoration:none;font:700 .72rem var(--mono);opacity:.55;
+  padding:.35rem .5rem;border-radius:6px;display:inline-block;min-height:1.6rem}
+.perma:hover,.perma:focus-visible{opacity:1;background:var(--ouro)}
+.ev-cita .cita{padding:.35rem .55rem}
+.ev-cita .cita i{opacity:.78}
+.ev-cita.orfao{opacity:.72}
+.ev-item a.fonte{display:inline-block;padding:.25rem 0}
+.g-ctrl input[type=range]{height:1.6rem}
+.g-ctrl .g-check{min-height:1.6rem}
+.pula{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ouro);
+  border:3px solid var(--tinta);border-radius:0 0 10px 0;padding:.6rem 1rem;
+  font:700 .85rem var(--titulo);text-decoration:none}
+.pula:focus{left:0}
 """
 
 JS = r"""
@@ -719,10 +747,12 @@ def cabeca(titulo: str, desc: str, ativo: str) -> str:
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo.css">
 </head><body>
+<a class="pula" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="env">
   <a class="marca" href="/">Século<span>·</span>Perdido</a>
   <nav class="topo-nav">{itens}</nav>
-</div></header>"""
+</div></header>
+<a id="conteudo" tabindex="-1"></a>"""
 
 
 RODAPE = """<footer><div class="env">
@@ -805,10 +835,11 @@ def pagina_hipoteses(evid, hips, meta) -> str:
       <span class="sr-only"> — {h["id"]}, {legenda}, hipótese {st}{estado}</span></h3>
     <span class="hip-pct" aria-hidden="true">{pct}</span>
     <span class="sonda" style="--pct:{max(h['fatia']*100, 1):.1f}%" aria-hidden="true"><i></i></span>
-    <span class="hip-meta" aria-hidden="true">{"".join(selos)}
-      <a class="perma" href="#{h['id']}" title="link para esta hipótese">§</a></span>
+    <span class="hip-meta" aria-hidden="true">{"".join(selos)}</span>
   </summary>
   <div class="corpo">
+    <p class="perma-linha"><a class="perma" href="#{h['id']}"
+      aria-label="link permanente para a hipótese {h['id']}">§ link para {h['id']}</a></p>
     <p class="conta">a priori {h.get("prior", 0):.2f} → posterior {h["posterior"]:.2f}
       · {len(h.get("apoia") or [])} apoios, {len(h.get("contradiz") or [])} contradições
       {tetos}</p>
@@ -1057,7 +1088,19 @@ def pagina_metodo(meta) -> str:
 <button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button>""" + RODAPE)
 
 
-def pagina_grafo(meta) -> str:
+def pagina_grafo(meta, hips=None, evid=None) -> str:
+    linhas_tg = []
+    for h in (hips or []):
+        for rot in ("apoia", "contradiz"):
+            for e in h.get(rot) or []:
+                txt = html.escape(str((evid or {}).get(e["ev"], {}).get("texto", ""))[:150])
+                linhas_tg.append(
+                    f'<tr><td>{h["id"]}</td><td>{rot}</td>'
+                    f'<td><a href="/evidencias#{e["ev"]}">{e["ev"]}</a></td>'
+                    f'<td class="num">{e.get("peso", "")}</td><td>{txt}</td></tr>')
+    tabela_grafo = ('<table class="tabela"><thead><tr><th>hipótese</th><th>relação</th>'
+                    '<th>átomo</th><th class="num">peso</th><th>o que o átomo diz</th></tr>'
+                    '</thead><tbody>' + "".join(linhas_tg) + "</tbody></table>")
     chips = "".join(
         f'<label class="g-chip"><input type="checkbox" data-tipo="{t}"{" checked" if c else ""}>'
         f'<i style="background:{cor}"></i>{t}</label>'
@@ -1091,6 +1134,7 @@ def pagina_grafo(meta) -> str:
   <div class="g-wrap">
     <div class="g-tela">
       <div class="g-barra">
+        <label class="sr-only" for="g-busca">Buscar nó e centralizar</label>
         <input id="g-busca" type="search" placeholder="buscar e centralizar…" autocomplete="off">
         {chips}
         <button class="g-bt" id="g-tudo">abrir tudo</button>
@@ -1099,18 +1143,18 @@ def pagina_grafo(meta) -> str:
         <button class="g-bt" id="g-pausa" aria-pressed="false">pausar</button>
         <details class="g-ajustes"><summary class="g-bt">ajustes</summary>
           <div class="g-ctrl">
-            <label>repulsão <output data-eco="c-repulsao"></output>
-              <input id="c-repulsao" type="range" min="400" max="9000" step="100"></label>
-            <label>rigidez das arestas <output data-eco="c-mola"></output>
-              <input id="c-mola" type="range" min="0.0008" max="0.03" step="0.0008"></label>
-            <label>distância de repouso <output data-eco="c-dist"></output>
-              <input id="c-dist" type="range" min="50" max="360" step="5"></label>
-            <label>gravidade ao centro <output data-eco="c-grav"></output>
-              <input id="c-grav" type="range" min="0" max="0.008" step="0.0002"></label>
-            <label>atrito <output data-eco="c-atrito"></output>
-              <input id="c-atrito" type="range" min="0.5" max="0.98" step="0.01"></label>
-            <label>tamanho dos nós <output data-eco="c-tam"></output>
-              <input id="c-tam" type="range" min="0.5" max="2.4" step="0.1"></label>
+            <label for="c-repulsao">repulsão <output data-eco="c-repulsao" aria-hidden="true"></output>
+              <input id="c-repulsao" aria-label="repulsão" type="range" min="400" max="9000" step="100"></label>
+            <label for="c-mola">rigidez das arestas <output data-eco="c-mola" aria-hidden="true"></output>
+              <input id="c-mola" aria-label="rigidez das arestas" type="range" min="0.0008" max="0.03" step="0.0008"></label>
+            <label for="c-dist">distância de repouso <output data-eco="c-dist" aria-hidden="true"></output>
+              <input id="c-dist" aria-label="distância de repouso" type="range" min="50" max="360" step="5"></label>
+            <label for="c-grav">gravidade ao centro <output data-eco="c-grav" aria-hidden="true"></output>
+              <input id="c-grav" aria-label="gravidade ao centro" type="range" min="0" max="0.008" step="0.0002"></label>
+            <label for="c-atrito">atrito <output data-eco="c-atrito" aria-hidden="true"></output>
+              <input id="c-atrito" aria-label="atrito" type="range" min="0.5" max="0.98" step="0.01"></label>
+            <label for="c-tam">tamanho dos nós <output data-eco="c-tam" aria-hidden="true"></output>
+              <input id="c-tam" aria-label="tamanho dos nós" type="range" min="0.5" max="2.4" step="0.1"></label>
             <label>rótulo das arestas
               <select id="c-rot-a"><option value="auto">automático</option>
                 <option value="sempre">sempre</option><option value="nunca">nunca</option></select></label>
@@ -1122,12 +1166,18 @@ def pagina_grafo(meta) -> str:
           </div>
         </details>
       </div>
-      <canvas id="cv"></canvas>
+      <canvas id="cv" aria-label="Grafo de {meta['n_nos']} nós e {meta['n_rels']} relações. A mesma informação está na tabela abaixo do explorador."></canvas>
       <div class="g-legenda">{leg}</div>
       <div class="g-conta" id="g-conta"></div>
     </div>
     <aside id="painel"></aside>
   </div>
+  <details class="tabela-grafo"><summary>ver as ligações como tabela</summary>
+    <p class="intro">Equivalente textual do explorador: cada hipótese com os átomos que a
+    apoiam e a contradizem, com peso e justificativa. Navegável por teclado e por leitor de
+    tela, sem depender do canvas.</p>
+    {tabela_grafo}
+  </details>
   <p class="intro" style="margin-top:1.4rem">O contorno tracejado marca <strong>átomo
   órfão</strong>: evidência que ainda não pertence a nenhuma hipótese. Acúmulo de órfãos é o
   sintoma de uma alternativa que ninguém formulou — foi assim que três hipóteses deste
@@ -1274,7 +1324,7 @@ def main() -> int:
         "index.html": pagina_hipoteses(evid, hips, meta),
         "evidencias.html": pagina_evidencias(evid, hips, meta),
         "metodo.html": pagina_metodo(meta),
-        "grafo.html": pagina_grafo(meta),
+        "grafo.html": pagina_grafo(meta, hips, evid),
         "dados.html": pagina_dados(meta, tamanhos),
     }
     for nome, conteudo in paginas.items():
