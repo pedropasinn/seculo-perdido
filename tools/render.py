@@ -10,11 +10,14 @@ from __future__ import annotations
 
 import html
 import json
+import sys
 from pathlib import Path
 
 import yaml
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(RAIZ / "tools"))
+import score  # noqa: E402  — reusa o mesmo modelo de log-odds da linha de comando
 
 
 def ler(p: Path) -> tuple[dict, str]:
@@ -40,9 +43,22 @@ def main() -> int:
         meta["redteam"] = rt.read_text(encoding="utf-8") if rt.exists() else ""
         hipoteses.append(meta)
 
-    hipoteses.sort(key=lambda h: -float(h.get("prior") or 0))
+    # o site mostra o posterior, nao o prior: o prior tem que continuar sendo a
+    # crenca ANTES dos atomos, senao a proxima rodada conta os mesmos elos duas vezes
+    indice_ev = {e["id"]: e for e in evidencias}
+    for h in hipoteses:
+        h["posterior"] = score.pontuar(h, indice_ev)["posterior"]
+    vivas = {h["id"] for h in hipoteses if h.get("escopo") == "one_piece"
+             and h.get("status") in {"viva", "confirmada"}}
+    soma = sum(h["posterior"] for h in hipoteses if h["id"] in vivas) or 1.0
+    for h in hipoteses:
+        h["fatia"] = h["posterior"] / soma if h["id"] in vivas else 0.0
+
+    hipoteses.sort(key=lambda h: -float(h.get("posterior") or 0))
+    # default=str: o YAML converte 2026-08-11 sem aspas em datetime.date, e um
+    # campo de data mal citado num arquivo nao deve derrubar o site inteiro
     dados = json.dumps({"evidencias": evidencias, "hipoteses": hipoteses},
-                       ensure_ascii=False)
+                       ensure_ascii=False, default=str)
 
     saida = RAIZ / "site" / "index.html"
     saida.parent.mkdir(exist_ok=True)
@@ -76,7 +92,10 @@ PAGINA = """<!doctype html>
  code{font:.8rem ui-monospace,monospace;background:#e9e4d9;padding:.05rem .3rem;border-radius:3px}
 </style>
 <h1>Wiki de Evidências — One Piece</h1>
-<div class="sub">Hipóteses ordenadas por probabilidade. Toda afirmação aponta para um átomo verificável.</div>
+<div class="sub">Hipóteses ordenadas pelo posterior. A porcentagem grande é a fatia repartida
+entre as alternativas de escopo <code>one_piece</code>, que são mutuamente exclusivas —
+ela assume que a resposta certa está entre as listadas. Toda afirmação aponta para um
+átomo verificável.</div>
 <div id="app"></div>
 <script id="dados" type="application/json">__DADOS__</script>
 <script>
@@ -85,8 +104,9 @@ const ev = Object.fromEntries(d.evidencias.map(e => [e.id, e]));
 const esc = s => (s||'').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 document.getElementById('app').innerHTML = d.hipoteses.map(h => `
  <div class="hip ${h.status}">
-  <div class="id">${h.id} · ${h.status} · ${(h.prior*100).toFixed(0)}%</div>
-  <div class="barra"><i style="width:${h.prior*100}%"></i></div>
+  <div class="id">${h.id} · ${h.status} · fatia ${(h.fatia*100).toFixed(1)}%
+   <span class="prev">(prior ${(h.prior*100).toFixed(0)}% → posterior ${(h.posterior*100).toFixed(0)}%)</span></div>
+  <div class="barra"><i style="width:${h.fatia*100}%"></i></div>
   <div class="enun">${esc(h.enunciado)}</div>
   ${(h.apoia||[]).map(a=>`<div class="elo"><code>${a.ev}</code> ${esc(a.como)}
      <span class="prev">— ${esc(ev[a.ev]?.fonte||'?')}, peso ${a.peso}</span></div>`).join('')}
@@ -95,6 +115,7 @@ document.getElementById('app').innerHTML = d.hipoteses.map(h => `
   <details><summary>previsões (${(h.prediz||[]).length})</summary>
    ${(h.prediz||[]).map(p=>`<div class="prev">[${p.status}] ${esc(p.texto)}</div>`).join('')}
   </details>
+  ${h.redteam ? `<details><summary>red team</summary><pre>${esc(h.redteam)}</pre></details>` : ''}
  </div>`).join('');
 </script>
 </html>"""

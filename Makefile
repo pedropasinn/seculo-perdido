@@ -1,4 +1,4 @@
-.PHONY: check score buscar site novo-atomo nova-hipotese
+.PHONY: check score buscar site coletar novo-atomo nova-hipotese
 
 check:
 	@python3 tools/validate.py --raiz .
@@ -12,9 +12,13 @@ buscar:
 site:
 	@python3 tools/render.py
 
+coletar:
+	@python3 tools/coletar.py $(P)
+
 # ciclo de capitulo novo — rode cada etapa como sub-agente no Claude Code
 extract:
-	@echo "Claude Code: use agents/extrator.md com a fonte do cap $(CAP)"
+	@python3 tools/coletar.py "Chapter $(CAP)"
+	@echo "Claude Code: use agents/extrator.md sobre .cache/wiki/Chapter_$(CAP).txt"
 link:
 	@echo "Claude Code: use agents/vinculador.md sobre os atomos novos"
 redteam:

@@ -51,3 +51,28 @@ Proibido: scans e scanlations.
 
 Século Vazio, Joy Boy, Laugh Tale, Imu, Poneglyphs, D. — cerca de 300 átomos.
 Só escale depois que o ciclo rodar limpo nesse recorte.
+
+## Estado (2026-08-11, mangá no cap. 1191)
+
+83 átomos, 10 hipóteses. O ciclo completo — extrair, vincular, red team, curar —
+rodou uma vez sobre o recorte inicial. Oito hipóteses disputam o escopo
+`one_piece` (mutuamente exclusivas); duas são de escopo auxiliar.
+
+| id | o que afirma | status | fatia |
+|----|--------------|--------|-------|
+| H-05 | legado dirigido de Joy Boy: palavras e uma condição | viva, ferida | 42% |
+| H-08 | gatilho de um evento agendado (Terceiro Mundo do Harley) | viva, ferida | 23% |
+| H-04 | registro completo do Século Vazio | viva, ferida | 19% |
+| H-03 | artefato funcional do Reino Antigo | viva, ferida | 8% |
+| H-02 | valor relacional; o efeito veio do anúncio | viva, ferida | 6% |
+| H-06 | a arma ancestral Uranus | viva, ferida | 1% |
+| H-01 | tesouro material de ouro e joias | **refutada** | — |
+| H-07 | o Reino Antigo submerso reaparecendo | **refutada** | — |
+
+A fatia é a repartição do posterior dentro do escopo, e assume que a resposta
+certa está entre as hipóteses listadas — o que é exatamente o que o repositório
+não pode garantir. Leia `data/hipoteses/_orfaos.md` antes de confiar nela: átomo
+órfão acumulado é o sintoma de uma nona alternativa que ninguém formulou.
+
+Nenhuma hipótese sobreviveu intacta ao Red Team. Os relatórios de ataque estão em
+`data/hipoteses/H-*.redteam.md` e valem mais que as fatias.

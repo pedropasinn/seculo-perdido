@@ -94,6 +94,23 @@ def pontuar(hip: dict, evidencias: dict[str, dict]) -> dict:
             "n_contra": len(hip.get("contradiz") or [])}
 
 
+def normalizar_por_escopo(linhas: list[tuple[dict, dict]]) -> dict[str, list[tuple[str, float]]]:
+    """Reparte a massa de probabilidade entre hipoteses do mesmo escopo.
+
+    O score por hipotese e independente, entao os posteriores somam bem mais que
+    1 quando as hipoteses sao mutuamente exclusivas. Normalizar e o minimo para
+    poder ler os numeros como alternativas. Vale enfatizar o que a normalizacao
+    assume e nao verifica: que o conjunto e exaustivo. Se a resposta certa nao
+    estiver escrita em nenhum H-*.md, ela redistribui a massa entre erradas.
+    """
+    por_escopo: dict[str, list[tuple[str, float]]] = defaultdict(list)
+    for hip, r in linhas:
+        if hip.get("status") not in {"viva", "confirmada"}:
+            continue  # refutada nao disputa a massa; ela ja saiu do pareo
+        por_escopo[str(hip.get("escopo") or "outro")].append((hip["id"], r["posterior"]))
+    return {e: v for e, v in por_escopo.items() if len(v) > 1}
+
+
 def main() -> int:
     evidencias = carregar_evidencias()
     alvos = sys.argv[1:]
@@ -105,14 +122,25 @@ def main() -> int:
         print("nenhuma hipotese encontrada")
         return 1
 
+    linhas = []
     for caminho in arquivos:
         hip = ler(caminho)
         r = pontuar(hip, evidencias)
+        linhas.append((hip, r))
         print(f"\n{hip['id']}  [{hip.get('status')}]  {hip.get('enunciado', '')[:70]}")
         print(f"  prior {r['prior']:.2f} -> posterior {r['posterior']:.2f}   "
               f"({r['n_apoia']} apoios, {r['n_contra']} contradicoes)")
         for linha in r["detalhe"]:
             print(linha)
+
+    for escopo, itens in normalizar_por_escopo(linhas).items():
+        soma = sum(p for _, p in itens) or 1.0
+        print(f"\n--- repartido dentro do escopo '{escopo}' (soma bruta {soma:.2f}) ---")
+        for ident, post in sorted(itens, key=lambda t: -t[1]):
+            fatia = post / soma
+            print(f"  {ident}  {fatia*100:5.1f}%  {'#' * round(fatia * 40)}")
+        print("  (assume que a resposta certa esta entre as hipoteses listadas)")
+
     print("\nLembrete: isto e insumo. O Curador decide e escreve o porque.")
     return 0
 
