@@ -6,11 +6,11 @@
  "licenca_dados": "CC BY-SA 3.0",
  "licenca_codigo": "MIT",
  "atribuicao": "Paráfrases de material da One Piece Wiki (CC BY-SA 3.0). One Piece é obra de Eiichiro Oda / Shueisha.",
- "gerado_em": "2026-08-11T19:59:17-03:00",
- "commit": "6952d66729e8349f6967edbe8952fbda7f79788b",
+ "gerado_em": "2026-08-11T20:12:21-03:00",
+ "commit": "5fc3f44dc6a26bf050e880fb5c787a5368e76dc7",
  "capitulo_mais_recente": 1190,
  "n_evidencias": 289,
- "n_hipoteses": 17,
+ "n_hipoteses": 20,
  "vocabulario": {
   "confiabilidade": [
    "canonico",

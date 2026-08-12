@@ -79,6 +79,29 @@ empurrando na mesma direção.
 O efeito não é cosmético — ele trocou o primeiro colocado. Se você discordar da
 correlação por arco, mexa em `ARCOS` e no teto, não nos pesos dos elos.
 
+## Camada narrativa é a terceira deflação
+
+`confiabilidade` responde "a fonte de fato diz isto". `tipo` responde "que camada
+da obra é essa". Eram coisas diferentes e só a primeira pesava.
+
+Os sete átomos `tipo: capa` do repositório vêm todos da mesma história de capa
+(*Enel's Great Space Operations*) e estão marcados `canonico` — corretamente, os
+murais realmente dizem o que dizem. Só que `PESO_CONF` dava 1.0 a `canonico` e
+nada olhava `tipo`, então um mural lido numa página de título valia, log-odds por
+log-odds, o mesmo que o discurso de Clover. Medido em 11/08/2026: esses sete
+átomos sozinhos somavam +3.7 log-odds, levando um prior neutro de 0.50 a 0.977.
+O posterior 0.98 de H-16 **era a história de capa, e mais nada**.
+
+`PESO_TIPO` deflaciona capa a 0.4 — o mesmo teto de `traducao_disputada`, e pela
+mesma razão estrutural: a afirmação não sobrevive à troca da camada. Com isso e
+com as contra-evidências que o ataque trouxe, H-16 caiu de 0.98 para 0.28.
+
+Na mesma rodada, `arco()` foi corrigida. Ela concatenava os dígitos da fonte:
+"historia de capa caps 470-472" virava 470472, fora de qualquer faixa de `ARCOS`,
+e ganhava um balde de arco só dele com teto próprio. O átomo que escapava era o
+mais carregado de H-16. Um bug de parser com efeito de tese — passe `arco()` por
+um caso de teste antes de confiar em qualquer teto.
+
 ## A independência dos elos é falsa de dois jeitos
 
 `score.py` trata cada elo como fator de Bayes independente. Isso falha por duas

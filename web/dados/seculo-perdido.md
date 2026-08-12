@@ -1,7 +1,7 @@
 # Século Perdido — arquivo completo
 
 Arquivo de evidências sobre o mistério central de One Piece.  
-Capítulo mais recente: 1190 · 289 átomos · 17 hipóteses
+Capítulo mais recente: 1190 · 289 átomos · 20 hipóteses
 
 Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0). One Piece é obra de Eiichiro Oda / Shueisha.
 
@@ -392,7 +392,7 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 
 ### H-16 — viva · fatia 0.0%
 
-**As raças do céu vieram de fora do planeta: Skypieanos, Shandia e Birkanos descendem de uma civilização lunar que desceu à Estrela Azul por esgotamento de recursos, e a tecnologia dela é anterior ao Reino Antigo.**
+**As raças do céu vieram de fora do planeta: Skypieanos, Shandia e Birkanos descendem de uma civilização lunar que desceu à Estrela Azul por esgotamento de recursos.**
 
 - + `EV-0470-02` (peso 0.45) — Pelos murais, Enel descobre que Skypieanos, Shandia e Birkanos se originaram todos da mesma cidade lunar: a origem comum das três raças do céu está desenhada na própria lua.
 - + `EV-0472-01` (peso 0.4) — Os murais dizem que o nome da cidade lunar era Birka e que seus habitantes partiram para a Estrela Azul: há nome e motivo para a descida, e o nome reaparece numa ilha do céu.
@@ -405,23 +405,28 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0274-01` (peso 0.3) — Enel descreve a Fairy Vearth como um lugar de terra ilimitada onde, segundo as lendas do lugar em que nasceu, mora Deus, e diz que voltar para lá é voltar para onde pertence: a ilha do céu guarda como folclore a ideia de que sua gente pertence a outro lugar, que é o resíduo esperado de uma migração.
 - + `EV-0300-01` (peso 0.25) — Depois de derrotado por Luffy, Enel recupera a consciência, religa a arca Maxim e parte rumo a Fairy Vearth ainda na linha principal: a viagem começa dentro da obra e não dentro da história de capa, o que reduz a objeção de que todo o eixo lunar é narrativa paralela.
 - + `EV-0277-01` (peso 0.2) — Enel escravizou o esquadrão divino de Gan Fall para extrair todo o ouro de Shandora e usou esse ouro na construção da arca Maxim: o meio material que depois alcança a lua sai da cidade do céu, ligando os dois pontos por um mesmo recurso.
+- − `EV-0287-01` (peso 0.5) — Os Shandia antigos cultuavam deuses do sol, da terra, da floresta e da chuva: a única descrição da religião do povo é um panteão agrícola e terrestre, e a lua não está na lista.
+- − `EV-0261-01` (peso 0.45) — A lápide erguida nas ruínas registra que a cidade se chamava Shandora, que prosperou há mais de 1100 anos e que seu povo desapareceu de forma inexplicada há 800 anos: o único relógio que uma raça do céu tem no arquivo é terrestre e começa numa cidade no chão.
+- − `EV-0290-02` (peso 0.45) — Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada por defender o Poneglyph, e que por isso a vontade de seu povo é proteger o passado: quando um Shandia fala da própria origem e do próprio dever, o passado que ele nomeia é a pedra, não uma migração.
+- − `EV-1023-01` (peso 0.4) — Barba Branca contou a Marco que existiu um Kami no Kuni, um país dos deuses, no alto da Red Line muito antes de Mary Geoise existir: quando a obra conta gente chamada de deuses vivendo acima do resto do mundo, ela ancora a história no ponto mais alto do planeta, sem lua e sem migração.
 - − `EV-0274-03` (peso 0.35) — Segundo a fonte, as tribos que vieram da lua perderam com o tempo qualquer registro da própria origem: se a memória se perdeu, tudo que sustenta esta hipótese depende de uma história de capa e de murais que ninguém no presente leu.
 - − `EV-0472-02` (peso 0.25) — Segundo os murais, os habitantes da cidade lunar desceram até a estrela azul usando balões: a obra descreve a travessia como atmosférica e não espacial, o que enfraquece a leitura de civilização interplanetária.
 - − `EV-0272-02` (peso 0.3) — Nas ruínas de Shandora há uma parede coberta de escrita no mesmo sistema em que os Poneglyphs são gravados: a cidade do céu escrevia na escrita do Reino Antigo, o que a coloca dentro da civilização terrestre em vez de descendente de uma tecnologia lunar anterior a ela.
 - − `EV-0274-02` (peso 0.2) — O nome do lugar procurado por Enel é escrito com kanji que se lê como terra sem fim e furigana que se lê Fairy Vearth, de modo que as duas traduções correntes estão ambas no original: o destino que esta hipótese identifica com a lua é nomeado por termo de folclore, e a identificação depende da história de capa.
-- prevê [aberta]: Se verdadeiro, a linha principal da obra — e não uma história de capa — afirmará a origem lunar de alguma das raças do céu, por boca de personagem ou por documento lido em cena.
+- prevê [aberta]: Se verdadeiro, a linha principal da obra vinculará à lua os Shandia especificamente — o povo cuja história ela já contou inteira no chão, com cidade, guerra e lápide — e o fará até o fim do arco de Elbaf.
 - prevê [aberta]: Se verdadeiro, a tecnologia dos autômatos lunares reaparecerá ligada à energia antiga que move o gigante de ferro, e não como curiosidade isolada.
 
 ### H-17 — viva · fatia 0.0%
 
 **Os Poneglyphs são um sistema de sobrevivência de mensagem projetado contra o apagamento: indestrutíveis, espalhados entre povos distintos e confiados a guardiões que não sabem lê-los.**
 
+- + `EV-0395-05` (peso 0.55) — Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a intenção de projeto é declarada em cena por um personagem, e recai sobre a escolha do material.
+- + `EV-0395-04` (peso 0.5) — O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: a indestrutibilidade não é deduzida, é demonstrada no epicentro da operação de apagamento.
 - + `EV-0290-01` (peso 0.45) — Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si: o objeto do dever herdado é a pedra, e não o patrimônio.
 - + `EV-0290-03` (peso 0.5) — Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: guardar sem poder ler é exatamente o que um sistema desenhado contra o apagamento exige, porque o guardião não pode revelar o que não entende.
 - + `EV-0290-02` (peso 0.35) — Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada por defender o Poneglyph: o custo pago pela guarda mostra que a função era prioritária sobre a própria sobrevivência.
 - + `EV-0818-02` (peso 0.4) — Os Poneglyphs foram inventados pelo clã Kouzuki, cujos ancestrais os esculpiram no fim do Século Perdido: há autoria, data e intenção de projeto, e não acúmulo espontâneo.
 - + `EV-0395-10` (peso 0.4) — Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é sobreviver à própria derrota.
-- + `EV-0272-03` (peso 0.3) — Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época da guerra: a distribuição é ato deliberado de guerra, e não geografia acidental.
 - + `EV-0301-01` (peso 0.25) — Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs recolhidas na viagem o Rio Poneglyph será revelado: o sistema é projetado para só se completar quando as partes forem reunidas.
 - + `EV-0395-09` (peso 0.3) — Ohara só conseguiu inferir a existência do reino cruzando informação de várias fontes e de vários Poneglyphs, porque nenhum deles sozinho o nomeia: é a assinatura de um segredo repartido de propósito.
 - + `EV-0301-05` (peso 0.45) — Robin conclui que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história, e que a pedra de Shandora já cumpriu sua função porque Roger achou aquilo que ela indicava: a leitura conjunta é a propriedade de um sistema desenhado para que nenhuma peça isolada baste.
@@ -431,7 +436,6 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-0301-09` (peso 0.3) — Ao saber por Robin que o desejo de seus ancestrais já foi cumprido, o chefe Shandia desaba em lágrimas, entendendo que seu povo não precisa mais lutar pela pedra: a guarda era dever herdado, sustentado por gerações que não conheciam o conteúdo do que defendiam.
 - + `EV-0290-04` (peso 0.2) — Segundo Kalgara, o sino de ouro foi feito para anunciar ao mundo que eles estão ali e para avisar invasores de que os Shandia não os temem: junto da pedra existe um segundo canal, sonoro e não escrito, com a mesma função de não deixar o povo ser apagado.
 - + `EV-0272-01` (peso 0.15) — Há indicação de que a Grande Guerra do Século Perdido levou à queda da cidade de Shandora: a cidade que guardava a pedra caiu na guerra, que é exatamente o apagamento contra o qual o sistema teria sido projetado.
-- + `EV-0966-06` (peso 0.35) — Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: restringir a cifra a um herdeiro por geração é decisão de projeto, e separa deliberadamente a pedra de quem sabe lê-la.
 - + `EV-0966-08` (peso 0.35) — Foi Oden quem gravou, na escrita antiga, a mensagem que Roger ditou junto ao Poneglyph do sino de ouro de Shandora, registrando que estivera ali: o suporte continuou sendo usado oitocentos anos depois para deixar mensagem a leitores futuros, o que mostra o sistema em operação e não em ruína.
 - + `EV-0966-04` (peso 0.3) — Roger concluiu que só alcançaria a última ilha com a informação gravada nos Poneglyphs, e apresentou a Barba Branca e a Oden a transcrição de um deles: a informação gravada nas pedras é a única via para o destino final, ou seja, o sistema retém aquilo que nenhum outro suporte guardou.
 - + `EV-0966-07` (peso 0.3) — Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a pedra sinaliza a própria presença a quem pode ouvi-la, que é propriedade de sobrevivência do suporte e não do conteúdo.
@@ -439,6 +443,10 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - + `EV-1055-05` (peso 0.3) — Sukiyaki conduz Robin e Law por uma escada que desce do quarto secreto até a câmara subterrânea onde está o Road Poneglyph de Wano, abaixo da cidade submersa: pôr a pedra numa câmara subterrânea sob uma cidade submersa é escolha de esconderijo, que é o critério de colocação que a previsão desta hipótese exige.
 - + `EV-1055-10` (peso 0.25) — Sukiyaki diz que tudo o que contou lhe foi transmitido pela linha do xogunato e que desconhece o que Oden aprendeu nas viagens fora de Wano: o que a linhagem transmite é a custódia e o relato herdado, e não o conteúdo que o próprio filho foi buscar fora.
 - + `EV-0972-03` (peso 0.25) — Oden revelou publicamente, da panela de execução, que foi a própria família Kouzuki que fechou Wano ao resto do mundo, para proteger o país de uma grande força externa: a mesma linhagem que esculpiu as pedras organizou o isolamento do país como proteção, o que é custódia planejada e não acaso.
+- − `EV-0272-03` (peso 0.45) — Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi por causa disso que a cidade foi arruinada: a pedra chegou durante a guerra e a colocação arruinou os guardiões, o que é depósito de emergência e não posto escolhido.
+- − `EV-0966-06` (peso 0.4) — Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: concentrar a única chave de leitura em um herdeiro por geração é ponto único de falha, o contrário da redundância que um sistema projetado contra o apagamento teria.
+- − `EV-1053-01` (peso 0.35) — Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na antiga Wano, abaixo da caverna onde fica o Road Poneglyph do país: uma arma ancestral e uma das chaves empilhadas no mesmo sítio é concentração, não dispersão entre povos distintos.
+- − `EV-1053-02` (peso 0.35) — O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph: a pedra está trancada no assento do poder, junto do prisioneiro que sabe lê-la, e não confiada a um povo que não a lê.
 - − `EV-1085-02` (peso 0.45) — Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: se a dispersão foi erro de uma pessoa, ela não foi projeto de ninguém.
 - − `EV-1085-03` (peso 0.3) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a obra atribui a distribuição a um acidente histórico com consequência não pretendida.
 - − `EV-0272-02` (peso 0.3) — Nas ruínas de Shandora há uma parede coberta de escrita no mesmo sistema em que os Poneglyphs são gravados: se a escrita aparecia em arquitetura comum da cidade, os antepassados dos guardiões a liam, e a incapacidade de ler é perda posterior e não desenho.
@@ -447,7 +455,62 @@ Dados sob CC BY-SA 3.0. Paráfrases de material da One Piece Wiki (CC BY-SA 3.0)
 - − `EV-0818-03` (peso 0.3) — Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: em Wano a mesma linhagem que guarda a pedra sabe lê-la e escrevê-la, o oposto da separação entre guardião e leitor que este enunciado afirma.
 - − `EV-1055-08` (peso 0.2) — Sukiyaki admite que Kaidou e Orochi souberam do Poneglyph subterrâneo porque Jack, por ser homem-peixe, podia explorar as ruínas submersas: o esconderijo cedeu a um traço biológico banal de um subordinado, o que mostra custódia frágil em vez de projeto robusto.
 - prevê [aberta]: Se verdadeiro, aparecerá outro povo guardando um Poneglyph sem saber lê-lo, com a mesma estrutura de dever herdado dos Shandia.
-- prevê [aberta]: Se verdadeiro, a obra mostrará que a escolha de onde cada pedra ficou obedeceu a um critério, e não ao acaso da fuga.
+- prevê [falhada]: Se verdadeiro, a obra mostrará que a escolha de onde cada pedra ficou obedeceu a um critério, e não ao acaso da fuga.
+- prevê [aberta]: Se verdadeiro, um personagem dirá em cena quem escolheu o lugar de pelo menos um Poneglyph e por qual razão. Reprovada se a obra atribuir a posição de qualquer pedra a guerra, fuga, transporte de emergência ou ao ato de Lili.
+
+### H-18 — refutada · fatia 0.0%
+
+**Toki é a única testemunha do Século Perdido que chegou viva ao presente, e o que ela atravessou o tempo para alcançar era Wano — não a fuga de um perigo qualquer.**
+
+- + `EV-0973-04` (peso 0.5) — Toki nasceu por volta de oitocentos e trinta anos antes do presente, dentro do Século Perdido, e chegou à era atual saltando repetidamente para frente no tempo: há uma pessoa viva que nasceu dentro do período que o Governo apaga.
+- + `EV-0973-06` (peso 0.45) — Toki pertencia à família daimyo Amatsuki e ainda assim não conhecia sua terra de origem, e o que ela buscava ao viajar era chegar a Wano: o destino é declarado, e é um lugar, não uma época segura.
+- + `EV-0973-01` (peso 0.35) — Com o castelo em chamas, Toki enviou Momonosuke e quatro dos retainers vinte anos ao futuro e ficou para trás em vez de fugir com eles: quem só fugia do perigo teria embarcado, e ela não embarcou.
+- + `EV-0973-02` (peso 0.3) — Ferida e prestes a morrer, Toki cavalgou até Bakura Town e proferiu publicamente uma profecia diante dos cidadãos: o último ato dela foi entregar informação a Wano, não se salvar.
+- − `EV-0821-01` (peso 0.7) — Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: há outro ser que estava lá naquele período e continua vivo no presente, e a palavra única do enunciado cai.
+- − `EV-1046-01` (peso 0.6) — Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto: a outra testemunha não só chegou viva como já depôs em cena sobre quem conheceu naquela época.
+- − `EV-0973-05` (peso 0.35) — O poder da Toki Toki no Mi funciona numa direção só, enviando pessoas para o futuro e nunca de volta ao passado: quem tem apenas essa saída viaja por não ter alternativa, e a travessia pode ser consequência da fruta e não escolha.
+- − `EV-0972-07` (peso 0.35) — O plano de Toki usar a Toki Toki no Mi para enviar pessoas vinte anos ao futuro foi concebido por Oden: a decisão que a obra mostra em cena é dele, o que enfraquece a leitura de missão própria trazida do Século Perdido.
+- − `EV-0972-06` (peso 0.3) — Na carta deixada a Toki, Oden previu a guerra de vinte anos e pediu que ela usasse seu poder em função disso: o propósito documentado do salto é a agenda de Oden contra Kaidou, não algo que ela carregasse de oitocentos anos atrás.
+- prevê [aberta]: Se verdadeiro, a obra mostrará em cena o que Toki viu ou trouxe do Século Perdido, e isso terá consequência fora da disputa interna de Wano contra Orochi.
+- prevê [aberta]: Se verdadeiro, a razão de o destino ser Wano especificamente será nomeada, e não ficará como preferência pessoal de alguém que buscava a terra da própria família.
+
+### H-19 — viva · fatia 0.0%
+
+**A sentença de Zunesha é o que a preservou como testemunha: condenada há oitocentos anos a caminhar sem parar e a só agir sob ordem, ela chegou viva ao presente, e a ordem que a destrava vem da linhagem Kouzuki.**
+
+- + `EV-0821-01` (peso 0.55) — Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: a mesma condição que a limita é a que a mantém caminhando através do período apagado, viva até o presente.
+- + `EV-1040-01` (peso 0.5) — Joy Boy foi camarada de Zunesha durante sua vida: ela conviveu com a figura central daquele período, o que a torna testemunha e não apenas sobrevivente.
+- + `EV-1046-01` (peso 0.5) — Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto: ela retém memória daquela época e a usa para identificar alguém no presente.
+- + `EV-1041-01` (peso 0.45) — Zunesha declarou a Momonosuke, pela Voz de Todas as Coisas, que lutaria sob o comando dele e que abriria as fronteiras de Wano: a ordem que a destrava é apresentada como vinda do herdeiro Kouzuki.
+- + `EV-1050-01` (peso 0.4) — Depois da derrota de Kaidou, Momonosuke decidiu não abrir ainda as fronteiras de Wano e comunicou a decisão a Zunesha: a decisão do herdeiro Kouzuki é o que determina se ela age.
+- + `EV-1052-01` (peso 0.4) — Em respeito à decisão de Momonosuke, Zunesha deixou as águas de Wano e sumiu na neblina próxima: ela desfez o próprio movimento anterior por causa da ordem, o que mostra a trava operando em cena.
+- + `EV-0822-01` (peso 0.2) — Miyagi especula que Zunesha não caminha ao acaso e pode estar procurando um lugar determinado: é especulação de personagem, não afirmação da obra, e por isso entra com peso baixo.
+- − `EV-0821-02` (peso 0.45) — Zunesha possui a Voz de Todas as Coisas e só consegue falar telepaticamente com quem tem a mesma habilidade: a restrição pode ser de canal de comunicação e não de titularidade, caso em que qualquer portador da habilidade fala com ela, Kouzuki ou não.
+- − `EV-0966-07` (peso 0.4) — Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a Voz de Todas as Coisas não pertence à linhagem Kouzuki, e quem a tinha não era herdeiro de Wano.
+- − `EV-1037-02` (peso 0.3) — Zunesha chegou às águas próximas de Wano e ali encontrou uma grande frota de navios do Governo Mundial: o átomo registra o encontro e nada sobre alguém tentar comandá-la, então a preservação contra o vencedor não tem cena que a mostre.
+- prevê [aberta]: Se verdadeiro, alguém de fora da linhagem Kouzuki tentará comandar Zunesha em cena e ela não obedecerá — recusa ou incapacidade —, e a razão será a titularidade da ordem, não a falta da Voz de Todas as Coisas.
+- prevê [aberta]: Se verdadeiro, a obra nomeará quem impôs a sentença dos oitocentos anos, e será poder ligado ao lado que venceu o Século Perdido, não julgamento entre pares nem causa natural.
+
+### H-20 — viva · fatia 0.0%
+
+**O projeto dos Poneglyphs terminou no suporte: gravar em pedra indestrutível foi decisão deliberada de quem previu a derrota, mas a dispersão das pedras e o analfabetismo dos guardiões são história posterior — guerra, transporte de emergência e erosão de oitocentos anos —, não parte do desenho.**
+
+- + `EV-0395-05` (peso 0.6) — Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a única intenção de projeto declarada em cena recai sobre o material, e não sobre onde a pedra ficaria nem sobre quem a guardaria.
+- + `EV-0395-04` (peso 0.5) — O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: se o suporte resiste ao epicentro do apagamento, distância e custódia não precisam acrescentar proteção nenhuma.
+- + `EV-0395-10` (peso 0.45) — Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é gravar diante da derrota, e o ato que a obra atribui a esse povo é gravar, não distribuir.
+- + `EV-1085-02` (peso 0.5) — Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: o único átomo que declara a causa da dispersão a chama de erro, e o atribui a uma soberana dos vinte reinos e não a quem gravou.
+- + `EV-1085-03` (peso 0.4) — O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a dispersão, no relato da obra, atrai caçadores em vez de proteger a mensagem.
+- + `EV-0272-03` (peso 0.45) — Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi por causa disso que a cidade foi arruinada: a pedra chegou em plena guerra e a colocação arruinou quem a recebeu.
+- + `EV-0966-06` (peso 0.4) — Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: a escassez de leitores é política hereditária do clã que esculpiu as pedras, e não propriedade de uma custódia distribuída.
+- + `EV-0818-03` (peso 0.4) — Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: onde há guardião documentado com linhagem, o guardião sabe ler — o analfabeto é o caso, não a regra.
+- + `EV-0290-03` (peso 0.3) — Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: perder a leitura ao longo de gerações é o que se espera de qualquer transmissão sem escola, com ou sem projeto por trás.
+- + `EV-1053-02` (peso 0.3) — O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph: a pedra está no assento do poder e não entregue a um povo distinto, o que contraria a dispersão como característica de desenho.
+- − `EV-0301-04` (peso 0.45) — Robin recorda que existem dois tipos de Poneglyph: os que carregam informação e os que revelam onde estão os outros: uma camada que aponta para as demais pedras é arquitetura de sistema e vai além da escolha do material.
+- − `EV-0301-05` (peso 0.45) — Robin conclui que a pedra de Shandora já cumpriu sua função porque Roger já achou aquilo que ela indicava, e que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história: leitura conjunta é propriedade projetada, e não efeito de guerra ou de erosão.
+- − `EV-0301-01` (peso 0.35) — Diz-se que ao chegar a Laugh Tale, se a pessoa levou consigo as passagens dos Poneglyphs recolhidas na viagem, o Rio Poneglyph será finalmente revelado: um mecanismo que só se completa quando as partes forem reunidas exige que a repartição fosse intencional.
+- − `EV-0290-01` (peso 0.3) — Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si, e sim o Poneglyph fincado na base do campanário: existe dever de guarda herdado e nomeado, o que é mais do que um acidente histórico deixaria.
+- prevê [aberta]: Se verdadeiro, quando a obra explicar a posição de alguma pedra, a explicação será guerra, fuga, transporte de emergência ou o ato de Lili. Reprovada se um personagem nomear em cena quem escolheu o lugar de um Poneglyph e por qual razão de projeto.
+- prevê [aberta]: Se verdadeiro, a camada dos Road Poneglyphs — as pedras que apontam para Laugh Tale — será datada como posterior ao ato de gravar as pedras de história, obra de quem veio depois, e não do mesmo gesto do povo derrotado.
 
 ---
 

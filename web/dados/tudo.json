@@ -7,11 +7,11 @@
   "licenca_dados": "CC BY-SA 3.0",
   "licenca_codigo": "MIT",
   "atribuicao": "Paráfrases de material da One Piece Wiki (CC BY-SA 3.0). One Piece é obra de Eiichiro Oda / Shueisha.",
-  "gerado_em": "2026-08-11T19:59:17-03:00",
-  "commit": "6952d66729e8349f6967edbe8952fbda7f79788b",
+  "gerado_em": "2026-08-11T20:12:21-03:00",
+  "commit": "5fc3f44dc6a26bf050e880fb5c787a5368e76dc7",
   "capitulo_mais_recente": 1190,
   "n_evidencias": 289,
-  "n_hipoteses": 17,
+  "n_hipoteses": 20,
   "vocabulario": {
    "confiabilidade": [
     "canonico",
@@ -244,6 +244,12 @@
    "contexto": "Contexto: Robin lendo a lápide da cidade no Upper Yard, provavelmente erguida pelos próprios descendentes. Relevante porque data a fundação de Shandora antes do Século Perdido e o sumiço do povo dentro dele.",
    "citado_por": [
     {
+     "hipotese": "H-16",
+     "relacao": "contradiz",
+     "peso": 0.45,
+     "justificativa": "A lápide erguida nas ruínas registra que a cidade se chamava Shandora, que prosperou há mais de 1100 anos e que seu povo desapareceu de forma inexplicada há 800 anos: o único relógio que uma raça do céu tem no arquivo é terrestre e começa numa cidade no chão."
+    },
+    {
      "hipotese": "H-17",
      "relacao": "contradiz",
      "peso": 0.15,
@@ -344,9 +350,15 @@
    "citado_por": [
     {
      "hipotese": "H-17",
+     "relacao": "contradiz",
+     "peso": 0.45,
+     "justificativa": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi por causa disso que a cidade foi arruinada: a pedra chegou durante a guerra e a colocação arruinou os guardiões, o que é depósito de emergência e não posto escolhido."
+    },
+    {
+     "hipotese": "H-20",
      "relacao": "apoia",
-     "peso": 0.3,
-     "justificativa": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época da guerra: a distribuição é ato deliberado de guerra, e não geografia acidental."
+     "peso": 0.45,
+     "justificativa": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi por causa disso que a cidade foi arruinada: a pedra chegou em plena guerra e a colocação arruinou quem a recebeu."
     }
    ]
   },
@@ -469,7 +481,7 @@
     "Maxim",
     "lua"
    ],
-   "contexto": "Relevante porque a nave que depois alcança a lua é feita do ouro da cidade que veio da lua.",
+   "contexto": "Registra a origem do material da Maxim. A ligação entre esse ouro e a lua é\nafirmação de hipótese, não deste átomo: o capítulo diz de onde o ouro saiu e no\nque foi usado, e nada além disso. A frase anterior aqui dizia \"a cidade que veio\nda lua\" — conclusão de H-16 escrita dentro de um átomo canônico, removida em\n2026-08-11 depois que o Red Team a encontrou.",
    "citado_por": [
     {
      "hipotese": "H-16",
@@ -519,7 +531,14 @@
     "sol"
    ],
    "contexto": "Paralelo estrutural com os deuses citados no Harley de Elbaf.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-16",
+     "relacao": "contradiz",
+     "peso": 0.5,
+     "justificativa": "Os Shandia antigos cultuavam deuses do sol, da terra, da floresta e da chuva: a única descrição da religião do povo é um panteão agrícola e terrestre, e a lua não está na lista."
+    }
+   ]
   },
   {
    "id": "EV-0290-01",
@@ -544,6 +563,12 @@
      "relacao": "apoia",
      "peso": 0.45,
      "justificativa": "Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si: o objeto do dever herdado é a pedra, e não o patrimônio."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "contradiz",
+     "peso": 0.3,
+     "justificativa": "Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si, e sim o Poneglyph fincado na base do campanário: existe dever de guarda herdado e nomeado, o que é mais do que um acidente histórico deixaria."
     }
    ]
   },
@@ -564,6 +589,12 @@
    ],
    "contexto": "Motivo declarado da destruição dito por um personagem, não pelo narrador. Não há, na fonte, nome para quem atacou.",
    "citado_por": [
+    {
+     "hipotese": "H-16",
+     "relacao": "contradiz",
+     "peso": 0.45,
+     "justificativa": "Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada por defender o Poneglyph, e que por isso a vontade de seu povo é proteger o passado: quando um Shandia fala da própria origem e do próprio dever, o passado que ele nomeia é a pedra, não uma migração."
+    },
     {
      "hipotese": "H-17",
      "relacao": "apoia",
@@ -594,6 +625,12 @@
      "relacao": "apoia",
      "peso": 0.5,
      "justificativa": "Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: guardar sem poder ler é exatamente o que um sistema desenhado contra o apagamento exige, porque o guardião não pode revelar o que não entende."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.3,
+     "justificativa": "Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: perder a leitura ao longo de gerações é o que se espera de qualquer transmissão sem escola, com ou sem projeto por trás."
     }
    ]
   },
@@ -696,6 +733,12 @@
      "relacao": "apoia",
      "peso": 0.25,
      "justificativa": "Diz-se que ao chegar a Laugh Tale levando as passagens dos Poneglyphs recolhidas na viagem o Rio Poneglyph será revelado: o sistema é projetado para só se completar quando as partes forem reunidas."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "contradiz",
+     "peso": 0.35,
+     "justificativa": "Diz-se que ao chegar a Laugh Tale, se a pessoa levou consigo as passagens dos Poneglyphs recolhidas na viagem, o Rio Poneglyph será finalmente revelado: um mecanismo que só se completa quando as partes forem reunidas exige que a repartição fosse intencional."
     }
    ]
   },
@@ -779,6 +822,12 @@
      "relacao": "apoia",
      "peso": 0.4,
      "justificativa": "Robin recorda que existem dois tipos de Poneglyph, os que carregam informação e os que revelam onde estão os outros: uma camada de índice que aponta para as demais pedras é arquitetura de sistema, e não acúmulo de monumentos avulsos."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "contradiz",
+     "peso": 0.45,
+     "justificativa": "Robin recorda que existem dois tipos de Poneglyph: os que carregam informação e os que revelam onde estão os outros: uma camada que aponta para as demais pedras é arquitetura de sistema e vai além da escolha do material."
     }
    ]
   },
@@ -811,6 +860,12 @@
      "relacao": "apoia",
      "peso": 0.45,
      "justificativa": "Robin conclui que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história, e que a pedra de Shandora já cumpriu sua função porque Roger achou aquilo que ela indicava: a leitura conjunta é a propriedade de um sistema desenhado para que nenhuma peça isolada baste."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "contradiz",
+     "peso": 0.45,
+     "justificativa": "Robin conclui que a pedra de Shandora já cumpriu sua função porque Roger já achou aquilo que ela indicava, e que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história: leitura conjunta é propriedade projetada, e não efeito de guerra ou de erosão."
     }
    ]
   },
@@ -1423,6 +1478,18 @@
      "relacao": "apoia",
      "peso": 0.25,
      "justificativa": "O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: é demonstração em cena de material do Reino Antigo que a tecnologia atual não destrói nem replica."
+    },
+    {
+     "hipotese": "H-17",
+     "relacao": "apoia",
+     "peso": 0.5,
+     "justificativa": "O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: a indestrutibilidade não é deduzida, é demonstrada no epicentro da operação de apagamento."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.5,
+     "justificativa": "O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: se o suporte resiste ao epicentro do apagamento, distância e custódia não precisam acrescentar proteção nenhuma."
     }
    ]
   },
@@ -1460,6 +1527,18 @@
      "relacao": "apoia",
      "peso": 0.25,
      "justificativa": "Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a escolha do suporte é de quem endereça um recado a leitores muito distantes no tempo, que é a forma de um legado dirigido."
+    },
+    {
+     "hipotese": "H-17",
+     "relacao": "apoia",
+     "peso": 0.55,
+     "justificativa": "Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a intenção de projeto é declarada em cena por um personagem, e recai sobre a escolha do material."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.6,
+     "justificativa": "Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a única intenção de projeto declarada em cena recai sobre o material, e não sobre onde a pedra ficaria nem sobre quem a guardaria."
     }
    ]
   },
@@ -1619,6 +1698,12 @@
      "relacao": "apoia",
      "peso": 0.4,
      "justificativa": "Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é sobreviver à própria derrota."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.45,
+     "justificativa": "Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é gravar diante da derrota, e o ato que a obra atribui a esse povo é gravar, não distribuir."
     }
    ]
   },
@@ -3538,6 +3623,12 @@
      "relacao": "contradiz",
      "peso": 0.3,
      "justificativa": "Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: em Wano a mesma linhagem que guarda a pedra sabe lê-la e escrevê-la, o oposto da separação entre guardião e leitor que este enunciado afirma."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.4,
+     "justificativa": "Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: onde há guardião documentado com linhagem, o guardião sabe ler — o analfabeto é o caso, não a regra."
     }
    ]
   },
@@ -3583,6 +3674,18 @@
      "relacao": "apoia",
      "peso": 0.2,
      "justificativa": "Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: uma sentença supõe uma autoridade com poder para julgar e punir no fim do Século Perdido, isto é, uma soberania em exercício antes do regime atual."
+    },
+    {
+     "hipotese": "H-18",
+     "relacao": "contradiz",
+     "peso": 0.7,
+     "justificativa": "Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: há outro ser que estava lá naquele período e continua vivo no presente, e a palavra única do enunciado cai."
+    },
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.55,
+     "justificativa": "Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: a mesma condição que a limita é a que a mantém caminhando através do período apagado, viva até o presente."
     }
    ]
   },
@@ -3609,6 +3712,12 @@
      "relacao": "contradiz",
      "peso": 0.2,
      "justificativa": "Zunesha possui a Voz de Todas as Coisas e só consegue falar telepaticamente com quem tem a mesma habilidade: ouvir vozes ganha aqui um referente que não tem nada de leitura, o que enfraquece a ponte entre o verso profético e a leitura de um registro."
+    },
+    {
+     "hipotese": "H-19",
+     "relacao": "contradiz",
+     "peso": 0.45,
+     "justificativa": "Zunesha possui a Voz de Todas as Coisas e só consegue falar telepaticamente com quem tem a mesma habilidade: a restrição pode ser de canal de comunicação e não de titularidade, caso em que qualquer portador da habilidade fala com ela, Kouzuki ou não."
     }
    ]
   },
@@ -3629,7 +3738,14 @@
     "Seculo Perdido"
    ],
    "contexto": "Especulação de personagem, não narração. O que é canônico é que Miyagi diz isso, não que seja verdade.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.2,
+     "justificativa": "Miyagi especula que Zunesha não caminha ao acaso e pode estar procurando um lugar determinado: é especulação de personagem, não afirmação da obra, e por isso entra com peso baixo."
+    }
+   ]
   },
   {
    "id": "EV-0908-01",
@@ -3799,9 +3915,15 @@
    "citado_por": [
     {
      "hipotese": "H-17",
+     "relacao": "contradiz",
+     "peso": 0.4,
+     "justificativa": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: concentrar a única chave de leitura em um herdeiro por geração é ponto único de falha, o contrário da redundância que um sistema projetado contra o apagamento teria."
+    },
+    {
+     "hipotese": "H-20",
      "relacao": "apoia",
-     "peso": 0.35,
-     "justificativa": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: restringir a cifra a um herdeiro por geração é decisão de projeto, e separa deliberadamente a pedra de quem sabe lê-la."
+     "peso": 0.4,
+     "justificativa": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: a escassez de leitores é política hereditária do clã que esculpiu as pedras, e não propriedade de uma custódia distribuída."
     }
    ]
   },
@@ -3833,6 +3955,12 @@
      "relacao": "apoia",
      "peso": 0.3,
      "justificativa": "Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a pedra sinaliza a própria presença a quem pode ouvi-la, que é propriedade de sobrevivência do suporte e não do conteúdo."
+    },
+    {
+     "hipotese": "H-19",
+     "relacao": "contradiz",
+     "peso": 0.4,
+     "justificativa": "Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a Voz de Todas as Coisas não pertence à linhagem Kouzuki, e quem a tinha não era herdeiro de Wano."
     }
    ]
   },
@@ -4620,6 +4748,12 @@
      "relacao": "apoia",
      "peso": 0.25,
      "justificativa": "Na carta deixada a Toki, Oden previu que em vinte anos estouraria uma guerra e que chegaria ao Novo Mundo uma força capaz de derrubar Kaidou: é previsão com prazo declarado que a obra depois cumpriu, o que eleva o valor probatório das predições datadas de que esta hipótese vive."
+    },
+    {
+     "hipotese": "H-18",
+     "relacao": "contradiz",
+     "peso": 0.3,
+     "justificativa": "Na carta deixada a Toki, Oden previu a guerra de vinte anos e pediu que ela usasse seu poder em função disso: o propósito documentado do salto é a agenda de Oden contra Kaidou, não algo que ela carregasse de oitocentos anos atrás."
     }
    ]
   },
@@ -4640,7 +4774,14 @@
     "plano"
    ],
    "contexto": "O salto de vinte anos não foi improviso de uma mãe encurralada; era instrução prévia,\nescrita antes da execução.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-18",
+     "relacao": "contradiz",
+     "peso": 0.35,
+     "justificativa": "O plano de Toki usar a Toki Toki no Mi para enviar pessoas vinte anos ao futuro foi concebido por Oden: a decisão que a obra mostra em cena é dele, o que enfraquece a leitura de missão própria trazida do Século Perdido."
+    }
+   ]
   },
   {
    "id": "EV-0973-01",
@@ -4659,7 +4800,14 @@
     "Kouzuki"
    ],
    "contexto": "O herdeiro dos Kouzuki e o único leitor de Poneglyphs restante é retirado da linha do tempo\npor vinte anos. O conhecimento da família atravessa o intervalo dentro de uma pessoa.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-18",
+     "relacao": "apoia",
+     "peso": 0.35,
+     "justificativa": "Com o castelo em chamas, Toki enviou Momonosuke e quatro dos retainers vinte anos ao futuro e ficou para trás em vez de fugir com eles: quem só fugia do perigo teria embarcado, e ela não embarcou."
+    }
+   ]
   },
   {
    "id": "EV-0973-02",
@@ -4678,7 +4826,14 @@
     "Toki"
    ],
    "contexto": "O ato foi deliberado: ela gastou os últimos minutos garantindo que a profecia tivesse\ntestemunhas, o que a torna instrumento político e não apenas visão.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-18",
+     "relacao": "apoia",
+     "peso": 0.3,
+     "justificativa": "Ferida e prestes a morrer, Toki cavalgou até Bakura Town e proferiu publicamente uma profecia diante dos cidadãos: o último ato dela foi entregar informação a Wano, não se salvar."
+    }
+   ]
   },
   {
    "id": "EV-0973-03",
@@ -4723,7 +4878,14 @@
     "Toki"
    ],
    "contexto": "Existe na era moderna uma pessoa nascida no Século Perdido que atravessou o apagamento sem\npassar por ele. É o único caso conhecido de testemunha viva daquele período fora dos\nPoneglyphs.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-18",
+     "relacao": "apoia",
+     "peso": 0.5,
+     "justificativa": "Toki nasceu por volta de oitocentos e trinta anos antes do presente, dentro do Século Perdido, e chegou à era atual saltando repetidamente para frente no tempo: há uma pessoa viva que nasceu dentro do período que o Governo apaga."
+    }
+   ]
   },
   {
    "id": "EV-0973-05",
@@ -4741,7 +4903,14 @@
     "tempo"
    ],
    "contexto": "Ambíguo porque a página da personagem afirma isso sem apontar capítulo, ao contrário do\nresto da biografia. Se confirmado, fecha uma porta importante: ninguém trouxe informação do\nSéculo Perdido para trás, só pessoas vieram para frente.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-18",
+     "relacao": "contradiz",
+     "peso": 0.35,
+     "justificativa": "O poder da Toki Toki no Mi funciona numa direção só, enviando pessoas para o futuro e nunca de volta ao passado: quem tem apenas essa saída viaja por não ter alternativa, e a travessia pode ser consequência da fruta e não escolha."
+    }
+   ]
   },
   {
    "id": "EV-0973-06",
@@ -4760,7 +4929,14 @@
     "memoria"
    ],
    "contexto": "Ambíguo porque a frase da wiki não deixa claro se a terra desconhecida é Wano ou outro\nlugar. Se for Wano, uma nobre do Século Perdido já ignorava a própria origem, e o apagamento\nseria anterior à queda.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-18",
+     "relacao": "apoia",
+     "peso": 0.45,
+     "justificativa": "Toki pertencia à família daimyo Amatsuki e ainda assim não conhecia sua terra de origem, e o que ela buscava ao viajar era chegar a Wano: o destino é declarado, e é um lugar, não uma época segura."
+    }
+   ]
   },
   {
    "id": "EV-0973-07",
@@ -4876,6 +5052,12 @@
      "relacao": "apoia",
      "peso": 0.3,
      "justificativa": "Barba Branca contou a Marco que existiu um Kami no Kuni, um país dos deuses, no alto da Red Line muito antes de Mary Geoise existir: havia uma soberania anterior no mesmo lugar."
+    },
+    {
+     "hipotese": "H-16",
+     "relacao": "contradiz",
+     "peso": 0.4,
+     "justificativa": "Barba Branca contou a Marco que existiu um Kami no Kuni, um país dos deuses, no alto da Red Line muito antes de Mary Geoise existir: quando a obra conta gente chamada de deuses vivendo acima do resto do mundo, ela ancora a história no ponto mais alto do planeta, sem lua e sem migração."
     }
    ]
   },
@@ -4951,7 +5133,14 @@
     "Governo Mundial"
    ],
    "contexto": "Depois de séculos vagando, o elefante aparece exatamente no país que guarda Pluton e um Road Poneglyph.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-19",
+     "relacao": "contradiz",
+     "peso": 0.3,
+     "justificativa": "Zunesha chegou às águas próximas de Wano e ali encontrou uma grande frota de navios do Governo Mundial: o átomo registra o encontro e nada sobre alguém tentar comandá-la, então a preservação contra o vencedor não tem cena que a mostre."
+    }
+   ]
   },
   {
    "id": "EV-1040-01",
@@ -4975,6 +5164,12 @@
      "relacao": "apoia",
      "peso": 0.2,
      "justificativa": "Joy Boy foi camarada de Zunesha durante sua vida: é o que qualifica Zunesha como testemunha direta do primeiro portador, e não como personagem repetindo lenda."
+    },
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.5,
+     "justificativa": "Joy Boy foi camarada de Zunesha durante sua vida: ela conviveu com a figura central daquele período, o que a torna testemunha e não apenas sobrevivente."
     }
    ]
   },
@@ -4996,7 +5191,14 @@
     "Kouzuki Momonosuke"
    ],
    "contexto": "A wiki referencia a mesma declaração aos capítulos 1039 e 1041.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.45,
+     "justificativa": "Zunesha declarou a Momonosuke, pela Voz de Todas as Coisas, que lutaria sob o comando dele e que abriria as fronteiras de Wano: a ordem que a destrava é apresentada como vinda do herdeiro Kouzuki."
+    }
+   ]
   },
   {
    "id": "EV-1043-01",
@@ -5049,6 +5251,18 @@
      "relacao": "apoia",
      "peso": 0.3,
      "justificativa": "Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto, depositando confiança nele: uma testemunha direta do primeiro portador lê a chegada do poder a Luffy como destino, e não como acaso."
+    },
+    {
+     "hipotese": "H-18",
+     "relacao": "contradiz",
+     "peso": 0.6,
+     "justificativa": "Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto: a outra testemunha não só chegou viva como já depôs em cena sobre quem conheceu naquela época."
+    },
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.5,
+     "justificativa": "Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto: ela retém memória daquela época e a usa para identificar alguém no presente."
     }
    ]
   },
@@ -5070,7 +5284,14 @@
     "Zunesha"
    ],
    "contexto": "A decisão mantém Pluton selada e adia a agenda que Oden dizia ser a de Joy Boy.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.4,
+     "justificativa": "Depois da derrota de Kaidou, Momonosuke decidiu não abrir ainda as fronteiras de Wano e comunicou a decisão a Zunesha: a decisão do herdeiro Kouzuki é o que determina se ela age."
+    }
+   ]
   },
   {
    "id": "EV-1052-01",
@@ -5088,7 +5309,14 @@
     "Wano"
    ],
    "contexto": "O elefante obedece à autoridade Kouzuki no presente, como obedecia a uma sentença no passado.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-19",
+     "relacao": "apoia",
+     "peso": 0.4,
+     "justificativa": "Em respeito à decisão de Momonosuke, Zunesha deixou as águas de Wano e sumiu na neblina próxima: ela desfez o próprio movimento anterior por causa da ordem, o que mostra a trava operando em cena."
+    }
+   ]
   },
   {
    "id": "EV-1053-01",
@@ -5113,6 +5341,12 @@
      "relacao": "contradiz",
      "peso": 0.3,
      "justificativa": "Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na antiga Wano, abaixo do Road Poneglyph do país: o padrão da obra é guardar cada arma longe do fim da rota, não nele."
+    },
+    {
+     "hipotese": "H-17",
+     "relacao": "contradiz",
+     "peso": 0.35,
+     "justificativa": "Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na antiga Wano, abaixo da caverna onde fica o Road Poneglyph do país: uma arma ancestral e uma das chaves empilhadas no mesmo sítio é concentração, não dispersão entre povos distintos."
     }
    ]
   },
@@ -5134,7 +5368,20 @@
     "Kouzuki Sukiyaki"
    ],
    "contexto": "Era o quarto secreto de passatempos do ex-xogum antes de virar cela. Robin chega até ele por indicação de Brook.",
-   "citado_por": []
+   "citado_por": [
+    {
+     "hipotese": "H-17",
+     "relacao": "contradiz",
+     "peso": 0.35,
+     "justificativa": "O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph: a pedra está trancada no assento do poder, junto do prisioneiro que sabe lê-la, e não confiada a um povo que não a lê."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.3,
+     "justificativa": "O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph: a pedra está no assento do poder e não entregue a um povo distinto, o que contraria a dispersão como característica de desenho."
+    }
+   ]
   },
   {
    "id": "EV-1053-03",
@@ -5845,6 +6092,12 @@
      "relacao": "contradiz",
      "peso": 0.45,
      "justificativa": "Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: se a dispersão foi erro de uma pessoa, ela não foi projeto de ninguém."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.5,
+     "justificativa": "Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: o único átomo que declara a causa da dispersão a chama de erro, e o atribui a uma soberana dos vinte reinos e não a quem gravou."
     }
    ]
   },
@@ -5882,6 +6135,12 @@
      "relacao": "contradiz",
      "peso": 0.3,
      "justificativa": "O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a obra atribui a distribuição a um acidente histórico com consequência não pretendida."
+    },
+    {
+     "hipotese": "H-20",
+     "relacao": "apoia",
+     "peso": 0.4,
+     "justificativa": "O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a dispersão, no relato da obra, atrai caçadores em vez de proteger a mensagem."
     }
    ]
   },
@@ -9483,7 +9742,7 @@
   },
   {
    "id": "H-16",
-   "enunciado": "As raças do céu vieram de fora do planeta: Skypieanos, Shandia e Birkanos descendem de uma civilização lunar que desceu à Estrela Azul por esgotamento de recursos, e a tecnologia dela é anterior ao Reino Antigo.",
+   "enunciado": "As raças do céu vieram de fora do planeta: Skypieanos, Shandia e Birkanos descendem de uma civilização lunar que desceu à Estrela Azul por esgotamento de recursos.",
    "escopo": "outro",
    "status": "viva",
    "prior": 0.4,
@@ -9546,6 +9805,26 @@
    ],
    "contradiz": [
     {
+     "ev": "EV-0287-01",
+     "peso": 0.5,
+     "como": "Os Shandia antigos cultuavam deuses do sol, da terra, da floresta e da chuva: a única descrição da religião do povo é um panteão agrícola e terrestre, e a lua não está na lista."
+    },
+    {
+     "ev": "EV-0261-01",
+     "peso": 0.45,
+     "como": "A lápide erguida nas ruínas registra que a cidade se chamava Shandora, que prosperou há mais de 1100 anos e que seu povo desapareceu de forma inexplicada há 800 anos: o único relógio que uma raça do céu tem no arquivo é terrestre e começa numa cidade no chão."
+    },
+    {
+     "ev": "EV-0290-02",
+     "peso": 0.45,
+     "como": "Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada por defender o Poneglyph, e que por isso a vontade de seu povo é proteger o passado: quando um Shandia fala da própria origem e do próprio dever, o passado que ele nomeia é a pedra, não uma migração."
+    },
+    {
+     "ev": "EV-1023-01",
+     "peso": 0.4,
+     "como": "Barba Branca contou a Marco que existiu um Kami no Kuni, um país dos deuses, no alto da Red Line muito antes de Mary Geoise existir: quando a obra conta gente chamada de deuses vivendo acima do resto do mundo, ela ancora a história no ponto mais alto do planeta, sem lua e sem migração."
+    },
+    {
      "ev": "EV-0274-03",
      "peso": 0.35,
      "como": "Segundo a fonte, as tribos que vieram da lua perderam com o tempo qualquer registro da própria origem: se a memória se perdeu, tudo que sustenta esta hipótese depende de uma história de capa e de murais que ninguém no presente leu."
@@ -9568,7 +9847,7 @@
    ],
    "prediz": [
     {
-     "texto": "Se verdadeiro, a linha principal da obra — e não uma história de capa — afirmará a origem lunar de alguma das raças do céu, por boca de personagem ou por documento lido em cena.",
+     "texto": "Se verdadeiro, a linha principal da obra vinculará à lua os Shandia especificamente — o povo cuja história ela já contou inteira no chão, com cidade, guerra e lápide — e o fará até o fim do arco de Elbaf.",
      "status": "aberta"
     },
     {
@@ -9577,9 +9856,9 @@
     }
    ],
    "concorrentes": [],
-   "corpo": "## Por que esta hipótese existe\n\nVeio do relatório de órfãos, e o cluster era grande demais para continuar sem\ndono: cerca de quarenta átomos falando de Shandora, Birka, Fairy Vearth,\nautômatos e da lua, sem pertencer a hipótese nenhuma. A análise do grafo mostrou\nque o tema `lua` tem betweenness altíssima com grau baixo — é a ponte que liga o\nbloco Skypiea ao resto do arquivo, e estava fora do sistema.\n\n## O caso a favor\n\nO eixo lunar não é conjectura de fandom: os murais da cidade sob a crosta da lua\nsão mostrados na obra, e é neles que a origem comum dos três povos do céu\naparece. Enel liga a energia e a cidade responde.\n\n## O caso contra, que é sério\n\nQuase tudo vem de **história de capa** — narrativa paralela, sem diálogo e fora\nda linha principal. Os átomos estão marcados como `capa` no campo `tipo`\njustamente por isso. E EV-0274-03 registra que os próprios descendentes perderam\no registro da origem: a hipótese depende de uma fonte que a obra trata como\nlateral e de uma memória que a própria obra diz ter se perdido.\n\n## O que a mataria\n\nA linha principal contradizer a origem lunar, ou a história de capa ser\nexplicitamente descartada como não-canônica.\n\n## Nota de curadoria\n\nPrior 0.40. Escopo `outro`: ela não disputa a pergunta sobre o tesouro e pode ser\nverdadeira junto com qualquer uma das hipóteses de escopo `one_piece`. Ainda não\npassou pelo Red Team.",
-   "redteam": "",
-   "posterior": 0.9756,
+   "corpo": "## Por que esta hipótese existe\n\nVeio do relatório de órfãos, e o cluster era grande demais para continuar sem\ndono: cerca de quarenta átomos falando de Shandora, Birka, Fairy Vearth,\nautômatos e da lua, sem pertencer a hipótese nenhuma. A análise do grafo mostrou\nque o tema `lua` tem betweenness altíssima com grau baixo — é a ponte que liga o\nbloco Skypiea ao resto do arquivo, e estava fora do sistema.\n\n## O caso a favor\n\nO eixo lunar não é conjectura de fandom: os murais da cidade sob a crosta da lua\nsão mostrados na obra, e é neles que a origem comum dos três povos do céu\naparece. Enel liga a energia e a cidade responde.\n\n## O caso contra, que é sério\n\nQuase tudo vem de **história de capa** — narrativa paralela, sem diálogo e fora\nda linha principal. Os átomos estão marcados como `capa` no campo `tipo`\njustamente por isso. E EV-0274-03 registra que os próprios descendentes perderam\no registro da origem: a hipótese depende de uma fonte que a obra trata como\nlateral e de uma memória que a própria obra diz ter se perdido.\n\n## O que a mataria\n\nA linha principal contradizer a origem lunar, ou a história de capa ser\nexplicitamente descartada como não-canônica.\n\n## Nota de curadoria — revisada em 2026-08-11 após o Red Team\n\nVeredito do ataque: **ferida**, com uma cláusula refutada por vazio. O Curador\naceitou as duas coisas e mais três correções que valem para o repositório inteiro.\n\n**Cláusula excisada.** O enunciado terminava em \"e a tecnologia dela é anterior ao\nReino Antigo\". Nenhum átomo dos 289 data a cidade lunar, os autômatos ou a\nmigração — EV-0466-01 chega a \"antiga e há muito abandonada\" e para. Enquanto isso\no arquivo é generoso em datas do outro lado: EV-1065-01 põe o Reino Antigo em 900\nanos, EV-0261-01 põe Shandora em mais de 1100. Datação sem relógio não é leitura\ngenerosa do átomo, é cláusula acrescentada no silêncio dele. Fora.\n\n**O posterior era instrumentação, não evidência.** A hipótese exibia 0.98. O ataque\nmediu: os sete átomos `tipo: capa` do corpus, todos da mesma história de capa,\nsomavam +3.7 log-odds sozinhos — o suficiente para levar um prior neutro a 0.977.\n`PESO_CONF` deflacionava por `confiabilidade` e nada deflacionava por `tipo`, então\num mural lido por Enel numa página de título valia o mesmo que o discurso de\nClover. `score.py` ganhou `PESO_TIPO`, com capa a 0.4 — o mesmo teto que o\nrepositório já dá a `traducao_disputada`, e pela mesma razão: a afirmação não\nsobrevive à troca da camada.\n\n**E um bug de parser que favorecia esta hipótese em particular.** `arco()`\nconcatenava os dígitos da fonte. \"historia de capa caps 470-472\" virava 470472,\nque não cai em faixa nenhuma de `ARCOS` — então o átomo mais carregado de H-16, o\núnico dos 289 onde a palavra \"Skypieano\" aparece, ganhava um balde de arco só dele\ne escapava do teto que os outros seis sofriam. Corrigido para ler o primeiro\nnúmero precedido de \"cap\", o que de quebra impede que uma futura fonte \"SBS volume\n4\" seja lida como capítulo 4.\n\nCom as três correções e as quatro contra-evidências novas, o posterior caiu de\n**0.98 para 0.28**.\n\n**Contaminação removida de um átomo.** O corpo de EV-0277-01 afirmava \"a cidade que\nveio da lua\" — a conclusão desta hipótese escrita dentro de um átomo canônico de\ncapítulo. Se isso circulasse pelo vinculador, a hipótese passaria a se apoiar em si\nmesma. Excisado.\n\n**Previsão (1) substituída.** A antiga dizia que a linha principal afirmaria a\norigem lunar de *alguma* das raças do céu, por boca de personagem *ou* por\ndocumento. Disjunção larga, sem prazo: a não-revelação nunca a falseava, só a\nadiava. A nova aponta para os Shandia — o povo cuja história a obra já contou\ninteira no chão, com cidade, guerra e lápide — e tem prazo. Essa pode morrer.\n\n**O que sobrevive, e é honesto dizer que sobrevive.** A história de capa existe, foi\ndesenhada e publicada por Oda, e afirma origem lunar comum para os três povos.\nQuem chama isso de invenção de fandom está errado. O que não sobrevive é o peso —\ne a junção Shandia-lua, que depende de EV-0470-02 e de mais nada.\n\nEscopo `outro`: não disputa a pergunta sobre o tesouro. Com a cláusula temporal\nfora, também deixa de disputar o mesmo estrato de H-14, e por isso as duas não\nforam marcadas como concorrentes.",
+   "redteam": "# Red Team — H-16\n\n## Ataque 2026-08-11\n\n### Contra-evidência encontrada\n\n**A fronteira da linha principal, marcada por átomo.**\n\n- EV-0300-01 — \"Depois de derrotado por Luffy, Enel recupera a consciência, religa a\n  arca Maxim e parte rumo a Fairy Vearth.\" Este é o átomo mais importante do ataque, e\n  ele não é sobre a lua: é sobre onde a narrativa principal para. O próprio corpo do\n  átomo registra que esta é a última aparição de Enel na linha principal e que tudo o\n  que vem depois está na história de capa. Enel *parte* rumo a Fairy Vearth e a obra\n  fecha a porta atrás dele. Tudo que H-16 afirma sobre a lua — a cidade sob a crosta,\n  os murais, a origem comum, o esgotamento de recursos, os balões — acontece do outro\n  lado dessa porta. A hipótese não é sustentada por evidência fraca da linha\n  principal; ela é sustentada por evidência de fora dela.\n\n- EV-0274-01 — \"Enel descreve a Fairy Vearth como um lugar de terra ilimitada onde,\n  segundo as lendas do lugar em que nasceu, mora Deus, e diz que voltar para lá é\n  voltar para onde pertence.\" Este é o único momento em que a linha principal fala do\n  destino celeste de um povo do céu, e o que ela produz é *lenda do lugar em que ele\n  nasceu*, sobre um lugar onde mora Deus. O corpo do átomo é explícito: primeira\n  aparição do destino lunar na obra, ainda como folclore birkano, **sem qualquer\n  menção à lua**. A linha principal já teve sua chance de dizer \"lua\" com a palavra na\n  boca do personagem que mais teria motivo para dizê-la, e disse \"Deus\". Isso não é\n  ausência de evidência por falta de oportunidade; é a obra escolhendo a formulação\n  mítica quando a factual estava disponível.\n\n- EV-0274-03 — \"Segundo a fonte, as tribos que vieram da lua perderam com o tempo\n  qualquer registro da própria origem, e delas restou apenas um mito que trata a lua\n  como Fairy Vearth, lugar de sonho.\" Confiabilidade `ambiguo`, e a nota do átomo diz\n  por quê: a afirmação de que os registros se perderam **mistura o capítulo com a\n  história de capa**. Ou seja: o único átomo do corpus que enuncia diretamente \"tribos\n  que vieram da lua\" já vem carimbado como contaminado pela camada que estamos\n  contestando. Não se pode usá-lo para provar que a camada de capa é dispensável,\n  porque ele é a camada de capa vazando para dentro de um átomo de capítulo.\n\n- EV-0274-02 — \"O nome do lugar procurado por Enel é escrito com kanji que se lê como\n  terra sem fim e furigana que se lê Fairy Vearth, de modo que as duas traduções\n  correntes estão ambas no original.\" `traducao_disputada`, peso ≤ 0.4 por regra do\n  repositório. A nota manda não construir argumento sobre a palavra 'fairy' sozinha. O\n  kanji diz *terra sem fim* — que é uma descrição de abundância de solo, exatamente o\n  que falta a uma ilha do céu, e que não precisa de nenhum corpo celeste para\n  significar o que significa.\n\n**O elo Shandia: três raças, um átomo, e ele não é da obra principal.**\n\n- EV-0261-01 — \"A lápide erguida nas ruínas registra que a cidade se chamava Shandora,\n  que prosperou há mais de 1100 anos e que seu povo desapareceu de forma inexplicada\n  há 800 anos.\" Este é o **único relógio que qualquer raça do céu tem no corpus**, e\n  ele é terrestre. A lápide não data uma descida da lua: data uma cidade que prosperou\n  há mais de 1100 anos e um desaparecimento há 800 anos. Uma origem lunar anterior ao\n  Reino Antigo teria que caber antes de 1100 anos, e a lápide não oferece um dia\n  sequer antes disso. O que ela oferece é o oposto do que H-16 precisa: a história dos\n  Shandia começa, no registro, com uma cidade no chão.\n\n- EV-0272-03 — \"Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi\n  trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi\n  por causa disso que a cidade foi arruinada.\" A história dos Shandia que a obra\n  efetivamente conta é uma história de guerra na Estrela Azul: uma pedra trazida\n  durante o combate contra o inimigo, e a cidade arruinada por causa disso. Nada nessa\n  cadeia exige que alguém tenha descido de lugar nenhum. O povo aparece onde a obra o\n  põe: defendendo um Poneglyph contra o inimigo do Século Perdido.\n\n- EV-0290-02 — \"Kalgara afirma ter certeza de que a cidade de Shandora foi dizimada\n  por defender o Poneglyph, e que por isso a vontade de seu povo é proteger o passado\n  e o que dele restou a qualquer custo.\" Quando um Shandia fala da própria origem e do\n  próprio dever — com certeza declarada, em cena, na linha principal — o que ele diz é\n  que a cidade foi dizimada por defender a pedra e que a vontade do povo é proteger o\n  passado. O passado que os Shandia dizem proteger é o Poneglyph, não uma migração. Se\n  a memória lunar existisse na tradição desse povo, este era o discurso em que ela\n  apareceria.\n\n- EV-0287-01 — \"Os Shandia antigos cultuavam deuses do sol, da terra, da floresta e da\n  chuva.\" Um povo que teria saído de uma lua esgotada de recursos cultua, na única\n  descrição de sua religião que o corpus tem, deuses do sol, da terra, da floresta e\n  da chuva — um panteão agrícola e terrestre, sem lua nenhuma dentro dele. Isso é\n  contra-evidência positiva e não mera ausência: a lista é fechada e a lua não está na\n  lista.\n\n- EV-0470-02 — \"Pelos murais, Enel descobre que Skypieanos, Shandia e Birkanos se\n  originaram todos da mesma cidade lunar e que foram eles que inventaram os autômatos.\"\n  Cito o átomo que sustenta a cláusula das três raças **como contra-evidência contra o\n  próprio uso que dele se faz**, por três motivos que estão dentro do átomo:\n  (i) `tipo: capa` — a descoberta é de Enel lendo murais numa história de capa;\n  (ii) a nota registra que o vínculo \"Shandora / Chandra, lua\" é *trivia sem\n  referência de capítulo* e **observação editorial, não afirmação da obra**;\n  (iii) o corpo do átomo diz que ele une três povos que, **na linha principal,\n  aparecem como estrangeiros uns aos outros e em guerra há quatrocentos anos**.\n  Levantamento feito: a palavra \"Skypieano\" ocorre em **exatamente um átomo dos 289**,\n  e é este. Não há elo forte para uma raça extrapolado para as outras duas — há um\n  único elo, de capa, para as três de uma vez, e ele contradiz o que a linha principal\n  mostra dessas mesmas três.\n\n**A datação: a cláusula não tem relógio, e o relógio que existe aponta para outro lado.**\n\n- EV-1065-01 — \"Vegapunk teoriza que o Reino Antigo era, 900 anos atrás, uma\n  civilização tecnologicamente muito mais avançada que a do presente.\" Toda tecnologia\n  antiga do corpus cabe dentro dessa janela sem custo: 900 anos atrás havia uma\n  civilização tecnologicamente muito mais avançada que a do presente, e ela tem nome,\n  data e personagem que a descreve. Para que \"a tecnologia lunar é anterior ao Reino\n  Antigo\" signifique algo, seria preciso um artefato que essa janela não comporta.\n  Nenhum átomo lunar do corpus oferece data, nem relativa nem absoluta.\n\n- EV-1122-01 — \"Emet, o gigante de ferro que conheceu pessoalmente o Joy Boy original,\n  chama Luffy de Joy Boy.\" O único autômato do corpus com datação é o gigante de\n  ferro, e ele é datado *para dentro* da era de Joy Boy, que EV-1114-01 põe no Reino\n  Antigo. Emet conheceu pessoalmente o Joy Boy original: a máquina antiga que a obra\n  mostra na linha principal é contemporânea do Reino Antigo, não anterior a ele.\n\n- EV-0466-01 — \"Escavando a cratera aberta pelos piratas espaciais, Enel encontra sob\n  a crosta da lua uma cidade antiga escondida e há muito abandonada.\" Note-se o que a\n  fonte máxima do eixo lunar consegue dizer sobre idade: *antiga* e *há muito\n  abandonada*. É tudo. Nenhum número, nenhum evento de referência, nenhuma relação com\n  o Reino Antigo. \"Anterior ao Reino Antigo\" não é uma leitura generosa deste átomo; é\n  uma cláusula acrescentada onde o átomo tem silêncio.\n\n**A previsão (2) já está contrariada, e pela comparação que ela mesma propõe.**\n\n- EV-1125-02 — \"Vegapunk nunca conseguiu replicar a energia antiga que move o robô\n  Emet, comum no Século Perdido, e a máquina só voltou à vida quando os Tambores da\n  Libertação soaram.\" contra EV-0468-01 — \"A descarga elétrica de Enel recarrega a\n  cidade lunar e os autômatos antigos parados dentro dela, que voltam a funcionar\n  depois de séculos inertes.\" Ponha os dois lado a lado, que é precisamente o que a\n  previsão (2) pede. A energia antiga que move Emet é **irreplicável por Vegapunk** e\n  a máquina **só voltou à vida quando os Tambores soaram** — chave de ativação que é\n  um evento, não um comando. Os autômatos lunares, parados há séculos, voltam a\n  funcionar com uma **descarga elétrica** de um homem qualquer com fruta do raio; o\n  corpo do átomo é explícito em que o problema da cidade era alimentação, não ruína\n  técnica. São dois regimes energéticos opostos: um é uma tecnologia perdida com\n  gatilho histórico, o outro é uma bateria descarregada. A previsão (2) aposta em\n  convergência; o corpus já publicou a divergência.\n\n**O eixo lunar canônico existe — e não é o de H-16.**\n\n- EV-1033-01 — \"Queen afirma que os Lunarians eram chamados de deuses num passado\n  distante e sobrevivem em qualquer ambiente natural.\" O corpo do átomo diz que este é\n  **o único eixo lunar com base canônica direta**. E ele não fala de Skypieanos, nem\n  de Shandia, nem de Birkanos: fala de um povo chamado de deuses num passado distante,\n  que sobrevive em qualquer ambiente natural.\n\n- EV-1023-01 — \"Barba Branca contou a Marco que existiu um Kami no Kuni, um país dos\n  deuses, no alto da Red Line muito antes de Mary Geoise existir.\" E o lugar onde a\n  linha principal ancora esse povo de deuses é **o alto da Red Line**, muito antes de\n  Mary Geoise — no chão do planeta, no ponto mais alto dele. Quando a obra quis contar\n  uma história de gente chamada de deuses vivendo acima do resto do mundo, ela a\n  contou na Red Line e por boca de Barba Branca, sem lua e sem migração. H-16 monta a\n  mesma figura com uma peça a mais e evidência de qualidade menor.\n\n**A própria fonte de H-16 mina a necessidade da hipótese.**\n\n- EV-0453-01 — \"Os quatro autômatos construídos pelo professor Tsukimi na Ilha\n  Karakuri viajaram do planeta até a lua usando balões, para vingar a morte do\n  criador.\" Este átomo é da mesma história de capa e destrói o valor explicativo do\n  resto dela. Se quatro autômatos construídos no presente, na Ilha Karakuri, chegam do\n  planeta à lua **usando balões**, então a viagem planeta-lua não é feito de\n  civilização perdida — é engenharia doméstica contemporânea. O corpo do átomo diz que\n  isso trata a distância como travessia atmosférica, não espacial. Uma origem lunar\n  deixa então de explicar qualquer excepcionalidade das raças do céu: por esse padrão\n  de dificuldade, qualquer um sobe e desce, e a ascendência lunar vira detalhe\n  geográfico, não fundamento de uma civilização anterior.\n\n- EV-0472-02 — \"Segundo os murais, os habitantes da cidade lunar desceram até a estrela\n  azul usando balões e deixaram para trás os autômatos que haviam criado, numa\n  despedida triste para os dois lados.\" Mesmo dentro da capa, a descida é feita com\n  balões e a cena é uma despedida triste — o corpo do átomo observa que a descida é\n  tratada como viagem possível com tecnologia simples. Um povo capaz de balões não é\n  um povo cuja tecnologia precise anteceder o Reino Antigo para ser explicada.\n\n**Contaminação detectada num átomo (reparo devido antes de qualquer recálculo).**\n\n- EV-0277-01 — \"Enel escravizou o esquadrão divino de Gan Fall para extrair todo o\n  ouro de Shandora, e usou esse ouro na construção da arca Maxim.\" O texto do átomo\n  está correto. O **corpo** dele, porém, diz: \"a nave que depois alcança a lua é feita\n  do ouro da cidade que veio da lua\". Isso é a conclusão de H-16 escrita dentro do\n  comentário de um átomo de capítulo canônico. Se esse comentário circular pelo\n  vinculador ou pelo curador como se fosse dado, a hipótese passa a se apoiar em si\n  mesma. Peço a excisão da oração \"da cidade que veio da lua\" do corpo de EV-0277-01.\n\n### Veredito\n\nferida\n\n**O que sobrevive.** Não digo refutada, e o motivo é honesto: a história de capa\n*existe*, foi desenhada e publicada pelo autor, e ela realmente afirma origem lunar\ncomum para os três povos e esgotamento de recursos como causa da migração. EV-0470-01,\nEV-0470-02, EV-0472-01 e EV-0472-02 são átomos reais, bem extraídos, com fonte\nverificável e notas honestas. Quem afirma que H-16 é invenção de fandom está errado.\nO núcleo — \"há uma origem lunar para gente do céu na obra de Oda\" — está de pé.\n\n**O que não sobrevive: o peso.** Um posterior de 0.98 diz que a proposição está\npraticamente decidida. Ela não está, e o número é artefato de instrumentação. Medi:\nos sete átomos `tipo: capa` do corpus são todos desta mesma história de capa e todos\nestão marcados `confiabilidade: canonico`. Em `tools/score.py`, `PESO_CONF` dá 1.0 a\n`canonico` e **não existe deflator algum para `tipo: capa`** — um mural lido por Enel\nnuma página de título vale, log-odds por log-odds, exatamente o que vale o discurso de\nClover em EV-0395-08. Simulei a contribuição isolada desses sete átomos com os dois\ntetos ligados: **+3.7 log-odds, que levam um prior neutro de 0.50 a um posterior de\n0.977**. A história de capa, sozinha, produz o número que H-16 exibe. O teto por\ncapítulo não a freia porque ela ocupa seis capítulos distintos; o teto por arco a\nfreia pouco porque escala com a raiz do número de capítulos.\n\n**E um defeito de instrumentação que favorece H-16 especificamente.** A função\n`arco()` de `score.py` extrai os dígitos da string `fonte`. A `fonte` de EV-0470-02 é\n\"historia de capa caps 470-472\", cujos dígitos concatenam em 470472 — número que não\ncai em nenhuma faixa de `ARCOS`. Resultado: o átomo mais carregado da hipótese, o\núnico que une as três raças, **cai num balde de arco só dele**, com teto próprio de\n1.2, escapando do teto do arco Thriller Bark onde os outros seis foram agrupados. Não\né erro do curador nem do extrator; é o parser. Mas o efeito é que a peça mais\nload-bearing de H-16 é justamente a que escapa da deflação que o CLAUDE.md deste repo\ndescreve como decisiva. Isso deve ser corrigido em `score.py` (normalizar faixas de\ncapítulos) antes de qualquer recálculo desta hipótese.\n\n**Teto honesto de peso para os átomos de capa.** A confiabilidade `canonico` neles é\ndefensável se ler-se como \"a fonte de fato diz isto\" — os murais realmente dizem. O\nerro não está no campo `confiabilidade`, está no **peso do elo**. Um átomo de capa\ncertifica o que a capa afirma, não o que o mundo é; é a mesma distância que o\nrepositório já respeita em EV-1089-01, onde se recusa a nomear Uranus porque a\nsuposição é do fandom, e em EV-1138-06, onde o kanji compartilhado é fato mas a\nidentificação é leitura do analista. Aplicando o mesmo padrão: **peso ≤ 0.4 para todo\nelo cujo átomo tenha `tipo: capa`**, o mesmo teto que o repositório já impõe a\n`traducao_disputada`, e pelo mesmo motivo estrutural — a afirmação não sobrevive à\ntroca da camada narrativa. Recomendo que `tools/validate.py` passe a avisar quando um\nelo com átomo `tipo: capa` exceder 0.4, na linha já existente para tradução disputada,\ne que `score.py` ganhe um deflator de tipo além do de confiabilidade.\n\n**A cláusula \"anterior ao Reino Antigo\": esta parte está refutada por vazio.** Não é\nque a evidência seja fraca — é que ela não existe. Varri o corpus: **nenhum átomo data\na cidade lunar, os autômatos lunares ou a migração**, nem em anos, nem em relação a\nevento nomeado. EV-0466-01 consegue chegar a \"antiga e há muito abandonada\" e para. Do\noutro lado, o corpus é generoso em datas: EV-1065-01 põe o Reino Antigo em 900 anos\ncom tecnologia superior à do presente, EV-0261-01 põe Shandora em mais de 1100 anos,\nEV-1122-01 põe o gigante de ferro convivendo com o Joy Boy original. A cláusula de\nanterioridade é datação sem relógio, e ela não é decorativa: é ela que transforma H-16\nde \"há gente do céu com ascendência lunar\" em uma afirmação sobre a *ordem das\ncivilizações*, que é a parte cara. **Exijo a excisão da oração \"e a tecnologia dela é\nanterior ao Reino Antigo\" do enunciado.** Mantida a oração, meu veredito sobre a\nhipótese como está escrita passa de ferida a refutada nessa cláusula, porque ela\nafirma uma relação temporal que zero átomos do repositório instanciam.\n\n**Falseabilidade — previsão (1) é uma confissão, não um remendo, e mesmo assim precisa\nser substituída.** A pergunta é se o inciso \"e não uma história de capa\" é honesto.\nJulgo que **é honesto e é insuficiente**, e que a insuficiência é do tipo pior. Honesto\nporque o autor da hipótese viu a objeção e não a escondeu: a previsão declara qual\npadrão probatório contaria como confirmação, e esse padrão exclui deliberadamente a\nbase atual. Isso é o contrário de trapaça. Mas veja a consequência lógica que ninguém\ntirou: **uma hipótese cujo critério de confirmação exclui explicitamente a própria base\nde evidência está, pelo seu próprio critério, não confirmada** — e não pode exibir\n0.98. O inciso não repara a fraqueza; ele a documenta e depois a hipótese segue\npontuando como se a documentação a tivesse resolvido. Confissão registrada no lugar\nerrado: pertence ao peso dos elos, não ao texto da previsão.\n\nAlém disso a previsão (1), como redigida, é fraca por conta própria: \"a linha principal\nafirmará a origem lunar de *alguma* das raças do céu, por boca de personagem *ou* por\ndocumento lido em cena\" é uma disjunção larga, sem prazo, sem detalhe discriminante, e\nque não pode falhar — a não-revelação nunca a falseia, só a adia. Exijo substituição\npor cláusula arriscada e discriminante, do tipo: *a linha principal nomeará a lua como\norigem e vinculará a ela **os Shandia** especificamente — o povo cuja história a obra já\ncontou por inteiro no chão — e o fará antes do fim do arco de Elbaf.* Essa versão pode\nmorrer; a atual não.\n\nA previsão (2) é a boa: ela é arriscada, discriminante e testável. Registre-se que ela\njá corre atrás do placar, por EV-1125-02 contra EV-0468-01.\n\n**Cadeia frágil — o ponto único de falha.** A cláusula das três raças depende de\nEV-0470-02 e de mais nada. Um átomo, `tipo: capa`, cuja nota já desqualifica metade do\nseu próprio conteúdo como trivia editorial, e cujo corpo registra que os três povos\nque ele unifica aparecem na linha principal como estrangeiros em guerra há\nquatrocentos anos. Retire-se EV-0470-02 e a hipótese perde a palavra \"Skypieanos\" do\ncorpus inteiro e perde a junção Shandia-lua por completo, sobrando uma proposição bem\nmenor: \"Birka, a ilha do céu de Enel, repete o nome de uma cidade lunar abandonada\".\nEssa proposição menor eu não consigo ferir — e é ela, e só ela, que a evidência\nsustenta.\n\n**Circularidade.** Presente e localizada. EV-0470-01 e EV-0470-02 certificam o que os\nmurais *mostram* e o que Enel *descobre lendo-os*; H-16 os usa como certificando o que\naconteceu. Entre uma coisa e outra há a premissa não evidenciada de que os murais de\numa cidade abandonada, dentro de uma história de capa, são um relato verídico da\nprópria origem — premissa que o átomo EV-0274-03 torna especialmente cara, já que ele\nafirma que essas tribos *perderam qualquer registro da própria origem*. Um povo sem\nregistro da própria origem é exatamente o tipo de povo cujos murais fundadores são\nmito, não ata. A hipótese precisa que os murais sejam confiáveis e, no mesmo fôlego,\nusa como apoio a tese de que a memória desse povo se perdeu.\n\n### Custo estrutural\n\n10 suposições não evidenciadas:\n\n1. **Que história de capa estabelece fato da linha principal.** Nenhum átomo autoriza\n   isso, e o repositório mantém `tipo: capa` no vocabulário justamente porque a\n   distinção importa. EV-0300-01 marca a fronteira em cena.\n2. **Que os murais lunares são relato verídico e não mito fundador.** EV-0470-01 e\n   EV-0470-02 certificam o que os murais mostram; a veracidade é acrescentada.\n3. **Que existe uma raça \"Skypieana\" com origem comum.** A palavra ocorre em 1 dos 289\n   átomos, e é o átomo de capa.\n4. **Que os Shandia descendem dessa migração.** Nenhum átomo de linha principal põe os\n   Shandia no céu antes de Shandora; EV-0261-01, EV-0272-03, EV-0290-02 e EV-0287-01\n   contam uma história terrestre completa, com cidade, guerra, pedra e panteão agrícola.\n5. **Que a migração é anterior ao Reino Antigo.** Zero átomos datam a cidade lunar.\n   Esta é a suposição mais cara porque é a que está no enunciado como se fosse achado.\n6. **Que o esgotamento de recursos foi evento histórico e não causa narrada num mural.**\n   EV-0472-01 diz \"os murais dizem\"; a nota registra que não há menção a guerra como\n   causa, o que é observação sobre o texto do mural, não sobre o mundo.\n7. **Que a tecnologia dos autômatos lunares e a energia antiga de Emet são a mesma\n   coisa.** EV-1125-02 e EV-0468-01 descrevem regimes opostos: irreplicável com gatilho\n   histórico versus recarregável por descarga elétrica.\n8. **Que a Birka do céu (EV-0279-01) e a Birka lunar (EV-0472-01) são a mesma polity em\n   continuidade.** Nada as liga além do nome, e a nota de EV-0472-01 registra apenas\n   que o nome repete.\n9. **Que o ouro de Shandora tem proveniência lunar.** Suposição que hoje circula dentro\n   do corpo de EV-0277-01, não como átomo — ver o pedido de excisão acima.\n10. **Que as raças do céu, e não os Lunarians de EV-1033-01, são a linhagem lunar da\n    obra.** O único rótulo lunar canônico do corpus está preso a outro povo, ancorado\n    no alto da Red Line por EV-1023-01.\n\nCusto comparativo: H-16 precisa de uma migração interplanetária, de um povo extra e de\numa ordenação temporal sem relógio para explicar átomos que já têm explicação terrestre\npublicada na linha principal.\n\n### Concorrente mais econômico\n\n**H-14** — \"O Século Perdido não foi a primeira destruição: houve uma civilização\nindustrial anterior ao Reino Antigo, e o mundo já passou por pelo menos dois colapsos\nantes do atual.\"\n\nH-14 explica o mesmo conjunto de fenômenos que H-16 existe para explicar — maquinaria\nantiga que ninguém do presente sabe fabricar, um estrato tecnológico mais velho que\nqualquer registro, gente chamada de deuses vivendo acima do resto do mundo, e uma\ncamada de civilização que antecede o Reino Antigo — usando **um único planeta**. Ela\nnão precisa de migração, não precisa de balões, não precisa unificar três povos que a\nlinha principal mostra em guerra, e não precisa datar nada por decreto: EV-1138-07\ndesenha a civilização industrial, EV-1065-01 dá a janela de 900 anos, EV-1023-01 e\nEV-1033-01 dão os deuses no alto da Red Line. Todos de linha principal ou de mural\npublicado no capítulo, nenhum de história de capa.\n\nVale registrar o que a comparação faz com o campo \"anterior ao Reino Antigo\": as duas\nhipóteses o reivindicam, mas H-14 o reivindica como sua tese central com átomos que\npelo menos discutem cronologia, e H-16 o reivindica como cláusula acessória sem nenhum.\nSe as duas seguirem vivas, o curador deve marcá-las como concorrentes — hoje elas\ndisputam o mesmo estrato temporal sem se declarar rivais, e `tools/independencia.py`\nnão vê o conflito porque estão em escopos diferentes (`seculo_vazio` e `outro`).\n\nConcorrente secundário, para o fio específico de \"gente chamada de deuses acima do\nmundo\": **H-09**, que cobre EV-1023-01 com uma soberania anterior usurpada, sem sair do\nplaneta.\n",
+   "posterior": 0.2758,
    "fatia": 0.0
   },
   {
@@ -9589,6 +9868,16 @@
    "status": "viva",
    "prior": 0.5,
    "apoia": [
+    {
+     "ev": "EV-0395-05",
+     "peso": 0.55,
+     "como": "Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a intenção de projeto é declarada em cena por um personagem, e recai sobre a escolha do material."
+    },
+    {
+     "ev": "EV-0395-04",
+     "peso": 0.5,
+     "como": "O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: a indestrutibilidade não é deduzida, é demonstrada no epicentro da operação de apagamento."
+    },
     {
      "ev": "EV-0290-01",
      "peso": 0.45,
@@ -9613,11 +9902,6 @@
      "ev": "EV-0395-10",
      "peso": 0.4,
      "como": "Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é sobreviver à própria derrota."
-    },
-    {
-     "ev": "EV-0272-03",
-     "peso": 0.3,
-     "como": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época da guerra: a distribuição é ato deliberado de guerra, e não geografia acidental."
     },
     {
      "ev": "EV-0301-01",
@@ -9665,11 +9949,6 @@
      "como": "Há indicação de que a Grande Guerra do Século Perdido levou à queda da cidade de Shandora: a cidade que guardava a pedra caiu na guerra, que é exatamente o apagamento contra o qual o sistema teria sido projetado."
     },
     {
-     "ev": "EV-0966-06",
-     "peso": 0.35,
-     "como": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: restringir a cifra a um herdeiro por geração é decisão de projeto, e separa deliberadamente a pedra de quem sabe lê-la."
-    },
-    {
      "ev": "EV-0966-08",
      "peso": 0.35,
      "como": "Foi Oden quem gravou, na escrita antiga, a mensagem que Roger ditou junto ao Poneglyph do sino de ouro de Shandora, registrando que estivera ali: o suporte continuou sendo usado oitocentos anos depois para deixar mensagem a leitores futuros, o que mostra o sistema em operação e não em ruína."
@@ -9706,6 +9985,26 @@
     }
    ],
    "contradiz": [
+    {
+     "ev": "EV-0272-03",
+     "peso": 0.45,
+     "como": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi por causa disso que a cidade foi arruinada: a pedra chegou durante a guerra e a colocação arruinou os guardiões, o que é depósito de emergência e não posto escolhido."
+    },
+    {
+     "ev": "EV-0966-06",
+     "peso": 0.4,
+     "como": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: concentrar a única chave de leitura em um herdeiro por geração é ponto único de falha, o contrário da redundância que um sistema projetado contra o apagamento teria."
+    },
+    {
+     "ev": "EV-1053-01",
+     "peso": 0.35,
+     "como": "Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na antiga Wano, abaixo da caverna onde fica o Road Poneglyph do país: uma arma ancestral e uma das chaves empilhadas no mesmo sítio é concentração, não dispersão entre povos distintos."
+    },
+    {
+     "ev": "EV-1053-02",
+     "peso": 0.35,
+     "como": "O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph: a pedra está trancada no assento do poder, junto do prisioneiro que sabe lê-la, e não confiada a um povo que não a lê."
+    },
     {
      "ev": "EV-1085-02",
      "peso": 0.45,
@@ -9749,13 +10048,264 @@
     },
     {
      "texto": "Se verdadeiro, a obra mostrará que a escolha de onde cada pedra ficou obedeceu a um critério, e não ao acaso da fuga.",
+     "status": "falhada"
+    },
+    {
+     "texto": "Se verdadeiro, um personagem dirá em cena quem escolheu o lugar de pelo menos um Poneglyph e por qual razão. Reprovada se a obra atribuir a posição de qualquer pedra a guerra, fuga, transporte de emergência ou ao ato de Lili.",
+     "status": "aberta"
+    }
+   ],
+   "concorrentes": [
+    "H-20"
+   ],
+   "corpo": "## Por que esta hipótese existe\n\nVinte e seis átomos com o tema `Poneglyphs` estavam órfãos. O arquivo tratava as\npedras como fonte de informação — o que elas dizem — e nunca como artefato com\nprojeto próprio: por que são indestrutíveis, por que estão espalhadas, por que\nquem as guarda não as lê.\n\n## O caso a favor\n\nEV-0290-03 é o átomo que dá o nome à hipótese: os Shandia guardaram a pedra por\ngerações e **nenhum deles consegue lê-la**. Isso parece falha e é a propriedade\ncentral de um sistema desenhado contra o apagamento — um guardião que entende a\nmensagem pode ser interrogado, convencido ou comprado. Shandora foi destruída por\ndefender uma pedra cujo conteúdo seus defensores desconheciam.\n\n## O caso contra, e ele é bom\n\nEV-1085-02 diz, pela boca de Imu, que a dispersão foi **erro de Lili** — não\nprojeto do clã Kouzuki. Se procede, a rede que hoje parece engenhosa é resíduo\nde acidente, e a hipótese inteira está lendo intenção onde houve acaso. É a mesma\ntensão que já pesava contra H-05.\n\n## O que a mataria\n\nA obra confirmar que a distribuição foi acidental, ou mostrar que os guardiões\noriginalmente sabiam ler e perderam a capacidade depois.\n\n## Nota de curadoria — revisada em 2026-08-11 após o Red Team\n\nVeredito: **ferida**. Posterior de **0.99 para 0.46**, e a concorrente que o\npróprio ataque redigiu — H-20 — abriu com 0.97. Foi o ataque mais produtivo até\nagora, porque quase nada do que ele achou era sobre esta hipótese.\n\n**Dois elos estavam com o sinal invertido.** EV-0272-03 diz que a pedra foi\n*trazida* para Shandora enquanto a cidade lutava contra o inimigo, e que foi por\ncausa disso que a cidade foi arruinada. Isso estava contado como apoio, sob a\nleitura de \"colocação deliberada\". É o contrário: pedra em trânsito durante uma\nguerra é depósito de emergência, e a colocação arruinou os guardiões em vez de\nsalvá-los. A anotação do próprio átomo já dizia isso e a hipótese leu a frase ao\navesso. EV-0966-06 também mudou de lado: concentrar a única chave de leitura em um\nfilho por geração não é redundância projetada, é ponto único de falha — e\nEV-0973-01 mostra o quanto, com o único leitor restante precisando ser retirado da\nlinha do tempo para que a capacidade sobrevivesse a um incêndio.\n\n**A cláusula mais bem evidenciada não tinha um único apoio vinculado.**\n\"Indestrutíveis\" é a parte da hipótese que o arquivo prova: EV-0395-05 tem Clover\ndeclarando em cena por que gravaram em pedra, e EV-0395-04 mostra a pedra intacta\ndepois de uma bomba detonada ao seu redor. Nenhum dos dois estava ligado a H-17. Os\n23 apoios estavam todos nas duas cláusulas contestadas. Corrigido.\n\n**A previsão (2) foi marcada `falhada`, e ela falhou em 2003.** \"A escolha de onde\ncada pedra ficou obedeceu a um critério, e não ao acaso da fuga\" já está reprovada\npor EV-0272-03 e por EV-1085-02, que atribui a dispersão mundial a um erro de Lili.\nA penalidade de 0.5 do `score.py` é justa aqui: a obra respondeu à pergunta duas\nvezes, nas duas contra. Entrou no lugar uma previsão com critério de reprovação\nescrito.\n\n**O argumento que mais dói, e é o da própria melhor evidência da hipótese.** Se o\nponeglyph de Ohara fica intacto no epicentro de um Buster Call, então a dispersão\nnão acrescenta segurança nenhuma: uma pedra indestrutível não precisa estar longe,\ne uma pedra que precisa estar longe não é indestrutível. As três propriedades do\nenunciado são apresentadas como partes cooperantes, e a primeira torna as outras\nduas ociosas.\n\n**E o 0.99 era, em boa parte, folga de escopo.** H-17 era a única hipótese em\n`poneglyph`: `fator_discriminacao` devolvia 1.0 para os 23 elos e a normalização\nentregava a ela 100% da massa. Não havia contra quem discriminar porque não havia\nconcorrente — nenhuma alternativa tinha sido formulada e derrotada, porque nenhuma\ntinha sido formulada. A correção não foi mexer nos pesos: foi abrir H-20 e deixar\nas duas disputarem.\n\n**Pendência que este ataque abriu e que não foi resolvida.** O teto por arco escala\ncom `√(capítulos distintos)`, assumindo que capítulos distintos carregam informação\nindependente. Os quatro capítulos de Skypiea que sustentam metade do apoio desta\nhipótese (261, 272, 290, 301) relatam **um sítio e um povo** — as ruínas de\nShandora, a pedra do sino, os Shandia. Amostra efetiva 1, creditada como 4, numa\ntese cuja cláusula central é pluralidade de povos. Não há como um script detectar\n\"mesma cena\" sem um campo novo nos átomos, então fica registrado aqui em vez de\nremendado às pressas.",
+   "redteam": "# Red Team — H-17\n\n## Ataque 2026-08-11\n\n**Contaminação declarada.** O ataque foi encomendado com instrução explícita de rodar\n`python3 tools/score.py H-17` para inspecionar as linhas de teto. A saída da ferramenta\nimprime o `apoia` e o `contradiz` do alvo linha a linha, então vi os 23 ids de apoio e os\n7 de contradição antes de terminar a busca própria. O arquivo `H-17.md` não foi aberto e\nnenhuma busca varreu `data/hipoteses/` atrás de ids. Registro o vazamento em vez de fingir\nisolamento: as contra-evidências abaixo foram levantadas por varredura independente em\n`data/evidencias/` (`grep -il` por Poneglyph, guardião, Mary Geoise, Arabasta, Big Mom,\nindestrutível), e três delas — EV-1053-01, EV-1053-02 e EV-0272-03 — não constam do\n`contradiz` do alvo. Duas — EV-0272-03 e EV-0966-06 — estão hoje no `apoia` e o ataque\nsustenta que estão do lado errado do sinal. O leitor pode descontar o que quiser do resto.\n\n### Contra-evidência encontrada\n\n- **EV-1085-02** — \"Imu se interessa por Lili por causa de um **erro** dela que levou os\n  Poneglyphs a se **espalharem pelo mundo**.\" Este é o único átomo do corpus que declara a\n  causa da dispersão, e a palavra que ele usa é *erro*. O enunciado de H-17 pede o\n  contrário exato: pedras \"espalhadas entre povos distintos\" como parte de um sistema\n  *projetado*. Não é um átomo que enfraquece uma nuance — é um átomo canônico que atribui\n  a característica central da hipótese a um acidente de uma rainha do Século Perdido, não\n  a um plano de quem gravou. E o agente do espalhamento não é sequer o povo que escreveu:\n  é Lili, uma soberana dos vinte reinos, que EV-1084-01 mostra sendo a única a não se\n  mudar para Mary Geoise e a ter os registros apagados. Quem espalhou não é quem gravou.\n\n- **EV-1085-03** — \"O ato de Lili de **espalhar os Poneglyphs pelo mundo** é tido como o\n  que influenciou **piratas a persegui-los em busca de tesouro**.\" Fere por um segundo\n  caminho, independente do primeiro. Um sistema *projetado contra o apagamento* que\n  produz como efeito documentado uma corrida mundial de piratas atrás das pedras é um\n  sistema que fabricou o seu próprio predador. A dispersão, no relato da obra, não protege\n  a mensagem: publicita a mensagem para quem a quer como tesouro. H-17 precisa que a\n  dispersão seja função de segurança; o átomo a descreve como função de atração.\n\n- **EV-0818-03** — \"Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de\n  **ler e de escrever** a língua dos Poneglyphs, e a transmitiu ao filho Oden.\" A terceira\n  cláusula do enunciado — \"confiadas a guardiões que **não sabem lê-las**\" — tem um\n  contraexemplo canônico dentro do próprio corpus, e não um contraexemplo periférico: é a\n  família que guarda o Road Poneglyph do país que carrega uma das quatro chaves de Laugh\n  Tale. Se o analfabetismo do guardião é o mecanismo de segurança do sistema, a pedra de\n  maior valor estratégico está guardada exatamente pela linhagem que o mecanismo deveria\n  excluir. H-17 só sobrevive a este átomo abrindo uma exceção ad hoc para os Kouzuki, e\n  a exceção cobre a pedra mais importante.\n\n- **EV-0818-02** — \"Os Poneglyphs foram **inventados pelo clã Kouzuki**, cujos ancestrais\n  os **esculpiram** no fim do Século Perdido.\" Combinado com o anterior, fecha o problema:\n  o clã que inventou, esculpiu, lê e escreve também é o clã que guarda. Guardião e autor\n  são a mesma casa. A figura do \"guardião analfabeto\" descreve um caso do corpus, não a\n  arquitetura dele.\n\n- **EV-0966-06** — \"Segundo Oden, a língua antiga dos Poneglyphs é uma **cifra secreta\n  ensinada a apenas um filho da família Kouzuki**.\" Este átomo está hoje contado como\n  apoio, e é onde o sinal se inverte com mais custo. Ele localiza a escassez de leitores\n  **dentro da família que esculpiu as pedras**, como política de transmissão hereditária —\n  não como propriedade da custódia distribuída. A leitura restrita é um segredo de clã\n  guardado *contra* terceiros, o que é o oposto funcional de confiar a pedra a um povo\n  que não a lê para protegê-la. Um sistema desenhado para sobreviver ao apagamento não\n  concentraria a única chave de leitura em um filho por geração de uma única família: essa\n  é a arquitetura mais frágil possível, e EV-0973-01 mostra o quanto — com o castelo em\n  chamas, o único leitor restante precisa ser retirado da linha do tempo por vinte anos\n  para que a capacidade sobreviva. Isso não é redundância projetada. É ponto único de\n  falha salvo por acaso.\n\n- **EV-1053-02** — \"O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki\n  preso por anos **abriga um Poneglyph**.\" Não consta do `contradiz`. Fere a cláusula da\n  dispersão de frente: uma pedra dentro do porão do castelo do soberano, no centro\n  político do país, na sala privada do ex-xogum. Não está espalhada entre um povo distinto;\n  está trancada no assento do poder, junto do prisioneiro que sabe lê-la.\n\n- **EV-1053-01** — \"Pluton repousa numa caverna secreta ao pé do Monte Fuji submerso na\n  antiga Wano, **abaixo da caverna onde fica o Road Poneglyph do país**.\" Também ausente do\n  `contradiz`, e é a concentração mais extrema do corpus: uma arma ancestral e uma das\n  quatro chaves de Laugh Tale empilhadas verticalmente no mesmo sítio, do mesmo país. Se\n  a escolha do lugar de cada pedra obedeceu a um critério de sobrevivência da mensagem\n  contra apagamento, esse critério produziu o pior arranjo concebível — dois ativos\n  insubstituíveis num raio de metros, sob a jurisdição de um único xogum.\n\n- **EV-0272-03** — \"Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi\n  **trazido para Shandora na época em que a cidade lutava contra o inimigo**, e que **foi\n  por causa disso que a cidade foi arruinada**.\" Este átomo também está do lado do apoio, e\n  é o mais caro dos dois enganos de sinal. Ele descreve literalmente o cenário que a\n  previsão (2) de H-17 promete descartar — \"o acaso da fuga\". A pedra não estava em\n  Shandora: **chegou** durante a guerra, o que a torna depósito de emergência, não posto\n  escolhido. E a segunda metade do átomo mata a leitura de sistema bem-sucedido: a cidade\n  foi arruinada por causa da chegada da pedra. A colocação não salvou os guardiões; matou\n  os guardiões. A anotação do próprio átomo já dizia isso — \"não é patrimônio antigo da\n  cidade, é depósito de guerra\" — e a hipótese leu a frase ao contrário.\n\n- **EV-1055-08** — \"Sukiyaki admite que **Kaidou e Orochi souberam do Poneglyph\n  subterrâneo porque Jack, por ser homem-peixe, podia explorar as ruínas submersas**.\" O\n  esconderijo mais elaborado do corpus — cidade submersa, câmara subterrânea, acesso pela\n  cela do ex-xogum — foi vencido por uma capacidade fisiológica banal de um subordinado.\n  Segurança por obscuridade que cai diante do primeiro homem-peixe que passa não é\n  engenharia contra apagamento.\n\n- **EV-1056-04** — \"Law entrega aos Piratas de Kid uma **cópia em papel** do Road\n  Poneglyph de Wano.\" A indestrutibilidade do suporte é irrelevante para o controle da\n  mensagem, e a obra demonstra isso no mesmo capítulo em que a pedra é lida. Se o conteúdo\n  migra para papel na primeira oportunidade, a pedra nunca foi o que protegia a\n  informação — ela apenas garantiu que o texto chegasse a um leitor. Isso é compatível com\n  a hipótese; o que não é compatível é o resto do sistema (dispersão, guardião analfabeto)\n  fazer trabalho algum depois disso.\n\n### Veredito\n\n**ferida**\n\nNão é `refutada`, e digo por quê antes de dizer o resto: a metade do enunciado que fala do\n**suporte** tem apoio canônico direto e sobrevive inteira ao ataque. EV-0395-05 põe na boca\nde Clover que \"a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel,\nteria se perdido\" — intenção declarada, em cena, por um personagem, sobre a escolha do\nmaterial. EV-0395-10 fecha: \"o povo do reino antigo, ao saber que seria derrotado, gravou\nos poneglyphs para que o mundo soubesse o que havia acontecido\". E EV-0395-04 mostra o\nmecanismo funcionando: \"o poneglyph de Ohara ficou intacto depois que uma bomba foi\ndetonada ao seu redor dentro da Árvore do Conhecimento\". Escrever em pedra indestrutível\nfoi projeto, com motivo declarado e demonstração em cena. Isso está provado e nada no\nataque o toca.\n\nO que cai é a outra metade. Segue na ordem pedida.\n\n**(a) \"Projetado\" só é evidenciado para o suporte, e é o suporte que torna o resto\nsupérfluo.** A pergunta era se existe átomo que distinga design de sobrevivência seletiva.\nPara a pedra: existe, e é EV-0395-05 — intenção declarada. Para a **dispersão** e para o\n**guardião analfabeto**: não existe nenhum. Nenhum átomo do corpus mostra alguém decidindo\nonde uma pedra ficaria, nem alguém confiando uma pedra a um povo. O único átomo que fala da\ncausa da distribuição é EV-1085-02, e ele diz *erro*. Então a hipótese não está apenas sem\nsuporte nessas duas cláusulas: está com a única evidência disponível apontando contra.\n\nMas o problema é pior que ausência de evidência, e é aqui que a hipótese se fere sozinha.\nEV-0395-04 mostra a pedra de Ohara **intacta no epicentro** da operação de apagamento mais\nextrema que a obra encena — um Buster Call sobre uma ilha inteira, com bomba detonada ao\nredor da pedra. Se o suporte resiste a isso, a dispersão não acrescenta segurança nenhuma:\numa pedra indestrutível não precisa estar longe, e uma pedra que precisa estar longe não é\nindestrutível. As três propriedades do enunciado são apresentadas como partes cooperantes\nde um mesmo desenho, e a primeira torna as outras duas ociosas. Uma hipótese que conjuga\ntrês mecanismos onde um basta está sobre-especificada por construção — e a parte\nsobre-especificada é exatamente a que não tem átomo.\n\nSome-se a isso o que EV-0395-04 faz com o cenário rival: se a pedra sobrevive a um Buster\nCall, então as pedras que restaram **não** são \"as que estavam longe\". Distância não\nexplica sobrevivência, porque a proximidade máxima também não a impediu. O corpus, portanto,\nnão distingue design de seleção do mais apto na dimensão da localização — ele simplesmente\nnão testa localização, porque nenhuma pedra do corpus foi destruída. Não há um único átomo\nregistrando Poneglyph perdido, quebrado ou apagado, nem número total de pedras gravadas.\nSem baixa registrada não há amostra e não há seleção mensurável. **Nas cláusulas de\ndispersão e de guarda, H-17 não é falseável pela base atual** — e o que a torna\nnão-falseável não é a redação, é a inexistência de qualquer átomo sobre colocação de pedra.\n\n**(b) O 0.99 mede extração de dois arcos e uma folga de escopo, não força de evidência.**\n`score.py H-17` decompõe assim, depois dos dois tetos:\n\n| arco | líquido | observação |\n|---|---|---|\n| Skypiea (caps 261, 272, 290, 301) | **+2.40** | cortado de +2.78 pelo teto de arco |\n| Wano (caps 966, 972, 1053, 1055, 1056) | +2.08 | cap 966 cortado de +2.08 para +1.20 |\n| Enies Lobby / Ohara (cap 395) | +1.12 | um capítulo só |\n| Zou (cap 818) | +0.16 | +0.64 e −0.48 quase se anulam |\n| Egghead (cap 1085) | −1.20 | no teto negativo |\n| **total** | **+4.56** | prior 0.50 → posterior 0.99 |\n\nCorreção da premissa do pedido: não é Ohara e Skypiea. **É Skypiea e Wano — 98% do saldo\nlíquido.** Ohara entrega +1.12 de um único capítulo, e o achado colateral é constrangedor:\nos dois átomos que sustentam a palavra **indestrutíveis** do enunciado — EV-0395-04 (a\npedra intacta depois da bomba) e EV-0395-05 (Clover explicando por que gravaram em pedra) —\n**não estão vinculados a H-17**. A cláusula mais bem evidenciada da hipótese tem zero dos 23\napoios. Os 23 estão concentrados nas duas cláusulas contestadas.\n\nO que o **teto de arco** revelou, especificamente. Ele disparou uma vez só, em Skypiea:\n`+2.78 -> +2.40`, com teto de `1.2 × √4 = 2.40`. O corte de 0.38 é o menor dos problemas.\nO problema é o que o `√4` está assumindo. O teto escala com a raiz do número de **capítulos\ndistintos** porque capítulos distintos carregariam informação independente — mas os quatro\ncapítulos de Skypiea (261, 272, 290, 301) relatam **um sítio arqueológico e um povo**: as\nruínas de Shandora, o Poneglyph do sino de ouro, os Shandia. Robin lendo a lápide, Robin\nlendo as inscrições, o flashback de Kalgara e Noland, Robin lendo a pedra. É uma cena\nencadeada, publicada em sequência, sobre a mesma pedra. O tamanho efetivo de amostra ali\né 1, não 4, e o teto creditou 4.\n\nIsso importa mais para H-17 do que importaria para qualquer outra hipótese do repositório,\nporque a cláusula que o enunciado afirma é **pluralidade** — \"espalhados entre povos\ndistintos\". Metade do apoio líquido de uma tese sobre pluralidade de povos vem de um povo\nsó. É o mesmo defeito que o `TETO_POR_ARCO` foi criado para pegar, uma camada abaixo: o\nteto por arco não vê quatro capítulos do mesmo arco contando a mesma cena.\n\nE há uma terceira folga, que nenhum dos dois tetos cobre. H-17 é a **única hipótese do\nescopo `poneglyph`**. Isso significa que `fator_discriminacao` devolve 1.0 para os 23 elos\n(nenhuma marca `÷ compartilhado` aparece na saída) e que `normalizar_por_escopo` lhe\nentrega 100% da massa do escopo. `independencia.py` mostra o efeito por outro ângulo: 32,3%\ndo apoio de H-17 é emprestado de átomos que tocam hipóteses vivas de outros escopos, e ainda\nassim ela aparece em 3º na ordenação por evidência exclusiva — não porque discrimine bem,\nmas porque **não há contra quem discriminar**. O 0.99 é incontestado por construção, não\npor evidência. Nenhuma alternativa foi formulada e derrotada; nenhuma foi formulada.\n\n**(c) A previsão (2) não tem critério de reprovação — e já está reprovada.** \"A obra\nmostrará que a escolha de onde cada pedra ficou obedeceu a um critério, e não ao acaso da\nfuga\" falha nos dois sentidos ao mesmo tempo, o que é raro.\n\nFalha como previsão porque *critério* não tem negação operacional. Qualquer arranjo que a\nobra revele — uma pedra por reino, uma por continente, uma por raça, uma por ponto\nnavegável — será lido como critério depois do fato. Não há capítulo, não há tipo de cena,\nnão há personagem que precise dizer nada. Uma previsão que nenhum desfecho reprova não move\npriori: é descrição do corpus com aparência de risco, o mesmo defeito que o ataque a H-18\nmarcou na previsão (1) daquela hipótese.\n\nE falha como retrato do corpus porque o \"acaso da fuga\" **já está no corpus**, escrito num\nátomo que a própria H-17 conta como apoio. EV-0272-03 diz que a pedra \"foi trazida para\nShandora na época em que a cidade lutava contra o inimigo\". Guerra em curso, pedra em\ntrânsito, cidade arruinada em seguida. Isso é o cenário que a previsão promete excluir,\npublicado em 2003. Somando EV-1085-02, que atribui a dispersão mundial a um erro de Lili,\na obra já respondeu à pergunta da previsão (2) duas vezes, nas duas vezes contra. O Curador\ndeveria marcá-la `falhada`, e a penalidade de `score.py` (0.5 por previsão falhada) levaria\no posterior de 0.99 para ~0.50 sozinha — antes de qualquer reponderação dos elos.\n\nSubstituição sugerida, com critério de reprovação explícito: *\"Um personagem dirá em cena\nquem escolheu o lugar de pelo menos um Poneglyph e por qual razão. Reprovada se, em vez\ndisso, a obra atribuir a posição de qualquer pedra a guerra, fuga, transporte de emergência\nou ao ato de Lili — como já fez em EV-0272-03 e EV-1085-02.\"*\n\n**(d) A previsão (1) é quase retrodição.** \"Aparecerá outro povo guardando um Poneglyph sem\nsaber lê-lo, com a mesma estrutura de dever herdado dos Shandia.\" As duas metades já existem\nseparadas no corpus e faltam três centímetros para se tocarem: EV-0628-01 põe um Poneglyph\nna Sea Forest da Ilha dos Homens-Peixe, e EV-0649-04 põe a família real da mesma ilha\nguardando um dever hereditário cujos termos ela admite não conhecer — \"Neptune afirma que\nnão conhece os detalhes da promessa e que sabe apenas, por lenda transmitida na família\nreal, que um dia alguém viria cumprir em lugar de Joy Boy o que ele prometeu\". EV-0641-01\ndata essa guarda em séculos e a chama de missão. Falta apenas um átomo dizendo que é a\nfamília real que guarda aquela pedra específica para a previsão estar cumprida por material\npublicado em 2011. Ela é a menos ruim das duas, mas está a um capítulo de virar descrição\ndo que já lemos, e o corpus a favorece: pedir que uma obra episódica sobre um mundo de mil\nilhas mostre mais um povo com um dever antigo é pedir pouco.\n\n**(e) Um contraste que a hipótese não olhou.** O corpus tem **três** casos de acesso à\nleitura e nenhum deles passa por custódia distribuída. Robin aprendeu \"aos oito anos\nespionando o trabalho dos arqueólogos, sem que nenhum deles soubesse\" (EV-0397-03) — clandes-\ntinidade. Roger \"localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele\"\n(EV-0966-07) — habilidade sobrenatural pessoal. Oden herdou a cifra por ser um filho Kouzuki\n(EV-0966-06) — sangue. Um sistema *projetado* para que a mensagem sobrevivesse e chegasse a\nser lida deixaria alguma via prevista de recuperação da leitura. As três vias que a obra\nmostra são, respectivamente, um acidente biográfico, um dom raro e um segredo de família\nque quase morreu num incêndio. É a assinatura de sobrevivência acidental, não de redundância\ndesenhada. E EV-0301-09 encerra o único caso de guarda documentado com o chefe Shandia\ndesabando em lágrimas ao saber \"que seu povo não precisa mais lutar pela pedra\" — um dever\nque termina por notificação de um estranho, não por protocolo previsto.\n\n### Custo estrutural\n\n**7 suposições não evidenciadas:**\n\n1. **Que espalhar as pedras foi decisão de quem as gravou.** Contradita por EV-1085-02, o\n   único átomo sobre a causa da dispersão, que a chama de erro e a atribui a Lili — uma\n   soberana dos vinte reinos (EV-0722-01), não o povo que esculpiu (EV-0818-02).\n2. **Que houve um ato de *confiar* a guarda a alguém.** O verbo \"confiadas\" do enunciado\n   não tem um único átomo por trás. Nenhuma cena de entrega, nenhum personagem confiando,\n   nenhum termo de custódia. O que o corpus mostra é o oposto: EV-0272-03 tem uma pedra\n   *trazida* para uma cidade em guerra.\n3. **Que o analfabetismo do guardião é característica do sistema, e não consequência do\n   tempo.** EV-0966-06 localiza a escassez de leitores numa política hereditária do clã\n   autor, não num desenho de custódia. EV-0290-03 registra o resultado — \"nenhum dos\n   Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações\" —, mas\n   resultado depois de gerações é o que se espera de qualquer transmissão oral sem escola,\n   com ou sem projeto.\n4. **Que \"povos distintos\" descreve a arquitetura, quando o corpus documenta um único povo\n   guardião analfabeto.** Os Shandia, em EV-0290-01 e EV-0290-03. Todos os demais casos de\n   posse são de outro tipo: Kouzuki que lêem (EV-0818-03), porão de castelo (EV-1053-02),\n   túmulo real de Arabasta (EV-1053-03), Sea Forest sem guardião nomeado (EV-0628-01).\n   N = 1, e é o N de onde vem metade do apoio.\n5. **Que a dispersão acrescenta proteção sobre a indestrutibilidade.** EV-0395-04 mostra a\n   pedra intacta no epicentro de um Buster Call. Se a pedra não quebra, estar longe não\n   protege de nada, e a cláusula não faz trabalho. Suposição que a hipótese precisa para\n   ser interessante e que a sua própria melhor evidência anula.\n6. **Que os Poneglyphs conhecidos são amostra representativa do que foi gravado.** Nenhum\n   átomo dá o número total de pedras, nenhum registra pedra destruída ou perdida. Sem\n   baixas não há como falar em sobrevivência — nem projetada, nem seletiva.\n7. **Que a custódia pelos Kouzuki é exceção.** É a suposição mais cara, porque é a que a\n   hipótese precisa fazer em silêncio: o clã que inventou (EV-0818-02), lê e escreve\n   (EV-0818-03), esculpiu a mando de Roger em plena era moderna (EV-0966-08) e guarda uma\n   das quatro chaves no porão do castelo (EV-1053-02) é apresentado como caso fora da\n   regra. Se ele for o padrão e os Shandia a exceção, o enunciado inverte de sinal inteiro.\n\nPadrão: das sete, cinco existem para converter a distribuição observada hoje em intenção de\noitocentos anos atrás. Nenhuma delas explica átomo que a leitura mais fraca — \"gravar em\npedra foi projeto, o resto é história\" — não explique igual.\n\n### Concorrente mais econômico\n\n**nenhuma**\n\nE isso é achado, não ausência de esforço. Não existe outra hipótese no escopo `poneglyph`;\nH-17 ocupa o escopo sozinha, o que desliga o divisor de discriminação de `score.py` e a\nnormalização por escopo, e é boa parte de por que o posterior chegou a 0.99 sem nunca ter\nsido atacada. As vizinhas mais próximas estão em escopos diferentes e não competem: H-04\nusa os mesmos átomos de Ohara para falar do conteúdo do registro, não do mecanismo de\ncustódia; H-05 disputa o legado de Joy Boy e é *contraditada* por EV-0395-10, que H-17\nconta como apoio; H-19 trata de Zunesha como testemunha e é contraditada por EV-0966-07,\noutro apoio de H-17. Nenhuma das três se propõe a explicar por que as pedras estão onde\nestão.\n\nO concorrente que explicaria a mesma base com menos peças **não está no repositório**, e a\nrecomendação ao Curador é abri-lo antes de reponderar qualquer elo. Formulação sugerida:\n\n> *O projeto dos Poneglyphs terminou no suporte. O povo do reino antigo escolheu gravar em\n> pedra indestrutível porque previu a derrota e o apagamento (EV-0395-05, EV-0395-10,\n> EV-0395-04). A distribuição atual das pedras não é parte desse projeto: resulta de guerra,\n> de transporte de emergência e do ato de Lili (EV-0272-03, EV-1085-02, EV-1085-03), e o\n> analfabetismo de alguns guardiões é erosão de oitocentos anos somada a uma política de\n> segredo do clã que as esculpiu (EV-0966-06, EV-0290-03).*\n\nEssa versão explica todos os 23 átomos hoje vinculados a H-17, explica também os 7 que a\ncontradizem, não precisa de nenhuma das sete suposições listadas acima, e tem previsão\nfalseável de graça: *se algum dia um personagem disser quem escolheu o lugar de uma pedra,\nela está reprovada*. É estritamente mais fraca e estritamente melhor coberta. H-17, para\ncontinuar de pé como está, precisa produzir o átomo que essa versão não tem — alguém, em\ncena, decidindo onde uma pedra fica.\n",
+   "posterior": 0.4578,
+   "fatia": 0.0
+  },
+  {
+   "id": "H-18",
+   "enunciado": "Toki é a única testemunha do Século Perdido que chegou viva ao presente, e o que ela atravessou o tempo para alcançar era Wano — não a fuga de um perigo qualquer.",
+   "escopo": "seculo_vazio",
+   "status": "refutada",
+   "prior": 0.3,
+   "apoia": [
+    {
+     "ev": "EV-0973-04",
+     "peso": 0.5,
+     "como": "Toki nasceu por volta de oitocentos e trinta anos antes do presente, dentro do Século Perdido, e chegou à era atual saltando repetidamente para frente no tempo: há uma pessoa viva que nasceu dentro do período que o Governo apaga."
+    },
+    {
+     "ev": "EV-0973-06",
+     "peso": 0.45,
+     "como": "Toki pertencia à família daimyo Amatsuki e ainda assim não conhecia sua terra de origem, e o que ela buscava ao viajar era chegar a Wano: o destino é declarado, e é um lugar, não uma época segura."
+    },
+    {
+     "ev": "EV-0973-01",
+     "peso": 0.35,
+     "como": "Com o castelo em chamas, Toki enviou Momonosuke e quatro dos retainers vinte anos ao futuro e ficou para trás em vez de fugir com eles: quem só fugia do perigo teria embarcado, e ela não embarcou."
+    },
+    {
+     "ev": "EV-0973-02",
+     "peso": 0.3,
+     "como": "Ferida e prestes a morrer, Toki cavalgou até Bakura Town e proferiu publicamente uma profecia diante dos cidadãos: o último ato dela foi entregar informação a Wano, não se salvar."
+    }
+   ],
+   "contradiz": [
+    {
+     "ev": "EV-0821-01",
+     "peso": 0.7,
+     "como": "Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: há outro ser que estava lá naquele período e continua vivo no presente, e a palavra única do enunciado cai."
+    },
+    {
+     "ev": "EV-1046-01",
+     "peso": 0.6,
+     "como": "Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto: a outra testemunha não só chegou viva como já depôs em cena sobre quem conheceu naquela época."
+    },
+    {
+     "ev": "EV-0973-05",
+     "peso": 0.35,
+     "como": "O poder da Toki Toki no Mi funciona numa direção só, enviando pessoas para o futuro e nunca de volta ao passado: quem tem apenas essa saída viaja por não ter alternativa, e a travessia pode ser consequência da fruta e não escolha."
+    },
+    {
+     "ev": "EV-0972-07",
+     "peso": 0.35,
+     "como": "O plano de Toki usar a Toki Toki no Mi para enviar pessoas vinte anos ao futuro foi concebido por Oden: a decisão que a obra mostra em cena é dele, o que enfraquece a leitura de missão própria trazida do Século Perdido."
+    },
+    {
+     "ev": "EV-0972-06",
+     "peso": 0.3,
+     "como": "Na carta deixada a Toki, Oden previu a guerra de vinte anos e pediu que ela usasse seu poder em função disso: o propósito documentado do salto é a agenda de Oden contra Kaidou, não algo que ela carregasse de oitocentos anos atrás."
+    }
+   ],
+   "prediz": [
+    {
+     "texto": "Se verdadeiro, a obra mostrará em cena o que Toki viu ou trouxe do Século Perdido, e isso terá consequência fora da disputa interna de Wano contra Orochi.",
+     "status": "aberta"
+    },
+    {
+     "texto": "Se verdadeiro, a razão de o destino ser Wano especificamente será nomeada, e não ficará como preferência pessoal de alguém que buscava a terra da própria família.",
      "status": "aberta"
     }
    ],
    "concorrentes": [],
-   "corpo": "## Por que esta hipótese existe\n\nVinte e seis átomos com o tema `Poneglyphs` estavam órfãos. O arquivo tratava as\npedras como fonte de informação — o que elas dizem — e nunca como artefato com\nprojeto próprio: por que são indestrutíveis, por que estão espalhadas, por que\nquem as guarda não as lê.\n\n## O caso a favor\n\nEV-0290-03 é o átomo que dá o nome à hipótese: os Shandia guardaram a pedra por\ngerações e **nenhum deles consegue lê-la**. Isso parece falha e é a propriedade\ncentral de um sistema desenhado contra o apagamento — um guardião que entende a\nmensagem pode ser interrogado, convencido ou comprado. Shandora foi destruída por\ndefender uma pedra cujo conteúdo seus defensores desconheciam.\n\n## O caso contra, e ele é bom\n\nEV-1085-02 diz, pela boca de Imu, que a dispersão foi **erro de Lili** — não\nprojeto do clã Kouzuki. Se procede, a rede que hoje parece engenhosa é resíduo\nde acidente, e a hipótese inteira está lendo intenção onde houve acaso. É a mesma\ntensão que já pesava contra H-05.\n\n## O que a mataria\n\nA obra confirmar que a distribuição foi acidental, ou mostrar que os guardiões\noriginalmente sabiam ler e perderam a capacidade depois.\n\n## Nota de curadoria\n\nPrior 0.50, alto porque a hipótese é pouco exigente: afirma projeto, não afirma\nconteúdo. Escopo `poneglyph` — não disputa a pergunta sobre o tesouro. Ainda não\npassou pelo Red Team.",
+   "corpo": "## Por que esta hipótese existe\n\nSete átomos sobre Toki estavam órfãos — o maior cluster restante depois da\nrodada de vinculação. E a pergunta veio de fora: um vídeo que lista duzentos\nmistérios de One Piece pergunta exatamente qual era o objetivo dela ao vir do\nSéculo Perdido. Quando o relatório de órfãos e uma pergunta externa apontam para\no mesmo buraco, é sinal de que a hipótese faltava mesmo.\n\n## O que torna Toki singular\n\nEla é a única pessoa do arquivo que **nasceu dentro do Século Perdido e chegou\nviva ao presente**. Todo o resto do que sabemos daquele período vem de pedra,\nmural, texto religioso ou de alguém contando o que leu. Toki é testemunha.\n\nE há um silêncio que a hipótese precisa explicar: ela nunca conta o que viu.\nNenhum átomo registra Toki falando do Século Perdido — nem para Oden, nem para os\nretainers, nem na profecia final.\n\n## O caso contra, que é forte\n\nOs três atomos de contradição apontam todos na mesma direção: a travessia pode\nnão ter sido escolha. A fruta só vai para frente (EV-0973-05), o plano do salto\nde vinte anos foi de Oden (EV-0972-07), e a carta dele pede que ela use o poder\npara a agenda contra Kaidou (EV-0972-06). Somando, a leitura mais econômica é\nque Toki fugia do perigo e caiu no presente, e que Wano era simplesmente a terra\nda família dela.\n\nO que sustenta a hipótese contra isso é EV-0973-01: com o castelo em chamas, ela\nmandou os outros e **ficou**. Quem só fugia teria embarcado.\n\n## O que a mataria\n\nA obra confirmar que ela saltava só por reflexo de sobrevivência, ou que a busca\npor Wano era saudade da terra natal e nada mais.\n\n## Nota de curadoria — refutada em 2026-08-11\n\nO Red Team derrubou as duas metades do enunciado, cada uma por átomo canônico\ndireto, e o Curador aceitou sem desconto.\n\n**\"Única\" era falso e verificável.** EV-0821-01 diz que Zunesha foi sentenciada a\ncaminhar eternamente por um crime cometido há 800 anos, e EV-1046-01 mostra ela\ncomparando Luffy ao Joy Boy que conheceu no passado. Existe outra testemunha\ndaquele período viva no presente, ela fala (EV-0821-02), conheceu Joy Boy\npessoalmente (EV-1040-01) e está em águas de Wano (EV-1037-02). Cinco átomos\ncanônicos, todos no arquivo antes de esta hipótese ser escrita. A palavra \"única\"\nnão precisava de previsão futura para cair — bastava eu ter procurado.\n\n**\"Não a fuga\" contradizia a letra do átomo citado.** EV-0973-04, o único átomo\nque descreve o mecanismo da travessia, diz que ela saltava *sempre que corria\nperigo*. O enunciado negava exatamente a palavra que o átomo usa.\n\nE a defesa que eu tinha montado ruiu no átomo vizinho: ficar para trás\n(EV-0973-01) parecia escolha até EV-0973-02 dizer, no mesmo bloco, que ela estava\n*ferida e prestes a morrer*. Não é preciso postular missão para explicar quem não\nembarca nessa condição.\n\n**O que fica como aprendizado do arquivo**, além do óbvio: o silêncio de Toki não\nera argumento. \"Nenhum átomo registra Toki falando do Século Perdido\" é fato sobre\na nossa cobertura de leitura — todo o material dela vem de dois capítulos de\nflashback — e não sobre a conduta da personagem. Ler ausência de átomo como\nocultamento deliberado viola a Regra zero pelo avesso: em vez de afirmar uma cena\nque não existe, afirma uma cena que não existir significa alguma coisa.\n\n**A hipótese certa era sobre a outra testemunha.** Zunesha tem cinco átomos\ncanônicos coerentes e nenhuma hipótese viva a cobre. O cluster de órfãos apontava\npara lá; eu escrevi sobre Toki porque a pergunta externa era sobre Toki. Fica\nregistrado, e é o que vem a seguir.",
+   "redteam": "# Red Team — H-18\n\n## Ataque 2026-08-11\n\n### Contra-evidência encontrada\n\n- EV-0821-01 — \"Zunesha foi sentenciada a caminhar eternamente e a só agir sob\n  ordem, como punição por um crime cometido há 800 anos.\" Este átomo é canônico e\n  derruba sozinho a palavra **única** do enunciado. Um crime cometido há 800 anos\n  e uma sentença de caminhar eternamente descrevem alguém que estava lá e que\n  continua aqui — o próprio corpo do átomo registra a leitura em uma linha: uma\n  testemunha viva da guerra, condenada a obedecer. H-18 não precisa ser\n  reformulada para acomodar isso; ela precisa ser reescrita, porque a exclusividade\n  não é ornamento do enunciado, é o que o torna interessante.\n\n- EV-1046-01 — \"Zunesha comparou Luffy ao Joy Boy que conheceu no passado e\n  afirmou que aquilo era o destino do garoto, depositando confiança nele.\" Se\n  EV-0821-01 estabelece que a testemunha chegou viva, este estabelece que ela\n  **depõe**. Zunesha conheceu Joy Boy no passado e faz a identificação no presente,\n  diante do leitor. É exatamente o ato que a previsão (1) reserva para Toki como se\n  fosse inédito, e a obra já o encenou com outra personagem. Some-se EV-1040-01\n  (\"Joy Boy foi camarada de Zunesha durante sua vida\"), e a camaradagem com Joy Boy\n  não é dedução: é átomo.\n\n- EV-0821-02 — \"Zunesha possui a Voz de Todas as Coisas e só consegue falar\n  telepaticamente com quem tem a mesma habilidade; foi assim que pediu a Momonosuke\n  permissão para revidar.\" O canal de testemunho existe, está aberto e o\n  interlocutor é o herdeiro Kouzuki. E EV-1037-02 põe a testemunha no lugar:\n  Zunesha chegou às águas próximas de Wano. Ou seja, a configuração que H-18\n  postula como singularidade de Toki — testemunha do Século Perdido em contato com\n  os Kouzuki dentro de Wano — o corpus já tem, com outro sujeito, sem salto\n  temporal e sem missão.\n\n- EV-0973-04 — \"Toki nasceu por volta de oitocentos e trinta anos antes do\n  presente, dentro do Século Perdido, e chegou à era atual saltando repetidamente\n  para frente no tempo **sempre que corria perigo**.\" O único átomo canônico que\n  descreve o mecanismo pelo qual ela atravessou o tempo nomeia o gatilho, e o\n  gatilho é perigo. O enunciado afirma \"não a fuga de um perigo qualquer\" contra a\n  redação literal do átomo de que depende. Note também o que o átomo **não** diz:\n  ele diz que ela nasceu dentro do Século Perdido e que chegou à era atual. Não diz\n  que viu, que trouxe, que guardou ou que soube de coisa alguma. Nascer dentro de um\n  período é dado de nascimento, não de testemunho, e a previsão (1) já pressupõe o\n  segundo.\n\n- EV-0973-02 — \"**Ferida e prestes a morrer**, Toki cavalgou até Bakura Town e\n  proferiu publicamente uma profecia diante dos cidadãos, e Orochi passou a temer o\n  que ela anunciou.\" Este é o golpe no item (a). O único apoio de agência\n  disponível é ela ter ficado para trás em vez de embarcar (EV-0973-01), e este\n  átomo entrega a causa banal no mesmo bloco: ela estava ferida e prestes a morrer.\n  Alguém prestes a morrer que fica para trás não precisa de missão para explicar o\n  ato — precisa de ferimento, e o ferimento está escrito. Pior para a previsão (1):\n  o que ela de fato fez com os últimos minutos foi proferir publicamente uma\n  profecia diante dos cidadãos, e Orochi passou a temer o que ela anunciou. A única\n  consequência encenada do que Toki carregava aponta **para dentro** da disputa\n  contra Orochi, não para fora dela.\n\n- EV-0972-07 — \"O plano de Toki usar a Toki Toki no Mi para enviar pessoas vinte\n  anos ao futuro foi concebido por **Oden**.\" O ato mais deliberado da biografia\n  dela é, canonicamente, instrução de outra pessoa. H-18 lê intenção própria onde a\n  obra nomeia autoria alheia do plano.\n\n- EV-0972-06 — \"Na carta deixada a Toki, Oden previu que em vinte anos estouraria\n  uma guerra e que chegaria ao Novo Mundo uma força capaz de derrubar Kaidou, e\n  pediu que ela **usasse seu poder em função disso**.\" A única finalidade que a\n  obra atribui explicitamente ao poder de Toki é a guerra de vinte anos contra\n  Kaidou — a agenda interna de Wano. O átomo que mais se aproxima de nomear um\n  propósito para ela nomeia o propósito errado para esta hipótese.\n\n- EV-0973-06 — \"Toki pertencia à família daimyo Amatsuki e, ainda assim, não\n  conhecia sua terra de origem; o que ela buscava ao viajar era chegar a Wano.\"\n  Ponto único de falha, e ele se fere sozinho. É o **único** átomo do corpus que\n  liga a viagem dela a Wano como destino, é `ambiguo`, e o próprio corpo do átomo\n  registra o motivo: a frase da wiki não deixa claro se a terra desconhecida é Wano\n  ou outro lugar. A previsão (2) exige que a razão do destino não seja \"preferência\n  pessoal de quem buscava a terra da própria família\" — e a única frase disponível\n  sobre a origem dela diz que pertencia à família daimyo Amatsuki e não conhecia a\n  própria terra de origem. A hipótese importou a falsificação da previsão (2) da\n  mesma fonte de onde tirou a previsão.\n\n- EV-0973-05 — \"O poder da Toki Toki no Mi funciona numa direção só: envia pessoas\n  anos ou décadas para o futuro e nunca de volta ao passado.\" Também `ambiguo`, e o\n  corpo do átomo diz por quê: a página da personagem afirma isso sem apontar\n  capítulo, ao contrário do resto da biografia. É a peça que faz dela um portador\n  singular, e é a peça sem capítulo.\n\n- EV-0967-09 e EV-0972-03 — \"Na ilha final Oden aprendeu que Wano já estivera\n  conectada ao resto do mundo\" e \"foi a própria família Kouzuki que fechou Wano ao\n  resto do mundo, para proteger o país de uma grande força externa\". Somados a\n  EV-0966-06 (a língua antiga dos Poneglyphs é cifra secreta ensinada a apenas um\n  filho da família Kouzuki) e a EV-1055-02 (abaixo do castelo há uma cidade inteira\n  submersa e preservada, identificada como a Wano de 800 anos atrás), o corpus já\n  responde \"por que Wano\" sem passar por Toki em nenhum ponto. A previsão (2)\n  pergunta uma coisa que o arquivo já respondeu por outra via.\n\n- EV-1125-01 e EV-1125-02 — \"Um robô gigante blindado criado no início do Século\n  Perdido subiu a Red Line e invadiu Mary Geoise 200 anos atrás\" e \"Vegapunk nunca\n  conseguiu replicar a energia antiga que move o robô Emet, comum no Século\n  Perdido, e a máquina só voltou à vida quando os Tambores da Libertação soaram\".\n  Fere a exclusividade por um segundo caminho: um objeto criado no início do Século\n  Perdido chegou ao presente, agiu, e voltou à vida em cena. Se o critério for\n  \"testemunha viva\", Zunesha basta; se o critério for \"coisa do Século Perdido que\n  atravessou íntegra e produziu consequência hoje\", há uma fila.\n\n### Veredito\n\nrefutada\n\nAs duas metades do enunciado caem, cada uma por átomo canônico direto, e é por isso\nque o veredito não é \"ferida\".\n\nA metade da exclusividade cai por EV-0821-01 + EV-1046-01: existe outra testemunha\ndo Século Perdido viva no presente, ela conheceu Joy Boy pessoalmente, ela fala, e\nela está em Wano (EV-0821-02, EV-1040-01, EV-1037-02). A metade da intenção cai por\nEV-0973-04, que descreve o mecanismo com a palavra perigo e nenhuma outra. Pela\nregra do Curador — `refutada` é contra-evidência canônica direta —, isso é o caso.\n\n**(a) Intenção onde a evidência mostra reflexo.** O ataque encomendado subestimou o\npróprio caso. Não é só que EV-0973-04 diga \"sempre que corria perigo\": é que o\núnico apoio de escolha, ficar para trás em EV-0973-01, tem a causa banal escrita no\nátomo vizinho — EV-0973-02 abre com \"ferida e prestes a morrer\". E os dois átomos\nque trazem propósito declarado trazem propósito **alheio**: EV-0972-07 diz que o\nplano do salto de vinte anos foi concebido por Oden, EV-0972-06 diz que a carta\ndele pediu que ela usasse seu poder em função da guerra contra Kaidou. Somando: da\nbiografia dela, o corpus tem um gatilho involuntário, uma incapacitação física, um\nplano de terceiro e uma instrução de terceiro. \"Missão\" precisa ser acrescentada\npor fora de todos os quatro. Isso é a definição de circularidade: os átomos só\nsustentam intenção se a intenção já estiver pressuposta ao lê-los.\n\n**(b) O silêncio dela não é evidência — e a regra é explícita.** Este repositório\nproíbe o movimento em dois lugares. `CLAUDE.md`, Regra zero: se você lembra de uma\ncena e não existe átomo para ela, o caminho é criar o átomo, nunca afirmar direto.\n`agents/extrator.md`, regra 5: o que não está na fonte à sua frente não vira átomo.\nAs duas dizem a mesma coisa por consequência: a ausência de átomo é fato sobre **o\ncorpus**, não sobre a obra. E o corpus admite ser amostra parcial — o escopo\ninicial é um recorte de cerca de 300 átomos, e não há um único átomo sobre Toki\nfora dos capítulos 972 e 973. Ler \"ela nunca contou o que viu\" a partir disso é ler\na nossa cobertura de leitura como se fosse conduta da personagem. O precedente já\nexiste: em H-14 o ataque rejeitou a inferência a partir de \"os gigantes não têm\nregistro do edifício\", porque ausência de registro é compatível com várias\nhistórias incompatíveis entre si. Aqui é o mesmo mecanismo, uma camada mais frágil,\nporque lá havia átomo afirmando a ausência e aqui não há átomo nenhum.\n\n**(c) A previsão (1) é decorativa; a previsão (2) não discrimina.** A previsão (1)\nnão tem critério de reprovação. Não fixa capítulo, não fixa tipo de cena, e o termo\nque deveria fazer o trabalho — \"consequência fora da disputa interna de Wano contra\nOrochi\" — já está satisfeito por átomos publicados antes de a hipótese existir:\nEV-0973-03 registra que a profecia foi entendida como derrubar Orochi **e abrir as\nfronteiras de Wano**, e abrir as fronteiras é, por qualquer leitura branda,\nconsequência fora da disputa contra Orochi; EV-0972-04 já põe o mundo inteiro, e\nnão só Wano, aguardando a chegada da figura ligada ao intervalo de oitocentos anos.\nUma previsão cujos termos o corpus já cumpre só pode ser marcada `cumprida`, nunca\n`falhada`. É teoria elástica com aparência de risco, exatamente o que a regra 2 do\nREADME existe para barrar. Substitua por algo que possa dar errado — por exemplo:\n\"aparecerá átomo em que Toki nomeia, cita ou mostra um conteúdo específico do\nSéculo Perdido, e o conteúdo será distinto do que Zunesha já testemunhou\". Isso tem\ncomo falhar.\n\nA previsão (2) tem o defeito oposto: a metade positiva não discrimina e a metade\nnegativa já falhou. Se a obra nomear a razão de Wano importar, a previsão marca\n`cumprida` mesmo que a razão nada tenha a ver com Toki — e o corpus já oferece três\nrazões prontas em EV-0967-09, EV-0972-03 e EV-1055-02. A cláusula de exclusão é a\núnica parte falseável, e EV-0973-06 já entrega o que ela proíbe: família daimyo\nAmatsuki, terra de origem desconhecida.\n\nRegistro o que **não** encontrei, porque a regra final manda: não há átomo dizendo\nque Toki não trouxe nada, nem átomo negando que Wano fosse o destino. A hipótese\nnão é impossível. Ela é (i) falsa como escrita, na palavra \"única\"; (ii) contrária\nà redação do seu átomo de mecanismo, na palavra \"não a fuga\"; e (iii) sem previsão\nque possa reprová-la. Retirada a exclusividade, retirada a intenção e reescritas as\nduas previsões, o que sobra — \"uma pessoa nascida no Século Perdido atravessou o\napagamento e chegou a Wano\" — é EV-0973-04 parafraseado, e paráfrase de átomo não é\nhipótese.\n\n### Custo estrutural\n\nNove suposições não evidenciadas, e cinco delas têm átomo canônico do outro lado:\n\n1. Que Toki é a **única** testemunha do Século Perdido viva no presente.\n   Contradita por EV-0821-01 e EV-1046-01.\n2. Que ela **viu ou trouxe** algo do Século Perdido. EV-0973-04 registra\n   nascimento e travessia; nenhum átomo registra conteúdo, memória ou objeto.\n3. Que os saltos foram **dirigidos a um destino**. EV-0973-04 nomeia o gatilho, e o\n   gatilho é perigo — um mecanismo disparado por perigo chega onde o perigo parar.\n4. Que **Wano era o objetivo**. Apoiado em EV-0973-06 apenas, `ambiguo`, cujo\n   próprio corpo diz que a frase não deixa claro se a terra é Wano.\n5. Que o motivo de Wano **não é a terra da própria família**. EV-0973-06 diz\n   família daimyo Amatsuki e terra de origem desconhecida — a hipótese precisa que\n   seu único átomo de destino esteja errado na metade que ela cita.\n6. Que ficar para trás foi **escolha**. EV-0973-01 diz castelo em chamas e\n   EV-0973-02 diz ferida e prestes a morrer.\n7. Que o salto de vinte anos exprime **vontade dela**. EV-0972-07 atribui o plano a\n   Oden.\n8. Que o **silêncio** dela é ocultamento deliberado. Ausência de átomo, contra a\n   Regra zero do `CLAUDE.md` e a regra 5 de `agents/extrator.md`.\n9. Que \"consequência fora da disputa contra Orochi\" tem fronteira definível.\n   EV-0972-06 (Kaidou) e EV-0973-03 (fronteiras) caem dos dois lados conforme a\n   conveniência da leitura.\n\nDuas fragilidades estruturais por cima da contagem. Primeira: dos átomos que\nsustentam a hipótese, três são `ambiguo` (EV-0973-03, EV-0973-05, EV-0973-06), e um\ndeles carrega sozinho a tese do destino. Segunda: todo o material vem dos capítulos\n972 e 973 — um bloco, um arco (Wano, 909–1057). O `CLAUDE.md` documenta o\n`TETO_POR_ARCO` justamente porque quinze capítulos publicados juntos empurram na\nmesma direção sem que o teto por capítulo veja. Uma hipótese cujo corpus inteiro é\num flashback de dois capítulos não é uma leitura do arquivo; é uma leitura daquele\nflashback.\n\n### Concorrente mais econômico\n\nH-17\n\nH-17 (\"os Poneglyphs são um sistema de sobrevivência de mensagem projetado contra o\napagamento: indestrutíveis, espalhados entre povos distintos e confiados a\nguardiões que não sabem lê-los\") explica o mesmo conjunto sem postular missão\nnenhuma, porque o que ela afirma é projeto e não conteúdo. O caso de Toki é o mesmo\npadrão de projeto com suporte humano em vez de pedra: o herdeiro Kouzuki e único\nleitor restante é retirado da linha do tempo por vinte anos e o conhecimento da\nfamília atravessa o intervalo dentro de uma pessoa (EV-0973-01). Quem projetou está\nnomeado — EV-0972-07 diz que o plano foi de Oden —, e a mesma linhagem que\nesculpiu as pedras é a que fechou o país (EV-0972-03, já em H-17) e a que restringe\na cifra a um filho por geração (EV-0966-06, já em H-17). Nessa leitura, Toki é o\n**meio** de transmissão, não a origem da mensagem, e nada precisa ser suposto sobre\no que ela viu. H-18 acrescenta duas peças que nenhum átomo carrega — um conteúdo\ntrazido do Século Perdido e uma intenção de destino — sem acrescentar cobertura\nsobre um único átomo. É o mesmo defeito que o ataque a H-14 chamou de acrescentar\npeça sem acrescentar cobertura.\n\nSegunda opção, para a metade profética: H-08 já usa EV-0972-06 e EV-0973-03 tratando\na carta de Oden e a profecia de Toki como previsões datadas dentro de um calendário\nque a obra opera em vários lugares — sem precisar que Toki tenha agenda própria. Os\ndois átomos que H-18 mais precisaria para provar intenção já estão emprestados a\numa concorrente que os explica sem intenção, o que é exatamente o problema de apoio\ncompartilhado que `tools/independencia.py` mede e que o `CLAUDE.md` registra como\nmaior que a correlação de fonte.\n\nTerceira opção, se o interesse real for a testemunha e não a personagem: nenhuma\nhipótese viva cobre Zunesha, apesar de EV-0821-01, EV-0821-02, EV-1040-01,\nEV-1046-01 e EV-1037-02 formarem um conjunto coerente e canônico sobre um ser que\nesteve no Século Perdido, chegou vivo, fala e está em Wano. O corpus tem a\ntestemunha; escolheu-se escrever a hipótese sobre a outra. Vale mais formular essa\ndo que reparar H-18 — e vale o precedente registrado em H-10, onde o átomo âncora,\nlido inteiro, trabalhava contra a própria hipótese que o citava.\n",
+   "posterior": 0.043,
+   "fatia": 0.0
+  },
+  {
+   "id": "H-19",
+   "enunciado": "A sentença de Zunesha é o que a preservou como testemunha: condenada há oitocentos anos a caminhar sem parar e a só agir sob ordem, ela chegou viva ao presente, e a ordem que a destrava vem da linhagem Kouzuki.",
+   "escopo": "seculo_vazio",
+   "status": "viva",
+   "prior": 0.4,
+   "apoia": [
+    {
+     "ev": "EV-0821-01",
+     "peso": 0.55,
+     "como": "Zunesha foi sentenciada a caminhar eternamente e a só agir sob ordem, como punição por um crime cometido há 800 anos: a mesma condição que a limita é a que a mantém caminhando através do período apagado, viva até o presente."
+    },
+    {
+     "ev": "EV-1040-01",
+     "peso": 0.5,
+     "como": "Joy Boy foi camarada de Zunesha durante sua vida: ela conviveu com a figura central daquele período, o que a torna testemunha e não apenas sobrevivente."
+    },
+    {
+     "ev": "EV-1046-01",
+     "peso": 0.5,
+     "como": "Zunesha comparou Luffy ao Joy Boy que conheceu no passado e afirmou que aquilo era o destino do garoto: ela retém memória daquela época e a usa para identificar alguém no presente."
+    },
+    {
+     "ev": "EV-1041-01",
+     "peso": 0.45,
+     "como": "Zunesha declarou a Momonosuke, pela Voz de Todas as Coisas, que lutaria sob o comando dele e que abriria as fronteiras de Wano: a ordem que a destrava é apresentada como vinda do herdeiro Kouzuki."
+    },
+    {
+     "ev": "EV-1050-01",
+     "peso": 0.4,
+     "como": "Depois da derrota de Kaidou, Momonosuke decidiu não abrir ainda as fronteiras de Wano e comunicou a decisão a Zunesha: a decisão do herdeiro Kouzuki é o que determina se ela age."
+    },
+    {
+     "ev": "EV-1052-01",
+     "peso": 0.4,
+     "como": "Em respeito à decisão de Momonosuke, Zunesha deixou as águas de Wano e sumiu na neblina próxima: ela desfez o próprio movimento anterior por causa da ordem, o que mostra a trava operando em cena."
+    },
+    {
+     "ev": "EV-0822-01",
+     "peso": 0.2,
+     "como": "Miyagi especula que Zunesha não caminha ao acaso e pode estar procurando um lugar determinado: é especulação de personagem, não afirmação da obra, e por isso entra com peso baixo."
+    }
+   ],
+   "contradiz": [
+    {
+     "ev": "EV-0821-02",
+     "peso": 0.45,
+     "como": "Zunesha possui a Voz de Todas as Coisas e só consegue falar telepaticamente com quem tem a mesma habilidade: a restrição pode ser de canal de comunicação e não de titularidade, caso em que qualquer portador da habilidade fala com ela, Kouzuki ou não."
+    },
+    {
+     "ev": "EV-0966-07",
+     "peso": 0.4,
+     "como": "Roger localizou o Poneglyph de Skypiea ouvindo as vozes que vinham de dentro dele: a Voz de Todas as Coisas não pertence à linhagem Kouzuki, e quem a tinha não era herdeiro de Wano."
+    },
+    {
+     "ev": "EV-1037-02",
+     "peso": 0.3,
+     "como": "Zunesha chegou às águas próximas de Wano e ali encontrou uma grande frota de navios do Governo Mundial: o átomo registra o encontro e nada sobre alguém tentar comandá-la, então a preservação contra o vencedor não tem cena que a mostre."
+    }
+   ],
+   "prediz": [
+    {
+     "texto": "Se verdadeiro, alguém de fora da linhagem Kouzuki tentará comandar Zunesha em cena e ela não obedecerá — recusa ou incapacidade —, e a razão será a titularidade da ordem, não a falta da Voz de Todas as Coisas.",
+     "status": "aberta"
+    },
+    {
+     "texto": "Se verdadeiro, a obra nomeará quem impôs a sentença dos oitocentos anos, e será poder ligado ao lado que venceu o Século Perdido, não julgamento entre pares nem causa natural.",
+     "status": "aberta"
+    }
+   ],
+   "concorrentes": [],
+   "corpo": "## Por que esta hipótese existe\n\nEla nasceu de uma derrota. H-18 afirmou que Toki era a **única** testemunha do\nSéculo Perdido viva no presente, e o Red Team derrubou a palavra com cinco átomos\ncanônicos que já estavam no arquivo — todos sobre Zunesha. O relatório terminou\ndizendo, em resumo, que o corpus tinha a testemunha e alguém escolheu escrever a\nhipótese sobre a outra personagem.\n\nO cluster de órfãos vinha apontando para o mesmo lugar havia duas rodadas.\n\n## O que a hipótese afirma, e o que ela não afirma\n\nAfirma duas coisas: que a sentença descrita em EV-0821-01 é o mecanismo da\npreservação — caminhar sem parar e só agir sob ordem é o que atravessa oitocentos\nanos —, e que o titular da ordem hoje é a linhagem Kouzuki.\n\nNão afirma que Zunesha guarda um conteúdo específico do período, nem que o crime\ndela foi injusto, nem que ela foi posta ali para esperar. Cada uma dessas seria uma\npeça a mais sem átomo que a carregue, e foi exatamente esse acréscimo que matou\nH-18.\n\n## A contradição que veio junto\n\nEV-0966-07 é o problema honesto desta hipótese. Roger localizou o Poneglyph de\nSkypiea ouvindo as vozes que vinham de dentro dele — a Voz de Todas as Coisas não é\npropriedade dos Kouzuki, e Roger não era herdeiro de Wano. Somando a EV-0821-02,\nque diz que Zunesha só fala com quem tem a mesma habilidade, existe uma leitura\nconcorrente inteira: a trava não é jurídica, é técnica. Ela obedece Momonosuke\nporque é com ele que ela **consegue falar**, e qualquer portador da habilidade\nserviria.\n\nAs duas leituras dão as mesmas cenas até hoje. É por isso que a previsão (1) foi\nescrita como foi: ela separa as duas exigindo que a recusa aconteça diante de\nalguém que tenha a Voz e ainda assim não seja obedecido.\n\n## O que a mataria\n\nZunesha aceitar comando de alguém fora da linhagem Kouzuki, ou a obra estabelecer\nque a sentença é o castigo de um culpado por dano próprio, sem relação com o\nconflito do Século Perdido.\n\n## Nota de curadoria\n\nPrior 0.40. O apoio é canônico e denso, mas seis dos sete átomos vêm de dois arcos\n(Zou e Wano) e o teto por arco vai cortá-los. A segunda metade do enunciado — a\ntitularidade Kouzuki — é a parte frágil, e está escrita assim de propósito: se\nestiver errada, a previsão (1) a reprova sem levar junto a primeira metade.",
    "redteam": "",
-   "posterior": 0.9896,
+   "posterior": 0.9279,
+   "fatia": 0.0
+  },
+  {
+   "id": "H-20",
+   "enunciado": "O projeto dos Poneglyphs terminou no suporte: gravar em pedra indestrutível foi decisão deliberada de quem previu a derrota, mas a dispersão das pedras e o analfabetismo dos guardiões são história posterior — guerra, transporte de emergência e erosão de oitocentos anos —, não parte do desenho.",
+   "escopo": "poneglyph",
+   "status": "viva",
+   "prior": 0.5,
+   "apoia": [
+    {
+     "ev": "EV-0395-05",
+     "peso": 0.6,
+     "como": "Clover afirma que a mensagem foi gravada em pedra porque, se tivesse sido escrita em papel, teria se perdido: a única intenção de projeto declarada em cena recai sobre o material, e não sobre onde a pedra ficaria nem sobre quem a guardaria."
+    },
+    {
+     "ev": "EV-0395-04",
+     "peso": 0.5,
+     "como": "O poneglyph de Ohara ficou intacto depois que uma bomba foi detonada ao seu redor dentro da Árvore do Conhecimento: se o suporte resiste ao epicentro do apagamento, distância e custódia não precisam acrescentar proteção nenhuma."
+    },
+    {
+     "ev": "EV-0395-10",
+     "peso": 0.45,
+     "como": "Clover afirma que o povo do reino antigo, ao saber que seria derrotado, gravou os poneglyphs para que o mundo soubesse o que havia acontecido: a finalidade declarada é gravar diante da derrota, e o ato que a obra atribui a esse povo é gravar, não distribuir."
+    },
+    {
+     "ev": "EV-1085-02",
+     "peso": 0.5,
+     "como": "Imu se interessa por Lili por causa de um erro dela que levou os Poneglyphs a se espalharem pelo mundo: o único átomo que declara a causa da dispersão a chama de erro, e o atribui a uma soberana dos vinte reinos e não a quem gravou."
+    },
+    {
+     "ev": "EV-1085-03",
+     "peso": 0.4,
+     "como": "O ato de Lili de espalhar os Poneglyphs pelo mundo é tido como o que influenciou piratas a persegui-los em busca de tesouro: a dispersão, no relato da obra, atrai caçadores em vez de proteger a mensagem."
+    },
+    {
+     "ev": "EV-0272-03",
+     "peso": 0.45,
+     "como": "Lendo as inscrições das ruínas, Robin conclui que um Poneglyph foi trazido para Shandora na época em que a cidade lutava contra o inimigo, e que foi por causa disso que a cidade foi arruinada: a pedra chegou em plena guerra e a colocação arruinou quem a recebeu."
+    },
+    {
+     "ev": "EV-0966-06",
+     "peso": 0.4,
+     "como": "Segundo Oden, a língua antiga dos Poneglyphs é uma cifra secreta ensinada a apenas um filho da família Kouzuki: a escassez de leitores é política hereditária do clã que esculpiu as pedras, e não propriedade de uma custódia distribuída."
+    },
+    {
+     "ev": "EV-0818-03",
+     "peso": 0.4,
+     "como": "Sukiyaki, da família Kouzuki, herdou dos ancestrais a habilidade de ler e de escrever a língua dos Poneglyphs, e a transmitiu ao filho Oden: onde há guardião documentado com linhagem, o guardião sabe ler — o analfabeto é o caso, não a regra."
+    },
+    {
+     "ev": "EV-0290-03",
+     "peso": 0.3,
+     "como": "Nenhum dos Shandia consegue decifrar a mensagem da pedra que seu povo guarda há gerações: perder a leitura ao longo de gerações é o que se espera de qualquer transmissão sem escola, com ou sem projeto por trás."
+    },
+    {
+     "ev": "EV-1053-02",
+     "peso": 0.3,
+     "como": "O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph: a pedra está no assento do poder e não entregue a um povo distinto, o que contraria a dispersão como característica de desenho."
+    }
+   ],
+   "contradiz": [
+    {
+     "ev": "EV-0301-04",
+     "peso": 0.45,
+     "como": "Robin recorda que existem dois tipos de Poneglyph: os que carregam informação e os que revelam onde estão os outros: uma camada que aponta para as demais pedras é arquitetura de sistema e vai além da escolha do material."
+    },
+    {
+     "ev": "EV-0301-05",
+     "peso": 0.45,
+     "como": "Robin conclui que a pedra de Shandora já cumpriu sua função porque Roger já achou aquilo que ela indicava, e que os Poneglyphs são feitos para serem lidos em conjunto, preenchendo o trecho apagado da história: leitura conjunta é propriedade projetada, e não efeito de guerra ou de erosão."
+    },
+    {
+     "ev": "EV-0301-01",
+     "peso": 0.35,
+     "como": "Diz-se que ao chegar a Laugh Tale, se a pessoa levou consigo as passagens dos Poneglyphs recolhidas na viagem, o Rio Poneglyph será finalmente revelado: um mecanismo que só se completa quando as partes forem reunidas exige que a repartição fosse intencional."
+    },
+    {
+     "ev": "EV-0290-01",
+     "peso": 0.3,
+     "como": "Kalgara explica a Noland que o que os Shandia guardam há gerações não é o ouro nem a cidade em si, e sim o Poneglyph fincado na base do campanário: existe dever de guarda herdado e nomeado, o que é mais do que um acidente histórico deixaria."
+    }
+   ],
+   "prediz": [
+    {
+     "texto": "Se verdadeiro, quando a obra explicar a posição de alguma pedra, a explicação será guerra, fuga, transporte de emergência ou o ato de Lili. Reprovada se um personagem nomear em cena quem escolheu o lugar de um Poneglyph e por qual razão de projeto.",
+     "status": "aberta"
+    },
+    {
+     "texto": "Se verdadeiro, a camada dos Road Poneglyphs — as pedras que apontam para Laugh Tale — será datada como posterior ao ato de gravar as pedras de história, obra de quem veio depois, e não do mesmo gesto do povo derrotado.",
+     "status": "aberta"
+    }
+   ],
+   "concorrentes": [
+    "H-17"
+   ],
+   "corpo": "## Por que esta hipótese existe\n\nEla foi escrita pelo Red Team que atacou H-17, e o Curador só a transcreveu. O\nataque terminou dizendo que o concorrente mais econômico **não estava no\nrepositório** — e que reponderar os elos de H-17 antes de abrir esse concorrente\nseria consertar o número errado.\n\nH-17 é a única hipótese do escopo `poneglyph`. Isso desliga duas defesas do\n`score.py` de uma vez: `fator_discriminacao` devolve 1.0 para todos os elos, e a\nnormalização por escopo entrega 100% da massa a ela. O posterior de 0.99 era\nincontestado por construção, não por evidência — nenhuma alternativa havia sido\nformulada e derrotada, porque nenhuma havia sido formulada.\n\nEsta é a alternativa. As duas agora se declaram concorrentes, e o divisor liga.\n\n## A diferença entre as duas, em uma frase\n\nAs duas concordam que gravar em pedra foi projeto. Discordam sobre o resto: H-17\nlê a dispersão e o guardião analfabeto como partes cooperantes do mesmo desenho;\nH-20 lê as duas como o que sobrou depois de oitocentos anos de guerra e esquecimento.\n\n## O argumento mais forte a favor\n\nÉ o mais simples: se a pedra sobrevive a uma bomba detonada ao seu redor\n(EV-0395-04), estar longe não protege de nada. A indestrutibilidade torna a\ndispersão ociosa. Um desenho que conjuga três mecanismos onde um basta está\nsobre-especificado — e as duas partes sobre-especificadas são justamente as que\nnão têm um único átomo mostrando alguém decidindo onde uma pedra ficaria.\n\nO que o arquivo tem sobre a causa da distribuição é EV-1085-02, e a palavra que\nele usa é *erro*.\n\n## O caso contra, que é real\n\nA camada de índice. EV-0301-04 diz que existem dois tipos de pedra, e um deles\nrevela onde estão as outras; EV-0301-05 diz que são feitas para leitura conjunta;\nEV-0301-01 diz que reunir as passagens revela o Rio Poneglyph. Isso é arquitetura,\ne vai além da escolha do material. A saída desta hipótese é que essa camada seja\nposterior — obra de outra mão, depois do Século Perdido — e é exatamente o que a\nprevisão (2) aposta. Se a obra datar os Road Poneglyphs no mesmo gesto que gravou\nas pedras de história, H-20 perde.\n\n## Nota de curadoria\n\nPrior 0.50, igual ao de H-17: as duas entram empatadas de propósito, porque o\nponto de abrir a concorrente não é vencer, é fazer o escopo parar de premiar quem\nestá sozinho nele.",
+   "redteam": "",
+   "posterior": 0.9689,
    "fatia": 0.0
   }
  ]

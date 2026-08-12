@@ -9,6 +9,13 @@ O `enunciado` e as `prediz` de UMA hipótese, e acesso a `data/evidencias/`.
 **Você NÃO recebe o campo `apoia`.** Isso é deliberado: se você vir os argumentos
 a favor, você vai ancorar neles. Construa o caso contra do zero.
 
+Não basta não abrir o arquivo da hipótese alvo — **não rode busca que varra
+`data/hipoteses/` procurando um id de átomo**. No ataque a H-18, um `grep` por
+`EV-0973` imprimiu cinco linhas do corpo do alvo, incluindo ids do `apoia`, sem
+que o arquivo fosse aberto. Restrinja qualquer busca a `data/evidencias/`. Se
+mesmo assim vazar algo, registre o vazamento no relatório: contaminação declarada
+vale mais que isolamento presumido.
+
 ## Vetores de ataque, em ordem
 
 1. **Contra-evidência direta.** Existe átomo que torna a hipótese falsa ou

@@ -3,7 +3,7 @@
 Átomos que não têm elo em nenhuma hipótese. Acúmulo aqui é sintoma de
 hipótese faltando — foi assim que H-11, H-14, H-16 e H-17 nasceram.
 
-**58 de 289 átomos.** Concentrados em: Wano (17), Seculo Perdido (6), Imu (6), Elbaf (6), Pluton (5), Zunesha (5), fronteiras (5), destino (4).
+**45 de 289 átomos.** Concentrados em: Wano (8), Imu (6), Elbaf (6), Pluton (5), armas ancestrais (4), Laugh Tale (4), mural (4), destino (3).
 
 Menção num relatório de red team não conta como vínculo: o atacante cita
 átomos para argumentar, e contar isso escondia órfãos de verdade.
@@ -11,7 +11,6 @@ Menção num relatório de red team não conta como vínculo: o atacante cita
 - EV-0096-01 — Woop Slap pergunta, sobre Luffy, se aquilo é o sonho dele ou o destino dele.
 - EV-0099-01 — Testemunhas da execução de Roger afirmam que ele sorriu pouco antes de morrer.
 - EV-0202-01 — Nico Robin é uma das pouquíssimas pessoas vivas capazes de ler a língua antiga dos Poneglyphs.
-- EV-0287-01 — Os Shandia antigos cultuavam deuses do sol, da terra, da floresta e da chuva.
 - EV-0301-07 — Gan Fall diz a Robin que Roger esteve em Skypiea há cerca de vinte anos.
 - EV-0302-01 — Wyper e seus guerreiros juram a Kalgara que manterão o orgulho do povo e não deixarão a Luz de Shandora se apaga
 - EV-0344-01 — Pluton é um navio de guerra ancestral construído na ilha de Water 7 durante o Século Perdido.
@@ -26,25 +25,13 @@ Menção num relatório de red team não conta como vínculo: o atacante cita
 - EV-0722-01 — Ha 800 anos, dezenove dos vinte monarcas se mudaram para Mary Geoise apos a fundacao do Governo Mundial, e apena
 - EV-0763-01 — Rosinante afirma que o 'D.' foi herdado secretamente pelo mundo ao longo da história e que numa certa terra o Cl
 - EV-0820-01 — Inuarashi afirma que a ilha final da Grand Line, Lodestar, explicaria como buscar os quatro Road Poneglyphs, e N
-- EV-0822-01 — Miyagi especula que Zunesha não caminha ao acaso e pode estar procurando um lugar determinado.
 - EV-0908-01 — Imu demonstra interesse particular por Vivi, descendente da rainha Lili de Arabasta.
 - EV-0966-02 — Treze anos antes do encontro com Barba Branca, a tripulação de Roger chegou a Lodestar, a última ilha do Novo Mu
 - EV-0966-03 — O Log Pose não consegue travar em Laugh Tale, e o motivo não é explicado.
 - EV-0968-07 — Oden recusou a oferta dos Piratas de Roger de ajudá-lo a abrir as fronteiras de Wano e decidiu realizar isso por
 - EV-0972-05 — Certo de que seria morto, Oden pediu aos seus retainers que abrissem as fronteiras de Wano em seu lugar.
-- EV-0972-07 — O plano de Toki usar a Toki Toki no Mi para enviar pessoas vinte anos ao futuro foi concebido por Oden.
-- EV-0973-01 — Com o castelo em chamas, Toki enviou Momonosuke e quatro dos retainers vinte anos ao futuro e ficou para trás, e
-- EV-0973-02 — Ferida e prestes a morrer, Toki cavalgou até Bakura Town e proferiu publicamente uma profecia diante dos cidadão
-- EV-0973-04 — Toki nasceu por volta de oitocentos e trinta anos antes do presente, dentro do Século Perdido, e chegou à era at
-- EV-0973-05 — O poder da Toki Toki no Mi funciona numa direção só: envia pessoas anos ou décadas para o futuro e nunca de volt
-- EV-0973-06 — Toki pertencia à família daimyo Amatsuki e, ainda assim, não conhecia sua terra de origem; o que ela buscava ao 
 - EV-0973-07 — Durante a viagem com os Piratas de Roger, Oden ergueu Momonosuke para lhe mostrar o horizonte, dizendo que aquil
 - EV-1000-02 — Ace revela a Yamato o objetivo que está no fim do sonho de Luffy, e Yamato reconhece que bate com o que Oden reg
-- EV-1037-02 — Zunesha chegou às águas próximas de Wano e ali encontrou uma grande frota de navios do Governo Mundial.
-- EV-1041-01 — Zunesha declarou a Momonosuke, pela Voz de Todas as Coisas, que lutaria sob o comando dele e que abriria as fron
-- EV-1050-01 — Depois da derrota de Kaidou, Momonosuke decidiu não abrir ainda as fronteiras de Wano e comunicou a decisão a Zu
-- EV-1052-01 — Em respeito à decisão de Momonosuke, Zunesha deixou as águas de Wano e sumiu na neblina próxima.
-- EV-1053-02 — O cômodo do porão do castelo do xogum onde Orochi manteve Sukiyaki preso por anos abriga um Poneglyph.
 - EV-1053-05 — Tenguyama Hitetsu tira a máscara diante de Robin e se revela como Kouzuki Sukiyaki, o ex-xogum que Orochi deu po
 - EV-1055-07 — Sukiyaki diz que Pluton está um pouco mais abaixo, mas que ele próprio nunca a viu e não pode mostrá-la.
 - EV-1055-09 — Robin questiona por que Oden queria abrir as fronteiras de Wano, se abri-las significava soltar Pluton no mundo.

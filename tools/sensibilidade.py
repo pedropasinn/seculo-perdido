@@ -140,8 +140,9 @@ def cmd_recencia(corte: int) -> None:
     for h in hipoteses:
         rec = tot = 0.0
         for e in h.get("apoia") or []:
-            c = score.contribuicao(e.get("peso", 0),
-                                   evidencias.get(e["ev"], {}).get("confiabilidade", ""))
+            atomo = evidencias.get(e["ev"], {})
+            c = score.contribuicao(e.get("peso", 0), atomo.get("confiabilidade", ""),
+                                   atomo.get("tipo", ""))
             tot += c
             if int(e["ev"].split("-")[1]) > corte:
                 rec += c

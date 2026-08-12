@@ -9,11 +9,18 @@ A independencia e falsa (atomos do mesmo capitulo se correlacionam), por isso o
 teto de deflacao por fonte existe: sem ele, dez atomos do mesmo capitulo
 "provariam" qualquer coisa.
 
-Uso:  python3 tools/score.py [H-XX ...]
+Uso:  python3 tools/score.py [H-XX ...] [--tetos]
+
+`--tetos` esconde as linhas de elo e mostra so os tetos. Existe por causa de um
+vazamento real: o Red Team de H-17 foi instruido a rodar `score.py H-17` para ler
+as linhas de teto, e a saida despejou os 23 ids de apoio e os 7 de contradicao do
+alvo. O agente declarou a contaminacao em vez de esconde-la, e a ferramenta e que
+estava errada. Ao encomendar um ataque, use `--tetos`.
 """
 from __future__ import annotations
 
 import math
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -28,6 +35,19 @@ PESO_CONF = {
     "sbs": 0.8,
     "ambiguo": 0.6,
     "traducao_disputada": 0.4,
+}
+
+# ...e um deflator paralelo, por TIPO. `confiabilidade` responde "a fonte de fato
+# diz isto"; `tipo` responde "que camada da obra e essa". Uma historia de capa
+# realmente afirma o que afirma — mas afirma numa camada que a linha principal
+# nao ratifica. Sem isto, um mural lido por Enel numa pagina de titulo valia, log-odds
+# por log-odds, o mesmo que o discurso de Clover.
+#
+# Medido em 11/08/2026: os sete atomos `tipo: capa` do corpus, todos da mesma
+# historia de capa, somavam +3.7 log-odds sozinhos — o bastante para levar um prior
+# neutro de 0.50 a 0.977. O posterior de H-16 era a capa, e mais nada.
+PESO_TIPO = {
+    "capa": 0.4,
 }
 
 # forca maxima que um unico capitulo pode contribuir, em log-odds.
@@ -76,11 +96,21 @@ ARCOS = [
 
 
 def arco(fonte: str) -> str:
-    """'cap 1138' -> 'Elbaf'. O que nao tiver numero vira arco proprio."""
-    digitos = "".join(c for c in str(fonte) if c.isdigit())
-    if not digitos:
+    """'cap 1138' -> 'Elbaf'. O que nao tiver numero vira arco proprio.
+
+    Le o PRIMEIRO numero, nao a concatenacao dos digitos. A versao antiga juntava
+    tudo: "historia de capa caps 470-472" virava 470472, que nao cai em faixa
+    nenhuma e ganhava um balde de arco so dele, com teto proprio — e o atomo que
+    escapava era justamente o mais carregado de H-16. Bug de parser com efeito de
+    tese.
+    """
+    # so casa numero precedido de "cap": senao "SBS volume 4" viraria capitulo 4
+    # e cairia em East Blue. Nao ha SBS no corpus hoje, mas o vocabulario ja
+    # preve databook e entrevista, e o erro seria silencioso.
+    m = re.search(r"caps?\s*(\d+)", str(fonte), re.IGNORECASE)
+    if not m:
         return str(fonte)
-    n = int(digitos)
+    n = int(m.group(1))
     for lo, hi, nome in ARCOS:
         if lo <= n <= hi:
             return nome
@@ -100,9 +130,9 @@ def carregar_evidencias() -> dict[str, dict]:
     }
 
 
-def contribuicao(peso: float, conf: str) -> float:
-    """Converte um peso 0-1 em log-odds, escalado pela confiabilidade."""
-    efetivo = float(peso) * PESO_CONF.get(conf, 0.5)
+def contribuicao(peso: float, conf: str, tipo: str = "") -> float:
+    """Converte um peso 0-1 em log-odds, escalado pela confiabilidade e pelo tipo."""
+    efetivo = float(peso) * PESO_CONF.get(conf, 0.5) * PESO_TIPO.get(tipo, 1.0)
     # peso 1.0 canonico -> ~1.6 log-odds (fator ~5x). Deliberadamente modesto.
     return efetivo * 1.6
 
@@ -153,7 +183,8 @@ def pontuar(hip: dict, evidencias: dict[str, dict]) -> dict:
             if not ev:
                 continue
             fd = fator_discriminacao(elo.get("ev", ""), rotulo, hip.get("escopo", ""))
-            delta = sinal * contribuicao(elo.get("peso", 0), ev.get("confiabilidade", "")) * fd
+            delta = sinal * contribuicao(elo.get("peso", 0), ev.get("confiabilidade", ""),
+                                         ev.get("tipo", "")) * fd
             por_fonte[str(ev.get("fonte", "?"))] += delta
             marca = f"  (÷{round(1/fd)} compartilhado)" if fd < 1 else ""
             detalhe.append(f"    {elo['ev']:<14} {rotulo:<10} {delta:+.2f}{marca}")
@@ -200,11 +231,17 @@ def normalizar_por_escopo(linhas: list[tuple[dict, dict]]) -> dict[str, list[tup
     assume e nao verifica: que o conjunto e exaustivo. Se a resposta certa nao
     estiver escrita em nenhum H-*.md, ela redistribui a massa entre erradas.
     """
+    # so `one_piece` foi construido como conjunto mutuamente exclusivo, com o
+    # campo `concorrentes` preenchido. Os escopos auxiliares agrupam hipoteses
+    # que podem ser verdadeiras ao mesmo tempo — repartir probabilidade entre
+    # elas seria inventar uma disputa que nao existe.
     por_escopo: dict[str, list[tuple[str, float]]] = defaultdict(list)
     for hip, r in linhas:
         if hip.get("status") not in {"viva", "confirmada"}:
             continue  # refutada nao disputa a massa; ela ja saiu do pareo
-        por_escopo[str(hip.get("escopo") or "outro")].append((hip["id"], r["posterior"]))
+        if str(hip.get("escopo")) != "one_piece":
+            continue
+        por_escopo["one_piece"].append((hip["id"], r["posterior"]))
     return {e: v for e, v in por_escopo.items() if len(v) > 1}
 
 
@@ -213,7 +250,9 @@ def main() -> int:
     todas = [ler(p) for p in sorted((RAIZ / "data" / "hipoteses").glob("H-*.md"))
              if not p.name.endswith(".redteam.md")]
     indexar_compartilhamento(todas)
-    alvos = sys.argv[1:]
+    argv = sys.argv[1:]
+    so_tetos = "--tetos" in argv
+    alvos = [a for a in argv if not a.startswith("--")]
     arquivos = sorted((RAIZ / "data" / "hipoteses").glob("H-*.md"))
     arquivos = [p for p in arquivos if not p.name.endswith(".redteam.md")]
     if alvos:
@@ -231,6 +270,8 @@ def main() -> int:
         print(f"  prior {r['prior']:.2f} -> posterior {r['posterior']:.2f}   "
               f"({r['n_apoia']} apoios, {r['n_contra']} contradicoes)")
         for linha in r["detalhe"]:
+            if so_tetos and not linha.lstrip().startswith("["):
+                continue
             print(linha)
 
     for escopo, itens in normalizar_por_escopo(linhas).items():

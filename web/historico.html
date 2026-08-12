@@ -30,7 +30,7 @@
   <nav class="topo-nav"><a href="/">Hipóteses</a><a href="/grafo">Grafo</a><a href="/cronologia">Cronologia</a><a href="/evidencias">Evidências</a><a href="/historico" aria-current="page">Histórico</a><a href="/metodo">Método</a><a href="/dados">Dados & API</a></nav>
 </div></header>
 <a id="conteudo" tabindex="-1"></a><main><section style="border-top:0"><div class="env">
-  <div class="cab"><h1>O rastro</h1><span class="n">27 rodadas</span></div>
+  <div class="cab"><h1>O rastro</h1><span class="n">28 rodadas</span></div>
   <p class="intro">O valor deste projeto não é a resposta que ele dá hoje, é o registro de
   uma hipótese subindo e caindo ao longo dos capítulos. Cada rodada abaixo é um estado
   completo do arquivo, com o que entrou de evidência e o que isso fez com o ranking — em
@@ -197,6 +197,12 @@
     <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>Corrige a independencia dos elos, duas hipoteses novas, README</h3>
     <p>A CORRECAO DO FURO. score.py tratava cada elo como fator de Bayes independente, e um mesmo atomo alimentava varias hipoteses concorrentes ao mesmo tempo — inflando todas juntas em vez de separar uma das outras. Em Bayes,</p><p>evidencia igualmente compativel com k alternativas nao altera a razao entre elas.</p><p>O fator de discriminacao divide a contribuicao pelo numero de hipoteses do mesmo escopo que recebem a MESMA relacao daquele atomo. Um atomo que apoia uma e contradiz outra continua valendo integral nas duas — esse discrimina, e e</p><p>exatamente o tipo de evidencia que decide.</p>
     <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/6952d66729e8349f6967edbe8952fbda7f79788b">6952d66</a></div>
+  </div></li><li class="marco canonica">
+  <div class="marco-data">11 ago</div>
+  <div class="marco-corpo">
+    <h3><svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>75 elos novos, H-06 refutada, e o detector de orfaos estava errado</h3>
+    <p>VINCULACAO. Dois agentes ligaram os orfaos de Wano (49 elos) e de Skypiea (26).</p><p>Os orfaos caem de 109 para 58.</p><p>O BUG QUE OS DOIS ACHARAM. Meu detector de orfaos contava mencao dentro de relatorio de red team como se fosse vinculo. O atacante cita atomos o tempo todo para argumentar, entao atomos sem elo nenhum apareciam como vinculados —</p><p>e ficavam invisiveis para quem fosse vincular. tools/orfaos.py corrige e passa a ser a fonte unica dessa conta.</p>
+    <div class="marco-ev"><a href="https://github.com/pedropasinn/seculo-perdido/commit/5fc3f44dc6a26bf050e880fb5c787a5368e76dc7">5fc3f44</a></div>
   </div></li></ol>
   <p class="intro">O histórico completo, commit a commit, está em
   <a href="https://github.com/pedropasinn/seculo-perdido/commits/main">pedropasinn/seculo-perdido</a>.
@@ -217,5 +223,5 @@ publicada pela Shueisha — este é um projeto de fã, sem vínculo com os deten
 pela cláusula share-alike da fonte.</p>
 <p><a href="https://github.com/pedropasinn/seculo-perdido">pedropasinn/seculo-perdido</a> ·
 <a href="https://github.com/pedropasinn/seculo-perdido/commits/main">histórico de mudanças</a> ·
-atualizado em <time datetime="2026-08-11T19:59:17">11 de agosto de 2026</time></p>
+atualizado em <time datetime="2026-08-11T20:12:21">11 de agosto de 2026</time></p>
 </div></footer><script src="/app.a7a530bf.js"></script></body></html>
