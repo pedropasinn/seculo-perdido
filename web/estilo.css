@@ -338,6 +338,24 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
 .marco-corpo h3{font:400 1.4rem/1.15 var(--display);letter-spacing:.03em;
   text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center}
 .marco-corpo p{font-size:.94rem;margin:.35rem 0}
+.checas{display:grid;gap:1.1rem;margin:1.6rem 0 2.2rem}
+.checa{background:var(--papel);border:2.5px solid var(--tinta);border-radius:14px;
+  padding:1.1rem 1.2rem;box-shadow:var(--sombra-sm)}
+.checa .afirma{font:600 1.06rem/1.4 var(--titulo);margin:0 0 .55rem;
+  color:var(--tinta);text-wrap:balance}
+.checa .afirma::before{content:"C";font:700 1.5rem var(--display);
+  color:var(--tinta);opacity:.35;margin-right:.15rem}
+.checa .vered{margin:0 0 .6rem}
+.sel-v{display:inline-block;font:700 .66rem/1 var(--mono);letter-spacing:.06em;
+  text-transform:uppercase;padding:.4rem .6rem;border:2.5px solid var(--tinta);
+  border-radius:999px;box-shadow:var(--sombra-sm)}
+.checa.ok .sel-v{background:var(--ouro)}
+.checa.meio .sel-v{background:var(--papel-2)}
+.checa.vazio .sel-v,.checa.contra .sel-v{background:var(--vermelho);color:#fff}
+.checa .expl{margin:0;font-size:.97rem;line-height:1.62;color:var(--tinta)}
+.checa:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--tinta)}
+.checa{transition:transform .12s,box-shadow .12s}
+@media (prefers-reduced-motion:reduce){.checa{transition:none}}
 .marco-ev{margin-top:.6rem;display:flex;gap:.4rem;flex-wrap:wrap}
 .marco-ev a{font:700 .68rem var(--mono);text-decoration:none;background:var(--papel-2);
   border:2px solid var(--tinta);border-radius:999px;padding:.22rem .45rem}

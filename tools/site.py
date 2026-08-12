@@ -491,6 +491,24 @@ pre.cmd{background:var(--tinta);color:#e7ddc9;border-radius:10px;padding:.7rem .
 .marco-corpo h3{font:400 1.4rem/1.15 var(--display);letter-spacing:.03em;
   text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center}
 .marco-corpo p{font-size:.94rem;margin:.35rem 0}
+.checas{display:grid;gap:1.1rem;margin:1.6rem 0 2.2rem}
+.checa{background:var(--papel);border:2.5px solid var(--tinta);border-radius:14px;
+  padding:1.1rem 1.2rem;box-shadow:var(--sombra-sm)}
+.checa .afirma{font:600 1.06rem/1.4 var(--titulo);margin:0 0 .55rem;
+  color:var(--tinta);text-wrap:balance}
+.checa .afirma::before{content:"\201C";font:700 1.5rem var(--display);
+  color:var(--tinta);opacity:.35;margin-right:.15rem}
+.checa .vered{margin:0 0 .6rem}
+.sel-v{display:inline-block;font:700 .66rem/1 var(--mono);letter-spacing:.06em;
+  text-transform:uppercase;padding:.4rem .6rem;border:2.5px solid var(--tinta);
+  border-radius:999px;box-shadow:var(--sombra-sm)}
+.checa.ok .sel-v{background:var(--ouro)}
+.checa.meio .sel-v{background:var(--papel-2)}
+.checa.vazio .sel-v,.checa.contra .sel-v{background:var(--vermelho);color:#fff}
+.checa .expl{margin:0;font-size:.97rem;line-height:1.62;color:var(--tinta)}
+.checa:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--tinta)}
+.checa{transition:transform .12s,box-shadow .12s}
+@media (prefers-reduced-motion:reduce){.checa{transition:none}}
 .marco-ev{margin-top:.6rem;display:flex;gap:.4rem;flex-wrap:wrap}
 .marco-ev a{font:700 .68rem var(--mono);text-decoration:none;background:var(--papel-2);
   border:2px solid var(--tinta);border-radius:999px;padding:.22rem .45rem}
@@ -753,6 +771,7 @@ if (topo) {
 SITE = "https://seculo-perdido.vercel.app"
 NAV = [("/", "index.html", "Hipóteses"), ("/grafo", "grafo.html", "Grafo"),
        ("/cronologia", "cronologia.html", "Cronologia"),
+       ("/checagem", "checagem.html", "Checagem"),
        ("/evidencias", "evidencias.html", "Evidências"),
        ("/historico", "historico.html", "Histórico"),
        ("/metodo", "metodo.html", "Método"), ("/dados", "dados.html", "Dados & API")]
@@ -1387,6 +1406,57 @@ def pagina_cronologia(meta, cron, evid) -> str:
 <button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
 
 
+ROTULO_VEREDITO = {
+    "confirmada": ("O arquivo confirma", "ok"),
+    "parcial": ("Confirmada pela metade", "meio"),
+    "sem_atomo": ("Nenhum átomo sustenta", "vazio"),
+    "contradita": ("O arquivo contradiz", "contra"),
+}
+
+
+def pagina_checagem(meta, chk, corpo) -> str:
+    itens = chk.get("itens") or []
+    conta = {k: sum(1 for i in itens if i.get("veredito") == k) for k in ROTULO_VEREDITO}
+    cartoes = []
+    for i in itens:
+        v = str(i.get("veredito", "parcial"))
+        rot, cls = ROTULO_VEREDITO.get(v, ROTULO_VEREDITO["parcial"])
+        refs = " ".join(f'<a href="/evidencias#{e}">{e}</a>' for e in i.get("ev") or [])
+        cartoes.append(f"""<article class="checa {cls}">
+  <p class="afirma">{html.escape(str(i.get("afirmacao", "")))}</p>
+  <p class="vered"><span class="sel-v">{rot}</span></p>
+  <p class="expl">{html.escape(" ".join(str(i.get("texto", "")).split()))}</p>
+  <div class="marco-ev">{refs}</div>
+</article>""")
+
+    f = chk.get("fonte") or {}
+    creditos = ""
+    if f.get("url"):
+        creditos = (f'<p class="intro">Pauta levantada a partir de '
+                    f'<a href="{html.escape(str(f["url"]))}" rel="noopener nofollow">'
+                    f'{html.escape(str(f.get("titulo", "um vídeo de recapitulação")))}</a>, '
+                    f'do canal {html.escape(str(f.get("canal", "")))}, '
+                    f'{html.escape(str(f.get("quando", "")))}. '
+                    f'{html.escape(" ".join(str(chk.get("nota", "")).split()))}</p>')
+
+    return (cabeca("Checagem — Século Perdido",
+                   "Afirmações que circulam nos resumos de One Piece, conferidas uma a uma "
+                   "contra os átomos de evidência do arquivo.", "checagem.html") +
+            f"""<main><section style="border-top:0"><div class="env">
+  <div class="cab"><h1>{html.escape(str(chk.get("titulo", "Checagem")))}</h1>
+    <span class="n">{len(itens)} afirmações</span></div>
+  <p class="intro">{html.escape(" ".join(str(chk.get("descricao", "")).split()))}</p>
+  <p class="legenda-cert">
+    <span class="pt canonica"></span> {conta.get("confirmada", 0)} confirmadas
+    <span class="pt ambigua"></span> {conta.get("parcial", 0)} pela metade
+    <span class="pt disputada"></span> {conta.get("sem_atomo", 0) + conta.get("contradita", 0)} sem átomo que sustente</p>
+  {creditos}
+  <div class="checas">{"".join(cartoes)}</div>
+  {markdown_leve(corpo)}
+</div></section>
+<button id="ao-topo" hidden aria-label="Voltar ao topo">↑</button></main>""" + RODAPE)
+
+
 def pagina_historico(meta, rodadas) -> str:
     itens = []
     for r in rodadas:
@@ -1444,6 +1514,11 @@ def main() -> int:
     if pc.exists():
         cron, _ = ler(pc)
 
+    chk, chk_corpo = {}, ""
+    pk = RAIZ / "data" / "checagem.md"
+    if pk.exists():
+        chk, chk_corpo = ler(pk)
+
     # o rastro sai do proprio git: os commits de rodada sao a narrativa
     rodadas = []
     bruto = git("log", "--format=%H|%cI|%s|%b", "--reverse", padrao="")
@@ -1488,6 +1563,7 @@ def main() -> int:
         "grafo.html": pagina_grafo(meta, hips, evid),
         "dados.html": pagina_dados(meta, tamanhos),
         "cronologia.html": pagina_cronologia(meta, cron, evid),
+        "checagem.html": pagina_checagem(meta, chk, chk_corpo),
         "historico.html": pagina_historico(meta, rodadas),
     }
     for nome, conteudo in paginas.items():

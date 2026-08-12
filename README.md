@@ -38,6 +38,7 @@ até o capítulo 1190.
 | **[Hipóteses](https://seculo-perdido.vercel.app/)** | as alternativas ranqueadas, cada uma com elos, previsões e o ataque que sofreu |
 | **[Grafo](https://seculo-perdido.vercel.app/grafo)** | 434 nós e 1457 relações tipadas, no espírito do Neo4j — a aresta carrega peso e justificativa |
 | **[Cronologia](https://seculo-perdido.vercel.app/cronologia)** | a linha do tempo do mundo, com a fonte de cada marco |
+| **[Checagem](https://seculo-perdido.vercel.app/checagem)** | afirmações que todo mundo repete, conferidas uma a uma contra os átomos |
 | **[Evidências](https://seculo-perdido.vercel.app/evidencias)** | os 289 átomos, com busca e as hipóteses que citam cada um |
 | **[Histórico](https://seculo-perdido.vercel.app/historico)** | o rastro: cada rodada, o que entrou e o que mudou de posição |
 | **[Método](https://seculo-perdido.vercel.app/metodo)** | como funciona, e o que o próprio arquivo não sabe |
@@ -130,6 +131,7 @@ make check && make web  →  valida e republica
 data/evidencias/         289 átomos EV-<capítulo>-<seq>.md
 data/hipoteses/          17 hipóteses + os relatórios de red team
 data/cronologia.md       os marcos datados, cada um citando seus átomos
+data/checagem.md         afirmações do resumo popular, com o veredito do arquivo
 agents/                  os prompts dos quatro papéis
 tools/validate.py        o portão, determinístico e sem IA
 tools/score.py           log-odds, com teto por capítulo e por arco
